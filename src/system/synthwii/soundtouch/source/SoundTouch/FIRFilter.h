@@ -42,7 +42,8 @@
 #ifndef FIRFilter_H
 #define FIRFilter_H
 
-#include "STTypes.h"
+#include "synthwii/soundtouch/include/STTypes.h"
+#include "utl/MemMgr.h"
 
 namespace soundtouch
 {
@@ -77,7 +78,8 @@ public:
 
     /// Operator 'new' is overloaded so that it automatically creates a suitable instance 
     /// depending on if we've a MMX-capable CPU available or not.
-    static void * operator new(size_t s);
+    static void * operator new(size_t s) { return _MemAlloc(s, 0x20); }
+    static void operator delete(void *p) { _MemFree(p); }
 
     static FIRFilter *newInstance();
 

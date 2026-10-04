@@ -111,6 +111,9 @@ public:
     void CapLastFreestyleSection(float);
     void GetPracticePhrases(std::vector<VocalPhrase> &, int, int) const;
 
+    int HasNoteInRange(int, int) const;
+    int GetNumPracticePhrases(const std::vector<VocalPhrase> &) const;
+    static bool IsIllegalFreestyleSection(DataArray *, const std::pair<float, float> &);
     const char *PrintTick(int tick) const;
     Symbol GetTrackName() const { return mTrackName; }
     void SetTrackName(Symbol name) { mTrackName = name; }

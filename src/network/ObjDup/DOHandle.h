@@ -9,6 +9,7 @@ namespace Quazal {
 
         bool operator<(const DOHandle &h) const { return mValue < h.mValue; }
 
+        bool IsAWKHandle() const;
         void SetDOClassID(unsigned int);
 
         unsigned int mValue; // 0x0

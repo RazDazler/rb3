@@ -4,7 +4,11 @@
 
 #define IPC_QUEUE_CAPACITY 16
 #define IPC_HEAP_SIZE_OLD 0x800
+#ifdef VERSION_SZBE69_B8
+#define IPC_HEAP_SIZE 0x2000
+#else
 #define IPC_HEAP_SIZE 0x1000
+#endif
 
 typedef struct IPCRequestQueue {
     u32 sent;                                // at 0x0

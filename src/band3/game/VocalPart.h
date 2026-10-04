@@ -24,6 +24,7 @@ public:
     bool ScoringEnabled() const;
     void SetRemotePhraseMeterFrac(float);
     bool InTambourinePhrase() const;
+    int CalculateRemainingTambourineTicks();
     void ForcePhrasePointDelta(float);
     float FramePhraseMeterFrac() const;
     int GetSpotlightPhrase() const;
@@ -31,8 +32,10 @@ public:
     void SetPhraseRank(int);
     bool InEmptyPhrase() const;
     bool InPlayablePhrase() const;
+    bool AtPhraseEnd(float) const;
     void HandlePhraseEnd(int &, float &, float &, int &, float);
     float GetOverallPartHitPercentage() const;
+    float GetFreestyleSectionDurationMs() const;
     int CurrentPhraseIndex() const;
     void OnGameOver();
     const VocalPhrase *GetFirstPhraseMarker() const;
@@ -47,6 +50,12 @@ public:
     void AddPhrasePoints(float);
     void SetFirstPhraseMsToScore(float);
     void SetVocalNoteList(VocalNoteList *);
+    bool PhraseHasUnpitchedNotes() const;
+    void AddSingerCandidate(Singer *, float);
+    void ClearSingerCandidates();
+    Singer *GetBestSingerCandidate();
+    bool HasBestSingerCandidate();
+    int NumPracticePhrases(const std::vector<VocalPhrase> &) const;
 
     int PartIndex() const { return mPartIndex; }
     float MaxPhraseScore() const { return mPhraseScoreMax; }
@@ -67,7 +76,7 @@ public:
     float mRemotePhraseMeterFrac; // 0x2c
     float mPhraseScorePartMultiplier; // 0x30
     float mPhraseScoreMax; // 0x34
-    int unk38;
+    float unk38;
     int unk3c;
     float mPhraseScore; // 0x40
     float unk44;

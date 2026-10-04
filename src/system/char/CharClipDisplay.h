@@ -15,6 +15,13 @@ public:
     void SetText(const char *);
     void SetStartEnd(float, float, bool);
 
+    void DrawBlend(float, float);
+    void DrawCursor();
+    float GetX(float) const;
+    void GetXY(Vector2 &, float) const;
+    void DrawBeatString(float, const Hmx::Color &);
+    void DrawBeatString(const char *, float, const Hmx::Color &);
+
     static void Init(ObjectDir *);
     static float LineSpacing();
 
@@ -31,21 +38,6 @@ public:
     float unk18;
     float unk1c;
     float unk20;
-    char *unk24;
-    int unk28;
-    int unk2c;
-    int unk30;
-    int unk34;
-    int unk38;
-    int unk3c;
-    int unk40;
-    int unk44;
-    int unk48;
-    int unk4c;
-    int unk50;
-    int unk54;
-    int unk58;
-    int unk5c;
-    int unk60;
+    char unk24[64]; // inline text buffer, 0x24..0x63
     float unk64;
 };

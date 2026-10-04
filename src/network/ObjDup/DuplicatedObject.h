@@ -10,6 +10,8 @@
 
 namespace Quazal {
 
+    class DataSet;
+    class Time;
     class DuplicatedObject : public StateMachine {
     public:
         DuplicatedObject();
@@ -32,6 +34,12 @@ namespace Quazal {
         virtual bool IsABootstrapDO() const { return false; }
         virtual void UpdateCellStats(int, int, int) {}
 
+        bool SpecificRefresh(DataSet *, const Time &);
+        bool SpecificUpdate(DataSet *, Time);
+        bool IsAWellKnownDO() const;
+        bool CallApproveFaultRecovery();
+        bool IsADuplica() const;
+        void ClearFlag(unsigned short);
         unsigned int GetMasterID() const;
         bool IsADuplicationMaster() const;
         void SetStationSpecialRelevance();

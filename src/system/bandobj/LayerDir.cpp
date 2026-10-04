@@ -1,4 +1,34 @@
 #include "bandobj/LayerDir.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolLayerDir,
+    "colors",
+    "color",
+    "alpha",
+    ".png",
+    ".bmp",
+    "_norm.png",
+    "_spec.png",
+    "_norm.bmp",
+    "_spec.bmp",
+    "ObjPtr_p.h",
+    "f.Owner()",
+    "",
+    "LayerDir.cpp",
+    "0",
+    "%s can't load new %s version %d > %d",
+    "%s can't load new %s alt version %d > %d",
+    "milo_prop_path",
+    "name",
+    "PropSync_p.h",
+    "op == kPropSize",
+    "i == prop->Size() && op <= kPropInsert",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "rndobj/Cam.h"
 #include "obj/ObjVersion.h"
 #include "utl/Symbols.h"

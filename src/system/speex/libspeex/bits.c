@@ -194,6 +194,7 @@ EXPORT void speex_bits_read_whole_bytes(SpeexBits *bits, char *chars, int nbytes
    bits->nbBits+=nchars<<LOG2_BITS_PER_CHAR;
 }
 
+#ifndef VERSION_SZBE69
 static inline EXPORT void speex_bits_insert_terminator(SpeexBits *bits)
 {
    if (bits->bitPtr)
@@ -201,6 +202,7 @@ static inline EXPORT void speex_bits_insert_terminator(SpeexBits *bits)
    while (bits->bitPtr)
       speex_bits_pack(bits, 1, 1);
 }
+#endif
 
 EXPORT int speex_bits_write(SpeexBits *bits, char *chars, int max_nbytes)
 {
@@ -379,3 +381,13 @@ EXPORT int speex_bits_nbytes(SpeexBits *bits)
 {
    return ((bits->nbBits+BITS_PER_CHAR-1)>>LOG2_BITS_PER_CHAR);
 }
+
+#ifdef VERSION_SZBE69
+EXPORT void speex_bits_insert_terminator(SpeexBits *bits)
+{
+   if (bits->bitPtr)
+      speex_bits_pack(bits, 0, 1);
+   while (bits->bitPtr)
+      speex_bits_pack(bits, 1, 1);
+}
+#endif

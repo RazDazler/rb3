@@ -296,6 +296,7 @@ void Debug::RemoveExitCallback(ExitCallbackFunc *func) {
 void Debug::Print(const char *msg) {
     AutoSlowFrame asf("Debug::Print");
 
+#ifdef MILO_DEBUG
     if (mLog && !mLog->mFile.Fail()) {
         mLog->Print(msg);
         if (mAlwaysFlush) {
@@ -320,6 +321,7 @@ void Debug::Print(const char *msg) {
         OSReport("%s", msgChunk);
     }
     OSReport("%s", msg);
+#endif
 }
 
 void Debug::StartLog(const char *file, bool always_flush) {
@@ -344,8 +346,12 @@ void Debug::StopLog() {
 }
 
 Debug::Debug()
-    : mNoDebug(0), mFailing(0), mExiting(0), mNoTry(0), mNoModal(0), mTry(0), mLog(0),
-      mReflect(0), mModalCallback(DebugModal), mFailThreadMsg(0), mNotifyThreadMsg(0) {}
+    : mNoDebug(0), mFailing(0), mExiting(0), mNoTry(0), mNoModal(0), mTry(0),
+#ifdef MILO_DEBUG
+      mLog(0),
+#endif
+      mReflect(0), mModalCallback(DebugModal), mFailThreadMsg(0), mNotifyThreadMsg(0) {
+}
 
 Debug::~Debug() { StopLog(); }
 

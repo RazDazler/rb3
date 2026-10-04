@@ -26,11 +26,20 @@ Symbol AccomplishmentCategory::GetGroup() const { return mGroup; }
 
 Symbol AccomplishmentCategory::GetAward() const { return mAward; }
 
-bool AccomplishmentCategory::HasAward() const { return !(mAward == ""); }
+bool AccomplishmentCategory::HasAward() const { return mAward != ""; }
 
+#ifdef MILO_DEBUG
 DECOMP_FORCEACTIVE(
     AccomplishmentCategory,
     "%s_desc",
     "ui/accomplishments/category_art/%s_keep.png",
     "%s_gray"
 )
+#else
+DECOMP_FORCEACTIVE(
+    AccomplishmentCategory,
+    "%s_desc",
+    "%s_gray",
+    "ui/accomplishments/category_art/%s_keep.png"
+)
+#endif

@@ -290,7 +290,12 @@ void Player::EnterCoda() {
     }
 }
 
-void Player::AddBonusPoints(int i) { TheGame->AddBonusPoints(mUser, i, unk28c++); }
+void Player::AddBonusPoints(int i) {
+    BandUser *user = mUser;
+    Game *game = TheGame;
+    int bonus = unk28c++;
+    game->AddBonusPoints(user, i, bonus);
+}
 
 void Player::Rollback(float, float) {
     BandTrack *track = GetBandTrack();
@@ -381,12 +386,16 @@ void Player::LocalSetEnabledState(EnabledState estate, int i, BandUser *causer, 
 }
 
 bool Player::Saveable() const {
-    bool ret = false;
+    bool eligible;
+    bool result = false;
+    eligible = false;
     if (mEnabledState == kPlayerDisabled && mTimesFailed < 3 && !unk298)
-        ret = true;
-    if (ret)
+        eligible = true;
+    if (eligible) {
         MetaPerformer::Current();
-    return ret;
+        result = true;
+    }
+    return result;
 }
 
 void Player::Save(BandUser *user, bool b) { SetEnabledState(kPlayerBeingSaved, user, b); }
@@ -859,3 +868,7 @@ BEGIN_HANDLERS(Player)
     HANDLE_CHECK(0x6DE)
 END_HANDLERS
 #pragma pop
+void Player::IgnoreUntilRollback(float) {}
+void Player::SubtractEnergy(float amount) {
+    SetEnergy(std::max(0.0f, mBandEnergy - amount));
+}

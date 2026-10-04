@@ -211,7 +211,7 @@ bool NetSync::IsTransitionAllowed(UIScreen *s) const {
         return false;
     else {
         BandUser *u = TheSessionMgr->GetLeaderUser();
-        return (IsEnabled() && u) || (TheNetSession->HasUser(u) && u->IsLocal());
+        return (!IsEnabled() || !u) || (TheNetSession->HasUser(u) && u->IsLocal());
     }
 }
 

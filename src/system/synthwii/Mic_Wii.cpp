@@ -21,3 +21,17 @@ void MicWii::SetMicIndex(int micIndex) {
     MILO_ASSERT(micIndex >= -1 && micIndex < 4, 0x288);
     mMicIndex = micIndex;
 }
+
+bool MicWii::IsRunning() const { return mOn; }
+int MicWii::GetPad() const { return mPadNum; }
+void MicWii::SetPad(int pad) { mPadNum = pad; }
+float MicWii::GetCompressorParam() const { return 0.0f; }
+void MicWii::SetCompressorParam(float) {}
+bool MicWii::GetCompressor() const { return true; }
+void MicWii::SetCompressor(bool) {}
+float MicWii::GetSensitivity() const { return mSensitivity; }
+void MicWii::SetSensitivity(float sensitivity) { mSensitivity = sensitivity; }
+float MicWii::GetOutputGain() const { return 0.0f; }
+void MicWii::SetOutputGain(float) {}
+bool MicWii::GetDMA() const { return false; }
+void MicWii::SetDMA(bool) {}

@@ -18,6 +18,11 @@ BOOL GXGetCPUFifo(GXFifoObj *);
 u32 GXGetFifoCount(GXFifoObj *);
 u8 GXGetFifoWrap(GXFifoObj *);
 
+#ifdef VERSION_SZBE69_B8
+void GXEnableBreakPt(void *address);
+void GXDisableBreakPt(void);
+#endif
+
 #ifdef __cplusplus
 }
 #endif

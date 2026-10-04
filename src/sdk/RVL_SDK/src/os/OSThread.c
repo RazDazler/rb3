@@ -504,7 +504,7 @@ void OSExitThread(OSThread* thread) {
     currThread = OSGetCurrentThread();
     OSClearContext(&currThread->context);
 
-    if ((currThread->state & OS_THREAD_DETACHED)) {
+    if ((currThread->attr & OS_THREAD_DETACHED)) {
         next = currThread->linkActive.next;
         prev = currThread->linkActive.prev;
 

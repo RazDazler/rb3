@@ -1,4 +1,31 @@
 #include "meta_band/SongUpgradeMgr.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolSongUpgradeMgr,
+    "SongUpgradeData: MIDI file: %s\n",
+    "songs_upgrades",
+    "SongUpgradeData: correcting %s (insert / at %d)\n",
+    "/",
+    "SongUpgradeData: now        %s\n",
+    "Asking a song upgrade for a part rank that's not real_guitar or real_bass!",
+    "%s/%s",
+    "&.mid",
+    "SongUpgradeData: updated MIDI file to %s\n",
+    "SongUpgradeData: MIDI file %s does not exist in %s\n",
+    "SongUpgradeMgr.cpp",
+    "false",
+    "&upgrades.dta",
+    "d",
+    "Content %s isn't cached!",
+    ".",
+    "The upgrade for %s was found twice.\n",
+    "songID != kSongID_Invalid",
+    "it != mUpgradeData.end()"
+)
+#endif
 #include "meta_band/BandSongMgr.h"
 #include "obj/Data.h"
 #include "obj/DataFile.h"

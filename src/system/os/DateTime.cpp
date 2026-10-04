@@ -79,7 +79,12 @@ unsigned int DateTime::ToCode() const {
 
 void DateTime::ToString(class String &str) const {
     ToDateString(str);
+#ifdef VERSION_SZBE69
+    // The retail linker shares this implementation with int formatting calls.
+    str += MakeString(" %02d:%02d:%02d", int(mHour), int(mMin), int(mSec));
+#else
     str += MakeString(" %02d:%02d:%02d", mHour, mMin, mSec);
+#endif
 }
 
 void DateTime::ToDateString(class String &str) const {

@@ -896,7 +896,10 @@ float ProfileMgr::GetExcessVideoLagNeutral(int pad, bool b) const {
 
 FORCE_LOCAL_INLINE
 float ProfileMgr::GetExcessAudioLag() const {
-    return -(mPlatformAudioLatency + GetSongToTaskMgrMsRaw() + GetSyncOffsetRaw());
+    float song = GetSongToTaskMgrMsRaw();
+    float platform = mPlatformAudioLatency;
+    float sync = GetSyncOffsetRaw();
+    return -(platform + song + sync);
 }
 END_FORCE_LOCAL_INLINE
 

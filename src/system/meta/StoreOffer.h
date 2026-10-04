@@ -13,6 +13,7 @@ class StorePackedSong {
 public:
     void EndianFix();
     const char *GetShortName() const;
+    unsigned long long DataTitle() const;
     const char *GetName() const;
     const char *GetArtist() const;
     const char *GetDataTitle() const;

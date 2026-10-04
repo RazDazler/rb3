@@ -1,4 +1,43 @@
 #include "meta_band/MusicLibraryNetSetlists.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolMusicLibraryNetSetlists,
+    "MusicLibraryNetSetlists.cpp",
+    "mPendingSetlistArt",
+    "!mFailed && !mSucceeded",
+    "Setlists from net:\n",
+    "\n",
+    "title",
+    "desc",
+    "type",
+    "art_url",
+    "owner",
+    "guid",
+    "!archived",
+    "id",
+    "valid_instr",
+    "seconds_left",
+    "Bad setlist type from RockCentral!\n",
+    "setlist",
+    "s_name%03i",
+    "s_id%03i",
+    "mSucceeded",
+    "ssn",
+    "nss",
+    "!mPendingSetlistArt",
+    "!mSetlistArtLoader",
+    "nss->GetType() != SavedSetlist::kSetlistHarmonix",
+    "nss->GetType() != SavedSetlist::kBattleHarmonix",
+    "nss->GetType() != SavedSetlist::kArchivedHarmonix",
+    "bss",
+    "Bad SetlistType %i in RefreshSetlistArt!",
+    "No setlist art matching id sym \"%s\"!",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "meta_band/MusicLibrary.h"
 #include "meta_band/ProfileMgr.h"
 #include "net_band/RockCentral.h"

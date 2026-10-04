@@ -48,7 +48,7 @@ namespace ec {
     }
 
     ECResult titleChannel(unsigned long long titleId) {
-        return (ECResult)(titleId & 0xFFFF);
+        return (ECResult)((titleId >> 32) & 0xFFFF);
     }
 
     unsigned int isSubscription(unsigned long long p1) { return (unsigned int)__cntlzw(p1) >> 5; }

@@ -28,6 +28,7 @@ enum TexGen {
      * on cpu but slow on gs" */
     kTexGenEnviron = 5,
 };
+#ifndef VERSION_SZBE69_B8
 enum TexWrap {
     /** "UVs outside the range [0,1] are clamped" */
     kTexWrapClamp = 0,
@@ -40,6 +41,7 @@ enum TexWrap {
     /** "The image repeats itself, but is flipped every other repetition" */
     kTexWrapMirror = 4
 };
+#endif
 enum ShaderVariation {
     kShaderVariationNone = 0,
     kShaderVariationSkin = 1,
@@ -117,6 +119,20 @@ struct MatShaderOptions {
  */
 class RndMat : public Hmx::Object {
 public:
+#ifdef VERSION_SZBE69_B8
+    enum TexWrap {
+        /** "UVs outside the range [0,1] are clamped" */
+        kTexWrapClamp = 0,
+        /** "The image repeats itself across the surface" */
+        kTexWrapRepeat = 1,
+        /** "texels outside the UV range [0,1] are black" */
+        kTexBorderBlack = 2,
+        /** "texels outside the UV range [0,1] are white" */
+        kTexBorderWhite = 3,
+        /** "The image repeats itself, but is flipped every other repetition" */
+        kTexWrapMirror = 4
+    };
+#endif
     enum ColorModFlags {
         kColorModNone = 0,
         kColorModAlphaPack = 1,
@@ -348,5 +364,15 @@ public:
     ColorModFlags mColorModFlags : 8;
     int mDirty : 8;
 };
+
+#ifdef VERSION_SZBE69_B8
+// B8 symbols place the wrap enumeration in RndMat; retain aliases for callers.
+typedef RndMat::TexWrap TexWrap;
+const TexWrap kTexWrapClamp = RndMat::kTexWrapClamp;
+const TexWrap kTexWrapRepeat = RndMat::kTexWrapRepeat;
+const TexWrap kTexBorderBlack = RndMat::kTexBorderBlack;
+const TexWrap kTexBorderWhite = RndMat::kTexBorderWhite;
+const TexWrap kTexWrapMirror = RndMat::kTexWrapMirror;
+#endif
 
 RndMat *LookupOrCreateMat(const char *, ObjectDir *);

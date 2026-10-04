@@ -1,4 +1,20 @@
 #include "game/PerfectOverdriveTracker.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolPerfectOverdriveTracker,
+    "scoring",
+    "band_energy",
+    "deploy_beats",
+    "spotlight_phrase",
+    "PerfectOverdriveTracker.cpp",
+    "pPlayer",
+    "contribIter != mContribMap.end()",
+    "player"
+)
+#endif
 #include "beatmatch/TrackType.h"
 #include "game/TrackerSource.h"
 #include "meta_band/Utl.h"

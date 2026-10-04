@@ -51,8 +51,8 @@ float BandPerformer::GetNumStarsFloat() const {
 }
 
 float BandPerformer::GetTotalStars() const {
-    float base = GetNumStarsFloat();
-    return base + mBand->GetTotalStars();
+    float previous = mBand->GetTotalStars();
+    return previous + GetNumStarsFloat();
 }
 
 int BandPerformer::GetScoreForStars(int i1) const {

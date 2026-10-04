@@ -272,7 +272,7 @@ void BandDirector::UpdatePostProcOverlay(
 #ifdef MILO_DEBUG
     RndOverlay *o = RndOverlay::Find("postproc", true);
     if (o->Showing()) {
-        TextStream *ts = TheDebug.mReflect;
+        TextStream *ts = TheDebug.SetReflect(o);
         if (p1 && !p2) {
             MILO_LOG("Post Proc %s is not blended\n", p1->Name());
         } else {

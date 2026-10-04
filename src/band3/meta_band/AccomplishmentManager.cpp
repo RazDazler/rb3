@@ -1291,7 +1291,9 @@ Symbol AccomplishmentManager::GetAwardDescription(Symbol s) const {
         return pAward->GetDescription();
     } else {
         MILO_ASSERT(false, 0x972);
-        return "";
+        Symbol empty;
+        empty = "";
+        return empty;
     }
 }
 
@@ -1399,7 +1401,9 @@ Symbol AccomplishmentManager::GetNameForFirstNewRewardVignette() const {
         return prog.GetFirstNewRewardVignette();
     else {
         MILO_ASSERT(false, 0xA3B);
-        return "";
+        Symbol empty;
+        empty = "";
+        return empty;
     }
 }
 
@@ -1485,16 +1489,16 @@ bool AccomplishmentManager::IsAvailable(Symbol s, bool b) const {
         Symbol filt = pAccomplishment->GetDynamicPrereqsFilter();
         if (filt == gNullStr) {
             const std::vector<Symbol> &rSongs = pAccomplishment->GetDynamicPrereqsSongs();
-            int numrsongs = rSongs.size();
-            int iNumSongs = pAccomplishment->GetDynamicPrereqsNumSongs();
-            if (iNumSongs <= 0)
-                iNumSongs = numrsongs;
+            int iNumSongs = rSongs.size();
+            int iNumRequiredSongs = pAccomplishment->GetDynamicPrereqsNumSongs();
+            if (iNumRequiredSongs <= 0)
+                iNumRequiredSongs = iNumSongs;
             MILO_ASSERT(iNumSongs <= rSongs.size(), 0xAD4);
             int i7 = 0;
-            for (int i = 0; i < numrsongs; i++) {
+            for (int i = 0; i < iNumSongs; i++) {
                 if (TheSongMgr.HasSong(rSongs[i], false))
                     i7++;
-                if (i7 >= iNumSongs)
+                if (i7 >= iNumRequiredSongs)
                     return true;
             }
         } else {

@@ -71,7 +71,8 @@ void speex_bits_set_bit_buffer(SpeexBits *bits, void *buff, int buf_size);
 void speex_bits_destroy(SpeexBits *bits);
 
 /** Resets bits to initial value (just after initialization, erasing content)*/
-static inline void speex_bits_reset(SpeexBits *bits);
+/* Both shipped Wii builds call this helper from other translation units. */
+inline void speex_bits_reset(SpeexBits *bits);
 
 /** Rewind the bit-stream to the beginning (ready for read) without erasing the content */
 void speex_bits_rewind(SpeexBits *bits);
@@ -164,7 +165,11 @@ int speex_bits_remaining(SpeexBits *bits);
  *
  * @param bits Bit-stream to operate on
  */
+#ifdef VERSION_SZBE69
+void speex_bits_insert_terminator(SpeexBits *bits);
+#else
 static inline void speex_bits_insert_terminator(SpeexBits *bits);
+#endif
 
 #ifdef __cplusplus
 }

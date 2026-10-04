@@ -1,10 +1,17 @@
 #include "net/Server_Wii.h"
 #include "net/Server.h"
 #include "os/Timer.h"
+#include "revolution/rvl/so.h"
 
 WiiServer gWiiServer;
 Server &TheServer = gWiiServer;
 Timer g_LoginTimer;
+bool IsIpAddress(const char *address) {
+    u32 parsed;
+    return SOInetAtoN(address, &parsed) != 0;
+}
+unsigned int WiiServer::GetMasterProfileID() { return unka8; }
+int WiiServer::GetMessagingClient() { return unk88; }
 
 WiiServer::WiiServer()
     : unk68(0), unk69(0), unk6a(0), unk6b(0), unk6c(0), unk70(0), unk74(0), unk78(0),

@@ -13,9 +13,9 @@ class NetLoader {
 public:
     NetLoader(const String &);
     virtual ~NetLoader();
-    virtual void V_Unk0xC();
-    virtual bool V_Unk0x10();
-    virtual bool IsSafeToDelete();
+    virtual void PollLoading() = 0;
+    virtual bool HasFailed() = 0;
+    virtual bool IsSafeToDelete() const = 0;
 
     bool IsLoaded();
     const char *GetRemotePath() const;
@@ -60,7 +60,7 @@ public:
     void PollLoading();
     bool HasFailed();
 
-    NetLoaderStub *mLoader; // 0x0
+    NetLoader *mLoader; // 0x0
     DataArray *unk_0x4; // 0x4
 };
 

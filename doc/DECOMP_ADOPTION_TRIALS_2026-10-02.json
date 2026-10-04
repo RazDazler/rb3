@@ -1,0 +1,760 @@
+{
+  "system/beatmatch/Output.cpp": {
+    "accepted": false,
+    "code_bytes": 80,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_beatmatch_Output_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_beatmatch_Output_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "sdk/RVL_SDK/src/os/OSReboot.c": {
+    "accepted": false,
+    "code_bytes": 128,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-sdk_RVL_SDK_src_os_OSReboot_c-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-sdk_RVL_SDK_src_os_OSReboot_c-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/utl/Cache.cpp": {
+    "accepted": false,
+    "code_bytes": 196,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_utl_Cache_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_utl_Cache_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "band3/tour/TourQuestGameRules.cpp": {
+    "accepted": false,
+    "code_bytes": 268,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-band3_tour_TourQuestGameRules_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-band3_tour_TourQuestGameRules_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/os/OnlineID.cpp": {
+    "accepted": false,
+    "code_bytes": 272,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_os_OnlineID_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_os_OnlineID_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/synth/Mic.cpp": {
+    "accepted": false,
+    "code_bytes": 288,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_synth_Mic_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_synth_Mic_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/utl/MBT.cpp": {
+    "accepted": false,
+    "code_bytes": 328,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_utl_MBT_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_utl_MBT_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/ui/UIResource.cpp": {
+    "accepted": true,
+    "code_bytes": 352,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_ui_UIResource_cpp-default.log",
+        "accepted": true
+      }
+    ]
+  },
+  "system/os/ProfilePicture.cpp": {
+    "accepted": false,
+    "code_bytes": 556,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_os_ProfilePicture_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_os_ProfilePicture_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/synth/MicNull.cpp": {
+    "accepted": false,
+    "code_bytes": 556,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_synth_MicNull_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_synth_MicNull_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/rndobj/SIVideo.cpp": {
+    "accepted": false,
+    "code_bytes": 564,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_rndobj_SIVideo_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_rndobj_SIVideo_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "band3/tour/TourPropertyCollection.cpp": {
+    "accepted": false,
+    "code_bytes": 612,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-band3_tour_TourPropertyCollection_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-band3_tour_TourPropertyCollection_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/synth/MidiInstrumentMgr.cpp": {
+    "accepted": false,
+    "code_bytes": 660,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_synth_MidiInstrumentMgr_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_synth_MidiInstrumentMgr_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/synth/SampleInst.cpp": {
+    "accepted": false,
+    "code_bytes": 768,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_synth_SampleInst_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_synth_SampleInst_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/math/StreamChecksum.cpp": {
+    "accepted": false,
+    "code_bytes": 788,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_math_StreamChecksum_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_math_StreamChecksum_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/os/UserMgr.cpp": {
+    "accepted": false,
+    "code_bytes": 844,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_os_UserMgr_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_os_UserMgr_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/bandobj/BandSong.cpp": {
+    "accepted": false,
+    "code_bytes": 852,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_bandobj_BandSong_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_bandobj_BandSong_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "band3/tour/FixedSetlist.cpp": {
+    "accepted": false,
+    "code_bytes": 860,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-band3_tour_FixedSetlist_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-band3_tour_FixedSetlist_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/beatmatch/DrumFillTrackWatcherImpl.cpp": {
+    "accepted": false,
+    "code_bytes": 964,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_beatmatch_DrumFillTrackWatcherImpl_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_beatmatch_DrumFillTrackWatcherImpl_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/synth/tomcrypt/ctr.c": {
+    "accepted": true,
+    "code_bytes": 988,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_synth_tomcrypt_ctr_c-default.log",
+        "accepted": true
+      }
+    ]
+  },
+  "system/ui/UIColor.cpp": {
+    "accepted": false,
+    "code_bytes": 992,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_ui_UIColor_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_ui_UIColor_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/meta/Profile.cpp": {
+    "accepted": false,
+    "code_bytes": 1028,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_meta_Profile_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_meta_Profile_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/math/Rand.cpp": {
+    "accepted": false,
+    "code_bytes": 1168,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_math_Rand_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_math_Rand_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/os/Keyboard.cpp": {
+    "accepted": false,
+    "code_bytes": 1180,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_os_Keyboard_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_os_Keyboard_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/utl/FileStream.cpp": {
+    "accepted": false,
+    "code_bytes": 1224,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_utl_FileStream_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_utl_FileStream_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/speex/libspeex/bits.c": {
+    "accepted": false,
+    "code_bytes": 1304,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_speex_libspeex_bits_c-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_speex_libspeex_bits_c-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/ui/UIListHighlight.cpp": {
+    "accepted": false,
+    "code_bytes": 1344,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_ui_UIListHighlight_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_ui_UIListHighlight_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/beatmatch/GameGemDB.cpp": {
+    "accepted": false,
+    "code_bytes": 1356,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_beatmatch_GameGemDB_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_beatmatch_GameGemDB_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/beatmatch/GuitarTrackWatcherImpl.cpp": {
+    "accepted": false,
+    "code_bytes": 1404,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_beatmatch_GuitarTrackWatcherImpl_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_beatmatch_GuitarTrackWatcherImpl_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/meta/ConnectionStatusPanel.cpp": {
+    "accepted": false,
+    "code_bytes": 1432,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_meta_ConnectionStatusPanel_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_meta_ConnectionStatusPanel_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/ui/UITransitionHandler.cpp": {
+    "accepted": false,
+    "code_bytes": 1484,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_ui_UITransitionHandler_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_ui_UITransitionHandler_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/world/SpotlightEnder.cpp": {
+    "accepted": false,
+    "code_bytes": 1524,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_world_SpotlightEnder_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_world_SpotlightEnder_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "band3/tour/Quest.cpp": {
+    "accepted": false,
+    "code_bytes": 1556,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-band3_tour_Quest_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-band3_tour_Quest_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/beatmatch/JoypadGuitarController.cpp": {
+    "accepted": false,
+    "code_bytes": 1736,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_beatmatch_JoypadGuitarController_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_beatmatch_JoypadGuitarController_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/beatmatch/Playback.cpp": {
+    "accepted": false,
+    "code_bytes": 1780,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_beatmatch_Playback_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_beatmatch_Playback_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/bandobj/BandSongPref.cpp": {
+    "accepted": false,
+    "code_bytes": 1380,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_bandobj_BandSongPref_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_bandobj_BandSongPref_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/ui/Screenshot.cpp": {
+    "accepted": false,
+    "code_bytes": 1908,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_ui_Screenshot_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_ui_Screenshot_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/os/UsbMidiKeyboardMsgs.cpp": {
+    "accepted": false,
+    "code_bytes": 2008,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_os_UsbMidiKeyboardMsgs_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_os_UsbMidiKeyboardMsgs_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/ui/UIListArrow.cpp": {
+    "accepted": false,
+    "code_bytes": 2012,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_ui_UIListArrow_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_ui_UIListArrow_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/ui/UIButton.cpp": {
+    "accepted": false,
+    "code_bytes": 2072,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_ui_UIButton_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_ui_UIButton_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/beatmatch/KeyboardController.cpp": {
+    "accepted": false,
+    "code_bytes": 2252,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_beatmatch_KeyboardController_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_beatmatch_KeyboardController_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/os/UsbMidiGuitarMsgs.cpp": {
+    "accepted": false,
+    "code_bytes": 2428,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_os_UsbMidiGuitarMsgs_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_os_UsbMidiGuitarMsgs_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "band3/bandtrack/GemSmasher.cpp": {
+    "accepted": false,
+    "code_bytes": 2656,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-band3_bandtrack_GemSmasher_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-band3_bandtrack_GemSmasher_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "band3/game/RealGuitarGemPlayer.cpp": {
+    "accepted": false,
+    "code_bytes": 2692,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-band3_game_RealGuitarGemPlayer_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-band3_game_RealGuitarGemPlayer_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/meta/CreditsPanel.cpp": {
+    "accepted": false,
+    "code_bytes": 3160,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_meta_CreditsPanel_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_meta_CreditsPanel_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/char/CharFaceServo.cpp": {
+    "accepted": false,
+    "code_bytes": 4012,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_char_CharFaceServo_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_char_CharFaceServo_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/ui/UIProxy.cpp": {
+    "accepted": false,
+    "code_bytes": 4352,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_ui_UIProxy_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_ui_UIProxy_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  },
+  "system/bandobj/CrowdMeterIcon.cpp": {
+    "accepted": false,
+    "code_bytes": 4600,
+    "attempts": [
+      {
+        "variant": "default",
+        "log": "build\\goal-adopt-system_bandobj_CrowdMeterIcon_cpp-default.log",
+        "accepted": false
+      },
+      {
+        "variant": "ipa-off",
+        "log": "build\\goal-adopt-system_bandobj_CrowdMeterIcon_cpp-ipa-off.log",
+        "accepted": false
+      }
+    ]
+  }
+}

@@ -1,4 +1,72 @@
 #include "os/CommerceMgr_Wii.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolCommerceMgr_Wii,
+    "Prices",
+    "MaxUserFileSize",
+    "MaxUserInodes",
+    "offer_id",
+    "index_version",
+    "commerce_mgr",
+    "WaitAsyncOp: %s failed: %d\n",
+    "WaitAsyncOp: CustomerSupportCode: %d\n",
+    "WaitAsyncOp: errInfo: %s\n",
+    "none",
+    "<><><><><><><><><><><><><><><><> %s finished (%0.1f ms)\n",
+    "WiiCommerceMgr: no network config, %d, %d",
+    "store",
+    "titles",
+    "",
+    "CommerceMgr_Wii.cpp",
+    "err == EC_ERROR_OK",
+    "PCPW",
+    "net",
+    "commerce",
+    "appid",
+    "pcpw",
+    "tin",
+    "AppId",
+    "%s failed->%d  CustomerSupportCode->%d",
+    "EC_SetParameter(APP_ID)",
+    "TIN",
+    "EC_SetParameter(TIN)",
+    "%04d",
+    "WiiCommerceMgr: parental pin enabled %s\n",
+    "SPACE_CHECK_POLICY",
+    "SPACE_CHECK_ENTIRE_FS",
+    "EC_Connect failed: %d",
+    "CM_CNTSDCacheClearRSO failed: %d",
+    "DownloadSpecifiedContentUnits failed: (%d): spaceCheck: cu (%d), need (%d)",
+    "CM_CNTSDCachePushDeleteContentRSO failed: %d",
+    "EC_DownloadTitle failed: %d",
+    "Store: titleinfo: %d - titleId = %s | isTmdPresent = %d | isOnDevice = %d | type = %d | version = %d\n",
+    "Store: titleId = %s not owned.\n",
+    "==",
+    "string",
+    "PricingSelection",
+    "EC_ListContentSets failed: %d",
+    "null offer!",
+    "offer_type",
+    "descending",
+    "integer",
+    "LIKE",
+    "EC_PurchaseDataTitle failed: licensePricings NULL",
+    "EC_PurchaseDataTitle failed: %d",
+    "EC_DownloadContents failed! %d",
+    "EC_GetContentsResourceRequirement failed: %d",
+    "CalculateDownloadBlocksFromResourceReq, mNumValidContentRequirements == %d\n",
+    "CNTSDGetBackupBlocksFromCnt error: %d\n",
+    "CalculateDownloadBlocksFromResourceReq, mRequestCombined == %d\n",
+    "mOffer",
+    "Null offer in WiiCommerceMgr::DeleteContent\n",
+    "CM: Failed: Unmount, CNTSDCachePop() returned %d\n",
+    "%s(%d): %s unhandled msg: %s",
+    "vector"
+)
+#endif
 #include "system/meta/StorePackedMetadata.h"
 #include "ec/result.h"
 #include "system/utl/HttpWii.h"
@@ -13,14 +81,14 @@ extern int EC_Connect();
 extern int CM_CNTSDCachePopRSO(long);
 
 uint SCCheckPCShoppingRestriction() {
-    unsigned long dest [2];
-    if (SCFindU32Item(dest, SC_ITEM_NET_CTPC) == 0) dest[0] = 0;
+    unsigned long dest[2];
+    if (SCFindU32Item(dest, SC_ITEM_NET_CTPC) == 0)
+        dest[0] = 0;
     return dest[0] >> 2 & 1;
 }
 
 char gMakeTitleIdString[5];
-char gUsersPIN [8];
-
+char gUsersPIN[8];
 
 bool gAllowNeedSyncReturn = true;
 
@@ -131,14 +199,14 @@ char *MakeTitleIdString(unsigned long long titleId) {
 
 float WiiCommerceMgr::TimeoutForOp(WiiCommerceMgr::LastCommerceOperation lastOp) {
     switch (lastOp) {
-        case kConnect:
-            return 45000.0f;
-        case kPurchaseDataTitle:
-            return 45000.0f;
-        case kListContentSetsOffers:
-            return 120000.0f;
-        default:
-            return 59000.0f;
+    case kConnect:
+        return 45000.0f;
+    case kPurchaseDataTitle:
+        return 45000.0f;
+    case kListContentSetsOffers:
+        return 120000.0f;
+    default:
+        return 59000.0f;
     }
 }
 
@@ -167,13 +235,14 @@ const char *GetAttributeStr(ECContentCatalogInfo *info, char *name) {
 }
 
 int WiiCommerceMgr::PauseCommerce(bool pause) {
-    ECResult resPtr [40];
-    if (pause && mCommerceAsyncOpId != -1) return 0;
+    ECResult resPtr[40];
+    if (pause && mCommerceAsyncOpId != -1)
+        return 0;
 
     TheNetCacheMgr->Unload();
     while (!TheNetCacheMgr->IsUnloaded()) {
         Timer::Sleep(5);
-        //bctrl to Poll() here
+        // bctrl to Poll() here
         TheNetCacheMgr->Poll();
     }
     if (mCommerceAsyncOpId != -1) {
@@ -208,7 +277,8 @@ int WiiCommerceMgr::UnpauseCommerce() {
 
     int ret;
 
-    if ((TheStoreMetadata.mFlags & 1) != 0) return 1;
+    if ((TheStoreMetadata.mFlags & 1) != 0)
+        return 1;
     while (ThePlatformMgr.mCheckingProfanity != false) {
         Timer::Sleep(5);
         ThePlatformMgr.Poll();
@@ -236,31 +306,31 @@ int WiiCommerceMgr::UnpauseCommerce() {
     d6 = &(d5->Node(1));
     tin = d6->Str(d4);
 
-    //AppId
+    // AppId
     status = EC_SetParameter("AppId", appId);
     if (EC_FAIL(status)) {
         customerSupportCode = EC_GetCustomerSupportCode(status);
         MILO_WARN(
-            "%s failed->%d  CustomerSupportCode->%d", 
-            "EC_SetParameter(APP_ID)", 
-            status, 
+            "%s failed->%d  CustomerSupportCode->%d",
+            "EC_SetParameter(APP_ID)",
+            status,
             customerSupportCode
         );
     }
 
-    //TIN
+    // TIN
     status = EC_SetParameter("TIN", tin);
     if (EC_FAIL(status)) {
         customerSupportCode = EC_GetCustomerSupportCode(status);
         MILO_WARN(
-            "%s failed->%d  CustomerSupportCode->%d", 
-            "EC_SetParameter(TIN)", 
-            status, 
+            "%s failed->%d  CustomerSupportCode->%d",
+            "EC_SetParameter(TIN)",
+            status,
             customerSupportCode
         );
     }
 
-    //Parental Control Pin
+    // Parental Control Pin
     uint restriction = SCCheckPCShoppingRestriction();
     mParentalControlsActive = (-restriction | restriction) >> 0x1F;
     if (restriction != 0) {
@@ -274,9 +344,9 @@ int WiiCommerceMgr::UnpauseCommerce() {
             ret--;
         }
     }
-    if (TheWiiContentMgr.mMode == 0) 
+    if (TheWiiContentMgr.mMode == 0)
         EC_SetParameter("SPACE_CHECK_POLICY", "SPACE_CHECK_ENTIRE_FS");
-    
+
     customerSupportCode = EC_Connect();
     if (customerSupportCode < 1) {
         MILO_WARN("EC_Connect failed: %d", customerSupportCode);
@@ -326,11 +396,13 @@ void WiiCommerceMgr::InitPreDownload() {
     *(int *)&mTitleId = 0;
     unsigned long u2;
     if (__dest != __src) {
-        if (__dest != __src) { //same comparison again?
+        if (__dest != __src) { // same comparison again?
             __dest = memmove(__dest, __src, 0);
         }
         u2 = (int)__dest - unk2158 / 2;
+#ifdef MILO_DEBUG
         std_vec_range_assert(u2, 0xFFFF, __FUNCTION__22256);
+#endif
         unk215c = (short)u2;
     }
     unk2168 = 1;
@@ -360,31 +432,21 @@ unsigned int WiiCommerceMgr::OffersRemaining() {
     return (unsigned int)(-unk211c | unk211c) >> 0x1f;
 }
 
-bool WiiCommerceMgr::JustListedContentSetsPrices() {
-    return mCommerceAsyncName == 2;
-}
+bool WiiCommerceMgr::JustListedContentSetsPrices() { return mCommerceAsyncName == 2; }
 
-bool WiiCommerceMgr::ParentalControlsActive() {
-    return mParentalControlsActive;
-}
+bool WiiCommerceMgr::ParentalControlsActive() { return mParentalControlsActive; }
 
-long WiiCommerceMgr::GetCurrentFreeBlocks() {
-    return mCurrentFreeBlocks;
-}
+long WiiCommerceMgr::GetCurrentFreeBlocks() { return mCurrentFreeBlocks; }
 
-long WiiCommerceMgr::GetRequestedDownloadBlocks() {
-    return mRequestedDownloadBlocks;
-}
+long WiiCommerceMgr::GetRequestedDownloadBlocks() { return mRequestedDownloadBlocks; }
 
-long WiiCommerceMgr::GetBlocksAfterDownload() {
-    return mBlocksAfterDownload;
-}
+long WiiCommerceMgr::GetBlocksAfterDownload() { return mBlocksAfterDownload; }
 
-long WiiCommerceMgr::GetNeededBlocks() {
-    return mNeededBlocks;
-}
+long WiiCommerceMgr::GetNeededBlocks() { return mNeededBlocks; }
 
-void WiiCommerceMgr::HandleError(WiiCommerceMgr::LastCommerceOperation lastOp, int p2, const char *p3) {
+void WiiCommerceMgr::HandleError(
+    WiiCommerceMgr::LastCommerceOperation lastOp, int p2, const char *p3
+) {
     DataNode l68, l60, l58, l50, l38, l30, l28;
 
     if (!(*(bool *)(0x80c7a18c))) {
@@ -394,15 +456,12 @@ void WiiCommerceMgr::HandleError(WiiCommerceMgr::LastCommerceOperation lastOp, i
         l68.mValue.array = (DataArray *)0x6;
         l68.mValue.var = (DataNode *)0x0;
         l68.mValue.func = (DataFunc *)0x6;
-
-
     }
 }
 
-//CommerceMgrCancelCompleteMsg
+// CommerceMgrCancelCompleteMsg
 
 CommerceMgrCancelCompleteMsg::~CommerceMgrCancelCompleteMsg() {}
 
-//CommerceMgrOpCompleteMsg
+// CommerceMgrOpCompleteMsg
 CommerceMgrOpCompleteMsg::~CommerceMgrOpCompleteMsg() {}
-

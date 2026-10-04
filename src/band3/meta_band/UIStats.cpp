@@ -1,4 +1,36 @@
 #include "meta_band/UIStats.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolUIStats,
+    "UIStats.cpp",
+    "from",
+    "",
+    "00",
+    "stats/screen_exit",
+    "stats/pad_user",
+    "name",
+    "mode",
+    "%x:",
+    "padlog",
+    "pad_%d",
+    "local_user_%d",
+    "null",
+    "remoteCount < DIM(mLastRemoteID)",
+    "remote_user_%d",
+    "%s:%s",
+    "exit_stats",
+    "(rslt->Size() % 2) == 0",
+    "dropped_screens",
+    "but < 32",
+    "pad < 8",
+    "state < 2",
+    "msg.GetUser()",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "obj/Data.h"
 #include "obj/ObjMacros.h"
 #include "os/Debug.h"

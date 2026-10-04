@@ -19,9 +19,7 @@ void UIListArrow::Load(BinStream &bs) {
     ASSERT_REVS(1, 0)
     UIListWidget::Load(bs);
     int dump;
-    bool tmp;
-    bs >> mMesh >> dump >> mShowOnlyScroll >> tmp;
-    mOnHighlight = tmp;
+    bs >> mMesh >> dump >> mShowOnlyScroll >> mOnHighlight;
     mPosition = (UIListArrowPosition)dump;
     if (gRev != 0)
         bs >> mScrollAnim;

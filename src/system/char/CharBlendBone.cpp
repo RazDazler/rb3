@@ -1,4 +1,23 @@
 #include "char/CharBlendBone.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolCharBlendBone,
+    "CharBlendBone.cpp",
+    "0",
+    "%s can't load new %s version %d > %d",
+    "%s can't load new %s alt version %d > %d",
+    "ObjPtr_p.h",
+    "f.Owner()",
+    "",
+    "%s(%d): %s unhandled msg: %s",
+    "PropSync_p.h",
+    "i == prop->Size() && op <= kPropInsert",
+    "op == kPropSize"
+)
+#endif
 #include "rndobj/Trans.h"
 #include "utl/Symbols.h"
 

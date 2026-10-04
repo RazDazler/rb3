@@ -1,4 +1,5 @@
 #include "net/Server.h"
+// Authentication data uses the holder interface recovered from the B8 virtual call.
 #include "Server.h"
 #include "obj/Data.h"
 #include "obj/Dir.h"

@@ -1,4 +1,25 @@
 #include "rndobj/HiResScreen.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolHiResScreen,
+    "HiResScreen.cpp",
+    "mTotalRows % mRowsPerCacheLine == 0",
+    "_hires_cache_%.2d.dat",
+    "cacheFile",
+    "numRead == mByteSize",
+    "mCurrLoadedIndex < mTotalNumCacheLines",
+    "nBuffRange <= mByteSize",
+    "numWritten == nBuffRange",
+    "y >= nLoadedStart && y <= nLoadedEnd",
+    "urhigh",
+    "%s_%d.bmp",
+    "lo_res",
+    "lo_res/%s_%d.bmp"
+)
+#endif
 #include "rndobj/Rnd.h"
 #include "os/Debug.h"
 #include "os/File.h"

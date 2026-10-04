@@ -1,0 +1,863 @@
+{
+  "recorded_at": 1791055838.0232773,
+  "hardware": {
+    "cpu": "Intel i5-14600K",
+    "gpu": "RTX 3070 Ti",
+    "vram_mib": 8192,
+    "usable_ram_kib": 33263796
+  },
+  "model": "qwen2.5-coder:7b-instruct-q4_K_M",
+  "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+  "runtime": "Ollama 0.35.1 portable",
+  "baseline": {
+    "matched_code": 6324704,
+    "matched_functions": 28558,
+    "complete_code": 1241840,
+    "complete_units": 539
+  },
+  "verified_current": {
+    "fuzzy_match_percent": 68.905525,
+    "total_code": "11431676",
+    "matched_code": "6324972",
+    "matched_code_percent": 55.328476,
+    "total_data": "2755932",
+    "matched_data": "613848",
+    "matched_data_percent": 22.273699,
+    "total_functions": 41333,
+    "matched_functions": 28560,
+    "matched_functions_percent": 69.097336,
+    "complete_code": "1241840",
+    "complete_code_percent": 10.86315,
+    "complete_data": "497808",
+    "complete_data_percent": 18.063147,
+    "total_units": 1876,
+    "complete_units": 539
+  },
+  "retained_gains": {
+    "matched_code": 268,
+    "matched_functions": 2,
+    "complete_code": 0,
+    "complete_units": 0
+  },
+  "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+  "original_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+  "pending_journal": false,
+  "semantic_review": "Bitmap SetPixelIndex branch-local u8 temporaries preserve single existing read, integer promotions, masks, branches, and store order. Exact instructions/relocations confirmed before retaining. ByteGrinder op8 u8 temporaries preserve Int(1), then Int(2), 8-bit operands, modulo-256 sum and XOR. Both adopted functions have exact instruction and relocation matches.",
+  "pilot": {
+    "started_at": 1791055265.7113206,
+    "model": "qwen2.5-coder:7b-instruct-q4_K_M",
+    "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "review_only": true,
+    "attempts": [
+      {
+        "task": "project-z",
+        "fingerprint": "51a94142f7f67c2ec1a495e014f42cd1dcddda81675e7c87e39b42619ddbb10c",
+        "started_at": 1791055270.1902084,
+        "tokens_per_second": 90.98,
+        "body": "{\n    float nearPlane = mNearPlane;\n    float farPlane = mFarPlane;\n    float minZ = mZRange.x;\n    float distance = farPlane - nearPlane;\n    float maxZ = mZRange.y;\n    float range = maxZ - minZ;\n    float farScale = farPlane / distance;\n    float projected = farScale * nearPlane;\n    projected = z * farScale - projected;\n    z = projected / z;\n    z = z * range + minZ;\n    return 16777215.0f * z;\n}",
+        "reason": "The original body and the current compiled assembly have the same semantics and instruction order. The current body is already optimized for temporary lifetime reuse and declaration scheduling, as it reuses registers and minimizes redundant calculations. Therefore, no changes are needed.",
+        "proposal_sha256": "582abd502c749144f84c981ecc5a7813df044a3067a251389daf0485044def16",
+        "feedback": "Unchanged proposal",
+        "elapsed_seconds": 2.86
+      },
+      {
+        "task": "byte-grinder-op8",
+        "fingerprint": "120ff277ead53c04196815aa8e73721ecd0a1d8aa11d887056c9726c9c39f5a9",
+        "started_at": 1791055273.1951299,
+        "tokens_per_second": 90.58,
+        "body": "{\r\n    u32 op = msg->Int(1);\r\n    u8 temp = u8(msg->Int(2));\r\n    u8 ret = temp + u8(op);\r\n    return ret ^ u8(op);\r\n}",
+        "reason": "The original assembly shows that the addition is performed with the operands in a specific order. By introducing a temporary variable `temp` for the 8-bit truncation of `msg->Int(2)`, we can ensure that the order of operations is preserved. This change does not alter the semantics of the function and improves the register/instruction ordering for better performance on the PowerPC architecture.",
+        "proposal_sha256": "a0444023bc07bae8cd91938b67ffff9701a84d9e682a84cefc8277ae1dbfbd37",
+        "verified": false,
+        "feedback": {
+          "build_verified": true,
+          "target_inspection": {
+            "original_symbol": "op8__FP9DataArray",
+            "compiled_symbol": "op8__FP9DataArray",
+            "match_percent": 94.117645,
+            "instruction_differences": [
+              {
+                "row": 19,
+                "original_address": "2604",
+                "original": "clrlwi r4, r31, 24",
+                "compiled": "clrlwi r0, r3, 24",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 20,
+                "original_address": "2608",
+                "original": "clrlwi r0, r3, 24",
+                "compiled": "clrlwi r4, r31, 24",
+                "original_relocation": null,
+                "compiled_relocation": null
+              }
+            ],
+            "same_instruction_relocation_differences": []
+          },
+          "before": [
+            97.05882,
+            -1
+          ],
+          "after": [
+            94.117645,
+            -2
+          ],
+          "reason": "target_did_not_improve",
+          "measure_gains": {
+            "matched_code": 0,
+            "matched_functions": 0,
+            "complete_code": 0,
+            "matched_data": 0
+          }
+        },
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+        "elapsed_seconds": 19.73
+      },
+      {
+        "task": "bitmap-pixel-index",
+        "fingerprint": "c61bb0df4d6a0c937dce78ec217a6f0eb325277532758ddcd88fc80661c16c6e",
+        "started_at": 1791055293.0717466,
+        "tokens_per_second": 91.2,
+        "body": "{\r\n    bool bb;\r\n    int offset = PixelOffset(i1, i2, bb);\r\n    u8 *pixels = mPixels;\r\n    if (mBpp == 8) {\r\n        *(pixels + offset) = uc;\r\n    } else if (bb) {\r\n        u8 old = *(pixels + offset);\r\n        *(pixels + offset) = (uc << 4) | (old & 0xF);\r\n    } else {\r\n        u8 old = *(pixels + offset);\r\n        *(pixels + offset) = (old & 0xF0) | uc;\r\n    }\r\n}",
+        "reason": "This version introduces a temporary variable `old` to hold the value read from `mPixels + offset`. This improves register usage and instruction ordering, as it avoids redundant reads and allows for clearer and more efficient code. The original behavior is preserved, and the final OR operation is correctly ordered.",
+        "proposal_sha256": "f1fd455c3ed3ee9bb5654e35f6672d921bff475f0dce8c8b12f336fc780688f8",
+        "verified": true,
+        "feedback": {
+          "build_verified": true,
+          "target_inspection": {
+            "original_symbol": "SetPixelIndex__9RndBitmapFiiUc",
+            "compiled_symbol": "SetPixelIndex__9RndBitmapFiiUc",
+            "match_percent": 100.0,
+            "instruction_differences": [],
+            "same_instruction_relocation_differences": []
+          },
+          "before": [
+            96.969696,
+            -1
+          ],
+          "after": [
+            100.0,
+            0
+          ],
+          "reason": "improved_without_function_regressions",
+          "measure_gains": {
+            "matched_code": 132,
+            "matched_functions": 1,
+            "complete_code": 0,
+            "matched_data": 0
+          }
+        },
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+        "elapsed_seconds": 21.62
+      },
+      {
+        "task": "yuv444-rgb",
+        "fingerprint": "2a08556dd5e2cb71da18117116dbcf5d0f59bb035f767bc46b69301b08ba1e8b",
+        "started_at": 1791055314.8033488,
+        "tokens_per_second": 85.95,
+        "body": "{\r\n    YUV444 *src;\r\n    RGB *dst;\r\n    int row;\r\n    for (row = 0; row < height; row++) {\r\n        src = source;\r\n        dst = destination;\r\n        for (int x = 0; x < width; x++) {\r\n            int y = src->y - 16;\r\n            int u = src->u - 128;\r\n            int v = src->v - 128;\r\n            int r = (1164 * y + 1596 * v + 500) / 1000;\r\n            int g = (1164 * y - 813 * v - 391 * u + 500) / 1000;\r\n            int b = (1164 * y + 2018 * u + 500) / 1000;\r\n            dst->r = r > 255 ? 255 : (r < 0 ? 0 : r);\r\n            dst->g = g > 255 ? 255 : (g < 0 ? 0 : g);\r\n            dst->b = b > 255 ? 255 : (b < 0 ? 0 : b);\r\n            src++;\r\n            dst++;\r\n        }\r\n        source += width;\r\n        destination += width;\r\n    }\r\n}",
+        "reason": "The original and compiled bodies are identical, so no changes are needed. The assembly instructions are also identical, and the function preserves the original behavior, including the conversion equations, signed division rounding toward zero, clamp order, and exactly width*height 3-byte pixels.",
+        "proposal_sha256": "08e165d95450d6d3bea9c4f33f5abf327dbecc7f3dab183dd3695000dfb3bf3d",
+        "feedback": "Unchanged proposal",
+        "elapsed_seconds": 6.09
+      }
+    ],
+    "verified_proposals": [
+      "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\local-agent\\runs\\1791055265711152500\\002-bitmap-pixel-index\\manifest.json"
+    ],
+    "local_output_tokens": 984,
+    "local_prompt_tokens": 8952,
+    "baseline": {
+      "fuzzy_match_percent": 68.90546,
+      "total_code": "11431676",
+      "matched_code": "6324704",
+      "matched_code_percent": 55.326126,
+      "total_data": "2755932",
+      "matched_data": "613848",
+      "matched_data_percent": 22.273699,
+      "total_functions": 41333,
+      "matched_functions": 28558,
+      "matched_functions_percent": 69.09249,
+      "complete_code": "1241840",
+      "complete_code_percent": 10.86315,
+      "complete_data": "497808",
+      "complete_data_percent": 18.063147,
+      "total_units": 1876,
+      "complete_units": 539
+    },
+    "session": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\local-agent\\runs\\1791055265711152500",
+    "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+    "elapsed_seconds": 58.08,
+    "final": {
+      "fuzzy_match_percent": 68.90546,
+      "total_code": "11431676",
+      "matched_code": "6324704",
+      "matched_code_percent": 55.326126,
+      "total_data": "2755932",
+      "matched_data": "613848",
+      "matched_data_percent": 22.273699,
+      "total_functions": 41333,
+      "matched_functions": 28558,
+      "matched_functions_percent": 69.09249,
+      "complete_code": "1241840",
+      "complete_code_percent": 10.86315,
+      "complete_data": "497808",
+      "complete_data_percent": 18.063147,
+      "total_units": 1876,
+      "complete_units": 539
+    },
+    "stop_reason": "finite_queue_exhausted"
+  },
+  "benchmark": {
+    "time": 1791055402.2745993,
+    "model": "qwen2.5-coder:7b-instruct-q4_K_M",
+    "checks": [
+      {
+        "context": 4096,
+        "elapsed_seconds": 3.1,
+        "response": {
+          "body": "{ return r3 + 1; }",
+          "reason": "The original instructions addi r3, r3, 1 and blr correspond to incrementing the value in r3 by 1 and returning it. The C++98 code directly mirrors this behavior."
+        },
+        "policy_passed": true,
+        "policy_error": null,
+        "output_tokens": 60,
+        "tokens_per_second": 94.68,
+        "running_model": {
+          "models": [
+            {
+              "name": "qwen2.5-coder:7b-instruct-q4_K_M",
+              "model": "qwen2.5-coder:7b-instruct-q4_K_M",
+              "size": 4638040390,
+              "digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen2",
+                "families": [
+                  "qwen2"
+                ],
+                "parameter_size": "7.6B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-10-03T14:33:19.1090524-05:00",
+              "size_vram": 4638040390,
+              "context_length": 4096
+            }
+          ]
+        }
+      },
+      {
+        "context": 6144,
+        "elapsed_seconds": 3.12,
+        "response": {
+          "body": "{ return r3 + 1; }",
+          "reason": "The original instructions addi r3, r3, 1 and blr correspond to incrementing the value in r3 by 1 and returning it. The C++98 code directly mirrors this behavior."
+        },
+        "policy_passed": true,
+        "policy_error": null,
+        "output_tokens": 60,
+        "tokens_per_second": 94.38,
+        "running_model": {
+          "models": [
+            {
+              "name": "qwen2.5-coder:7b-instruct-q4_K_M",
+              "model": "qwen2.5-coder:7b-instruct-q4_K_M",
+              "size": 4847241788,
+              "digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen2",
+                "families": [
+                  "qwen2"
+                ],
+                "parameter_size": "7.6B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-10-03T14:33:22.2447322-05:00",
+              "size_vram": 4847241788,
+              "context_length": 6144
+            }
+          ]
+        }
+      }
+    ],
+    "limitation": "Tiny synthetic inference/policy smoke test, not decompilation accuracy or full-context capacity benchmark."
+  },
+  "automation_tests_passed": 53,
+  "background_batch": "Finite policy-3 queue completed. ByteGrinder op8 proposal semantically reviewed and retained; no local worker is running now.",
+  "setup_elapsed_seconds_at_checkpoint": 3051.98,
+  "account_usage_observations": {
+    "start": {
+      "primary_used_percent": 0,
+      "weekly_used_percent": 47
+    },
+    "checkpoint": {
+      "primary_used_percent": 19,
+      "weekly_used_percent": 50
+    },
+    "consumed_percentage_points": {
+      "primary": 19,
+      "weekly": 3
+    },
+    "note": "Rounded account-wide observations, not actual tokens or a causal measure of setup alone. Local inference itself uses no Codex allowance."
+  },
+  "second_batch": {
+    "started_at": 1791055775.6046999,
+    "model": "qwen2.5-coder:7b-instruct-q4_K_M",
+    "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "review_only": true,
+    "attempts": [
+      {
+        "task": "project-z",
+        "fingerprint": "3f3918c650d04c1c7c7b718b56725bd9c24f671c04e5950a6627386590bd9525",
+        "started_at": 1791055779.655378,
+        "tokens_per_second": 96.71,
+        "body": "{\n    float nearPlane = mNearPlane;\n    float farPlane = mFarPlane;\n    float minZ = mZRange.x;\n    float distance = farPlane - nearPlane;\n    float maxZ = mZRange.y;\n    float range = maxZ - minZ;\n    float farScale = farPlane / distance;\n    float projected = farScale * nearPlane;\n    projected = z * farScale - projected;\n    z = projected / z;\n    z = z * range + minZ;\n    return 16777215.0f * z;\n}",
+        "reason": "The original and current bodies are identical, so no changes are needed. The function already follows the correct order of operations and uses the appropriate registers as specified.",
+        "proposal_sha256": "582abd502c749144f84c981ecc5a7813df044a3067a251389daf0485044def16",
+        "feedback": "Unchanged proposal",
+        "elapsed_seconds": 2.31
+      },
+      {
+        "task": "byte-grinder-op8",
+        "fingerprint": "c2a10040598cdee69a85ca78415fba360be6cf46b9e3d7c789e5f28e557f495e",
+        "started_at": 1791055782.111845,
+        "tokens_per_second": 96.98,
+        "body": "{\r\n    u32 op = msg->Int(1);\r\n    u8 temp1 = u8(msg->Int(2));\r\n    u8 temp2 = u8(op);\r\n    u8 ret = temp1 + temp2;\r\n    return ret ^ temp2;\r\n}",
+        "reason": "Introduces temporary variables temp1 and temp2 to hold the intermediate 8-bit values before the addition and XOR operations. This preserves the original sequence of msg->Int calls and 8-bit truncations while allowing for improved register usage and instruction ordering.",
+        "proposal_sha256": "4cca6f212746303e7f81f8f45d83959bf29ccbc61fe57a46d00944f856419376",
+        "verified": true,
+        "feedback": {
+          "build_verified": true,
+          "target_inspection": {
+            "original_symbol": "op8__FP9DataArray",
+            "compiled_symbol": "op8__FP9DataArray",
+            "match_percent": 100.0,
+            "instruction_differences": [],
+            "same_instruction_relocation_differences": []
+          },
+          "before": [
+            97.05882,
+            -1
+          ],
+          "after": [
+            100.0,
+            0
+          ],
+          "reason": "improved_without_function_regressions",
+          "measure_gains": {
+            "matched_code": 136,
+            "matched_functions": 1,
+            "complete_code": 0,
+            "matched_data": 0
+          }
+        },
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+        "elapsed_seconds": 20.83
+      },
+      {
+        "task": "yuv444-rgb",
+        "fingerprint": "2ffc1206e4d830057ac0c5fae8779bcffda9c90de1e59db854d7a919b0524bad",
+        "started_at": 1791055803.1714268,
+        "tokens_per_second": 91.35,
+        "body": "{\r\n    YUV444 *src;\r\n    RGB *dst;\r\n    int row;\r\n    for (row = 0; row < height; row++) {\r\n        src = source;\r\n        dst = destination;\r\n        for (int x = 0; x < width; x++) {\r\n            int y = src->y - 16;\r\n            int u = src->u - 128;\r\n            int v = src->v - 128;\r\n            int r = (1164 * y + 1596 * v + 500) / 1000;\r\n            int g = (1164 * y - 813 * v - 391 * u + 500) / 1000;\r\n            int b = (1164 * y + 2018 * u + 500) / 1000;\r\n            dst->r = r > 255 ? 255 : (r < 0 ? 0 : r);\r\n            dst->g = g > 255 ? 255 : (g < 0 ? 0 : g);\r\n            dst->b = b > 255 ? 255 : (b < 0 ? 0 : b);\r\n            src++;\r\n            dst++;\r\n        }\r\n        source += width;\r\n        destination += width;\r\n    }\r\n}",
+        "reason": "The original and current bodies are semantically equivalent, preserving the same logic and operations. The current body has a minor rearrangement of the temporary variables, which may improve register usage and instruction ordering on the target architecture. The floating-point operations and clamping logic remain unchanged, ensuring the same behavior.",
+        "proposal_sha256": "08e165d95450d6d3bea9c4f33f5abf327dbecc7f3dab183dd3695000dfb3bf3d",
+        "feedback": "Unchanged proposal",
+        "elapsed_seconds": 4.98
+      },
+      {
+        "task": "project-z",
+        "fingerprint": "3f3918c650d04c1c7c7b718b56725bd9c24f671c04e5950a6627386590bd9525",
+        "started_at": 1791055808.2245681,
+        "tokens_per_second": 96.16,
+        "body": "{\n    float nearPlane = mNearPlane;\n    float farPlane = mFarPlane;\n    float minZ = mZRange.x;\n    float distance = farPlane - nearPlane;\n    float maxZ = mZRange.y;\n    float range = maxZ - minZ;\n    float farScale = farPlane / distance;\n    float projected = farScale * nearPlane;\n    projected = z * farScale - projected;\n    z = projected / z;\n    z = z * range + minZ;\n    return 16777215.0f * z;\n}",
+        "reason": "The original and current bodies are semantically equivalent, with the same floating-point operations in the same order. The suggested strategy of declaring existing scalar temporaries at the block start and assigning them in the original evaluation order does not change the semantics or instruction ordering. The current body is already optimized for register reuse and temporary lifetime, so no further improvements can be made without changing the behavior or introducing new issues.",
+        "proposal_sha256": "582abd502c749144f84c981ecc5a7813df044a3067a251389daf0485044def16",
+        "feedback": "Unchanged proposal",
+        "elapsed_seconds": 2.57
+      },
+      {
+        "task": "yuv444-rgb",
+        "fingerprint": "2ffc1206e4d830057ac0c5fae8779bcffda9c90de1e59db854d7a919b0524bad",
+        "started_at": 1791055811.1602583,
+        "tokens_per_second": 90.86,
+        "body": "{\r\n    YUV444 *src;\r\n    RGB *dst;\r\n    int row;\r\n    for (row = 0; row < height; row++) {\r\n        src = source;\r\n        dst = destination;\r\n        for (int x = 0; x < width; x++) {\r\n            int y = src->y - 16;\r\n            int u = src->u - 128;\r\n            int v = src->v - 128;\r\n            int y1164 = 1164 * y;\r\n            int v1596 = 1596 * v;\r\n            int v500 = 500;\r\n            int u391 = 391 * u;\r\n            int r = (y1164 + v1596 + v500) / 1000;\r\n            int g = (y1164 - 813 * v - u391 + v500) / 1000;\r\n            int b = (y1164 + 2018 * u + v500) / 1000;\r\n            dst->r = r > 255 ? 255 : (r < 0 ? 0 : r);\r\n            dst->g = g > 255 ? 255 : (g < 0 ? 0 : g);\r\n            dst->b = b > 255 ? 255 : (b < 0 ? 0 : b);\r\n            src++;\r\n            dst++;\r\n        }\r\n        source += width;\r\n        destination += width;\r\n    }\r\n}",
+        "reason": "This version declares intermediate variables at the beginning of the inner loop, preserving the original evaluation order and types. This can help improve register scheduling by allowing the compiler to reuse registers for these intermediate values, potentially reducing the number of memory accesses and improving performance.",
+        "proposal_sha256": "2c9ce8acce59459a5dd662b28d182436fbf90190821b38b8bc84e2c8b0d7e3ed",
+        "verified": false,
+        "feedback": {
+          "build_verified": true,
+          "target_inspection": {
+            "original_symbol": "YUV444ToRGB__FP6YUV444P3RGBii",
+            "compiled_symbol": "YUV444ToRGB__FP6YUV444P3RGBii",
+            "match_percent": 89.87341,
+            "instruction_differences": [
+              {
+                "row": 15,
+                "original_address": "7436",
+                "original": "lbz r11, 0x2(r8)",
+                "compiled": "lbz r12, 0x2(r8)",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 16,
+                "original_address": "7440",
+                "original": "lbz r12, 0x0(r8)",
+                "compiled": "lbz r11, 0x0(r8)",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 17,
+                "original_address": "7444",
+                "original": "subi r30, r11, 0x80",
+                "compiled": "subi r30, r12, 0x80",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 18,
+                "original_address": "7448",
+                "original": "lbz r11, 0x1(r8)",
+                "compiled": "lbz r12, 0x1(r8)",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 19,
+                "original_address": "7452",
+                "original": "subi r12, r12, 0x10",
+                "compiled": "subi r11, r11, 0x10",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 20,
+                "original_address": null,
+                "original": null,
+                "compiled": "mulli r29, r11, 0x48c",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 21,
+                "original_address": "7456",
+                "original": "subi r31, r11, 0x80",
+                "compiled": "subi r31, r12, 0x80",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 22,
+                "original_address": "7460",
+                "original": "mulli r29, r12, 0x48c",
+                "compiled": null,
+                "original_relocation": null,
+                "compiled_relocation": null
+              }
+            ],
+            "same_instruction_relocation_differences": []
+          },
+          "before": [
+            89.87341,
+            -8
+          ],
+          "after": [
+            89.87341,
+            -8
+          ],
+          "reason": "target_did_not_improve",
+          "measure_gains": {
+            "matched_code": 0,
+            "matched_functions": 0,
+            "complete_code": 0,
+            "matched_data": 0
+          }
+        },
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+        "elapsed_seconds": 23.07
+      },
+      {
+        "task": "project-z",
+        "fingerprint": "3f3918c650d04c1c7c7b718b56725bd9c24f671c04e5950a6627386590bd9525",
+        "started_at": 1791055834.2975757,
+        "tokens_per_second": 94.63,
+        "body": "{\n    float nearPlane = mNearPlane;\n    float farPlane = mFarPlane;\n    float minZ = mZRange.x;\n    float distance = farPlane - nearPlane;\n    float maxZ = mZRange.y;\n    float range = maxZ - minZ;\n    float farScale = farPlane / distance;\n    float projected = farScale * nearPlane;\n    projected = z * farScale - projected;\n    z = projected / z;\n    z = z * range + minZ;\n    return 16777215.0f * z;\n}",
+        "reason": "The suggested strategy of reusing an existing scalar temporary after its last use rather than keeping an additional temporary live did not result in a significant change in the register and instruction ordering. The original code already efficiently reuses registers and maintains the same floating-point operation order. Therefore, no changes were made.",
+        "proposal_sha256": "582abd502c749144f84c981ecc5a7813df044a3067a251389daf0485044def16",
+        "feedback": "Unchanged proposal",
+        "elapsed_seconds": 2.64
+      },
+      {
+        "task": "yuv444-rgb",
+        "fingerprint": "2ffc1206e4d830057ac0c5fae8779bcffda9c90de1e59db854d7a919b0524bad",
+        "started_at": 1791055839.307858,
+        "tokens_per_second": 88.67,
+        "body": "{\r\n    YUV444 *src;\r\n    RGB *dst;\r\n    int row;\r\n    for (row = 0; row < height; row++) {\r\n        src = source;\r\n        dst = destination;\r\n        for (int x = 0; x < width; x++) {\r\n            int y = src->y - 16;\r\n            int u = src->u - 128;\r\n            int v = src->v - 128;\r\n            int y1164 = 1164 * y;\r\n            int v1596 = 1596 * v;\r\n            int u391 = 391 * u;\r\n            int v500 = 500;\r\n            int r = (y1164 + v1596 + v500) / 1000;\r\n            int g = (y1164 - 813 * v - u391 + v500) / 1000;\r\n            int b = (y1164 + 2018 * u + v500) / 1000;\r\n            dst->r = r > 255 ? 255 : (r < 0 ? 0 : r);\r\n            dst->g = g > 255 ? 255 : (g < 0 ? 0 : g);\r\n            dst->b = b > 255 ? 255 : (b < 0 ? 0 : b);\r\n            src++;\r\n            dst++;\r\n        }\r\n        source += width;\r\n        destination += width;\r\n    }\r\n}",
+        "reason": "This version reuses the same temporary registers for intermediate calculations after their last use, reducing the number of live registers and potentially improving instruction scheduling. The order of floating-point operations and signed division rounding is preserved, as is the clamping of the results to the 0-255 range. The loop variables and pointers are managed correctly, and the function semantics remain unchanged.",
+        "proposal_sha256": "6c6111b9ae102c8158b1af1420ac14c20a284d692fe2f2dbd4bd9f03fdf2d932",
+        "verified": false,
+        "feedback": {
+          "build_verified": true,
+          "target_inspection": {
+            "original_symbol": "YUV444ToRGB__FP6YUV444P3RGBii",
+            "compiled_symbol": "YUV444ToRGB__FP6YUV444P3RGBii",
+            "match_percent": 89.87341,
+            "instruction_differences": [
+              {
+                "row": 15,
+                "original_address": "7436",
+                "original": "lbz r11, 0x2(r8)",
+                "compiled": "lbz r12, 0x2(r8)",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 16,
+                "original_address": "7440",
+                "original": "lbz r12, 0x0(r8)",
+                "compiled": "lbz r11, 0x0(r8)",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 17,
+                "original_address": "7444",
+                "original": "subi r30, r11, 0x80",
+                "compiled": "subi r30, r12, 0x80",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 18,
+                "original_address": "7448",
+                "original": "lbz r11, 0x1(r8)",
+                "compiled": "lbz r12, 0x1(r8)",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 19,
+                "original_address": "7452",
+                "original": "subi r12, r12, 0x10",
+                "compiled": "subi r11, r11, 0x10",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 20,
+                "original_address": null,
+                "original": null,
+                "compiled": "mulli r29, r11, 0x48c",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 21,
+                "original_address": "7456",
+                "original": "subi r31, r11, 0x80",
+                "compiled": "subi r31, r12, 0x80",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 22,
+                "original_address": "7460",
+                "original": "mulli r29, r12, 0x48c",
+                "compiled": null,
+                "original_relocation": null,
+                "compiled_relocation": null
+              }
+            ],
+            "same_instruction_relocation_differences": []
+          },
+          "before": [
+            89.87341,
+            -8
+          ],
+          "after": [
+            89.87341,
+            -8
+          ],
+          "reason": "target_did_not_improve",
+          "measure_gains": {
+            "matched_code": 0,
+            "matched_functions": 0,
+            "complete_code": 0,
+            "matched_data": 0
+          }
+        },
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+        "elapsed_seconds": 23.82
+      },
+      {
+        "task": "project-z",
+        "fingerprint": "3f3918c650d04c1c7c7b718b56725bd9c24f671c04e5950a6627386590bd9525",
+        "started_at": 1791055863.1945677,
+        "tokens_per_second": 95.76,
+        "body": "{\n    float nearPlane = mNearPlane;\n    float farPlane = mFarPlane;\n    float minZ = mZRange.x;\n    float distance = farPlane - nearPlane;\n    float maxZ = mZRange.y;\n    float range = maxZ - minZ;\n    float farScale = farPlane / distance;\n    float projected = farScale * nearPlane;\n    projected = z * farScale - projected;\n    z = projected / z;\n    z = z * range + minZ;\n    return 16777215.0f * z;\n}",
+        "reason": "The original and proposed bodies are identical. The compiler's reported differences are due to register allocation and operand order, not semantic changes. The original code is already optimized for the target architecture, and no further improvements can be made while preserving the original behavior and instruction/relocation match.",
+        "proposal_sha256": "582abd502c749144f84c981ecc5a7813df044a3067a251389daf0485044def16",
+        "feedback": "Unchanged proposal",
+        "elapsed_seconds": 2.66
+      },
+      {
+        "task": "yuv444-rgb",
+        "fingerprint": "2ffc1206e4d830057ac0c5fae8779bcffda9c90de1e59db854d7a919b0524bad",
+        "started_at": 1791055866.2256446,
+        "tokens_per_second": 90.54,
+        "body": "{\r\n    YUV444 *src;\r\n    RGB *dst;\r\n    int row;\r\n    for (row = 0; row < height; row++) {\r\n        src = source;\r\n        dst = destination;\r\n        for (int x = 0; x < width; x++) {\r\n            int y = src->y - 16;\r\n            int u = src->u - 128;\r\n            int v = src->v - 128;\r\n            int y1164 = 1164 * y;\r\n            int v1596 = 1596 * v;\r\n            int u391 = 391 * u;\r\n            int v500 = 500;\r\n            int r = (y1164 + v1596 + v500) / 1000;\r\n            int g = (y1164 - 813 * v - u391 + v500) / 1000;\r\n            int b = (y1164 + 2018 * u + v500) / 1000;\r\n            dst->r = r > 255 ? 255 : (r < 0 ? 0 : r);\r\n            dst->g = g > 255 ? 255 : (g < 0 ? 0 : g);\r\n            dst->b = b > 255 ? 255 : (b < 0 ? 0 : b);\r\n            src++;\r\n            dst++;\r\n        }\r\n        source += width;\r\n        destination += width;\r\n    }\r\n}",
+        "reason": "The original code and the compiled assembly are semantically equivalent, with only minor differences in register usage and instruction ordering. The suggested strategy of shortening temporary lifetimes with inner scopes does not apply here, as the existing code already has efficient temporary usage. The original expressions and branch/loop order are preserved, ensuring the same behavior and performance.",
+        "proposal_sha256": "6c6111b9ae102c8158b1af1420ac14c20a284d692fe2f2dbd4bd9f03fdf2d932",
+        "feedback": "Duplicate proposal; already tested",
+        "elapsed_seconds": 5.87
+      },
+      {
+        "task": "project-z",
+        "fingerprint": "3f3918c650d04c1c7c7b718b56725bd9c24f671c04e5950a6627386590bd9525",
+        "started_at": 1791055872.1637821,
+        "tokens_per_second": 94.96,
+        "body": "{\n    float nearPlane = mNearPlane;\n    float farPlane = mFarPlane;\n    float minZ = mZRange.x;\n    float maxZ = mZRange.y;\n    float distance = farPlane - nearPlane;\n    float range = maxZ - minZ;\n    float farScale = farPlane / distance;\n    float projected = farScale * nearPlane;\n    projected = z * farScale - projected;\n    z = projected / z;\n    z = z * range + minZ;\n    return 16777215.0f * z;\n}",
+        "reason": "The current body is semantically equivalent to the original assembly. The register allocation and instruction ordering are different, but the floating-point operations are performed in the same order and with the same structure. The original assembly uses specific registers for intermediate values, while the current body uses different registers. However, the final result is the same, and the function's behavior is preserved.",
+        "proposal_sha256": "026c772a2445d2cc41473268b19a7c0d3ae8579ac24bed2f6263a993081eb904",
+        "verified": false,
+        "feedback": {
+          "build_verified": true,
+          "target_inspection": {
+            "original_symbol": "ProjectZ__6WiiCamFf",
+            "compiled_symbol": "ProjectZ__6WiiCamFf",
+            "match_percent": 33.333336,
+            "instruction_differences": [
+              {
+                "row": 0,
+                "original_address": "1072",
+                "original": "lfs f6, 0x240(r3)",
+                "compiled": "lfs f2, 0x240(r3)",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 2,
+                "original_address": "1080",
+                "original": "lfs f5, 0x244(r3)",
+                "compiled": "lfs f3, 0x244(r3)",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 4,
+                "original_address": "1088",
+                "original": "fsubs f3, f5, f6",
+                "compiled": "fsubs f6, f3, f2",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 5,
+                "original_address": "1092",
+                "original": "lfs f2, 0x254(r3)",
+                "compiled": "lfs f5, 0x254(r3)",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 7,
+                "original_address": "1100",
+                "original": "fsubs f2, f2, f4",
+                "compiled": "fsubs f5, f5, f4",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 8,
+                "original_address": "1104",
+                "original": "fdivs f5, f5, f3",
+                "compiled": "fdivs f3, f3, f6",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 9,
+                "original_address": "1108",
+                "original": "fmuls f3, f5, f6",
+                "compiled": "fmuls f2, f3, f2",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 10,
+                "original_address": "1112",
+                "original": "fmsubs f3, f1, f5, f3",
+                "compiled": "fmsubs f2, f1, f3, f2",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 11,
+                "original_address": "1116",
+                "original": "fdivs f1, f3, f1",
+                "compiled": "fdivs f1, f2, f1",
+                "original_relocation": null,
+                "compiled_relocation": null
+              },
+              {
+                "row": 12,
+                "original_address": "1120",
+                "original": "fmadds f1, f1, f2, f4",
+                "compiled": "fmadds f1, f1, f5, f4",
+                "original_relocation": null,
+                "compiled_relocation": null
+              }
+            ],
+            "same_instruction_relocation_differences": []
+          },
+          "before": [
+            33.333336,
+            -10
+          ],
+          "after": [
+            33.333336,
+            -10
+          ],
+          "reason": "target_did_not_improve",
+          "measure_gains": {
+            "matched_code": 0,
+            "matched_functions": 0,
+            "complete_code": 0,
+            "matched_data": 0
+          }
+        },
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+        "elapsed_seconds": 21.03
+      },
+      {
+        "task": "yuv444-rgb",
+        "fingerprint": "2ffc1206e4d830057ac0c5fae8779bcffda9c90de1e59db854d7a919b0524bad",
+        "started_at": 1791055893.5691547,
+        "tokens_per_second": 91.21,
+        "body": "{\r\n    YUV444 *src;\r\n    RGB *dst;\r\n    int row;\r\n    for (row = 0; row < height; row++) {\r\n        src = source;\r\n        dst = destination;\r\n        for (int x = 0; x < width; x++) {\r\n            int y = src->y - 16;\r\n            int u = src->u - 128;\r\n            int v = src->v - 128;\r\n            int y1164 = 1164 * y;\r\n            int v1596 = 1596 * v;\r\n            int u391 = 391 * u;\r\n            int v500 = 500;\r\n            int r = (y1164 + v1596 + v500) / 1000;\r\n            int g = (y1164 - 813 * v - u391 + v500) / 1000;\r\n            int b = (y1164 + 2018 * u + v500) / 1000;\r\n            dst->r = r > 255 ? 255 : (r < 0 ? 0 : r);\r\n            dst->g = g > 255 ? 255 : (g < 0 ? 0 : g);\r\n            dst->b = b > 255 ? 255 : (b < 0 ? 0 : b);\r\n            src++;\r\n            dst++;\r\n        }\r\n        source += width;\r\n        destination += width;\r\n    }\r\n}",
+        "reason": "The original and proposed bodies are semantically equivalent. The proposed body introduces intermediate variables for intermediate calculations, which can improve register usage and instruction ordering on the target architecture. This can lead to better performance by reducing the number of times the same calculations need to be performed and by utilizing the available registers more efficiently.",
+        "proposal_sha256": "6c6111b9ae102c8158b1af1420ac14c20a284d692fe2f2dbd4bd9f03fdf2d932",
+        "feedback": "Duplicate proposal; already tested",
+        "elapsed_seconds": 5.64
+      },
+      {
+        "task": "project-z",
+        "fingerprint": "3f3918c650d04c1c7c7b718b56725bd9c24f671c04e5950a6627386590bd9525",
+        "started_at": 1791055899.2849522,
+        "tokens_per_second": 92.4,
+        "body": "{\n    float nearPlane = mNearPlane;\n    float farPlane = mFarPlane;\n    float minZ = mZRange.x;\n    float maxZ = mZRange.y;\n    float distance = farPlane - nearPlane;\n    float range = maxZ - minZ;\n    float farScale = farPlane / distance;\n    float projected = farScale * nearPlane;\n    projected = z * farScale - projected;\n    z = projected / z;\n    z = z * range + minZ;\n    return 16777215.0f * z;\n}",
+        "reason": "The original and compiled bodies are identical. The function signature and member layout remain unchanged, and the floating-point operations are preserved. The instruction order has been slightly adjusted to improve register reuse and lifetime management, but the semantics remain the same.",
+        "proposal_sha256": "026c772a2445d2cc41473268b19a7c0d3ae8579ac24bed2f6263a993081eb904",
+        "feedback": "Duplicate proposal; already tested",
+        "elapsed_seconds": 2.47
+      },
+      {
+        "task": "yuv444-rgb",
+        "fingerprint": "2ffc1206e4d830057ac0c5fae8779bcffda9c90de1e59db854d7a919b0524bad",
+        "started_at": 1791055902.1262262,
+        "tokens_per_second": 81.37,
+        "body": "{\r\n    YUV444 *src;\r\n    RGB *dst;\r\n    int row;\r\n    for (row = 0; row < height; row++) {\r\n        src = source;\r\n        dst = destination;\r\n        for (int x = 0; x < width; x++) {\r\n            int y = src->y - 16;\r\n            int u = src->u - 128;\r\n            int v = src->v - 128;\r\n            int y1164 = 1164 * y;\r\n            int v1596 = 1596 * v;\r\n            int u391 = 391 * u;\r\n            int v500 = 500;\r\n            int r = (y1164 + v1596 + v500) / 1000;\r\n            int g = (y1164 - 813 * v - u391 + v500) / 1000;\r\n            int b = (y1164 + 2018 * u + v500) / 1000;\r\n            dst->r = r > 255 ? 255 : (r < 0 ? 0 : r);\r\n            dst->g = g > 255 ? 255 : (g < 0 ? 0 : g);\r\n            dst->b = b > 255 ? 255 : (b < 0 ? 0 : b);\r\n            src++;\r\n            dst++;\r\n        }\r\n        source += width;\r\n        destination += width;\r\n    }\r\n}",
+        "reason": "The original and modified bodies are semantically equivalent, as they both perform the same calculations and clamping operations. The only difference is the placement of the loop-counter variable `x` and the branch-local scalar declarations, which do not affect the execution of the code. The compiler reports a match percentage of 89.87341, indicating that the modified body is very similar to the original one.",
+        "proposal_sha256": "6c6111b9ae102c8158b1af1420ac14c20a284d692fe2f2dbd4bd9f03fdf2d932",
+        "feedback": "Duplicate proposal; already tested",
+        "elapsed_seconds": 7.06
+      },
+      {
+        "task": "project-z",
+        "fingerprint": "3f3918c650d04c1c7c7b718b56725bd9c24f671c04e5950a6627386590bd9525",
+        "started_at": 1791055909.2567239,
+        "tokens_per_second": 93.52,
+        "body": "{\n    float nearPlane = mNearPlane;\n    float farPlane = mFarPlane;\n    float minZ = mZRange.x;\n    float maxZ = mZRange.y;\n    float distance = farPlane - nearPlane;\n    float range = maxZ - minZ;\n    float farScale = farPlane / distance;\n    float projected = farScale * nearPlane;\n    projected = z * farScale - projected;\n    z = projected / z;\n    z = z * range + minZ;\n    return 16777215.0f * z;\n}",
+        "reason": "No change needed; the current body is already semantically equivalent to the original assembly. The suggested strategy of using explicit sequential assignments does not apply here as the original assembly already follows a clear and efficient sequence of operations. The current register allocation and instruction ordering are optimal for the given operation chain.",
+        "proposal_sha256": "026c772a2445d2cc41473268b19a7c0d3ae8579ac24bed2f6263a993081eb904",
+        "feedback": "Duplicate proposal; already tested",
+        "elapsed_seconds": 2.56
+      },
+      {
+        "task": "yuv444-rgb",
+        "fingerprint": "2ffc1206e4d830057ac0c5fae8779bcffda9c90de1e59db854d7a919b0524bad",
+        "started_at": 1791055912.1872344,
+        "tokens_per_second": 88.41,
+        "body": "{\r\n    YUV444 *src;\r\n    RGB *dst;\r\n    int row;\r\n    for (row = 0; row < height; row++) {\r\n        src = source;\r\n        dst = destination;\r\n        for (int x = 0; x < width; x++) {\r\n            int y = src->y - 16;\r\n            int u = src->u - 128;\r\n            int v = src->v - 128;\r\n            int y1164 = 1164 * y;\r\n            int v1596 = 1596 * v;\r\n            int u391 = 391 * u;\r\n            int v500 = 500;\r\n            int r = (y1164 + v1596 + v500) / 1000;\r\n            int g = (y1164 - 813 * v - u391 + v500) / 1000;\r\n            int b = (y1164 + 2018 * u + v500) / 1000;\r\n            dst->r = r > 255 ? 255 : (r < 0 ? 0 : r);\r\n            dst->g = g > 255 ? 255 : (g < 0 ? 0 : g);\r\n            dst->b = b > 255 ? 255 : (b < 0 ? 0 : b);\r\n            src++;\r\n            dst++;\r\n        }\r\n        source += width;\r\n        destination += width;\r\n    }\r\n}",
+        "reason": "This revised version uses explicit sequential assignments for intermediate values, which can help the compiler better optimize register usage and instruction scheduling. The original operation order and scalar types are preserved, ensuring that the semantics remain equivalent to the original code. This approach can lead to more efficient execution by allowing the compiler to better reuse registers and reduce the number of temporary variables.",
+        "proposal_sha256": "6c6111b9ae102c8158b1af1420ac14c20a284d692fe2f2dbd4bd9f03fdf2d932",
+        "feedback": "Duplicate proposal; already tested",
+        "elapsed_seconds": 6.94
+      },
+      {
+        "task": "project-z",
+        "fingerprint": "3f3918c650d04c1c7c7b718b56725bd9c24f671c04e5950a6627386590bd9525",
+        "started_at": 1791055919.2003338,
+        "tokens_per_second": 93.36,
+        "body": "{\n    float nearPlane = mNearPlane;\n    float farPlane = mFarPlane;\n    float minZ = mZRange.x;\n    float maxZ = mZRange.y;\n    float distance = farPlane - nearPlane;\n    float range = maxZ - minZ;\n    float farScale = farPlane / distance;\n    float projected = farScale * nearPlane;\n    projected = z * farScale - projected;\n    z = projected / z;\n    z = z * range + minZ;\n    return 16777215.0f * z;\n}",
+        "reason": "The original body and the current body are semantically equivalent. The function performs the same operations in the same order, and the register usage aligns with the original assembly. No changes were made to improve register allocation or instruction ordering.",
+        "proposal_sha256": "026c772a2445d2cc41473268b19a7c0d3ae8579ac24bed2f6263a993081eb904",
+        "feedback": "Duplicate proposal; already tested",
+        "elapsed_seconds": 2.53
+      },
+      {
+        "task": "yuv444-rgb",
+        "fingerprint": "2ffc1206e4d830057ac0c5fae8779bcffda9c90de1e59db854d7a919b0524bad",
+        "started_at": 1791055922.1010334,
+        "tokens_per_second": 88.57,
+        "body": "{\r\n    YUV444 *src;\r\n    RGB *dst;\r\n    int row;\r\n    for (row = 0; row < height; row++) {\r\n        src = source;\r\n        dst = destination;\r\n        for (int x = 0; x < width; x++) {\r\n            int y = src->y - 16;\r\n            int u = src->u - 128;\r\n            int v = src->v - 128;\r\n            int y1164 = 1164 * y;\r\n            int v1596 = 1596 * v;\r\n            int u391 = 391 * u;\r\n            int v500 = 500;\r\n            int r = (y1164 + v1596 + v500) / 1000;\r\n            int g = (y1164 - 813 * v - u391 + v500) / 1000;\r\n            int b = (y1164 + 2018 * u + v500) / 1000;\r\n            dst->r = r > 255 ? 255 : (r < 0 ? 0 : r);\r\n            dst->g = g > 255 ? 255 : (g < 0 ? 0 : g);\r\n            dst->b = b > 255 ? 255 : (b < 0 ? 0 : b);\r\n            src++;\r\n            dst++;\r\n        }\r\n        source += width;\r\n        destination += width;\r\n    }\r\n}",
+        "reason": "The previous proposals were duplicates. This version combines the most promising prior temporary layout with a distinct safe lifetime change. It avoids previously tested candidates and seeks a distinct safe candidate, not a variable rename.",
+        "proposal_sha256": "6c6111b9ae102c8158b1af1420ac14c20a284d692fe2f2dbd4bd9f03fdf2d932",
+        "feedback": "Duplicate proposal; already tested",
+        "elapsed_seconds": 5.38
+      }
+    ],
+    "verified_proposals": [
+      "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\local-agent\\runs\\1791055775599609400\\001-byte-grinder-op8\\manifest.json"
+    ],
+    "local_output_tokens": 5617,
+    "local_prompt_tokens": 59703,
+    "baseline": {
+      "fuzzy_match_percent": 68.905495,
+      "total_code": "11431676",
+      "matched_code": "6324836",
+      "matched_code_percent": 55.327286,
+      "total_data": "2755932",
+      "matched_data": "613848",
+      "matched_data_percent": 22.273699,
+      "total_functions": 41333,
+      "matched_functions": 28559,
+      "matched_functions_percent": 69.09492,
+      "complete_code": "1241840",
+      "complete_code_percent": 10.86315,
+      "complete_data": "497808",
+      "complete_data_percent": 18.063147,
+      "total_units": 1876,
+      "complete_units": 539
+    },
+    "session": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\local-agent\\runs\\1791055775599609400",
+    "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+    "elapsed_seconds": 154.72,
+    "final": {
+      "fuzzy_match_percent": 68.905495,
+      "total_code": "11431676",
+      "matched_code": "6324836",
+      "matched_code_percent": 55.327286,
+      "total_data": "2755932",
+      "matched_data": "613848",
+      "matched_data_percent": 22.273699,
+      "total_functions": 41333,
+      "matched_functions": 28559,
+      "matched_functions_percent": 69.09492,
+      "complete_code": "1241840",
+      "complete_code_percent": 10.86315,
+      "complete_data": "497808",
+      "complete_data_percent": 18.063147,
+      "total_units": 1876,
+      "complete_units": 539
+    },
+    "stop_reason": "finite_queue_exhausted"
+  },
+  "setup_elapsed_seconds_at_final": 3161.57
+}

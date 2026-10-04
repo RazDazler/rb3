@@ -1,0 +1,473 @@
+{
+  "started_at": 1791071069,
+  "status": "complete",
+  "target": "SZBE69_B8",
+  "initial_usage": {
+    "primary_used_percent": 0,
+    "weekly_used_percent": 62,
+    "primary_resets_at": 1791089070,
+    "weekly_resets_at": 1791580276
+  },
+  "expected_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+  "final_measures": {
+    "fuzzy_match_percent": 68.93282,
+    "total_code": "11431676",
+    "matched_code": "6362516",
+    "matched_code_percent": 55.6569,
+    "total_data": "2755932",
+    "matched_data": "614640",
+    "matched_data_percent": 22.302437,
+    "total_functions": 41333,
+    "matched_functions": 28651,
+    "matched_functions_percent": 69.3175,
+    "complete_code": "1243344",
+    "complete_code_percent": 10.876306,
+    "complete_data": "498004",
+    "complete_data_percent": 18.070257,
+    "total_units": 1876,
+    "complete_units": 543
+  },
+  "exact_gains": {
+    "matched_code": 0,
+    "matched_functions": 0,
+    "complete_code": 0,
+    "complete_units": 0,
+    "matched_data": 0,
+    "complete_data": 0
+  },
+  "retained_partial_reconstructions": [
+    {
+      "source": "src/network/Plugins/RTT.cpp",
+      "symbol": "Adjust__Q26Quazal3RTTFUi",
+      "before": [
+        13.333334,
+        -13
+      ],
+      "after": [
+        20.0,
+        -12
+      ],
+      "method": "Manually reviewed m2c orientation and 24 declaration permutations; original unsigned modular arithmetic restored.",
+      "result": {
+        "unit": "main/network/Plugins/RTT",
+        "symbol": "Adjust__Q26Quazal3RTTFUi",
+        "started_at": 1791072396.6421297,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "m2c-reviewed-4",
+        "before": [
+          13.333334,
+          -13
+        ],
+        "after": [
+          20.0,
+          -12
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+        "variants_tried": 24
+      },
+      "semantic_check": {
+        "checked_at": 1791073421.299359,
+        "cases": 10512,
+        "boundary_values": [
+          0,
+          1,
+          7,
+          8,
+          2147483647,
+          2147483648,
+          4294967294,
+          4294967295
+        ],
+        "method": "Pure Python simulation of the original integer PPC operation chain versus the reviewed C++ unsigned expression. No game function executed on the host.",
+        "all_equal": true,
+        "limitations": "Sample checks supplement the unsigned modular-arithmetic review; they are not exhaustive 2^96 input enumeration."
+      },
+      "source_sha256": "7b14e0baf09a5057b695ebebe06eb673dfe9ee3ce3e0f98a7f18849975499cc9"
+    }
+  ],
+  "measurements": {
+    "pilot_three_units": {
+      "started_at": 1791071844.8940785,
+      "status": "queue_complete",
+      "units_compared": 3,
+      "cache_hits": 0,
+      "native_seconds": 3.497221300000092,
+      "m2c_seconds": 2.0457,
+      "mode": "artifact_only_no_source_trials",
+      "version": "SZBE69_B8",
+      "measures": {
+        "fuzzy_match_percent": 68.93278,
+        "total_code": "11431676",
+        "matched_code": "6362516",
+        "matched_code_percent": 55.6569,
+        "total_data": "2755932",
+        "matched_data": "614640",
+        "matched_data_percent": 22.302437,
+        "total_functions": 41333,
+        "matched_functions": 28651,
+        "matched_functions_percent": 69.3175,
+        "complete_code": "1243344",
+        "complete_code_percent": 10.876306,
+        "complete_data": "498004",
+        "complete_data_percent": 18.070257,
+        "total_units": 1876,
+        "complete_units": 543
+      },
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+      "debug_map_path": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\debugversion2\\DATA\\files\\band_r_wii.map",
+      "debug_map_sha256": "d191ed3292f2a13b52c4ce66ceb91ccf2db7d49f0934c02a330f5ad809a1c8f1",
+      "candidate_units": 3,
+      "elapsed_seconds": 6.5516,
+      "protected_files_checked": 3307,
+      "protected_files_changed": [],
+      "protected_snapshot_sha256": "c84e526a28f0eecd421ae3e95d429f18da4a2c039b49ad302c1d84d3a01cc289",
+      "packet_count": 17,
+      "source_link_candidate_count": 0,
+      "error_count": 0,
+      "artifact": "build\\decomp\\preparation-pilot\\fresh.json",
+      "artifact_sha256": "3987ee95aa1596d81c96d16bb95cbf05d800e9065c8b4acf6f1d0d503506ba29"
+    },
+    "batch64": {
+      "started_at": 1791072232.805451,
+      "status": "comparison_limit",
+      "units_compared": 64,
+      "cache_hits": 0,
+      "native_seconds": 11.202570000001288,
+      "m2c_seconds": 18.448199999999996,
+      "mode": "artifact_only_no_source_trials",
+      "version": "SZBE69_B8",
+      "measures": {
+        "fuzzy_match_percent": 68.93278,
+        "total_code": "11431676",
+        "matched_code": "6362516",
+        "matched_code_percent": 55.6569,
+        "total_data": "2755932",
+        "matched_data": "614640",
+        "matched_data_percent": 22.302437,
+        "total_functions": 41333,
+        "matched_functions": 28651,
+        "matched_functions_percent": 69.3175,
+        "complete_code": "1243344",
+        "complete_code_percent": 10.876306,
+        "complete_data": "498004",
+        "complete_data_percent": 18.070257,
+        "total_units": 1876,
+        "complete_units": 543
+      },
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+      "debug_map_path": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\debugversion2\\DATA\\files\\band_r_wii.map",
+      "debug_map_sha256": "d191ed3292f2a13b52c4ce66ceb91ccf2db7d49f0934c02a330f5ad809a1c8f1",
+      "candidate_units": 210,
+      "elapsed_seconds": 41.7712,
+      "protected_files_checked": 3307,
+      "protected_files_changed": [],
+      "protected_snapshot_sha256": "c84e526a28f0eecd421ae3e95d429f18da4a2c039b49ad302c1d84d3a01cc289",
+      "packet_count": 145,
+      "source_link_candidate_count": 0,
+      "error_count": 0,
+      "artifact": "build\\decomp\\preparation-pilot\\batch64.json",
+      "artifact_sha256": "fabced7b42b6508064bd0063b80c35e1f4651829c9f6c4a0d38885c211f642de"
+    },
+    "near_fresh": {
+      "started_at": 1791072699.5065842,
+      "status": "queue_complete",
+      "units_compared": 210,
+      "cache_hits": 0,
+      "native_seconds": 28.46245389998512,
+      "m2c_seconds": 47.303100000000036,
+      "mode": "artifact_only_no_source_trials",
+      "version": "SZBE69_B8",
+      "measures": {
+        "fuzzy_match_percent": 68.93282,
+        "total_code": "11431676",
+        "matched_code": "6362516",
+        "matched_code_percent": 55.6569,
+        "total_data": "2755932",
+        "matched_data": "614640",
+        "matched_data_percent": 22.302437,
+        "total_functions": 41333,
+        "matched_functions": 28651,
+        "matched_functions_percent": 69.3175,
+        "complete_code": "1243344",
+        "complete_code_percent": 10.876306,
+        "complete_data": "498004",
+        "complete_data_percent": 18.070257,
+        "total_units": 1876,
+        "complete_units": 543
+      },
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+      "debug_map_path": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\debugversion2\\DATA\\files\\band_r_wii.map",
+      "debug_map_sha256": "d191ed3292f2a13b52c4ce66ceb91ccf2db7d49f0934c02a330f5ad809a1c8f1",
+      "candidate_units": 210,
+      "elapsed_seconds": 110.6705,
+      "classification_counts": {
+        "string_metadata": 7,
+        "instruction_or_behavior": 297,
+        "register_allocation_hint": 70
+      },
+      "protected_files_checked": 3307,
+      "protected_files_changed": [],
+      "protected_snapshot_sha256": "559b05edd6f9d658ad1b683b63551e407594678497387454ca1240135b3adf6e",
+      "packet_count": 374,
+      "source_link_candidate_count": 0,
+      "error_count": 0,
+      "artifact": "build\\decomp\\preparation-pilot\\catalog-fresh.json",
+      "artifact_sha256": "70ad0ebac8526021b1b21a5239aa32ade78d3ee3f23c64338495945813e46752"
+    },
+    "near_cached": {
+      "started_at": 1791072830.4736643,
+      "status": "queue_complete",
+      "units_compared": 0,
+      "cache_hits": 210,
+      "native_seconds": 3.1436104999993404,
+      "m2c_seconds": 0.0,
+      "mode": "artifact_only_no_source_trials",
+      "version": "SZBE69_B8",
+      "measures": {
+        "fuzzy_match_percent": 68.93282,
+        "total_code": "11431676",
+        "matched_code": "6362516",
+        "matched_code_percent": 55.6569,
+        "total_data": "2755932",
+        "matched_data": "614640",
+        "matched_data_percent": 22.302437,
+        "total_functions": 41333,
+        "matched_functions": 28651,
+        "matched_functions_percent": 69.3175,
+        "complete_code": "1243344",
+        "complete_code_percent": 10.876306,
+        "complete_data": "498004",
+        "complete_data_percent": 18.070257,
+        "total_units": 1876,
+        "complete_units": 543
+      },
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+      "debug_map_path": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\debugversion2\\DATA\\files\\band_r_wii.map",
+      "debug_map_sha256": "d191ed3292f2a13b52c4ce66ceb91ccf2db7d49f0934c02a330f5ad809a1c8f1",
+      "candidate_units": 210,
+      "elapsed_seconds": 5.2883,
+      "classification_counts": {
+        "string_metadata": 7,
+        "instruction_or_behavior": 297,
+        "register_allocation_hint": 70
+      },
+      "protected_files_checked": 3307,
+      "protected_files_changed": [],
+      "protected_snapshot_sha256": "559b05edd6f9d658ad1b683b63551e407594678497387454ca1240135b3adf6e",
+      "packet_count": 374,
+      "source_link_candidate_count": 0,
+      "error_count": 0,
+      "artifact": "build\\decomp\\preparation-pilot\\catalog-cached.json",
+      "artifact_sha256": "466ecb7ec8a970d6b5b07a393a5a999e5ef0faf000f54b53bb734007c547115b"
+    },
+    "broad_prepared": {
+      "started_at": 1791072899.039436,
+      "status": "queue_complete",
+      "units_compared": 193,
+      "cache_hits": 210,
+      "native_seconds": 18.81444279999414,
+      "m2c_seconds": 252.1772,
+      "mode": "artifact_only_no_source_trials",
+      "version": "SZBE69_B8",
+      "measures": {
+        "fuzzy_match_percent": 68.93282,
+        "total_code": "11431676",
+        "matched_code": "6362516",
+        "matched_code_percent": 55.6569,
+        "total_data": "2755932",
+        "matched_data": "614640",
+        "matched_data_percent": 22.302437,
+        "total_functions": 41333,
+        "matched_functions": 28651,
+        "matched_functions_percent": 69.3175,
+        "complete_code": "1243344",
+        "complete_code_percent": 10.876306,
+        "complete_data": "498004",
+        "complete_data_percent": 18.070257,
+        "total_units": 1876,
+        "complete_units": 543
+      },
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+      "debug_map_path": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\debugversion2\\DATA\\files\\band_r_wii.map",
+      "debug_map_sha256": "d191ed3292f2a13b52c4ce66ceb91ccf2db7d49f0934c02a330f5ad809a1c8f1",
+      "candidate_units": 403,
+      "elapsed_seconds": 342.1752,
+      "classification_counts": {
+        "string_metadata": 7,
+        "missing_compiled_function": 1703,
+        "instruction_or_behavior": 720,
+        "register_allocation_hint": 93
+      },
+      "protected_files_checked": 3307,
+      "protected_files_changed": [],
+      "protected_snapshot_sha256": "559b05edd6f9d658ad1b683b63551e407594678497387454ca1240135b3adf6e",
+      "packet_count": 2523,
+      "source_link_candidate_count": 0,
+      "error_count": 0,
+      "artifact": "build\\decomp\\preparation-pilot\\broad-fresh.json",
+      "artifact_sha256": "f06960136dd3f600705b95ef127e683fbf5e64812b5283a9891001f0ab070ee2"
+    },
+    "broad_cached": {
+      "started_at": 1791073461.937823,
+      "status": "queue_complete",
+      "units_compared": 0,
+      "cache_hits": 403,
+      "native_seconds": 2.7485596999977133,
+      "m2c_seconds": 0.0,
+      "mode": "artifact_only_no_source_trials",
+      "version": "SZBE69_B8",
+      "measures": {
+        "fuzzy_match_percent": 68.93282,
+        "total_code": "11431676",
+        "matched_code": "6362516",
+        "matched_code_percent": 55.6569,
+        "total_data": "2755932",
+        "matched_data": "614640",
+        "matched_data_percent": 22.302437,
+        "total_functions": 41333,
+        "matched_functions": 28651,
+        "matched_functions_percent": 69.3175,
+        "complete_code": "1243344",
+        "complete_code_percent": 10.876306,
+        "complete_data": "498004",
+        "complete_data_percent": 18.070257,
+        "total_units": 1876,
+        "complete_units": 543
+      },
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+      "debug_map_path": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\debugversion2\\DATA\\files\\band_r_wii.map",
+      "debug_map_sha256": "d191ed3292f2a13b52c4ce66ceb91ccf2db7d49f0934c02a330f5ad809a1c8f1",
+      "candidate_units": 403,
+      "elapsed_seconds": 7.7712,
+      "classification_counts": {
+        "string_metadata": 7,
+        "missing_compiled_function": 1703,
+        "instruction_or_behavior": 720,
+        "register_allocation_hint": 93
+      },
+      "protected_files_checked": 3307,
+      "protected_files_changed": [],
+      "protected_snapshot_sha256": "559b05edd6f9d658ad1b683b63551e407594678497387454ca1240135b3adf6e",
+      "packet_count": 2523,
+      "source_link_candidate_count": 0,
+      "error_count": 0,
+      "artifact": "build\\decomp\\preparation-pilot\\broad-cached.json",
+      "artifact_sha256": "0be384ef0b2b2f4ae448585ffc9be07094718397129c9dc060d790c91690750b"
+    }
+  },
+  "local_model_advisory_review": {
+    "reviewed_at": 1791072811.4529781,
+    "method": "Manual check against exact original packet rows; three small functions, 18 generated observations. Citations prove only row existence.",
+    "model": "qwen2.5-coder:7b-instruct-q4_K_M",
+    "prompt_tokens": 2014,
+    "output_tokens": 1042,
+    "latency_seconds": 13.3191,
+    "decision": "Do not enable model advice or source proposals in the default downtime job. Deterministic packet facts and m2c are more useful in this pilot.",
+    "clear_errors": [
+      {
+        "symbol": "ProjectZ__6WiiCamFf",
+        "row": 4,
+        "claim": "subtracts f5 from f6",
+        "actual": "fsubs f3,f5,f6 computes f5 minus f6"
+      },
+      {
+        "symbol": "Adjust__Q26Quazal3RTTFUi",
+        "row": 4,
+        "claim": "subtracts r4 from r0",
+        "actual": "subf r8,r0,r4 computes r4 minus r0"
+      },
+      {
+        "symbol": "IsActive__6UsbWiiCFi",
+        "row": 4,
+        "claim": "branches to row 36",
+        "actual": "0x24 is a relative branch displacement, not a packet row number"
+      }
+    ],
+    "additional_issue": "USB address construction description omits the low relocated part and should not be used for reconstruction. Many remaining observations repeat facts already extracted deterministically.",
+    "sources": [
+      {
+        "path": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\preparation\\SZBE69_B8\\advice\\ddbda73c9b1c1a4a0a37e1b16450201a23fed61229a83a7b9fee48574de97185.json",
+        "cached": false,
+        "symbol": "IsActive__6UsbWiiCFi",
+        "status": "unreviewed",
+        "elapsed_seconds": 5.508
+      },
+      {
+        "path": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\preparation\\SZBE69_B8\\advice\\b1937fffcd563d486936c67d4866be1ec3d6684225c3b2e94e733b8c8e8bcf0c.json",
+        "cached": false,
+        "symbol": "ProjectZ__6WiiCamFf",
+        "status": "unreviewed",
+        "elapsed_seconds": 4.3417
+      },
+      {
+        "path": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\preparation\\SZBE69_B8\\advice\\9ac084cd4a251246b7fb24c577a56a174694dc4c92549400cb4e29f3131ce9a5.json",
+        "cached": false,
+        "symbol": "Adjust__Q26Quazal3RTTFUi",
+        "status": "unreviewed",
+        "elapsed_seconds": 3.4694
+      }
+    ],
+    "limitations": [
+      "Small pilot does not prove all local models are ineffective.",
+      "No measured retained source gain from these advice requests.",
+      "Do not extrapolate preparation speed into decompilation completion rate."
+    ]
+  },
+  "m2c_provenance": {
+    "repository": "https://github.com/matt-kempster/m2c",
+    "commit": "708d2d2cb2698f091a92492b328f73b24209f72d",
+    "url": "https://codeload.github.com/matt-kempster/m2c/zip/708d2d2cb2698f091a92492b328f73b24209f72d",
+    "archive_sha256": "847a5f6f2dcece29bb2424d993ff70433c7e81bc9fd235bd9be5a1b1946b8bb3"
+  },
+  "verification": {
+    "test_count": 70,
+    "protected_files_checked": 3307,
+    "protected_files_changed": [],
+    "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+    "pending_journal": false,
+    "final_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+  },
+  "remaining_issues": [
+    "Local model advice is unreliable on PPC operands; keep default pipeline model-free.",
+    "m2c outputs require semantic/type/data-context review and do not count as matches.",
+    "RTT remains partial at20%; resolve native register allocation and scheduling.",
+    "No throughput forecast for completing full game this month; measure retained matched/linked gains with prepared contexts in subsequent sessions.",
+    "Investigate isolated permuter adapter, cross-function m2c type context and a pseudocode cache independent of current compiled source if benchmarks justify them.",
+    "Automatic account monitoring/refill and conversation resumption are outside these offline scripts."
+  ],
+  "report": "doc/DECOMP_OPTIMIZATION_2026-10-03.md",
+  "baseline": {
+    "fuzzy_match_percent": 68.93278,
+    "total_code": "11431676",
+    "matched_code": "6362516",
+    "matched_code_percent": 55.6569,
+    "total_data": "2755932",
+    "matched_data": "614640",
+    "matched_data_percent": 22.302437,
+    "total_functions": 41333,
+    "matched_functions": 28651,
+    "matched_functions_percent": 69.3175,
+    "complete_code": "1243344",
+    "complete_code_percent": 10.876306,
+    "complete_data": "498004",
+    "complete_data_percent": 18.070257,
+    "total_units": 1876,
+    "complete_units": 543
+  },
+  "completed_at": 1791073677.9504735,
+  "elapsed_seconds": 2608.95,
+  "final_usage": {
+    "checked_at": 1791073677.9504735,
+    "primary_used_percent": 19,
+    "weekly_used_percent": 65,
+    "primary_resets_at": 1791089072,
+    "weekly_resets_at": 1791580278,
+    "primary_remaining_percent": 81,
+    "weekly_remaining_percent": 35
+  },
+  "usage_change": {
+    "primary_percentage_points": 19,
+    "weekly_percentage_points": 3,
+    "interpretation": "Approximate account-wide changes in rounded usage percentages, not billable tokens or isolated model costs. Provider reset timestamps drifted two seconds; no refill occurred during this session."
+  }
+}

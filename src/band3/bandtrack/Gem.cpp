@@ -51,7 +51,8 @@ Gem &Gem::operator=(const Gem &g) {
 bool Gem::OnScreen(float ms) {
     float bottomSeconds = mGemManager->mTrackDir->BottomSeconds();
 
-    return (ms / 1000.0f) + bottomSeconds > mEnd;
+    float threshold = (ms / 1000.0f) + bottomSeconds;
+    return mEnd > threshold;
 }
 
 void Gem::Poll(float f1, float f2, float f3, float f4, float f5) {

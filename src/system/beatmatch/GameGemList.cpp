@@ -1,4 +1,17 @@
 #include "beatmatch/GameGemList.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolGameGemList,
+    "GameGemList.cpp",
+    "ms <= it->GetMs()",
+    "ms >= prev_it->GetMs()",
+    "idx < mGems.size()",
+    "vector"
+)
+#endif
 #include <algorithm>
 
 GameGemList::GameGemList(int thresh) : mHopoThreshold(thresh) {}

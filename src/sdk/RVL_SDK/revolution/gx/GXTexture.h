@@ -38,6 +38,10 @@ void GXInitTexObjLOD(
 );
 
 void GXLoadTexObj(GXTexObj *, GXTexMapID);
+void GXInitTexObjData(GXTexObj *, void *);
+void GXInitTexObjWrapMode(GXTexObj *, GXTexWrapMode, GXTexWrapMode);
+void GXInitTexObjTlut(GXTexObj *, u32);
+void GXLoadTlut(GXTlutObj *, u32);
 
 u32 GXGetTexObjTlut(GXTexObj *);
 

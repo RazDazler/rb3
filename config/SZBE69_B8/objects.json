@@ -62,7 +62,9 @@
             "band3/game/Metronome.cpp": "Matching",
             "band3/game/MultiplayerAnalyzer.cpp": "NonMatching",
             "band3/game/NetGameMsgs.cpp": "NonMatching",
-            "band3/game/OverdriveTimeTracker.cpp": "NonMatching",
+            "band3/game/OverdriveTimeTracker.cpp": {
+                "status": "Matching"
+            },
             "band3/game/OverdriveTracker.cpp": "NonMatching",
             "band3/game/PerfectOverdriveTracker.cpp": "NonMatching",
             "band3/game/PerfectSectionTracker.cpp": "NonMatching",
@@ -390,7 +392,9 @@
 
             "network/Extensions/AnyExtDDF.cpp": "MISSING",
             "network/Extensions/AVStreamsDDF.cpp": "MISSING",
-            "network/Extensions/ChannelInfo.cpp": "NonMatching",
+            "network/Extensions/ChannelInfo.cpp": {
+                "status": "Matching"
+            },
             "network/Extensions/ChannelInfoDDL.cpp": "MISSING",
             "network/Extensions/ChannelMemberSink.cpp": "MISSING",
             "network/Extensions/ChannelMembers.cpp": "NonMatching",
@@ -449,7 +453,9 @@
             "network/net/NetworkEmulator.cpp": "NonMatching",
             "network/net/QuazalSession.cpp": "NonMatching",
             "network/net/Server_Wii.cpp": "NonMatching",
-            "network/net/Server.cpp": "NonMatching",
+            "network/net/Server.cpp": {
+                "status": "Matching"
+            },
             "network/net/SessionMessages.cpp": "NonMatching",
             "network/net/SessionSearcher.cpp": "Matching",
             "network/net/SessionSearcher_RV.cpp": "NonMatching",
@@ -479,7 +485,9 @@
             "network/ObjDup/DOCore.cpp": "MISSING",
             "network/ObjDup/DOCoreDDF.cpp": "MISSING",
             "network/ObjDup/DOCoreTypes.cpp": "MISSING",
-            "network/ObjDup/DOFilter.cpp": "NonMatching",
+            "network/ObjDup/DOFilter.cpp": {
+                "status": "Matching"
+            },
             "network/ObjDup/DOFilters.cpp": "MISSING",
             "network/ObjDup/DOHandle.cpp": "MISSING",
             "network/ObjDup/DOOperation.cpp": "MISSING",
@@ -643,7 +651,9 @@
 
             "network/RVPackages/JobNintendoLogin.cpp": "MISSING",
             "network/RVPackages/JobNintendoTerminate.cpp": "MISSING",
-            "network/RVPackages/JobNintendoUpdateNameByGuest.cpp": "NonMatching",
+            "network/RVPackages/JobNintendoUpdateNameByGuest.cpp": {
+                "status": "Matching"
+            },
             "network/RVPackages/NintendoClient.cpp": "MISSING",
             "network/RVPackages/NintendoManagementProtocolDDL.cpp": "MISSING",
             "network/RVPackages/NintendoTokenDDL.cpp": "MISSING",
@@ -791,14 +801,18 @@
             "network/Platform/Platform.cpp": "NonMatching",
             "network/Platform/ProfilingUnit.cpp": "NonMatching",
             "network/Platform/RandomNumberGenerator.cpp": "Matching",
-            "network/Platform/RefCountedObject.cpp": "LinkIssues",
+            "network/Platform/RefCountedObject.cpp": {
+                "status": "Matching"
+            },
             "network/Platform/Result.cpp": "Matching",
             "network/Platform/RootObject.cpp": "Matching",
             "network/Platform/Socket.cpp": "Matching",
             "network/Platform/SpinTest.cpp": "MISSING",
             "network/Platform/StackTracer.cpp": "MISSING",
             "network/Platform/String.cpp": "NonMatching",
-            "network/Platform/StringConversion.cpp": "NonMatching",
+            "network/Platform/StringConversion.cpp": {
+                "status": "Matching"
+            },
             "network/Platform/StringConverter.cpp": "MISSING",
             "network/Platform/StringStream.cpp": "NonMatching",
             "network/Platform/SystemChecker.cpp": "Matching",
@@ -1287,7 +1301,9 @@
             "system/rndobj/Wind.cpp": "NonMatching",
 
             "system/rndwii/Cam.cpp": "NonMatching",
-            "system/rndwii/Env.cpp": "NonMatching",
+            "system/rndwii/Env.cpp": {
+                "status": "Matching"
+            },
             "system/rndwii/Lit.cpp": "NonMatching",
             "system/rndwii/Mat.cpp": "NonMatching",
             "system/rndwii/Mesh.cpp": "NonMatching",
@@ -1351,7 +1367,9 @@
             "system/synth/VorbisReader.cpp": "NonMatching",
             "system/synth/WavReader.cpp": "NonMatching",
 
-            "system/synthwii/EnvelopeWii.cpp": "NonMatching",
+            "system/synthwii/EnvelopeWii.cpp": {
+                "status": "Matching"
+            },
             "system/synthwii/FXWii.cpp": "MISSING",
             "system/synthwii/Mic_Wii.cpp": "NonMatching",
             "system/synthwii/PitchShiftEffect.cpp": "MISSING",
@@ -1464,8 +1482,12 @@
             "system/utl/MultiTempoTempoMap.cpp": "NonMatching",
             "system/utl/NetCacheLoader.cpp": "NonMatching",
             "system/utl/NetCacheMgr.cpp": "NonMatching",
-            "system/utl/NetLoader.cpp": "NonMatching",
-            "system/utl/NetLoader_Wii.cpp": "MISSING",
+            "system/utl/NetLoader.cpp": {
+                "status": "Matching"
+            },
+            "system/utl/NetLoader_Wii.cpp": {
+                "status": "Matching"
+            },
             "system/utl/Option.cpp": "Matching",
             "system/utl/PoolAlloc.cpp": "NonMatching",
             "system/utl/Profiler.cpp": "NonMatching",
@@ -1489,7 +1511,9 @@
             "system/utl/TimeConversion.cpp": "Matching",
             "system/utl/UserGuid.cpp": "Matching",
             "system/utl/UTF8.cpp": "NonMatching",
-            "system/utl/VarTimer.cpp": "NonMatching",
+            "system/utl/VarTimer.cpp": {
+                "status": "Matching"
+            },
             "system/utl/Wav.cpp": "NonMatching",
             "system/utl/WaveFile.cpp": "Matching",
 
@@ -1524,7 +1548,10 @@
         "mw_version": "Wii/1.3",
         "cflags": "system/speex",
         "objects": {
-            "system/speex/libspeex/bits.c": {"status": "LinkIssues", "comment": "Has issues with Quazal"},
+            "system/speex/libspeex/bits.c": {
+                "status": "Matching",
+                "comment": "Has issues with Quazal"
+            },
             "system/speex/libspeex/cb_search.c": "Matching",
             "system/speex/libspeex/exc_10_16_table.c": "Matching",
             "system/speex/libspeex/exc_10_32_table.c": "Matching",
@@ -1554,12 +1581,20 @@
         "mw_version": "Wii/1.3",
         "cflags": "system/soundtouch",
         "objects": {
-            "system/synthwii/soundtouch/source/SoundTouch/AAFilter.cpp": "NonMatching",
-            "system/synthwii/soundtouch/source/SoundTouch/FIFOSampleBuffer.cpp": "NonMatching",
-            "system/synthwii/soundtouch/source/SoundTouch/FIRFilter.cpp": "NonMatching",
+            "system/synthwii/soundtouch/source/SoundTouch/AAFilter.cpp": {
+                "status": "Matching"
+            },
+            "system/synthwii/soundtouch/source/SoundTouch/FIFOSampleBuffer.cpp": {
+                "status": "Matching"
+            },
+            "system/synthwii/soundtouch/source/SoundTouch/FIRFilter.cpp": {
+                "status": "Matching"
+            },
             "system/synthwii/soundtouch/source/SoundTouch/RateTransposer.cpp": "NonMatching",
             "system/synthwii/soundtouch/source/SoundTouch/SoundTouch.cpp": "Matching",
-            "system/synthwii/soundtouch/source/SoundTouch/TDStretch.cpp": "NonMatching"
+            "system/synthwii/soundtouch/source/SoundTouch/TDStretch.cpp": {
+                "status": "Matching"
+            }
         }
     },
     "system/tomcrypt": {
@@ -1780,7 +1815,9 @@
             "sdk/PowerPC_EABI_Support/MetroTRK/string_TRK.c": "MISSING",
             "sdk/PowerPC_EABI_Support/MetroTRK/support.c": "MISSING",
             "sdk/PowerPC_EABI_Support/MetroTRK/targcont.c": "MISSING",
-            "sdk/PowerPC_EABI_Support/MetroTRK/target_options.c": "MISSING",
+            "sdk/PowerPC_EABI_Support/MetroTRK/target_options.c": {
+                "status": "Matching"
+            },
             "sdk/PowerPC_EABI_Support/MetroTRK/targimpl.c": "MISSING",
             "sdk/PowerPC_EABI_Support/MetroTRK/targsupp.s": "MISSING"
         }
@@ -1979,7 +2016,9 @@
             "sdk/RVL_SDK/src/os/OSAlarm.c": "NonMatching",
             "sdk/RVL_SDK/src/os/OSAlloc.c": "Matching",
             "sdk/RVL_SDK/src/os/OSArena.c": "Matching",
-            "sdk/RVL_SDK/src/os/OSAudioSystem.c": "NonMatching",
+            "sdk/RVL_SDK/src/os/OSAudioSystem.c": {
+                "status": "Matching"
+            },
             "sdk/RVL_SDK/src/os/OSCache.c": "Matching",
             "sdk/RVL_SDK/src/os/OSContext.c": "Matching",
             "sdk/RVL_SDK/src/os/OSCrc.c": "NonMatching",
@@ -2002,9 +2041,13 @@
             "sdk/RVL_SDK/src/os/OSReset.c": "NonMatching",
             "sdk/RVL_SDK/src/os/OSRtc.c": "NonMatching",
             "sdk/RVL_SDK/src/os/OSSemaphore.c": "Matching",
-            "sdk/RVL_SDK/src/os/OSStateFlags.c": "NonMatching",
+            "sdk/RVL_SDK/src/os/OSStateFlags.c": {
+                "status": "Matching"
+            },
             "sdk/RVL_SDK/src/os/OSStateTM.c": "NonMatching",
-            "sdk/RVL_SDK/src/os/OSSync.c": "NonMatching",
+            "sdk/RVL_SDK/src/os/OSSync.c": {
+                "status": "Matching"
+            },
             "sdk/RVL_SDK/src/os/OSThread.c": "NonMatching",
             "sdk/RVL_SDK/src/os/OSTime.c": "Matching",
             "sdk/RVL_SDK/src/os/OSUtf.c": "NonMatching",

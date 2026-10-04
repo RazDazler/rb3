@@ -39,12 +39,12 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#if 0
-#include <memory.h>
+#if 1
+#include <string.h>
 #include <assert.h>
 #include <math.h>
 #include <stdlib.h>
-#include <stdexcept>
+#include "os/Debug.h"
 #include "FIRFilter.h"
 #include "cpu_detect.h"
 
@@ -59,7 +59,6 @@ using namespace soundtouch;
 FIRFilter::FIRFilter()
 {
     resultDivFactor = 0;
-    resultDivider = 0;
     length = 0;
     lengthDiv8 = 0;
     filterCoeffs = NULL;
@@ -175,14 +174,14 @@ uint FIRFilter::evaluateFilterMono(SAMPLETYPE *dest, const SAMPLETYPE *src, uint
 void FIRFilter::setCoefficients(const SAMPLETYPE *coeffs, uint newLength, uint uResultDivFactor)
 {
     assert(newLength > 0);
-    if (newLength % 8) throw std::runtime_error("FIR filter length not divisible by 8");
+    if (newLength % 8) MILO_FAIL("FIR filter length not divisible by 8");
 
     lengthDiv8 = newLength / 8;
     length = lengthDiv8 * 8;
     assert(length == newLength);
 
     resultDivFactor = uResultDivFactor;
-    resultDivider = (SAMPLETYPE)pow(2, resultDivFactor);
+    resultDivider = (SAMPLETYPE)(float)pow(2, (float)(int)resultDivFactor);
 
     delete[] filterCoeffs;
     filterCoeffs = new SAMPLETYPE[length];
@@ -190,7 +189,7 @@ void FIRFilter::setCoefficients(const SAMPLETYPE *coeffs, uint newLength, uint u
 }
 
 
-uint FIRFilter::getLength() const
+inline uint FIRFilter::getLength() const
 {
     return length;
 }
@@ -218,6 +217,7 @@ uint FIRFilter::evaluate(SAMPLETYPE *dest, const SAMPLETYPE *src, uint numSample
 
 
 
+#if 0
 // Operator 'new' is overloaded so that it automatically creates a suitable instance
 // depending on if we've a MMX-capable CPU available or not.
 void * FIRFilter::operator new(size_t s)
@@ -268,4 +268,5 @@ FIRFilter * FIRFilter::newInstance()
         return ::new FIRFilter;
     }
 }
+#endif
 #endif

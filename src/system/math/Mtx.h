@@ -234,19 +234,35 @@ public:
 class ShortQuat {
 public:
     short x, y, z, w;
+#ifdef VERSION_SZBE69
+    ShortQuat &operator=(const ShortQuat &quat) {
+        x = quat.x;
+        y = quat.y;
+        z = quat.z;
+        w = quat.w;
+        return *this;
+    }
+#endif
+    void Set(const Hmx::Quat &);
+    void Set(const Hmx::Matrix3 &);
     void Reset() {
         x = y = z = 0;
         w = 32767;
     }
-    void ToQuat(Hmx::Quat& q) const {
-        q.Set(x * 0.000030518509f, y * 0.000030518509f, z * 0.000030518509f, w * 0.000030518509f);
+    void ToQuat(Hmx::Quat &q) const {
+        q.Set(
+            x * 0.000030518509f,
+            y * 0.000030518509f,
+            z * 0.000030518509f,
+            w * 0.000030518509f
+        );
     }
 };
 
 class ByteQuat {
 public:
     char x, y, z, w;
-    void ToQuat(Hmx::Quat& q) const {
+    void ToQuat(Hmx::Quat &q) const {
         q.Set(x * 0.0078740157f, y * 0.0078740157f, z * 0.0078740157f, w * 0.0078740157f);
     }
 };
@@ -258,8 +274,14 @@ public:
     void Set(const Transform &);
     void Set(const TransformNoScale &);
     void SetRot(const Hmx::Matrix3 &);
+    void SetRot(const Hmx::Quat &);
+    Hmx::Quat &GetRot(Hmx::Quat &) const;
     void Reset();
+#ifdef VERSION_SZBE69
+    Transform &ToTransform(Transform &) const;
+#else
     void ToTransform(Transform &) const;
+#endif
     TransformNoScale &operator=(const TransformNoScale &t) { Set(t); }
 
     ShortQuat q; // 0x0/2/4/6
@@ -336,7 +358,11 @@ void Multiply(const Vector3 &, const Hmx::Quat &, Vector3 &);
 void Multiply(const Vector3 &, const Transform &, Vector3 &);
 void Multiply(const Plane &, const Transform &, Plane &);
 void Multiply(const Hmx::Matrix3 &, const Hmx::Matrix3 &, Hmx::Matrix3 &);
+#ifdef VERSION_SZBE69
+void IdentityInterp(const Hmx::Quat &, float, Hmx::Quat &);
+#else
 void IdentityInterp(const Hmx::Quat &, float, const Hmx::Quat &);
+#endif
 void Multiply(const Transform &, const Hmx::Matrix3 &, Transform &);
 
 inline void Multiply(const Frustum &fin, const Transform &tf, Frustum &fout) {

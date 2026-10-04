@@ -1302,9 +1302,9 @@ void RockCentral::ConvertToStr(MemStream &ms, String &str) {
     str.reserve(ms.BufferSize() * 2 + 1);
     ms.Seek(0, BinStream::kSeekBegin);
     while (!ms.Eof()) {
-        char uc;
+        unsigned char uc;
         ms >> uc;
-        short us = uc >> 4;
+        short us = (uc >> 4) & 0xF;
         if (us > 9) {
             str = str + (us + 0x37);
         } else {

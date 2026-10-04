@@ -1,4 +1,55 @@
 #include "tour/Tour.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolTour,
+    "Tour.cpp",
+    "!TheTour",
+    "tour",
+    "pProperty",
+    "pTourDesc",
+    "tour_properties",
+    "tour_status_info",
+    "tour_desc_info",
+    "tour_weight_info",
+    "pStatusEntry->Size() == 2",
+    "Tour status fan requirement values are not increasing!",
+    "iStatusIndex >= 0",
+    "iStatusIndex < m_vTourStatus.size()",
+    "false",
+    "m_mapTourProperties.empty()",
+    "%s tour property already exists, skipping",
+    "m_mapTourDesc.empty()",
+    "pTourDescArray->Size() > 0",
+    "%s tour desc already exists, skipping",
+    "m_pProfile",
+    "i_pProfile",
+    "pProgress",
+    "pPerformer",
+    "m_pTourPerformer",
+    "pQuest",
+    "pUser",
+    "",
+    "m_pTourProgress",
+    "pProfile",
+    "pScreen",
+    "filter_artist_",
+    "Invalid Random Filter = %s\n",
+    "pFixedSetlist",
+    "pSecondaryFilter",
+    "init",
+    "!pPerformer->IsLocal()",
+    "i_pLabel",
+    "pTourProgress",
+    "performer",
+    "pGoal",
+    "config/tour.dta",
+    "%s(%d): %s unhandled msg: %s",
+    "<invalid>"
+)
+#endif
 #include "QuestManager.h"
 #include "TourPerformer.h"
 #include "TourProperty.h"
@@ -209,7 +260,11 @@ Symbol Tour::GetTourGigGuideMap() const {
 Symbol Tour::GetConclusionText() const {
     if (m_pTourProgress) {
         TourDesc *pTourDesc = GetTourDesc(m_pTourProgress->GetTourDesc());
+#ifdef VERSION_SZBE69_B8
+        MILO_ASSERT(pTourDesc, 0x246);
+#else
         MILO_ASSERT(pTourDesc, 0x226);
+#endif
         return pTourDesc->GetConclusionText();
     } else
         return "";
@@ -290,7 +345,11 @@ bool Tour::HasBronzeMedal(Symbol s) const {
     MILO_ASSERT(pProgress, 0x3EC);
     int stars = pProgress->GetTourMostStars(s);
     TourDesc *pTourDesc = GetTourDesc(s);
+#ifdef VERSION_SZBE69_B8
+    MILO_ASSERT(pTourDesc, 0x3F1);
+#else
     MILO_ASSERT(pTourDesc, 0x3C2);
+#endif
     int goal = pTourDesc->GetTourStarsBronzeGoalValue();
     return goal <= stars;
 }

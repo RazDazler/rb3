@@ -1,4 +1,5 @@
 #include "EnvelopeWii.h"
+#include "synth/ADSR.h"
 
 EnvelopeWii::EnvelopeWii() {
     mAttackDuration = 5.0f;
@@ -8,12 +9,50 @@ EnvelopeWii::EnvelopeWii() {
     mReleaseStart = 0.0f;
 }
 
+void EnvelopeWii::StartAttack() {
+    mInRelease = false;
+    mTimer.Restart();
+}
+
+void EnvelopeWii::StartRelease() {
+    float value = GetValueAtOffset(0.0f);
+    mReleaseStart = value;
+    mInRelease = true;
+    mTimer.Restart();
+}
+
+bool EnvelopeWii::IsDone() {
+    if (mInRelease != false) {
+        mTimer.Split();
+        float elapsedTimeMs = mTimer.CyclesToMs(mTimer.mCycles);
+        if (elapsedTimeMs > mReleaseDuration) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void EnvelopeWii::Pause() {
+    mTimer.Pause();
+    mIsPaused = true;
+}
+
+void EnvelopeWii::Resume() {
+    if (mTimer.mRunning < 0) {
+        mTimer.Resume();
+    }
+    mIsPaused = false;
+}
+
+void EnvelopeWii::SetADSR(const ADSR &adsr) {
+    mAttackDuration = 1000.0f * adsr.GetAttackRate();
+    mReleaseDuration = 1000.0f * adsr.GetReleaseRate();
+}
+
 float EnvelopeWii::GetValueAtOffset(float timeOffset) {
     MILO_ASSERT(!(timeOffset < 0.0f), 0x44);
 
-    if (0 <= mTimer.mRunning) {
-        mTimer.Split();
-    }
+    mTimer.Split();
 
     float elapsedTimeMs = timeOffset + mTimer.CyclesToMs(mTimer.mCycles);
 
@@ -31,43 +70,4 @@ float EnvelopeWii::GetValueAtOffset(float timeOffset) {
             return 1.0f;
         }
     }
-}
-
-bool EnvelopeWii::IsDone() {
-    if (mInRelease != false) {
-        if (0 < mTimer.mRunning) {
-            mTimer.Split();
-        }
-        float elapsedTimeMs = mTimer.CyclesToMs(mTimer.mCycles);
-        if (elapsedTimeMs > mReleaseDuration) {
-            return true;
-        }
-    }
-    return false;
-}
-
-void EnvelopeWii::Pause() {
-    if (0 <= mTimer.mRunning) {
-        mTimer.Pause();
-    }
-    mIsPaused = true;
-}
-
-void EnvelopeWii::Resume() {
-    if (mTimer.mRunning < 0) {
-        mTimer.Resume();
-    }
-    mIsPaused = false;
-}
-
-void EnvelopeWii::StartAttack() {
-    mInRelease = false;
-    mTimer.Restart();
-}
-
-void EnvelopeWii::StartRelease() {
-    float value = GetValueAtOffset(0.0f);
-    mReleaseStart = value;
-    mInRelease = true;
-    mTimer.Restart();
 }

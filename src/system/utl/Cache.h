@@ -40,7 +40,11 @@ struct CacheDirEntry {};
 class CacheID {
 public:
     CacheID() {}
+#ifdef VERSION_SZBE69
+    virtual ~CacheID() {}
+#else
     virtual ~CacheID() = 0;
+#endif
     virtual const char *GetCachePath(const char *) = 0;
     virtual const char *GetCacheSearchPath(const char *) = 0;
     virtual int GetDeviceID() const;

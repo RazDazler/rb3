@@ -1,4 +1,20 @@
 #include "char/CharCollide.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolCharCollide,
+    "CharCollide.cpp",
+    "0",
+    "%s can't load new %s version %d > %d",
+    "%s can't load new %s alt version %d > %d",
+    "%s: can't do vertex based deformation vert %d is greater than the mesh %s vert count %d, please recompute the deformation by re-setting the mesh property",
+    "%s(%d): %s unhandled msg: %s",
+    "PropSync_p.h",
+    "i == prop->Size() && op <= kPropInsert"
+)
+#endif
 #include "rndobj/Utl.h"
 #include "utl/Symbols.h"
 

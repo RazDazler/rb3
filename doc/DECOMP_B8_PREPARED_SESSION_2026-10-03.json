@@ -1,0 +1,4415 @@
+{
+  "started_at": 1791075377.5630536,
+  "started_utc": "2026-10-04T00:56:17Z",
+  "status": "complete",
+  "session_label": "B8 prepared-context decompilation, local model edit worker stopped",
+  "model_label": "Current Codex model/effort not independently retrieved; earlier user-reported GPT-6.1 Sol Light context",
+  "target": "SZBE69_B8",
+  "baseline": {
+    "fuzzy_match_percent": 68.93282,
+    "total_code": "11431676",
+    "matched_code": "6362516",
+    "matched_code_percent": 55.6569,
+    "total_data": "2755932",
+    "matched_data": "614640",
+    "matched_data_percent": 22.302437,
+    "total_functions": 41333,
+    "matched_functions": 28651,
+    "matched_functions_percent": 69.3175,
+    "complete_code": "1243344",
+    "complete_code_percent": 10.876306,
+    "complete_data": "498004",
+    "complete_data_percent": 18.070257,
+    "total_units": 1876,
+    "complete_units": 543
+  },
+  "baseline_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+  "expected_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+  "config_sha256": "c223e9e651bec64cee321238881cc31e410f103d371674180bdfcddda3bf1dd0",
+  "initial_usage": {
+    "primary_used_percent": 20,
+    "weekly_used_percent": 65,
+    "primary_resets_at": 1791089070,
+    "weekly_resets_at": 1791580276
+  },
+  "usage_snapshots": [
+    {
+      "observed_at": 1791076447.1480787,
+      "primary_used": 30,
+      "weekly_used": 67,
+      "primary_reset": 1791089070,
+      "weekly_reset": 1791580276
+    },
+    {
+      "observed_at": 1791078974.2957506,
+      "primary_used": 51,
+      "weekly_used": 70,
+      "primary_reset": 1791089070,
+      "weekly_reset": 1791580276
+    }
+  ],
+  "accepted_changes": [
+    {
+      "candidate": "Match ranked boolean comparison operands without changing SetMode",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791075949399639300\\manifest.json",
+      "started_at": 1791075949.4008284,
+      "elapsed_seconds": 11.58,
+      "result": {
+        "unit": "main/network/net/MatchmakingSettings",
+        "symbol": "SetRanked__15SessionSettingsFb",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791075954745590000-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791075953937866600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "SetRanked__15SessionSettingsFb",
+          "compiled_symbol": "SetRanked__15SessionSettingsFb",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          83.33333,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 48,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 48,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Preserve post-Poll field read while aligning mercury OR operands",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076155758673500\\manifest.json",
+      "started_at": 1791076155.7597644,
+      "elapsed_seconds": 12.07,
+      "result": {
+        "unit": "main/system/beatmatch/BeatMatcher",
+        "symbol": "CheckMercurySwitch__11BeatMatcherFf",
+        "started_at": 1791076159.9355884,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "bool-polled-forced",
+        "before": [
+          96.666664,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 120,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Allocate readonly audio lag temporaries without changing the addition order",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076216083844200\\manifest.json",
+      "started_at": 1791076216.084639,
+      "elapsed_seconds": 16.62,
+      "result": {
+        "unit": "main/band3/meta_band/ProfileMgr",
+        "symbol": "GetExcessAudioLag__10ProfileMgrCFv",
+        "started_at": 1791076219.884106,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "song-platform-sync",
+        "before": [
+          28.57143,
+          -5
+        ],
+        "after": [
+          42.857143,
+          -4
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 6,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct page navigation direction from original B8 enum comparisons",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076325619344800\\manifest.json",
+      "started_at": 1791076325.6201322,
+      "elapsed_seconds": 10.74,
+      "result": {
+        "unit": "main/system/ui/Utl",
+        "symbol": "PageDirection__F12JoypadAction",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076330396297600-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076329618383200-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "PageDirection__F12JoypadAction",
+          "compiled_symbol": "PageDirection__F12JoypadAction",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 36,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 36,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Recover B8-compatible existing SoundTouch AAFilter methods without an extra emitted body",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076526136933400\\manifest.json",
+      "started_at": 1791076526.1379666,
+      "elapsed_seconds": 10.03,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/AAFilter",
+        "symbol": "setCutoffFreq__Q210soundtouch8AAFilterFd",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076530925050500-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076530139720800-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "setCutoffFreq__Q210soundtouch8AAFilterFd",
+          "compiled_symbol": "setCutoffFreq__Q210soundtouch8AAFilterFd",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 136,
+          "matched_functions": 4,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 136,
+        "matched_functions": 4,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore exact B8 double PI constants in SoundTouch coefficients",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076609193667900\\manifest.json",
+      "started_at": 1791076609.1945097,
+      "elapsed_seconds": 10.71,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/AAFilter",
+        "symbol": "calculateCoeffs__Q210soundtouch8AAFilterFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076613681681700-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076612907669300-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "calculateCoeffs__Q210soundtouch8AAFilterFv",
+          "compiled_symbol": "calculateCoeffs__Q210soundtouch8AAFilterFv",
+          "match_percent": 98.3871,
+          "instruction_differences": [
+            {
+              "row": 94,
+              "original_address": "632",
+              "original": "fadd f0, f2, f0",
+              "compiled": "fadd f2, f2, f0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 97,
+              "original_address": "644",
+              "original": "fctiwz f0, f0",
+              "compiled": "fctiwz f0, f2",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          95.161285,
+          -6
+        ],
+        "after": [
+          98.3871,
+          -2
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 40
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 40,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore B8 SoundTouch FIR allocation and typed constructor call",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076660389064400\\manifest.json",
+      "started_at": 1791076660.390207,
+      "elapsed_seconds": 10.98,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/AAFilter",
+        "symbol": "__ct__Q210soundtouch8AAFilterFUi",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076665301961300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076664523987100-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "__ct__Q210soundtouch8AAFilterFUi",
+          "compiled_symbol": "__ct__Q210soundtouch8AAFilterFUi",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          77.77778,
+          -6
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 108,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 108,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore B8 AAFilter project allocator free path",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076701119906500\\manifest.json",
+      "started_at": 1791076701.1211338,
+      "elapsed_seconds": 11.41,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/AAFilter",
+        "symbol": "__dt__Q210soundtouch8AAFilterFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076705927806200-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076705151939200-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "__dt__Q210soundtouch8AAFilterFv",
+          "compiled_symbol": "__dt__Q210soundtouch8AAFilterFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          96.42857,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align SoundTouch coefficient rounding result lifetime with B8",
+      "method": "variants",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076738486777800\\manifest.json",
+      "started_at": 1791076738.487607,
+      "elapsed_seconds": 11.25,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/AAFilter",
+        "symbol": "calculateCoeffs__Q210soundtouch8AAFilterFv",
+        "started_at": 1791076742.5251808,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "double-rounded",
+        "before": [
+          98.3871,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 496,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Source-link the fully matched SoundTouch AAFilter B8 object",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076806094624200\\manifest.json",
+      "started_at": 1791076806.0960338,
+      "elapsed_seconds": 11.78,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/AAFilter",
+        "symbol": "calculateCoeffs__Q210soundtouch8AAFilterFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076810960540400-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076810177281100-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "calculateCoeffs__Q210soundtouch8AAFilterFv",
+          "compiled_symbol": "calculateCoeffs__Q210soundtouch8AAFilterFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          100.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 740,
+          "matched_data": 0
+        },
+        "source_adopted": true,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 740,
+        "complete_units": 1,
+        "matched_data": 0,
+        "complete_data": 40
+      }
+    },
+    {
+      "candidate": "Recover fully matching B8 FIR filter loops and original constructor stores",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076961883432700\\manifest.json",
+      "started_at": 1791076961.884648,
+      "elapsed_seconds": 10.72,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/FIRFilter",
+        "symbol": "__ct__Q210soundtouch9FIRFilterFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076966539167200-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076965759555500-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "__ct__Q210soundtouch9FIRFilterFv",
+          "compiled_symbol": "__ct__Q210soundtouch9FIRFilterFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 1224,
+          "matched_functions": 6,
+          "complete_code": 0,
+          "matched_data": 96
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 1224,
+        "matched_functions": 6,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 96,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Source-link all matching B8 FIR filter routines and data",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077027797454100\\manifest.json",
+      "started_at": 1791077027.7983096,
+      "elapsed_seconds": 11.41,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/FIRFilter",
+        "symbol": "setCoefficients__Q210soundtouch9FIRFilterFPCsUiUi",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077032574902300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077031791214800-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "setCoefficients__Q210soundtouch9FIRFilterFPCsUiUi",
+          "compiled_symbol": "setCoefficients__Q210soundtouch9FIRFilterFPCsUiUi",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          100.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 1224,
+          "matched_data": 0
+        },
+        "source_adopted": true,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 1224,
+        "complete_units": 1,
+        "matched_data": 0,
+        "complete_data": 96
+      }
+    },
+    {
+      "candidate": "Reconstruct missing vocal note time comparator from B8 field and branch semantics",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077344686951400\\manifest.json",
+      "started_at": 1791077344.6880572,
+      "elapsed_seconds": 10.27,
+      "result": {
+        "unit": "main/system/beatmatch/VocalNoteList",
+        "symbol": "VocalNoteCmp__FfRC9VocalNote",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077349121792800-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077348339640500-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "VocalNoteCmp__FfRC9VocalNote",
+          "compiled_symbol": "VocalNoteCmp__FfRC9VocalNote",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 20,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 20,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Recover B8 vocal leaves while preserving existing constant emission order",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077524298517600\\manifest.json",
+      "started_at": 1791077524.2993822,
+      "elapsed_seconds": 13.28,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetFirstPhraseMarker__9VocalPartCFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077529405161800-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077528616914300-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetFirstPhraseMarker__9VocalPartCFv",
+          "compiled_symbol": "GetFirstPhraseMarker__9VocalPartCFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 216,
+          "matched_functions": 9,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 216,
+        "matched_functions": 9,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore exact singer NaN handling and phrase-end pointer comparison",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077687900937500\\manifest.json",
+      "started_at": 1791077687.9020054,
+      "elapsed_seconds": 11.47,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "AddSingerCandidate__9VocalPartFP6Singerf",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077692946906700-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077692146865300-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "AddSingerCandidate__9VocalPartFP6Singerf",
+          "compiled_symbol": "AddSingerCandidate__9VocalPartFP6Singerf",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          80.0,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 76,
+          "matched_functions": 2,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 76,
+        "matched_functions": 2,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct B8 empty-phrase sustain guard and phrase-end timing",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077772798538800\\manifest.json",
+      "started_at": 1791077772.7993186,
+      "elapsed_seconds": 12.29,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "IsEmptyPhrase__9VocalPartCFRCPC11VocalPhrase",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077777742631800-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077776961205900-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "IsEmptyPhrase__9VocalPartCFRCPC11VocalPhrase",
+          "compiled_symbol": "IsEmptyPhrase__9VocalPartCFRCPC11VocalPhrase",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 144,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 144,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align vocal note end comparator field loads with original B8 order",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077835227143900\\manifest.json",
+      "started_at": 1791077835.2279367,
+      "elapsed_seconds": 11.84,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "VocalNoteEndCmp__FfRC9VocalNote",
+        "started_at": 1791077839.3322961,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "direct-fields",
+        "before": [
+          71.42857,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 28,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Match original vocal phrase-end control flow with explicit returns",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077923323776600\\manifest.json",
+      "started_at": 1791077923.3245702,
+      "elapsed_seconds": 11.38,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "AtPhraseEnd__9VocalPartCFf",
+        "started_at": 1791077927.0383227,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "explicit-return-branches",
+        "before": [
+          41.17647,
+          -10
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 68,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align vocal tambourine flag and pointer snapshot registers",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791078033240900000\\manifest.json",
+      "started_at": 1791078033.2417014,
+      "elapsed_seconds": 12.15,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "InTambourinePhrase__9VocalPartCFv",
+        "started_at": 1791078037.6123567,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "result-notes-phrase",
+        "before": [
+          40.0,
+          -9
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 60,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct local and remote vocal phrase meter fraction from B8 vtable and field evidence",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791078086474746200\\manifest.json",
+      "started_at": 1791078086.476149,
+      "elapsed_seconds": 10.39,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "FramePhraseMeterFrac__9VocalPartCFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078090986033000-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078090216350800-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "FramePhraseMeterFrac__9VocalPartCFv",
+          "compiled_symbol": "FramePhraseMeterFrac__9VocalPartCFv",
+          "match_percent": 92.10526,
+          "instruction_differences": [
+            {
+              "row": 10,
+              "original_address": "12168",
+              "original": "cntlzw r0, r3",
+              "compiled": "cmpwi r3, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 11,
+              "original_address": "12172",
+              "original": "srwi. r0, r0, 5",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 12,
+              "original_address": "12176",
+              "original": "beq 0x50",
+              "compiled": "bne 0x50",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          92.10526,
+          -3
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align local vocal meter boolean normalization with the original virtual-call result",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791078168508553600\\manifest.json",
+      "started_at": 1791078168.5095913,
+      "elapsed_seconds": 11.04,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "FramePhraseMeterFrac__9VocalPartCFv",
+        "started_at": 1791078172.5337667,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "bool-local",
+        "before": [
+          92.10526,
+          -3
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 152,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Recover vocal percentage and freestyle duration with verified shared formatting helper",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791078707971510100\\manifest.json",
+      "started_at": 1791078707.9723282,
+      "elapsed_seconds": 12.19,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetOverallPartHitPercentage__9VocalPartCFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078712533853300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078711761690500-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetOverallPartHitPercentage__9VocalPartCFv",
+          "compiled_symbol": "GetOverallPartHitPercentage__9VocalPartCFv",
+          "match_percent": 98.14815,
+          "instruction_differences": [
+            {
+              "row": 41,
+              "original_address": "12660",
+              "original": "addi r6, r6, 0x222",
+              "compiled": "addi r6, r6, 0x2ec",
+              "original_relocation": {
+                "type_name": "R_PPC_NONE",
+                "target": {
+                  "symbol": {
+                    "name": "@stringBase0",
+                    "address": "44",
+                    "size": "748",
+                    "flags": 2
+                  },
+                  "addend": "546"
+                }
+              },
+              "compiled_relocation": {
+                "type_name": "R_PPC_NONE",
+                "target": {
+                  "symbol": {
+                    "name": "@stringBase0",
+                    "address": "20",
+                    "size": "801",
+                    "flags": 2
+                  },
+                  "addend": "748"
+                }
+              }
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          98.14815,
+          -1
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 156,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 156,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore original vocal hit-percentage assertion text without changing its range test",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791078820896785900\\manifest.json",
+      "started_at": 1791078820.897795,
+      "elapsed_seconds": 11.36,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetOverallPartHitPercentage__9VocalPartCFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078825401170400-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078824604936400-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetOverallPartHitPercentage__9VocalPartCFv",
+          "compiled_symbol": "GetOverallPartHitPercentage__9VocalPartCFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          98.14815,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 216,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 216,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Recover original vocal list setter, meter ordering and consecutive tambourine tick calculation",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791078978746395500\\manifest.json",
+      "started_at": 1791078978.7472174,
+      "elapsed_seconds": 11.62,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "SetVocalNoteList__9VocalPartFP13VocalNoteList",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078983183781900-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078982384927000-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "SetVocalNoteList__9VocalPartFP13VocalNoteList",
+          "compiled_symbol": "SetVocalNoteList__9VocalPartFP13VocalNoteList",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 540,
+          "matched_functions": 3,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 540,
+        "matched_functions": 3,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct bounded vocal phrase scoring and multiplier deltas from B8 assembly",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791079220208884300\\manifest.json",
+      "started_at": 1791079220.2100356,
+      "elapsed_seconds": 12.07,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "AddPhrasePoints__9VocalPartFf",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791079224997569400-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791079224192003700-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "AddPhrasePoints__9VocalPartFf",
+          "compiled_symbol": "AddPhrasePoints__9VocalPartFf",
+          "match_percent": 81.96721,
+          "instruction_differences": [
+            {
+              "row": 7,
+              "original_address": "8028",
+              "original": "lfs f4, 0x40(r3)",
+              "compiled": "lfs f3, 0x40(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 8,
+              "original_address": "8032",
+              "original": "lfs f3, 0x34(r3)",
+              "compiled": "lfs f2, 0x34(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 9,
+              "original_address": "8036",
+              "original": "lfs f2, 0x38(r3)",
+              "compiled": "lfs f0, 0x38(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 10,
+              "original_address": "8040",
+              "original": "fadds f0, f4, f1",
+              "compiled": "fadds f1, f3, f1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 11,
+              "original_address": "8044",
+              "original": "fcmpo cr0, f3, f2",
+              "compiled": "fcmpo cr0, f2, f0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 14,
+              "original_address": "8056",
+              "original": "fmr f3, f2",
+              "compiled": "fmr f2, f0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 15,
+              "original_address": "8060",
+              "original": "fcmpo cr0, f3, f0",
+              "compiled": "fcmpo cr0, f2, f1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 18,
+              "original_address": "8072",
+              "original": "fmr f3, f0",
+              "compiled": "fmr f2, f1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 19,
+              "original_address": "8076",
+              "original": "stfs f3, 0x40(r3)",
+              "compiled": "stfs f2, 0x40(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 20,
+              "original_address": "8080",
+              "original": "frsp f0, f3",
+              "compiled": "frsp f0, f2",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 26,
+              "original_address": "8104",
+              "original": "fsubs f31, f0, f4",
+              "compiled": "fsubs f31, f0, f3",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          81.96721,
+          -11
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align vocal weighted-overlap loop with cached original pointer and float lifetimes",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791079543954063000\\manifest.json",
+      "started_at": 1791079543.9548938,
+      "elapsed_seconds": 15.04,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "CalcPhraseScoreMax__9VocalPartCFRCPC11VocalPhrase",
+        "started_at": 1791079548.2850962,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "int-0-0",
+        "before": [
+          26.923079,
+          -38
+        ],
+        "after": [
+          61.538464,
+          -20
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 8,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Test readonly vocal score-field lifetimes against the original register schedule",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791079637354846800\\manifest.json",
+      "started_at": 1791079637.3557348,
+      "elapsed_seconds": 20.19,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "AddPhrasePoints__9VocalPartFf",
+        "started_at": 1791079641.0306668,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "previous-limit-maximum-False-0",
+        "before": [
+          81.96721,
+          -11
+        ],
+        "after": [
+          85.2459,
+          -9
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 24,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Recover thirteen Wii microphone leaves independently of the unfinished draft vtable",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791080112956351200\\manifest.json",
+      "started_at": 1791080112.9574754,
+      "elapsed_seconds": 10.87,
+      "result": {
+        "unit": "main/system/synthwii/Mic_Wii",
+        "symbol": "IsRunning__6MicWiiCFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791080118099810000-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791080117307082600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "IsRunning__6MicWiiCFv",
+          "compiled_symbol": "IsRunning__6MicWiiCFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 96,
+          "matched_functions": 13,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 96,
+        "matched_functions": 13,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Recover ten B8 Quazal protocol bitmask and scalar interface methods",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791080332924108200\\manifest.json",
+      "started_at": 1791080332.9248955,
+      "elapsed_seconds": 42.09,
+      "result": {
+        "unit": "main/network/Protocol/Protocol",
+        "symbol": "SetProtocolID__Q26Quazal8ProtocolFUc",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791080337235140000-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791080336401069600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "SetProtocolID__Q26Quazal8ProtocolFUc",
+          "compiled_symbol": "SetProtocolID__Q26Quazal8ProtocolFUc",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 96,
+          "matched_functions": 10,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 96,
+        "matched_functions": 10,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "CallContext flags, connection and cancellation registration, original no-op hooks",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791080819010099000\\manifest.json",
+      "started_at": 1791080819.0111692,
+      "elapsed_seconds": 42.61,
+      "result": {
+        "unit": "main/network/Core/CallContext",
+        "symbol": "SetFlag__Q26Quazal11CallContextFUi",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791080823430329300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791080822630995500-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "SetFlag__Q26Quazal11CallContextFUi",
+          "compiled_symbol": "SetFlag__Q26Quazal11CallContextFUi",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 68,
+          "matched_functions": 6,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 68,
+        "matched_functions": 6,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "DuplicatedObject default virtual behavior and 16-bit flag clearing",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791080895156608000\\manifest.json",
+      "started_at": 1791080895.1574385,
+      "elapsed_seconds": 14.24,
+      "result": {
+        "unit": "main/network/ObjDup/DuplicatedObject",
+        "symbol": "ClearFlag__Q26Quazal16DuplicatedObjectFUs",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791080899915225300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791080899138239500-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "ClearFlag__Q26Quazal16DuplicatedObjectFUs",
+          "compiled_symbol": "ClearFlag__Q26Quazal16DuplicatedObjectFUs",
+          "match_percent": 33.333336,
+          "instruction_differences": [
+            {
+              "row": 0,
+              "original_address": null,
+              "original": null,
+              "compiled": "nor r0, r4, r4",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 1,
+              "original_address": "20160",
+              "original": "lhz r5, 0x2c(r3)",
+              "compiled": "lhz r4, 0x2c(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 2,
+              "original_address": "20164",
+              "original": "xori r0, r4, 0xffff",
+              "compiled": "clrlwi r0, r0, 16",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 3,
+              "original_address": "20168",
+              "original": "and r0, r5, r0",
+              "compiled": "and r0, r4, r0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          33.333336,
+          -4
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 48,
+          "matched_functions": 8,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 48,
+        "matched_functions": 8,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "DuplicatedObject 16-bit XOR complement preserves original instruction sequence",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791080950710076500\\manifest.json",
+      "started_at": 1791080950.7115357,
+      "elapsed_seconds": 11.5,
+      "result": {
+        "unit": "main/network/ObjDup/DuplicatedObject",
+        "symbol": "ClearFlag__Q26Quazal16DuplicatedObjectFUs",
+        "started_at": 1791080954.9260013,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "0",
+        "before": [
+          33.333336,
+          -4
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 20,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "DuplicatedObject dataset rejection and well-known recovery predicates, corrected Time declaration",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081120530131600\\manifest.json",
+      "started_at": 1791081120.5309172,
+      "elapsed_seconds": 15.34,
+      "result": {
+        "unit": "main/network/ObjDup/DuplicatedObject",
+        "symbol": "SpecificRefresh__Q26Quazal16DuplicatedObjectFPQ26Quazal7DataSetRCQ26Quazal4Time",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081125273351900-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081124500953300-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "SpecificRefresh__Q26Quazal16DuplicatedObjectFPQ26Quazal7DataSetRCQ26Quazal4Time",
+          "compiled_symbol": "SpecificRefresh__Q26Quazal16DuplicatedObjectFPQ26Quazal7DataSetRCQ26Quazal4Time",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 236,
+          "matched_functions": 4,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 236,
+        "matched_functions": 4,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Store metadata leaves with qualified existing test struct",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081173124010700\\manifest.json",
+      "started_at": 1791081173.1250265,
+      "elapsed_seconds": 30.68,
+      "result": {
+        "unit": "main/system/meta/StorePackedMetadata",
+        "symbol": "LoadingFailed__20StoreMetadataManagerCFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081177745138200-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081176965301600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "LoadingFailed__20StoreMetadataManagerCFv",
+          "compiled_symbol": "LoadingFailed__20StoreMetadataManagerCFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 56,
+          "matched_functions": 4,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 56,
+        "matched_functions": 4,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "CallContext valid state transitions, flag invariant and success/failure wrappers",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081227610131800\\manifest.json",
+      "started_at": 1791081227.610936,
+      "elapsed_seconds": 42.92,
+      "result": {
+        "unit": "main/network/Core/CallContext",
+        "symbol": "TransitionIsValid__Q26Quazal11CallContextFQ36Quazal11CallContext6_StateQ36Quazal11CallContext6_State",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081232286781500-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081231506152600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "TransitionIsValid__Q26Quazal11CallContextFQ36Quazal11CallContext6_StateQ36Quazal11CallContext6_State",
+          "compiled_symbol": "TransitionIsValid__Q26Quazal11CallContextFQ36Quazal11CallContext6_StateQ36Quazal11CallContext6_State",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 356,
+          "matched_functions": 4,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 356,
+        "matched_functions": 4,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "DuplicatedObject empty handle comparison and short-circuit forms",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081301342571000\\manifest.json",
+      "started_at": 1791081301.3434863,
+      "elapsed_seconds": 10.91,
+      "result": {
+        "unit": "main/network/ObjDup/DuplicatedObject",
+        "symbol": "IsADuplica__Q26Quazal16DuplicatedObjectCFv",
+        "started_at": 1791081304.7908392,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "handle-empty-0",
+        "before": [
+          31.25,
+          -11
+        ],
+        "after": [
+          50.0,
+          -8
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "CallContext original pointer offsets and constructor body zeroing order",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081501385711300\\manifest.json",
+      "started_at": 1791081501.3865225,
+      "elapsed_seconds": 45.23,
+      "result": {
+        "unit": "main/network/Core/CallContext",
+        "symbol": "SetDependentConnection__Q26Quazal11CallContextFPvUi",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081505664050300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081504864105400-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "SetDependentConnection__Q26Quazal11CallContextFPvUi",
+          "compiled_symbol": "SetDependentConnection__Q26Quazal11CallContextFPvUi",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          33.333336,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 212,
+          "matched_functions": 3,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 212,
+        "matched_functions": 3,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Protocol message serialization, transmitted outcomes, context IDs and loopback",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081564972980200\\manifest.json",
+      "started_at": 1791081564.9737835,
+      "elapsed_seconds": 46.2,
+      "result": {
+        "unit": "main/network/Protocol/Protocol",
+        "symbol": "ExtractCallOutcome__Q26Quazal8ProtocolFPQ26Quazal7MessagePQ26Quazal7qResult",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081569605001700-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081568831748300-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "ExtractCallOutcome__Q26Quazal8ProtocolFPQ26Quazal7MessagePQ26Quazal7qResult",
+          "compiled_symbol": "ExtractCallOutcome__Q26Quazal8ProtocolFPQ26Quazal7MessagePQ26Quazal7qResult",
+          "match_percent": 94.871796,
+          "instruction_differences": [
+            {
+              "row": 22,
+              "original_address": "552",
+              "original": "mr r3, r31",
+              "compiled": "mr r4, r3",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 23,
+              "original_address": "556",
+              "original": "addi r4, r1, 0x1c",
+              "compiled": "mr r3, r31",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          94.871796,
+          -2
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 328,
+          "matched_functions": 6,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 328,
+        "matched_functions": 6,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Protocol transmitted outcome uses named local qResult as original",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081664013714300\\manifest.json",
+      "started_at": 1791081664.0147648,
+      "elapsed_seconds": 11.84,
+      "result": {
+        "unit": "main/network/Protocol/Protocol",
+        "symbol": "ExtractCallOutcome__Q26Quazal8ProtocolFPQ26Quazal7MessagePQ26Quazal7qResult",
+        "started_at": 1791081667.796629,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "named-transmitted-result",
+        "before": [
+          94.871796,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 156,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Exact CallContext callbacks with specifically reviewed unused weak destructor",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081971875460200\\manifest.json",
+      "started_at": 1791081971.8763294,
+      "elapsed_seconds": 49.51,
+      "result": {
+        "unit": "main/network/Core/CallContext",
+        "symbol": "InvokeCallbackOnSuccess__6QuazalFPQ26Quazal11CallContextPCQ26Quazal11UserContext",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081976581650700-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081975804590000-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "InvokeCallbackOnSuccess__6QuazalFPQ26Quazal11CallContextPCQ26Quazal11UserContext",
+          "compiled_symbol": "InvokeCallbackOnSuccess__6QuazalFPQ26Quazal11CallContextPCQ26Quazal11UserContext",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 212,
+          "matched_functions": 3,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 212,
+        "matched_functions": 3,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "TrackPanel game status, scroll-speed policy and guarded crowd audio reaction",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082102037455900\\manifest.json",
+      "started_at": 1791082102.0391476,
+      "elapsed_seconds": 11.05,
+      "result": {
+        "unit": "main/band3/bandtrack/TrackPanel",
+        "symbol": "PushCrowdReaction__10TrackPanelFb",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082106875804800-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082106080516800-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "PushCrowdReaction__10TrackPanelFb",
+          "compiled_symbol": "PushCrowdReaction__10TrackPanelFb",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 144,
+          "matched_functions": 4,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 144,
+        "matched_functions": 4,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "MemcardMgr raw two-bit mode/disable flags and default messages",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082238270899300\\manifest.json",
+      "started_at": 1791082238.2717178,
+      "elapsed_seconds": 11.15,
+      "result": {
+        "unit": "main/system/meta/MemcardMgr_Wii",
+        "symbol": "IsWriteMode__10MemcardMgrCFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082243342095300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082242550824900-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "IsWriteMode__10MemcardMgrCFv",
+          "compiled_symbol": "IsWriteMode__10MemcardMgrCFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 104,
+          "matched_functions": 5,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 104,
+        "matched_functions": 5,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "WiiServer SDK IP validator and existing profile/client getters",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082310907059200\\manifest.json",
+      "started_at": 1791082310.9080906,
+      "elapsed_seconds": 10.5,
+      "result": {
+        "unit": "main/network/net/Server_Wii",
+        "symbol": "IsIpAddress__FPCc",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082315494611800-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082314718505000-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "IsIpAddress__FPCc",
+          "compiled_symbol": "IsIpAddress__FPCc",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 64,
+          "matched_functions": 3,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 64,
+        "matched_functions": 3,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Player save eligibility scheduling, original rollback no-op and clamped energy subtraction",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082500447617600\\manifest.json",
+      "started_at": 1791082500.448601,
+      "elapsed_seconds": 12.29,
+      "result": {
+        "unit": "main/band3/game/Player",
+        "symbol": "Saveable__6PlayerCFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082505035058300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082504255206500-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "Saveable__6PlayerCFv",
+          "compiled_symbol": "Saveable__6PlayerCFv",
+          "match_percent": 75.0,
+          "instruction_differences": [
+            {
+              "row": 2,
+              "original_address": "9224",
+              "original": "li r5, 0x0",
+              "compiled": "li r4, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 3,
+              "original_address": "9228",
+              "original": "li r4, 0x0",
+              "compiled": "li r5, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 14,
+              "original_address": "9272",
+              "original": "li r4, 0x1",
+              "compiled": "li r5, 0x1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 15,
+              "original_address": "9276",
+              "original": "cmpwi r4, 0x0",
+              "compiled": "cmpwi r5, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 18,
+              "original_address": "9288",
+              "original": "li r5, 0x1",
+              "compiled": "li r4, 0x1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 20,
+              "original_address": "9296",
+              "original": "mr r3, r5",
+              "compiled": "mr r3, r4",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          50.0,
+          -12
+        ],
+        "after": [
+          75.0,
+          -6
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 80,
+          "matched_functions": 2,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 80,
+        "matched_functions": 2,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Track original game-over and paused-state leafs",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082560676464000\\manifest.json",
+      "started_at": 1791082560.677271,
+      "elapsed_seconds": 12.3,
+      "result": {
+        "unit": "main/band3/bandtrack/Track",
+        "symbol": "IsGameOver__5TrackCFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082565510029300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082564716003700-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "IsGameOver__5TrackCFv",
+          "compiled_symbol": "IsGameOver__5TrackCFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 44,
+          "matched_functions": 2,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 44,
+        "matched_functions": 2,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Player save eligibility boolean declaration order",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082607706274200\\manifest.json",
+      "started_at": 1791082607.707314,
+      "elapsed_seconds": 12.7,
+      "result": {
+        "unit": "main/band3/game/Player",
+        "symbol": "Saveable__6PlayerCFv",
+        "started_at": 1791082612.2013812,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "eligibility-before-result",
+        "before": [
+          75.0,
+          -6
+        ],
+        "after": [
+          91.66667,
+          -2
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Player bonus award temporary scheduling with original postincrement semantics",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082681604093700\\manifest.json",
+      "started_at": 1791082681.604975,
+      "elapsed_seconds": 17.1,
+      "result": {
+        "unit": "main/band3/game/Player",
+        "symbol": "AddBonusPoints__6PlayerFi",
+        "started_at": 1791082685.5433292,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "bonus-copy-5",
+        "before": [
+          22.222223,
+          -7
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 6,
+      "gains": {
+        "matched_code": 36,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Player save eligibility original zero-initialization order",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082735275049600\\manifest.json",
+      "started_at": 1791082735.2761269,
+      "elapsed_seconds": 12.84,
+      "result": {
+        "unit": "main/band3/game/Player",
+        "symbol": "Saveable__6PlayerCFv",
+        "started_at": 1791082739.3734152,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "original-init-order-0",
+        "before": [
+          91.66667,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 96,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "SoundTouch stereo left interpolation temporaries preserve right-side field reload",
+      "method": "variants",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082978490291400\\manifest.json",
+      "started_at": 1791082978.491121,
+      "elapsed_seconds": 10.85,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+        "symbol": "transposeStereo__Q210soundtouch19RateTransposerFloatFPsPCsUi",
+        "started_at": 1791082981.9415662,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "left-complement",
+        "before": [
+          73.758865,
+          -37
+        ],
+        "after": [
+          75.88652,
+          -34
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 4,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "SoundTouch stereo explicit condition slope matches original reuse without field reload",
+      "method": "variants",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791083049347233900\\manifest.json",
+      "started_at": 1791083049.3483076,
+      "elapsed_seconds": 10.89,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+        "symbol": "transposeStereo__Q210soundtouch19RateTransposerFloatFPsPCsUi",
+        "started_at": 1791083053.351568,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "condition-slope-function-complement",
+        "before": [
+          75.88652,
+          -34
+        ],
+        "after": [
+          83.57143,
+          -23
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "SoundTouch mono condition slope reuse follows original stereo observation",
+      "method": "variants",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791083207037743900\\manifest.json",
+      "started_at": 1791083207.0388184,
+      "elapsed_seconds": 10.94,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+        "symbol": "transposeMono__Q210soundtouch19RateTransposerFloatFPsPCsUi",
+        "started_at": 1791083210.727683,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "condition-slope",
+        "before": [
+          82.41759,
+          -16
+        ],
+        "after": [
+          86.666664,
+          -12
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Vocal note overlap query, practice phrase count and freestyle-duration validation",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791083349253464400\\manifest.json",
+      "started_at": 1791083349.2542624,
+      "elapsed_seconds": 42.49,
+      "result": {
+        "unit": "main/system/beatmatch/VocalNoteList",
+        "symbol": "GetNumPracticePhrases__13VocalNoteListCFRCQ211stlpmtx_std69vector<11VocalPhrase,Us,Q211stlpmtx_std27StlNodeAlloc<11VocalPhrase>>",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791083353827561300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791083353045772200-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetNumPracticePhrases__13VocalNoteListCFRCQ211stlpmtx_std69vector<11VocalPhrase,Us,Q211stlpmtx_std27StlNodeAlloc<11VocalPhrase>>",
+          "compiled_symbol": "GetNumPracticePhrases__13VocalNoteListCFRCQ211stlpmtx_std69vector<11VocalPhrase,Us,Q211stlpmtx_std27StlNodeAlloc<11VocalPhrase>>",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 372,
+          "matched_functions": 3,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 372,
+        "matched_functions": 3,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "VocalPart practice phrase wrapper with original null-list behavior",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791083444617112200\\manifest.json",
+      "started_at": 1791083444.6181505,
+      "elapsed_seconds": 12.26,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "NumPracticePhrases__9VocalPartCFRCQ211stlpmtx_std69vector<11VocalPhrase,Us,Q211stlpmtx_std27StlNodeAlloc<11VocalPhrase>>",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791083449214326900-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791083448404273000-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "NumPracticePhrases__9VocalPartCFRCQ211stlpmtx_std69vector<11VocalPhrase,Us,Q211stlpmtx_std27StlNodeAlloc<11VocalPhrase>>",
+          "compiled_symbol": "NumPracticePhrases__9VocalPartCFRCQ211stlpmtx_std69vector<11VocalPhrase,Us,Q211stlpmtx_std27StlNodeAlloc<11VocalPhrase>>",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 24,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 24,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Vocal note lookup and fully reviewed shared const upper-bound helper",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791083667237864000\\manifest.json",
+      "started_at": 1791083667.2386847,
+      "elapsed_seconds": 10.65,
+      "result": {
+        "unit": "main/system/beatmatch/VocalNoteList",
+        "symbol": "NextNote__13VocalNoteListCFf",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791083671993280000-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791083671189852300-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "NextNote__13VocalNoteListCFf",
+          "compiled_symbol": "NextNote__13VocalNoteListCFf",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 172,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 172,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    }
+  ],
+  "rejected_experiments": [
+    {
+      "candidate": "Restore original RGUtl string metadata for the small fret-string function",
+      "method": "literal",
+      "classification": "metadata",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791075513866693000\\manifest.json",
+      "started_at": 1791075513.8675587,
+      "elapsed_seconds": 18.9,
+      "result": {
+        "unit": "main/system/beatmatch/RGUtl",
+        "symbol": "RGFretNumberToString__Fi",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791075518882363700-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791075518082070600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "RGFretNumberToString__Fi",
+          "compiled_symbol": "RGFretNumberToString__Fi",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          83.33333,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "other_functions_regressed: @9911",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 24,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "SessionSettings symmetric bool and Symbol inequality operand order",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791075615726840100\\manifest.json",
+      "started_at": 1791075615.7276537,
+      "elapsed_seconds": 17.52,
+      "result": {
+        "unit": "main/network/net/MatchmakingSettings",
+        "symbol": "SetRanked__15SessionSettingsFb",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791075620245055100-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791075619449967000-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "SetRanked__15SessionSettingsFb",
+          "compiled_symbol": "SetRanked__15SessionSettingsFb",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          83.33333,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "other_functions_regressed: SetMode__15SessionSettingsF6Symboli",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 48,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Preserve ordered audio lag additions using the parameter accumulator",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076187930460900\\manifest.json",
+      "started_at": 1791076187.9312613,
+      "elapsed_seconds": 14.14,
+      "result": {
+        "unit": "main/band3/meta_band/ProfileMgr",
+        "symbol": "SetExcessAudioLag__10ProfileMgrFf",
+        "started_at": 1791076192.1747425,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          33.333336,
+          -4
+        ],
+        "after": [
+          33.333336,
+          -4
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 2,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align CharCuff eccentricity temporaries with original floating-point registers",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076250719047500\\manifest.json",
+      "started_at": 1791076250.719874,
+      "elapsed_seconds": 13.23,
+      "result": {
+        "unit": "main/system/char/CharCuff",
+        "symbol": "Eccentricity__8CharCuffCFRC7Vector2",
+        "started_at": 1791076254.6891258,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          71.42857,
+          -6
+        ],
+        "after": [
+          71.42857,
+          -6
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 6,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore scrollbar clamp temporary lifetimes while preserving unordered comparisons",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076286789918300\\manifest.json",
+      "started_at": 1791076286.7907348,
+      "elapsed_seconds": 13.1,
+      "result": {
+        "unit": "main/system/bandobj/ScrollbarDisplay",
+        "symbol": "SetHeight__16ScrollbarDisplayFf",
+        "started_at": 1791076290.9823406,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          42.857143,
+          -4
+        ],
+        "after": [
+          42.857143,
+          -4
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 4,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Audit existing SoundTouch AAFilter implementation against B8 native code",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076372463436800\\manifest.json",
+      "started_at": 1791076372.464471,
+      "elapsed_seconds": 12.04,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/AAFilter",
+        "symbol": "setCutoffFreq__Q210soundtouch8AAFilterFd",
+        "accepted": false,
+        "build_verified": false,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076376761957500-006-source-trial.log",
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Compile existing SoundTouch AAFilter using available memory declarations",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076422286002400\\manifest.json",
+      "started_at": 1791076422.2867775,
+      "elapsed_seconds": 12.11,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/AAFilter",
+        "symbol": "setCutoffFreq__Q210soundtouch8AAFilterFd",
+        "accepted": false,
+        "build_verified": false,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076426637139200-006-source-trial.log",
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Compare SoundTouch AAFilter after resolving local header paths",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076475132577700\\manifest.json",
+      "started_at": 1791076475.1333802,
+      "elapsed_seconds": 18.05,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/AAFilter",
+        "symbol": "setCutoffFreq__Q210soundtouch8AAFilterFd",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076479337419800-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076478532270600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "setCutoffFreq__Q210soundtouch8AAFilterFd",
+          "compiled_symbol": "setCutoffFreq__Q210soundtouch8AAFilterFd",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "new_unpaired_helpers: getLength__Q210soundtouch8AAFilterCFv",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 136,
+          "matched_functions": 4,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Recover existing FIR filter source with original B8 error and allocator paths",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791076866211228400\\manifest.json",
+      "started_at": 1791076866.212057,
+      "elapsed_seconds": 19.55,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/FIRFilter",
+        "symbol": "__ct__Q210soundtouch9FIRFilterFv",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076870805002000-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791076870021777300-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "__ct__Q210soundtouch9FIRFilterFv",
+          "compiled_symbol": "__ct__Q210soundtouch9FIRFilterFv",
+          "match_percent": 90.0,
+          "instruction_differences": [
+            {
+              "row": 5,
+              "original_address": null,
+              "original": null,
+              "compiled": "sth r0, 0xc(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          90.0,
+          -1
+        ],
+        "reason": "new_unpaired_helpers: AddToNotifies__23@unnamed@FIRFilter_cpp@FPCcRQ211stlpmtx_std52list<6String,Q211stlpmtx_std21StlNodeAlloc<6String>>",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 1188,
+          "matched_functions": 5,
+          "complete_code": 0,
+          "matched_data": 96
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align float rate transposition slope snapshots with original mono interpolation",
+      "method": "variants",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077236326090800\\manifest.json",
+      "started_at": 1791077236.3270109,
+      "elapsed_seconds": 11.14,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+        "symbol": "transposeMono__Q210soundtouch19RateTransposerFloatFPsPCsUi",
+        "started_at": 1791077240.6276119,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          82.41759,
+          -16
+        ],
+        "after": [
+          82.41759,
+          -16
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Inline the original rate-transposer free helper without expanding its base destructor",
+      "method": "variants",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077298024193200\\manifest.json",
+      "started_at": 1791077298.0254629,
+      "elapsed_seconds": 11.48,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+        "symbol": "__dt__Q210soundtouch19RateTransposerFloatFv",
+        "started_at": 1791077302.1509051,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          95.454544,
+          -1
+        ],
+        "after": [
+          95.454544,
+          -1
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 2,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct thirteen B8 vocal phrase and singer-candidate leaf functions",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077412304430400\\manifest.json",
+      "started_at": 1791077412.3055642,
+      "elapsed_seconds": 21.44,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetFirstPhraseMarker__9VocalPartCFv",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077416984381500-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077416170435900-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetFirstPhraseMarker__9VocalPartCFv",
+          "compiled_symbol": "GetFirstPhraseMarker__9VocalPartCFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "other_functions_regressed: @D_9999b93f000000a0",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 216,
+          "matched_functions": 9,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Match vocal leaf ordering and original singer unordered-comparison behavior",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791077630621370100\\manifest.json",
+      "started_at": 1791077630.6225636,
+      "elapsed_seconds": 18.59,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "AddSingerCandidate__9VocalPartFP6Singerf",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077635403690900-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791077634613028300-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "AddSingerCandidate__9VocalPartFP6Singerf",
+          "compiled_symbol": "AddSingerCandidate__9VocalPartFP6Singerf",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          80.0,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "other_functions_regressed: VocalNoteEndCmp__FfRC9VocalNote",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 76,
+          "matched_functions": 2,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore B8 vocal pitch-sigma log input precision from the original double constant",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791078289782996700\\manifest.json",
+      "started_at": 1791078289.7837598,
+      "elapsed_seconds": 19.13,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "SetDifficultyVariables__9VocalPartFi",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078294680675500-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078293907801700-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "SetDifficultyVariables__9VocalPartFi",
+          "compiled_symbol": "SetDifficultyVariables__9VocalPartFi",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          98.89503,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "other_functions_regressed: @D_2449e23f000000a0",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct B8 vocal duration and hit percentage with original assertion strings",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791078420274702000\\manifest.json",
+      "started_at": 1791078420.2759113,
+      "elapsed_seconds": 21.8,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetOverallPartHitPercentage__9VocalPartCFv",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078425176165900-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791078424382846100-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetOverallPartHitPercentage__9VocalPartCFv",
+          "compiled_symbol": "GetOverallPartHitPercentage__9VocalPartCFv",
+          "match_percent": 98.14815,
+          "instruction_differences": [
+            {
+              "row": 41,
+              "original_address": "12660",
+              "original": "addi r6, r6, 0x222",
+              "compiled": "addi r6, r6, 0x2ec",
+              "original_relocation": {
+                "type_name": "R_PPC_NONE",
+                "target": {
+                  "symbol": {
+                    "name": "@stringBase0",
+                    "address": "44",
+                    "size": "748",
+                    "flags": 2
+                  },
+                  "addend": "546"
+                }
+              },
+              "compiled_relocation": {
+                "type_name": "R_PPC_NONE",
+                "target": {
+                  "symbol": {
+                    "name": "@stringBase0",
+                    "address": "20",
+                    "size": "801",
+                    "flags": 2
+                  },
+                  "addend": "748"
+                }
+              }
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          98.14815,
+          -1
+        ],
+        "reason": "new_unpaired_helpers: MakeString<PCc,i,PCc>__FPCcPCciPCc_PCc",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 156,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align vocal score-cap temporaries with original float allocation",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791079437174724800\\manifest.json",
+      "started_at": 1791079437.1755118,
+      "elapsed_seconds": 12.01,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "AddPhrasePoints__9VocalPartFf",
+        "started_at": 1791079441.0139673,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          81.96721,
+          -11
+        ],
+        "after": [
+          81.96721,
+          -11
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Recover fourteen original Wii microphone state, pad and parameter leaf methods",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791079966954924200\\manifest.json",
+      "started_at": 1791079966.955707,
+      "elapsed_seconds": 18.6,
+      "result": {
+        "unit": "main/system/synthwii/Mic_Wii",
+        "symbol": "IsRunning__6MicWiiCFv",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791079971798815800-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791079971000978400-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "IsRunning__6MicWiiCFv",
+          "compiled_symbol": "IsRunning__6MicWiiCFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "new_unpaired_helpers: GetDroppedSamples__6MicWiiFv, GetName__6MicWiiCFv, IsConnected__6MicWiiCFv, IsInUse__6MicWiiFv, IsMultiMicDevice__6MicWiiCFv, MarkAsInUse__6MicWiiFb, PercentTalking__6MicWiiFv, SetChangeNotify__6MicWiiFb, SetFxSend__6MicWiiFP6FxSend, __dt__3MicFv",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 104,
+          "matched_functions": 14,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Store metadata loading/error/title-index leaves with original 64-bit title layout",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791080985906741300\\manifest.json",
+      "started_at": 1791080985.9075022,
+      "elapsed_seconds": 51.36,
+      "result": {
+        "unit": "main/system/meta/StorePackedMetadata",
+        "symbol": "LoadingFailed__20StoreMetadataManagerCFv",
+        "accepted": false,
+        "build_verified": false,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791080990720171700-006-source-trial.log",
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "DuplicatedObject dataset rejection and well-known recovery predicates",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081075230212800\\manifest.json",
+      "started_at": 1791081075.2310045,
+      "elapsed_seconds": 18.4,
+      "result": {
+        "unit": "main/network/ObjDup/DuplicatedObject",
+        "symbol": "SpecificRefresh__Q26Quazal16DuplicatedObjectFPQ26Quazal7DataSetRCQ26Quazal4Time",
+        "accepted": false,
+        "build_verified": false,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081079760899800-006-source-trial.log",
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "CallContext missing 0x2c field and original constructor initialization",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081348138838300\\manifest.json",
+      "started_at": 1791081348.1399179,
+      "elapsed_seconds": 86.23,
+      "result": {
+        "unit": "main/network/Core/CallContext",
+        "symbol": "__ct__Q26Quazal11CallContextFv",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081353052228100-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081352269462500-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "__ct__Q26Quazal11CallContextFv",
+          "compiled_symbol": "__ct__Q26Quazal11CallContextFv",
+          "match_percent": 85.41667,
+          "instruction_differences": [
+            {
+              "row": 25,
+              "original_address": "324",
+              "original": "stw r31, 0x44(r30)",
+              "compiled": "stw r31, 0x2c(r30)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 27,
+              "original_address": "332",
+              "original": "stw r31, 0x40(r30)",
+              "compiled": "stw r31, 0x30(r30)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 29,
+              "original_address": "340",
+              "original": "stw r31, 0x2c(r30)",
+              "compiled": "stw r31, 0x38(r30)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 30,
+              "original_address": "344",
+              "original": "stw r31, 0x30(r30)",
+              "compiled": "stw r31, 0x44(r30)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 31,
+              "original_address": "348",
+              "original": "stw r31, 0x38(r30)",
+              "compiled": "stw r31, 0x40(r30)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": [
+            {
+              "row": 24,
+              "original_address": "320",
+              "original": "lis r4, 0x0",
+              "compiled": "lis r4, 0x0",
+              "original_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@8071",
+                    "address": "4",
+                    "size": "4",
+                    "flags": 2
+                  }
+                }
+              },
+              "compiled_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@2827",
+                    "size": "4",
+                    "flags": 2
+                  }
+                }
+              }
+            },
+            {
+              "row": 28,
+              "original_address": "336",
+              "original": "addi r4, r4, 0x0",
+              "compiled": "addi r4, r4, 0x0",
+              "original_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "@8071",
+                    "address": "4",
+                    "size": "4",
+                    "flags": 2
+                  }
+                }
+              },
+              "compiled_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "@2827",
+                    "size": "4",
+                    "flags": 2
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "before": [
+          89.58333,
+          -5
+        ],
+        "after": [
+          85.41667,
+          -7
+        ],
+        "reason": "target_did_not_improve",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 20,
+          "matched_functions": 2,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "CallContext owned success and completion callback invocation",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081737306289700\\manifest.json",
+      "started_at": 1791081737.3073347,
+      "elapsed_seconds": 88.89,
+      "result": {
+        "unit": "main/network/Core/CallContext",
+        "symbol": "InvokeCallbackOnSuccess__6QuazalFPQ26Quazal11CallContextPCQ26Quazal11UserContext",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081741712015700-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081740929842900-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "InvokeCallbackOnSuccess__6QuazalFPQ26Quazal11CallContextPCQ26Quazal11UserContext",
+          "compiled_symbol": "InvokeCallbackOnSuccess__6QuazalFPQ26Quazal11CallContextPCQ26Quazal11UserContext",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "new_unpaired_helpers: __dt__Q26Quazal12CallbackRootFv",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 212,
+          "matched_functions": 3,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "RateTransposerFloat own delete tests original allocator call",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791081850915128300\\manifest.json",
+      "started_at": 1791081850.9159267,
+      "elapsed_seconds": 19.54,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+        "symbol": "__dt__Q210soundtouch19RateTransposerFloatFv",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081855969724600-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791081855167705700-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "__dt__Q210soundtouch19RateTransposerFloatFv",
+          "compiled_symbol": "__dt__Q210soundtouch19RateTransposerFloatFv",
+          "match_percent": 95.454544,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": [
+            {
+              "row": 14,
+              "original_address": "1992",
+              "original": "bl 0x0",
+              "compiled": "bl 0x0",
+              "original_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "_MemFree__FPv",
+                    "demangled_name": "_MemFree(void*)",
+                    "flags": 1
+                  }
+                }
+              },
+              "compiled_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "__dl__Q210soundtouch19RateTransposerFloatFPv",
+                    "demangled_name": "soundtouch::RateTransposerFloat::operator delete(void*)",
+                    "address": "3248",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "before": [
+          95.454544,
+          -1
+        ],
+        "after": [
+          95.454544,
+          -1
+        ],
+        "reason": "target_did_not_improve",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Performer original inline accumulated/coda score defaults",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082354738050000\\manifest.json",
+      "started_at": 1791082354.7393625,
+      "elapsed_seconds": 78.19,
+      "result": {
+        "unit": "main/band3/bandtrack/TrackPanel",
+        "symbol": "GetAccumulatedScore__9PerformerCFv",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082358896194300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082358088845900-object-summary.json",
+        "inspection_unavailable": "Original function has no compiled counterpart",
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          0.0,
+          0
+        ],
+        "reason": "target_did_not_improve",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "RateTransposerFloat own allocator and destructor-only inline eligibility",
+      "method": "source",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791082863143112100\\manifest.json",
+      "started_at": 1791082863.1439135,
+      "elapsed_seconds": 18.79,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+        "symbol": "__dt__Q210soundtouch19RateTransposerFloatFv",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082868127698800-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791082867328559000-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "__dt__Q210soundtouch19RateTransposerFloatFv",
+          "compiled_symbol": "__dt__Q210soundtouch19RateTransposerFloatFv",
+          "match_percent": 55.555557,
+          "instruction_differences": [
+            {
+              "row": 9,
+              "original_address": null,
+              "original": null,
+              "compiled": "beq 0x40",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 10,
+              "original_address": null,
+              "original": null,
+              "compiled": "lis r5, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "__vt__Q210soundtouch14RateTransposer",
+                    "demangled_name": "soundtouch::RateTransposer::__vtable",
+                    "address": "248",
+                    "size": "56",
+                    "flags": 1
+                  }
+                }
+              }
+            },
+            {
+              "row": 11,
+              "original_address": null,
+              "original": null,
+              "compiled": "li r4, 0x1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 12,
+              "original_address": null,
+              "original": null,
+              "compiled": "addi r5, r5, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "__vt__Q210soundtouch14RateTransposer",
+                    "demangled_name": "soundtouch::RateTransposer::__vtable",
+                    "address": "248",
+                    "size": "56",
+                    "flags": 1
+                  }
+                }
+              }
+            },
+            {
+              "row": 13,
+              "original_address": null,
+              "original": null,
+              "compiled": "stw r5, 0x0(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 14,
+              "original_address": null,
+              "original": null,
+              "compiled": "lwz r3, 0x8(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 15,
+              "original_address": null,
+              "original": null,
+              "compiled": "bl 0x0",
+              "original_relocation": null,
+              "compiled_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "__dt__Q210soundtouch8AAFilterFv",
+                    "demangled_name": "soundtouch::AAFilter::~AAFilter()",
+                    "flags": 1
+                  }
+                }
+              }
+            },
+            {
+              "row": 16,
+              "original_address": null,
+              "original": null,
+              "compiled": "addi r3, r30, 0x4c",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 17,
+              "original_address": null,
+              "original": null,
+              "compiled": "li r4, -0x1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 18,
+              "original_address": null,
+              "original": null,
+              "compiled": "bl 0x0",
+              "original_relocation": null,
+              "compiled_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "__dt__Q210soundtouch16FIFOSampleBufferFv",
+                    "demangled_name": "soundtouch::FIFOSampleBuffer::~FIFOSampleBuffer()",
+                    "flags": 1
+                  }
+                }
+              }
+            },
+            {
+              "row": 19,
+              "original_address": null,
+              "original": null,
+              "compiled": "addi r3, r30, 0x30",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 20,
+              "original_address": null,
+              "original": null,
+              "compiled": "li r4, -0x1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 21,
+              "original_address": null,
+              "original": null,
+              "compiled": "bl 0x0",
+              "original_relocation": null,
+              "compiled_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "__dt__Q210soundtouch16FIFOSampleBufferFv",
+                    "demangled_name": "soundtouch::FIFOSampleBuffer::~FIFOSampleBuffer()",
+                    "flags": 1
+                  }
+                }
+              }
+            },
+            {
+              "row": 22,
+              "original_address": null,
+              "original": null,
+              "compiled": "addi r3, r30, 0x14",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 23,
+              "original_address": "1972",
+              "original": "li r4, 0x0",
+              "compiled": "li r4, -0x1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": [
+            {
+              "row": 24,
+              "original_address": "1976",
+              "original": "bl 0x0",
+              "compiled": "bl 0x0",
+              "original_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "__dt__Q210soundtouch14RateTransposerFv",
+                    "demangled_name": "soundtouch::RateTransposer::~RateTransposer()",
+                    "address": "160",
+                    "size": "140",
+                    "flags": 1
+                  }
+                }
+              },
+              "compiled_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "__dt__Q210soundtouch16FIFOSampleBufferFv",
+                    "demangled_name": "soundtouch::FIFOSampleBuffer::~FIFOSampleBuffer()",
+                    "flags": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "before": [
+          95.454544,
+          -1
+        ],
+        "after": [
+          55.555557,
+          -16
+        ],
+        "reason": "target_did_not_improve",
+        "global_regressions": [
+          "matched_code",
+          "matched_functions"
+        ],
+        "measure_gains": {
+          "matched_code": -88,
+          "matched_functions": -1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "SoundTouch stereo interpolation scalar declaration and coefficient representation",
+      "method": "variants",
+      "classification": "library",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791083144551249100\\manifest.json",
+      "started_at": 1791083144.5521245,
+      "elapsed_seconds": 12.72,
+      "result": {
+        "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+        "symbol": "transposeStereo__Q210soundtouch19RateTransposerFloatFPsPCsUi",
+        "started_at": 1791083148.9457567,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          83.57143,
+          -23
+        ],
+        "after": [
+          83.57143,
+          -23
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 6,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "VocalNoteList upper-bound lookup with inclusive predecessor sustain",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\prepared-session\\1791083515510499000\\manifest.json",
+      "started_at": 1791083515.5113416,
+      "elapsed_seconds": 19.32,
+      "result": {
+        "unit": "main/system/beatmatch/VocalNoteList",
+        "symbol": "NextNote__13VocalNoteListCFf",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791083520875364300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791083520060943400-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "NextNote__13VocalNoteListCFf",
+          "compiled_symbol": "NextNote__13VocalNoteListCFf",
+          "match_percent": 95.454544,
+          "instruction_differences": [
+            {
+              "row": 24,
+              "original_address": null,
+              "original": null,
+              "compiled": "subi r5, r3, 0x34",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 31,
+              "original_address": "8632",
+              "original": "subi r3, r3, 0x34",
+              "compiled": "mr r3, r5",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          95.454544,
+          -2
+        ],
+        "reason": "new_unpaired_helpers: __upper_bound<PC9VocalNote,f,PFfRC9VocalNote_b,l>__11stlpmtx_stdFPC9VocalNotePC9VocalNoteRCfPFfRC9VocalNote_bPl_PC9VocalNote",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    }
+  ],
+  "retained_partial_reconstructions": [
+    {
+      "unit": "main/band3/meta_band/ProfileMgr",
+      "symbol": "GetExcessAudioLag__10ProfileMgrCFv",
+      "after": [
+        42.857143,
+        -4
+      ],
+      "note": "Allocate readonly audio lag temporaries without changing the addition order"
+    },
+    {
+      "unit": "main/band3/game/VocalPart",
+      "symbol": "CalcPhraseScoreMax__9VocalPartCFRCPC11VocalPhrase",
+      "after": [
+        61.538464,
+        -20
+      ],
+      "note": "Align vocal weighted-overlap loop with cached original pointer and float lifetimes"
+    },
+    {
+      "unit": "main/band3/game/VocalPart",
+      "symbol": "AddPhrasePoints__9VocalPartFf",
+      "after": [
+        85.2459,
+        -9
+      ],
+      "note": "Test readonly vocal score-field lifetimes against the original register schedule"
+    },
+    {
+      "unit": "main/network/ObjDup/DuplicatedObject",
+      "symbol": "IsADuplica__Q26Quazal16DuplicatedObjectCFv",
+      "after": [
+        50.0,
+        -8
+      ],
+      "note": "DuplicatedObject empty handle comparison and short-circuit forms"
+    },
+    {
+      "unit": "main/network/Core/CallContext",
+      "symbol": "__ct__Q26Quazal11CallContextFv",
+      "after": [
+        95.83333,
+        -2
+      ],
+      "note": "Existing constructor missing three zero stores restored, all instructions match but two anonymous constant relocations remain. Global report counts 192 bytes as matched; strict objdiff remains95.83333."
+    },
+    {
+      "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+      "symbol": "transposeStereo__Q210soundtouch19RateTransposerFloatFPsPCsUi",
+      "after": [
+        83.57143,
+        -23
+      ],
+      "note": "SoundTouch stereo explicit condition slope matches original reuse without field reload"
+    },
+    {
+      "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+      "symbol": "transposeMono__Q210soundtouch19RateTransposerFloatFPsPCsUi",
+      "after": [
+        86.666664,
+        -12
+      ],
+      "note": "SoundTouch mono condition slope reuse follows original stereo observation"
+    }
+  ],
+  "context_preparation": {
+    "units": 403,
+    "functions": 2523,
+    "path": "build/decomp/preparation/SZBE69_B8/latest.json"
+  },
+  "notes": [
+    "No source-proposal model worker is running; use deterministic variants and manually reviewed m2c orientation.",
+    "Matched metadata bytes are classified separately from behavioral reconstruction.",
+    "Account usage is rounded/shared and is not a billable token measurement."
+  ],
+  "latest_checkpoint": {
+    "at": 1791083900.7226985,
+    "measures": {
+      "fuzzy_match_percent": 68.993546,
+      "total_code": "11431676",
+      "matched_code": "6369380",
+      "matched_code_percent": 55.716938,
+      "total_data": "2755932",
+      "matched_data": "614776",
+      "matched_data_percent": 22.307373,
+      "total_functions": 41333,
+      "matched_functions": 28774,
+      "matched_functions_percent": 69.61508,
+      "complete_code": "1245308",
+      "complete_code_percent": 10.893486,
+      "complete_data": "498140",
+      "complete_data_percent": 18.075191,
+      "total_units": 1876,
+      "complete_units": 545
+    },
+    "gains": {
+      "matched_code": 6864,
+      "matched_functions": 123,
+      "complete_code": 1964,
+      "complete_units": 2,
+      "matched_data": 136,
+      "complete_data": 136
+    },
+    "elapsed_seconds": 8523.16,
+    "account_usage": {
+      "primary": {
+        "remaining_percent": 1,
+        "consumed_percentage_points": 79,
+        "same_window": true
+      },
+      "weekly": {
+        "remaining_percent": 22,
+        "consumed_percentage_points": 13,
+        "same_window": true
+      }
+    },
+    "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+    "matched_gain_breakdown": {
+      "reviewed_game_network_behavior": {
+        "matched_code": 4900,
+        "matched_functions": 111
+      },
+      "existing_licensed_soundtouch_source": {
+        "matched_code": 1964,
+        "matched_functions": 12,
+        "linked_code": 1964,
+        "linked_units": 2
+      },
+      "metadata_only": {
+        "matched_code": 0,
+        "matched_functions": 0
+      },
+      "included_report_exact_strict_metadata_residual": {
+        "matched_code": 192,
+        "matched_functions": 1,
+        "symbol": "__ct__Q26Quazal11CallContextFv",
+        "strict_score": 95.83333
+      }
+    },
+    "breakdown_is_reviewed_checkpoint_only": true,
+    "downtime_preparation": {
+      "status": "queue_complete",
+      "elapsed_seconds": 8.1227,
+      "units_compared": 0,
+      "cache_hits": 401,
+      "launcher_timeout": true,
+      "note": "Launcher timed out after checkpoint save, but child completed successfully; recovered from saved latest.json."
+    }
+  },
+  "latest_usage": {
+    "primary_used_percent": 99,
+    "weekly_used_percent": 78,
+    "primary_resets_at": 1791089070,
+    "weekly_resets_at": 1791580276
+  },
+  "local_helper_runs": [],
+  "partial_summary": {
+    "retained_records": 7,
+    "new_semantic_reconstructions": 3,
+    "new_semantic_bytes": 516,
+    "improved_existing_semantic_functions": 3,
+    "improved_existing_instruction_exact_metadata_residuals": 1
+  },
+  "remaining_issues": [
+    "VocalPart CalcPhraseScoreMax61.538464 and AddPhrasePoints85.2459 retain original overlap/cap/multiplier behavior; register scheduling remains.",
+    "DuplicatedObject IsADuplica50 remains an empty-handle short-circuit scheduling partial.",
+    "ProfileMgr GetExcessAudioLag42.857143 improved existing addition-order-preserving code.",
+    "RateTransposer stereo83.57143 and mono86.666664 improve condition slope reuse; floating register assignment remains. Derived destructor inherited delete and RTTI layout still block source linking.",
+    "CallContext constructor instruction-exact, strict95.83333 due two constant relocations; global report counts192 bytes as matched. Missing0x2c field corrected without class-size/Time-offset change.",
+    "VocalPart difficulty log precision experiment makes the function exact but regresses anonymous data; restored. CalcNoteWeights remains a stub and may resolve original constant ordering.",
+    "MicWii draft override/vtable ownership remains incomplete. IsPlaying was not retained because it emits wrong draft overrides.",
+    "ProtocolRequestBroker and EndPoint layouts are missing; do not invent subobjects or field types to implement GetCurrentOperation or incoming connections.",
+    "Performer inline defaults did not emit into original owner in the tested form, restored.",
+    "Local-model source worker remains stopped. Finite downtime preparation writes comparison/context artifacts only, without cloud/model calls or source/config edits."
+  ],
+  "stop_reason": "critical_usage_primary_1_percent_remaining",
+  "ended_at": 1791083900.7226985,
+  "ended_utc": "2026-10-04T03:18:20.722698+00:00"
+}

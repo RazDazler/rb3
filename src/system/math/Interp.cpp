@@ -61,14 +61,13 @@ void ExpInterpolator::Reset(const DataArray *data) {
 
 // fn_802DD32C
 float ExpInterpolator::Eval(float f) {
+#ifdef VERSION_SZBE69
+    float p = std::pow(mInvRun * (f - mX0), mPower);
+    return p * mRise + mY0;
+#else
     double pow_res = pow(mInvRun * (f - mX0), mPower);
-
-    // mInvRun * (f - mX0) is an implicit cast from float to double?
-    // mPower is also implicitly casted from float to double
-
-    // float pow_f(double x, double y) => double pow(double x, double y)
-    // pow_res = pow_f(mInvRun * (f - mX0), mPower);
     return (float)pow_res * mRise + mY0;
+#endif
 }
 
 // fn_802DD37C
@@ -104,12 +103,16 @@ void InvExpInterpolator::Reset(const DataArray *data) {
 
 // fn_802DD5B8
 float InvExpInterpolator::Eval(float f) {
+#ifdef VERSION_SZBE69
+    float a = 1.0f - mInvRun * (f - mX0);
+    float p = std::pow(a, mPower);
+    return (1.0f - p) * mRise + mY0;
+#else
     float pow_res;
-
     double a = -(mInvRun * (f - mX0) - 1);
-
     pow_res = std::pow(a, (double)mPower);
     return (1.0f - pow_res) * mRise + mY0;
+#endif
 }
 
 // fn_802DD61C
@@ -124,7 +127,11 @@ ATanInterpolator::ATanInterpolator() {}
 // fn_802DD738
 void ATanInterpolator::Reset(float y0, float y1, float x0, float x1, float severity) {
     float f_f31 = -severity;
+#ifdef VERSION_SZBE69
+    float f31 = -severity;
+#else
     double f31 = -severity;
+#endif
 
     mXMapping.Reset(f_f31, severity, x0, x1);
     mX0 = x0;
@@ -132,8 +139,10 @@ void ATanInterpolator::Reset(float y0, float y1, float x0, float x1, float sever
     mY0 = y0;
     mY1 = y1;
 
+#ifndef VERSION_SZBE69
     if (!(severity > 0.001f))
         MILO_FAIL("ATanInterpolator: severity (%f) too small.", severity);
+#endif
 
     float ftan = std::atan(f31);
 

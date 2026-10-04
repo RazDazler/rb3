@@ -43,13 +43,18 @@ extern GXRenderModeObj GXEurgb60Hz480ProgSoft;
 
 void GXSetTexCopySrc(u16 x, u16 y, u16 w, u16 h);
 void GXSetTexCopyDst(u16 w, u16 h, GXTexFmt fmt, GXBool mipmap);
-void GXGetTexBufferSize(u16 w, u16 h, GXTexFmt fmt, u32, u32);
+u32 GXGetTexBufferSize(u16 w, u16 h, GXTexFmt fmt, GXBool mipmap, u8 max_lod);
 
 void GXSetCopyClamp(GXCopyClamp clamp);
 
 void GXSetCopyClear(GXColor color, u32 z);
 void GXSetCopyFilter(GXBool, u8 sample_pattern[12][2], GXBool, u8 vfilter[7]);
 
+float GXGetYScaleFactor(u16 efbHeight, u16 xfbHeight);
+u32 GXSetDispCopyYScale(float scale);
+void GXSetDispCopySrc(u16 x, u16 y, u16 width, u16 height);
+void GXSetDispCopyDst(u16 width, u16 height);
+void GXSetDispCopyGamma(u32 gamma);
 void GXCopyDisp(void*, GXBool);
 void GXCopyTex(void*, GXBool);
 

@@ -1,4 +1,39 @@
 #include "tour/TourPerformerLocal.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolTourPerformerLocal,
+    "TourPerformerLocal.cpp",
+    "pProgress",
+    "pPerformer",
+    "mMetaPerformer",
+    "",
+    "TheQuestMgr.HasQuest( i_symQuest )",
+    "pQuest",
+    "false",
+    "o_rSongsInFilter.empty()",
+    "pSecondaryFilter",
+    "tour",
+    "Fixed setlist filter found!  This should never happen!",
+    "pFilter",
+    "pSongData",
+    "i_pProgress",
+    "filter_artist_%s",
+    "Unable to find a filter that has enough songs! Num Songs = %i: ",
+    "pFixedSetlist",
+    "pProgress->AreQuestFiltersEmpty()",
+    "Quest Filter selection took %f Milliseconds\n",
+    "!pProgress->AreQuestFiltersEmpty()",
+    "Tour Sanity Check Failed!  Filter: %s is not of type %s!",
+    "filter_artist_",
+    "pTourDesc",
+    "symQuest != gNullStr",
+    "NEW TOUR CHALLENGE: %s\n",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "game/BandUserMgr.h"
 #include "meta_band/MetaPerformer.h"
 #include "meta_band/ModifierMgr.h"

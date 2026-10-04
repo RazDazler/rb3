@@ -29,6 +29,8 @@ ctx.hpp
 # Original game files
 orig/*
 !orig/SZBE69.sha1
+/debugversion/
+/debugversion2/
 
 # Used to persist certain empty folders
 # Search patterns covering folders that need to be persisted must end with an asterisk,

@@ -830,12 +830,16 @@ void VocalTrackDir::ConfigPanels() {
     }
 }
 
+#ifdef VERSION_SZBE69
+DECOMP_FORCEACTIVE(VocalTrackDir, "pitch_window_mat_config.anim", "spotlight.mat")
+#else
 DECOMP_FORCEACTIVE(
     VocalTrackDir,
     "pitch_window_mat_config.anim",
     "massive pitch range in vocal HUD: [%.0f, %.0f], probably a bug",
     "spotlight.mat"
 )
+#endif
 
 void VocalTrackDir::ApplyArrowStyle(Hmx::Object *o) {
     if (o && o->Type() == arrow_style) {
@@ -1195,6 +1199,11 @@ DataNode VocalTrackDir::OnIsolatePart(DataArray *da) {
         return DataNode(0);
     }
 }
+
+#ifdef VERSION_SZBE69
+// This retained notification literal precedes the freestyle-wave asset name.
+DECOMP_FORCEACTIVE(VocalTrackDir, "isolating invalid vocal part: %d")
+#endif
 
 void VocalTrackDir::SetIsolatedPart(int part) {
     if (unk6c4 != part) {

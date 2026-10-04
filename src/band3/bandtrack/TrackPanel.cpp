@@ -9,6 +9,8 @@
 #include "decomp.h"
 #include "game/BandUserMgr.h"
 #include "game/Game.h"
+#include "game/GamePanel.h"
+#include "beatmatch/BeatMaster.h"
 #include "game/Player.h"
 #include "meta_band/MetaPerformer.h"
 #include "meta_band/ModifierMgr.h"
@@ -34,6 +36,21 @@
 #include <cmath>
 
 TrackPanel *TheTrackPanel;
+
+bool TrackPanel::IsGameOver() const { return TheGamePanel->IsGameOver(); }
+int TrackPanel::GetGameExcitement() const { return TheGame->GetCrowdExcitement(); }
+bool TrackPanel::ShouldUpdateScrollSpeed() const { return !TheGame->InDrumTrainer(); }
+void TrackPanel::PushCrowdReaction(bool active) {
+    BeatMaster *master = TheGame->mMaster;
+    if (!master)
+        return;
+    MasterAudio *audio = master->GetAudio();
+    if (!audio)
+        return;
+    if (!TheGame->mProperties.mCrowdReacts)
+        return;
+    audio->SetCrowdFader(active ? 0.0f : -96.0f);
+}
 
 TrackPanel *GetTrackPanel() { return TheTrackPanel; }
 

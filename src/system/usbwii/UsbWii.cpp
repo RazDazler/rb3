@@ -3,7 +3,12 @@
 
 UsbWii *gsTheUsbWii;
 
-// static u32 UsbWii::sUSBOpenCloseResult = 0;
+#ifdef VERSION_SZBE69_B8
+// Original .bss: result at +4, four 0x100-byte devices at aligned +0x20.
+int UsbWii::sUSBOpenCloseResult;
+UsbDevice UsbWii::sDevices[4] __attribute__((aligned(32)));
+bool UsbWii::mDiscError;
+#endif
 
 void UsbWii::ClearDevice(int num) {
     UsbDevice *device = &sDevices[num];
@@ -145,18 +150,19 @@ int UsbWii::GetJoypadType(int num) const {
 }
 
 inline bool UsbWii::IsDeviceActive(int num) {
-    bool stateValid = false;
+    bool result = false;
     bool deviceValid = false;
-    if (num < 4 && sDevices[num].type != kUsbNone) {
+    bool stateValid = false;
+    if (u32(num) < 4 && sDevices[num].type != kUsbNone) {
         deviceValid = true;
     }
-    if (deviceValid && sDevices[num].state >= 2) {
+    if (deviceValid && int(sDevices[num].state) > 2) {
         stateValid = true;
     }
-    if (stateValid && (sDevices[num].flags & kUsbFlagActive) == 0) {
-        return false;
+    if (stateValid && (sDevices[num].flags & kUsbFlagActive) != 0) {
+        result = true;
     }
-    return true;
+    return result;
 }
 
 bool UsbWii::IsActive(int num) const { return IsDeviceActive(num); }
@@ -192,7 +198,7 @@ void UsbWii::SetLED(int num, int led) {
 }
 
 void UsbWii::SetInactive(int num) {
-    if (num >= 4)
+    if (u32(num) >= 4)
         return;
     sDevices[num].flags = (sDevices[num].flags & ~kUsbFlagActive) | kUsbFlagInactive;
 }

@@ -7,6 +7,7 @@
 #include "game/BandUser.h"
 #include "game/Defines.h"
 #include "game/Game.h"
+#include "game/GamePanel.h"
 #include "game/GameMode.h"
 #include "game/Player.h"
 #include "meta_band/AppLabel.h"
@@ -23,6 +24,9 @@ Track::Track(BandUser *user)
     : mTrackConfig(user), mLastRating(-1.0f), mLastRatingState(kCrowdMeterInvalidState),
       unk50(0), mLastStreakCount(-1), mSlotIdx(-1), mIntroPlaying(0),
       mIntroEndMs(-3.4028235E+38f) {}
+
+bool Track::IsGameOver() const { return TheGamePanel->IsGameOver(); }
+bool Track::IsGamePaused() const { return TheGame->IsPaused(); }
 
 void Track::Poll(float f) {
     Player *player = mTrackConfig.GetBandUser()->GetPlayer();

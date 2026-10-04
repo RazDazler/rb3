@@ -3,6 +3,7 @@
 #include "obj/ObjMacros.h"
 #include "rndobj/Movie.h"
 #include "rndobj/SIVideo.h"
+class File;
 class WiiMovie : public RndMovie {
     WiiMovie();
     virtual ~WiiMovie();
@@ -19,7 +20,9 @@ class WiiMovie : public RndMovie {
     void StreamRestart(int);
 
     SIVideo mVideoData; // 0x2c
-    u32 unk_0x40, unk_0x44, unk_0x48, unk_0x4c, unk_0x50;
+    u32 unk_0x40, unk_0x44;
+    File *unk_0x48; // B8 asynchronous stream file
+    u32 unk_0x4c, unk_0x50;
 
     void *unk_0x54;
 };

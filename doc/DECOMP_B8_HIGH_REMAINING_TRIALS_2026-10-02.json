@@ -1,0 +1,69 @@
+{
+  "status": "rejected_and_rolled_back",
+  "warning": "Review against current source before retrying; do not bypass data regression or executable checksum gates.",
+  "trials": [
+    {
+      "name": "high-wiirnd-begindrawing.json",
+      "manifest": {
+        "unit": "main/system/rndwii/Rnd",
+        "symbol": "BeginDrawing__6WiiRndFb",
+        "files": [
+          {
+            "path": "src/system/rndwii/Rnd.h",
+            "replacements": [
+              {
+                "old": "    void GXReInit(bool);",
+                "new": "    void SyncDestroy();\n    virtual void BeginDrawing();\n    void BeginDrawing(bool);\n    virtual void EndDrawing();\n    void GXReInit(bool);"
+              }
+            ]
+          },
+          {
+            "path": "src/system/rndwii/Rnd.cpp",
+            "replacements": [
+              {
+                "old": "void DiagnoseHang() {",
+                "new": "bool gPreInitComplete;\nbool gInitComplete;\nbool gFinishFrame;\nvoid FrameQueueSync(int);\nvoid WiiRnd::BeginDrawing(bool fullFrame) {\n    if (fullFrame) {\n        if (!gPreInitComplete) return;\n        if (!gInitComplete) {\n            GXSetZMode(true, GX_LEQUAL, true);\n            GXSetColorUpdate(true);\n            GXSetAlphaUpdate(true);\n            uint clearColor = MakeU32Color(mClearColor);\n            GXSetCopyClear(*(GXColor *)&clearColor, 0xFFFFFF);\n            if (unk_0x1B0) {\n                VISetBlack(false);\n                VIFlush();\n                unk_0x1B0 = false;\n            }\n            if (mSync) {\n                if (!gFinishFrame) VIWaitForRetrace();\n                gFinishFrame = false;\n            }\n        } else {\n            {\n                static Timer *_t = AutoTimer::GetTimer(\"cpu\");\n                if (_t) _t->Stop();\n            }\n            if (unk_0x1B0) {\n                VISetBlack(false);\n                VIFlush();\n                unk_0x1B0 = false;\n            }\n            FrameQueueSync(mFramesBuffered);\n            SyncDestroy();\n            Rnd::BeginDrawing();\n            {\n                static Timer *_t = AutoTimer::GetTimer(\"cpu\");\n                if (_t) _t->Start();\n            }\n            WiiMat::sCurrent = 0;\n            ClearSwapTables();\n            mWorldEnded = true;\n        }\n    } else {\n        BeginDrawing();\n    }\n}\nvoid WiiRnd::HomeMenuClose(bool) {\n    GXReInit(true);\n    SetOverscan(unk_0x2B2);\n    SetGPHangDetectEnabled(true, __FUNCTION__);\n    BeginDrawing(true);\n    EndDrawing();\n    BeginDrawing(true);\n    EndDrawing();\n    BeginDrawing(true);\n    EndDrawing();\n}\n\nvoid DiagnoseHang() {"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "high-wiirnd-begindrawing-light.json",
+      "manifest": {
+        "unit": "main/system/rndwii/Rnd",
+        "symbol": "BeginDrawing__6WiiRndFb",
+        "files": [
+          {
+            "path": "src/system/rndwii/Rnd.h",
+            "replacements": [
+              {
+                "old": "    void GXReInit(bool);",
+                "new": "    void SyncDestroy();\n    virtual void BeginDrawing();\n    void BeginDrawing(bool);\n    virtual void EndDrawing();\n    void GXReInit(bool);"
+              }
+            ]
+          },
+          {
+            "path": "src/system/rndwii/Rnd.cpp",
+            "replacements": [
+              {
+                "old": "void DiagnoseHang() {",
+                "new": "bool gPreInitComplete;\nbool gInitComplete;\nbool gFinishFrame;\nvoid FrameQueueSync(int);\nvoid WiiRnd::BeginDrawing(bool fullFrame) {\n    if (fullFrame) {\n        if (!gPreInitComplete) return;\n        if (!gInitComplete) {\n            GXSetZMode(true, GX_LEQUAL, true);\n            GXSetColorUpdate(true);\n            GXSetAlphaUpdate(true);\n            uint clearColor = MakeU32Color(mClearColor);\n            GXSetCopyClear(*(GXColor *)&clearColor, 0xFFFFFF);\n            if (unk_0x1B0) {\n                VISetBlack(false);\n                VIFlush();\n                unk_0x1B0 = false;\n            }\n            if (mSync) {\n                if (!gFinishFrame) VIWaitForRetrace();\n                gFinishFrame = false;\n            }\n        } else {\n            {\n                static Timer *_t = AutoTimer::GetTimer(\"cpu\");\n                if (_t) _t->Stop();\n            }\n            if (unk_0x1B0) {\n                VISetBlack(false);\n                VIFlush();\n                unk_0x1B0 = false;\n            }\n            FrameQueueSync(mFramesBuffered);\n            SyncDestroy();\n            Rnd::BeginDrawing();\n            {\n                static Timer *_t = AutoTimer::GetTimer(\"cpu\");\n                if (_t) _t->Start();\n            }\n            WiiMat::sCurrent = 0;\n            ClearSwapTables();\n            mWorldEnded = true;\n        }\n    } else {\n        BeginDrawing();\n    }\n}\nvoid WiiRnd::HomeMenuClose(bool) {\n    GXReInit(true);\n    SetOverscan(unk_0x2B2);\n    SetGPHangDetectEnabled(true, __FUNCTION__);\n    BeginDrawing(true);\n    EndDrawing();\n    BeginDrawing(true);\n    EndDrawing();\n    BeginDrawing(true);\n    EndDrawing();\n}\n\nvoid DiagnoseHang() {"
+              }
+            ]
+          },
+          {
+            "path": "src/system/rndwii/Lit.h",
+            "replacements": [
+              {
+                "old": "    virtual ~WiiLight() {}",
+                "new": "    virtual ~WiiLight() {}\n#ifdef VERSION_SZBE69_B8\n    virtual Symbol ClassName() const { return StaticClassName(); }\n    static Symbol StaticClassName() {\n        static Symbol name(\"Light\");\n        return name;\n    }\n#endif"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 #include "os/Debug.h"
 #include "utl/Symbols3.h"
 
-bool IsWaitingNetUIState(NetUIState state) { return state >= 3 && state <= 8; }
+bool IsWaitingNetUIState(NetUIState state) { return u32(state) - 3 <= 5; }
 
 BandMachine::BandMachine()
     : mNetUIState(kNetUI_None), mNetUIStateParam(0), mPrimaryBandName(""),

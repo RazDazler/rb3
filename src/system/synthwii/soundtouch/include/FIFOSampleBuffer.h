@@ -47,6 +47,9 @@
 #define FIFOSampleBuffer_H
 
 #include "FIFOSamplePipe.h"
+#ifdef VERSION_SZBE69_B8
+#include "utl/MemMgr.h"
+#endif
 
 namespace soundtouch
 {
@@ -99,6 +102,9 @@ public:
 
     /// destructor
     ~FIFOSampleBuffer();
+#ifdef VERSION_SZBE69_B8
+    void operator delete(void *p) { _MemFree(p); }
+#endif
 
     /// Returns a pointer to the beginning of the output samples. 
     /// This function is provided for accessing the output samples directly. 

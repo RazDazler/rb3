@@ -65,8 +65,14 @@ public:
     virtual void Terminate();
     virtual void SetClearColor(const Hmx::Color &c) { mClearColor = c; }
     virtual void ForceColorClear() {}
+    // These two virtual slots exist only in the debug Wii renderer.
+#ifdef VERSION_SZBE69
+    void ScreenDump(const char *);
+    void ScreenDumpUnique(const char *);
+#else
     virtual void ScreenDump(const char *);
     virtual void ScreenDumpUnique(const char *);
+#endif
     virtual void
     DrawRect(const Hmx::Rect &, const Hmx::Color &, RndMat *, const Hmx::Color *, const Hmx::Color *) {
     }
@@ -77,7 +83,11 @@ public:
     virtual void MakeDrawTarget() {}
     virtual void SetSync(int i) { mSync = i; }
     virtual int GetFrameID() const;
+#ifdef VERSION_SZBE69_B8
+    virtual RndTex *GetCurrentFrameTex(bool) { return 0; }
+#else
     virtual int GetCurrentFrameTex(bool) { return 0; } // fix return type
+#endif
     virtual void ReleaseOwnership() {}
     virtual void AcquireOwnership() {}
     virtual void SetShadowMap(RndTex *, RndCam *, const Hmx::Color *) {}

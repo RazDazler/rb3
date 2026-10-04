@@ -35,7 +35,7 @@ WiiFriend::~WiiFriend() {
 }
 
 WiiFriendProfile *WiiFriend::GetProfileByIdx(int idx) const {
-    if (idx >= 0 && idx < (int)unk18.size())
+    if (idx >= 0 && idx < NumProfiles())
         return unk18[idx];
     else
         return nullptr;

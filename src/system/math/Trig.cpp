@@ -5,6 +5,19 @@
 
 float gBigSinTable[0x200];
 
+#ifdef VERSION_SZBE69
+void TrigTableInit() {
+    int i;
+    for (i = 0; i < 256; i++) {
+        gBigSinTable[i * 2] = sinf(0.024543693f * i);
+        if (i != 0) {
+            gBigSinTable[i * 2 - 1] = gBigSinTable[i * 2] - gBigSinTable[i * 2 - 2];
+        }
+    }
+    int tmp = (i - 1) * 2;
+    *(gBigSinTable + tmp + 1) = sinf(0.024543693f * i) - *(gBigSinTable + tmp);
+}
+#else
 void TrigTableInit() {
     float *temp_r30 = gBigSinTable;
     int i;
@@ -17,11 +30,12 @@ void TrigTableInit() {
     int tmp = (i - 1) * 2;
     *(gBigSinTable + tmp + 1) = std::sin(0.024543693f * i) - *(gBigSinTable + tmp);
 }
+#endif
 
 void TrigTableTerminate() {}
 
 inline float Lookup(float arg8) {
-    float x = arg8 * 40.743664f;
+    float x = arg8;
     int temp_r5 = (int)x;
     int idx = (temp_r5 & 0xFF) * 2;
     float *offset = &gBigSinTable[idx];
@@ -31,9 +45,9 @@ inline float Lookup(float arg8) {
 
 float Sine(float arg8) {
     if (arg8 < 0.0f) {
-        return -Lookup(-arg8);
+        return -Lookup(-arg8 * 40.743664f);
     } else
-        return Lookup(arg8);
+        return Lookup(arg8 * 40.743664f);
 }
 
 float FastSin(float f) {

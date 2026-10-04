@@ -7,7 +7,11 @@ float DbToRatio(float db) {
     if (db <= -96.0f)
         ratio = 0.0f;
     else
+#ifdef VERSION_SZBE69
+        ratio = powf(10.0f, db / 20.0f);
+#else
         ratio = std::pow(10.0f, db / 20.0f);
+#endif
     return ratio;
 }
 

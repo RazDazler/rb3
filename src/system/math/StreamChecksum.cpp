@@ -3,6 +3,7 @@
 #include "os/Debug.h"
 #include "os/PlatformMgr.h"
 #include <string.h>
+#include "decomp.h"
 
 void StreamChecksum::Begin() {
     if (mState == 1)
@@ -62,7 +63,9 @@ bool StreamChecksumValidator::Validate() {
 }
 
 void StreamChecksumValidator::HandleError(const char *c) {
+#ifdef MILO_DEBUG
     TheDebug << MakeString(c);
+#endif
     ThePlatformMgr.SetDiskError(kFailedChecksum);
 }
 
@@ -85,3 +88,7 @@ bool StreamChecksumValidator::ValidateChecksum(const unsigned char *hash) {
         HandleError(MakeString("Checksum failure for file %s\n", mFile));
     return b2;
 }
+
+#ifdef VERSION_SZBE69
+DECOMP_FORCEFUNC(StreamChecksum, Hmx::Matrix3, operator[](0))
+#endif

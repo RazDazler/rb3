@@ -1,6 +1,34 @@
 #include "CacheMgr_Wii.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolCacheMgr_Wii,
+    "A",
+    "Can't delete system file.",
+    "Not enough NAND available for VF.",
+    "Can't create sytem file.",
+    "Can't mount nand drive.",
+    "Can't format nand drive",
+    "Can't unmount nand drive.",
+    "Unknown OpType encountered in CacheMgr::Poll()\n",
+    "SearchAsync BAD PARAM: ppCacheID = 0x%X",
+    ", *ppCacheID = 0x%X",
+    "\n",
+    "SearchAsync BAD PARAM: mStrCacheName is empty\n",
+    "CacheMgr_Wii.cpp",
+    "false",
+    "IsDone()",
+    "/",
+    "cache_mgr_mount_result",
+    "cache_mgr_unmount_result"
+)
+#endif
 #include "Cache_Wii.h"
 #include "VF.h"
+#include "os/Debug.h"
+#include "utl/MakeString.h"
 
 const char *unusedStrings[] = {
     "A",
@@ -89,7 +117,10 @@ param_6; return true;
 bool CacheMgrWii::MountAsync(CacheID*, Cache*, Hmx::Object*) {}
 */
 bool CacheMgrWii::UnmountAsync(Cache **, Hmx::Object *) {}
-bool CacheMgrWii::DeleteAsync(CacheID *) {}
+bool CacheMgrWii::DeleteAsync(CacheID *) {
+    TheDebug.Fail(MakeString(kAssertStr, "CacheMgr_Wii.cpp", 0x128, "false"));
+    return false;
+}
 void CacheMgrWii::PollSearch() {}
 void CacheMgrWii::EndSearch(CacheResult) {}
 

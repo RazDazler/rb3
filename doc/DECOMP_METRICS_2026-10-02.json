@@ -1,0 +1,28 @@
+{
+  "checkpoint": "2026-10-02 08:21 UTC",
+  "baseline": {
+    "matched_code": 2085256,
+    "matched_functions": 19003,
+    "complete_code": 90700,
+    "complete_units": 61
+  },
+  "current": {
+    "fuzzy_match_percent": 40.9296,
+    "total_code": "8253332",
+    "matched_code": "2094468",
+    "matched_code_percent": 25.377241,
+    "total_data": "2451724",
+    "matched_data": "12396",
+    "matched_data_percent": 0.5056034,
+    "total_functions": 59456,
+    "matched_functions": 19099,
+    "matched_functions_percent": 32.122913,
+    "complete_code": "98120",
+    "complete_code_percent": 1.1888531,
+    "complete_data": "10552",
+    "complete_data_percent": 0.43039104,
+    "total_units": 2006,
+    "complete_units": 81
+  },
+  "dol_sha1": "189b001188a2f8ab769e72364440022407fe09d2"
+}

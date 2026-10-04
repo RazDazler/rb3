@@ -28,6 +28,10 @@ void GXSetFieldMask(GXBool enableEven, GXBool enableOdd);
 void GXSetFieldMode(GXBool texLOD, GXBool adjustAR);
 
 
+#ifdef VERSION_SZBE69_B8
+void GXPeekZ(u16 x, u16 y, u32 *depth);
+#endif
+
 #ifdef __cplusplus
 }
 #endif

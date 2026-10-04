@@ -20,21 +20,39 @@ void StandIn::SetGuid(HxGuid guid) {
 }
 
 bool StandIn::IsNone() const {
-    if (mGuid.IsNull() && mName.Null())
+    if (mGuid.IsNull() &&
+#ifdef VERSION_SZBE69
+        (mName == (const char *)0)
+#else
+        mName.Null()
+#endif
+    )
         return true;
     else
         return false;
 }
 
 bool StandIn::IsPrefabCharacter() const {
-    if (mGuid.IsNull() && !mName.Null())
+    if (mGuid.IsNull() &&
+#ifdef VERSION_SZBE69
+        (mName != (const char *)0)
+#else
+        !mName.Null()
+#endif
+    )
         return true;
     else
         return false;
 }
 
 bool StandIn::IsCustomCharacter() const {
-    if (!mGuid.IsNull() && mName.Null())
+    if (!mGuid.IsNull() &&
+#ifdef VERSION_SZBE69
+        (mName == (const char *)0)
+#else
+        mName.Null()
+#endif
+    )
         return true;
     else
         return false;
@@ -42,9 +60,11 @@ bool StandIn::IsCustomCharacter() const {
 
 int StandIn::SaveSize(int) {
     int size = HxGuid::SaveSize() + 0x32;
+#ifdef MILO_DEBUG
     if (FixedSizeSaveable::sPrintoutsEnabled) {
         MILO_LOG("* %s = %i\n", "StandIn", size);
     }
+#endif
     return size;
 }
 

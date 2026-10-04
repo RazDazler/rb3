@@ -18,6 +18,9 @@ void GXPixModeSync(void);
 
 GXDrawDoneCallback GXSetDrawDoneCallback(GXDrawDoneCallback);
 void GXSetDrawDone();
+void GXSetDrawSync(u16 token);
+typedef void (*GXDrawSyncCallback)(u16 token);
+GXDrawSyncCallback GXSetDrawSyncCallback(GXDrawSyncCallback callback);
 
 #ifdef __cplusplus
 }

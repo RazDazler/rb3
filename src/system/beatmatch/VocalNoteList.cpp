@@ -2,6 +2,9 @@
 #include "beatmatch/SongData.h"
 #include "os/System.h"
 #include "utl/MemMgr.h"
+#include <algorithm>
+
+bool VocalNoteCmp(float ms, const VocalNote &note) { return ms < note.GetMs(); }
 
 inline const char *VocalNoteList::PrintTick(int tick) const {
     return TickFormat(tick, *mSongData->GetMeasureMap());
@@ -209,4 +212,49 @@ void VocalNoteList::AddTambourineGem(int gem) { mTambourineGems.push_back(gem); 
 void VocalNoteList::SetFreestyleSections(const std::vector<std::pair<float, float> > &sects
 ) {
     mFreestyleSections = sects;
+}
+
+int VocalNoteList::HasNoteInRange(int start, int end) const {
+    const VocalNote *limit = mNotes.end();
+    for (const VocalNote *note = mNotes.begin(); note != limit; ++note) {
+        if (!note->mUnpitchedNote && note->mTick <= end
+            && note->mTick + note->mDurationTicks >= start)
+            return note->mTick;
+    }
+    return -1;
+}
+#pragma push
+#pragma inline_depth 0
+int VocalNoteList::GetNumPracticePhrases(const std::vector<VocalPhrase> &phrases) const {
+    int count = 0;
+    for (const VocalPhrase *phrase = phrases.begin(); phrase != phrases.end(); ++phrase) {
+        if (HasNoteInRange(phrase->unk8, phrase->unk8 + phrase->unkc) != -1)
+            ++count;
+    }
+    return count;
+}
+#pragma pop
+bool VocalNoteList::IsIllegalFreestyleSection(
+    DataArray *minimums, const std::pair<float, float> &section
+) {
+    float duration = section.second - section.first;
+    for (int i = 0; i < minimums->Size(); ++i) {
+        if (duration >= minimums->Float(i))
+            return false;
+    }
+    return true;
+}
+
+VocalNote *VocalNoteList::NextNote(float ms) const {
+    if (mNotes.empty())
+        return 0;
+    const VocalNote *next =
+        std::upper_bound(mNotes.begin(), mNotes.end(), ms, VocalNoteCmp);
+    if (next == mNotes.begin())
+        return const_cast<VocalNote *>(next);
+    if (ms <= (next - 1)->mMs + (next - 1)->mDurationMs)
+        return const_cast<VocalNote *>(next - 1);
+    if (next == mNotes.end())
+        return 0;
+    return const_cast<VocalNote *>(next);
 }

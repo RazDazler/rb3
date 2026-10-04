@@ -1,4 +1,60 @@
 #include "bandtrack/GemManager.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolGemManager,
+    "track_graphics",
+    "gem_tail",
+    "key_glow_threshold_ticks",
+    "rg_run_space_ticks",
+    "set_key_glow",
+    "chord_shape_outline",
+    "GemManager.cpp",
+    "bandUser",
+    "currentArpeggio->mShape",
+    "mExpiredArpeggios.front()->mShape",
+    "songData",
+    "otherSlot >= 0",
+    "inTrill == false",
+    "Trill at %0.1f ms. doesn't have alternating slots. Check for earlier notifies!",
+    "arrhythmicEndTick > gem.GetTick()",
+    "Trill ending at %0.1f ms. doesn't have a second note to trill to.",
+    "trillString == gem.GetLowestString()",
+    "fStartTimeMs >= 0.0f",
+    "fEndTimeMs > fStartTimeMs",
+    "arrhythmicEndTick > -1",
+    "No track dir in setup gems, so chord meshes can't be built",
+    "!mArpeggioPhrases.empty()",
+    "phrase.mEndTick == lastArpeggioEndTick",
+    "Ignoring invalid arpeggio phrase at %s; must begin with a chord",
+    "repeatedChordStartTick != -1",
+    "repeatedChordEndTick != -1",
+    "gemStatus",
+    "gemStatus->GetSize() == mGems.size()",
+    "chord_label.wid",
+    "set_lefty",
+    "drum",
+    "drum_lefty",
+    "gem",
+    "gems",
+    "smasher.trans",
+    "key_shift_tails.grp",
+    "tails.grp",
+    "miss",
+    "bracket_left_miss",
+    "bracket_left",
+    "bracket_span_miss",
+    "bracket_span",
+    "bracket_right_miss",
+    "bracket_right",
+    "gem_id < mGems.size()",
+    "slot >= 0 && slot < GetMaxSlots()",
+    "phrase_id >= -1",
+    "vector"
+)
+#endif
 #include "bandobj/ArpeggioShape.h"
 #include "bandtrack/NowBar.h"
 #include "bandtrack/Track.h"

@@ -25,6 +25,10 @@ public:
     virtual int Size() = 0;
     virtual int UncompressedSize() = 0;
     virtual bool ReadDone(int &) = 0;
+    bool WriteDone() {
+        int bytes;
+        return WriteDone(bytes);
+    }
     virtual bool WriteDone(int &i) {
         i = 0;
         return true;
@@ -90,7 +94,7 @@ int FileOpen(const char *iFilename, int iMode);
 int FileClose(int iFd);
 int FileDelete(const char *);
 int FileWrite(int iFd, void *iBuff, unsigned int iLen);
-int FileMkDir();
+int FileMkDir(const char *);
 
 void FileDiscSpinUp();
 void FileNormalizePath(const char *);

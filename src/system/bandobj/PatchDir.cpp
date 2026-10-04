@@ -1,4 +1,63 @@
 #include "bandobj/PatchDir.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolPatchDir,
+    "PatchDir.cpp",
+    "!mLoader",
+    "mLoader",
+    "!mTex",
+    "mat",
+    "art_maker",
+    "stickers",
+    "patch_layer",
+    "sResource",
+    "patch.mat",
+    "root.tnm",
+    "warp.grp",
+    "sticker.pal",
+    "sticker",
+    "%s(%d): %s unhandled msg: %s",
+    "* %s = %i\n",
+    "PatchDir",
+    "tex->Width() > 0 && tex->Height() > 0",
+    "false",
+    "stickerCategoryIndex < (1 << kStickerCategoryBits_2)",
+    "mStickerIdx < (1 << kStickerIdxBits_4)",
+    "mColorIdx < (1 << kColorIdxBits)",
+    "r >= -360.0f",
+    "r <= 360.0f",
+    "scaleX >= -5.0f",
+    "scaleX <= 5.0f",
+    "scaleY >= -5.0f",
+    "scaleY <= 5.0f",
+    "df >= 0.0f",
+    "df <= 50.0f",
+    "PatchDir::GetCurrentRev() == 0",
+    "%s can't load new %s version %d > %d",
+    "%s can't load new %s alt version %d > %d",
+    "size < kPatchBufSize",
+    "destIndex < numLayers",
+    "!mLayers[destIndex].HasSticker()",
+    "a->Size() == 10",
+    "it != mStickerMap.end()",
+    "!mStickerMap.empty()",
+    "ix >= 0 && ix < stickers->size()",
+    "mStickerMap.empty()",
+    "mStickerMap.find(category) == mStickerMap.end()",
+    "size_x",
+    "size_y",
+    "palette_index",
+    "allow_color",
+    "tex_path",
+    "!stickers.empty()",
+    "sticker->GetLoader()",
+    "it != mStickersLoading.end()",
+    "l.mStickerIdx < numStickers"
+)
+#endif
 #include "rndobj/Mat.h"
 #include "rndwii/Rnd.h"
 #include "ui/UI.h"

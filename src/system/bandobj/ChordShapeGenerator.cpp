@@ -1,4 +1,58 @@
 #include "bandobj/ChordShapeGenerator.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolChordShapeGenerator,
+    "ChordShapeGenerator.cpp",
+    "0",
+    "%s can't load new %s version %d > %d",
+    "%s can't load new %s alt version %d > %d",
+    "mFretHeights.size() <= (kMaxFretHeights + 1)",
+    "mGradeDistances.size() <= kMaxFretHeights",
+    "string index %d out of range",
+    "%s is missing",
+    "source chord mesh",
+    "source finger mesh",
+    "base cross section transform",
+    "contour cross section transform",
+    "base height transform",
+    "smasher 0",
+    "smasher 1",
+    "smasher 2",
+    "smasher 3",
+    "smasher 4",
+    "smasher 5",
+    "Chord Shape Generator: built %d shapes in %.2f mS\n",
+    "Could not create chord shape because some references are missing",
+    "connectingVerts.empty()",
+    "mSource",
+    "connectingVerts.size() == expectedVerts",
+    "orient == left",
+    "RG: too few verts for chord shape - increasing to %d",
+    "RG: too few faces for chord shape - increasing to %d",
+    "capMap.find(f.v1) != capMap.end() && capMap.find(f.v2) != capMap.end() && capMap.find(f.v3) != capMap.end()",
+    "connectingVerts.size()",
+    "bool(fretA) == bool(fretB)",
+    "rA != rB",
+    "(abs(rA) < PI) && (abs(rB) < PI)",
+    "leftMap.size() == numVerts && rightMap.size() == numVerts",
+    "leftMap.find(a) != leftMap.end() && leftMap.find(b) != leftMap.end()",
+    "rightMap.find(a) != rightMap.end() && rightMap.find(b) != rightMap.end()",
+    "mesh && Dir()",
+    "chord_L",
+    "chord",
+    "%s_%d",
+    "%s.mesh",
+    "%s(%d)",
+    "milo",
+    "update_objects",
+    "%s(%d): %s unhandled msg: %s",
+    "PropSync_p.h",
+    "i == prop->Size() && op <= kPropInsert"
+)
+#endif
 #include "beatmatch/RGUtl.h"
 #include "utl/Symbols.h"
 

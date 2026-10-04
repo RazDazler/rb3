@@ -7,9 +7,10 @@
 #include <types.h>
 
 namespace Quazal {
-    class LogEntry : public Quazal::String {
+    class LogEntry {
     public:
-        LogEntry(const char *s) : String(s) {}
+        LogEntry(const char *s) : m_oText(s) {}
+        Quazal::String m_oText;
     };
 
     class LogDevice : public RootObject {

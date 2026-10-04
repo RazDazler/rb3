@@ -1,10 +1,112 @@
 #include "meta/StorePackedMetadata.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolStorePackedMetadata,
+    "Store: file %s is missing\n",
+    "Store: file %s is over budget (%d > %d)\n",
+    "Store: Failed to allocated %d byte buffer for store file %s.\n",
+    "Store: Failed to allocated %d byte buffer for decompressing store file %s.\n",
+    "sizeof(StoreVersionHeader) == %d\n",
+    "%d strings, but based on the data size, there can only be %d.\n",
+    "There are %d null terminators, should have %d.\n",
+    "String %d does not match up\n",
+    "%sstrings",
+    "%sstrings_%s",
+    "%c%c%c%c",
+    "sizeof(StorePackedSong) == %d\n",
+    "%ssongs",
+    "There are %d bytes left in song file, at %d bytes per song is %d songs, but the file says there are %d songs.\n",
+    "Song %d: name %d is invalid\n",
+    "Song %d: artist %d is invalid\n",
+    "sizeof(StorePackedRanks) == %d\n",
+    "%s(%d) : Warning: %s",
+    "StorePackedMetadata.cpp",
+    "!padding",
+    "/preview_art/%s_nomip.png_%s",
+    "/album_art/UGC_%d_keep.png_%s",
+    "/preview_audio/%s_prev.bik",
+    "/audio_prev/UGC_%s_prev.bik",
+    "",
+    "sizeof(StorePackedOfferBase) == %d\n",
+    "offsetof(StorePackedOfferBase, mReview) == %d\n",
+    "%soffers",
+    "There are %d bytes left in offers file, at %d bytes per offer is %d offers, but the file says there are %d offers.\n",
+    "sizeof(StorePackedOffer) == %d\n",
+    "sizeof(StorePackedRBNOffer) == %d\n",
+    "%srbn_offers",
+    "There are %d bytes left in rbn_offers file, at %d bytes per offer is %d offers, but the file says there are %d offers.\n",
+    "%smarquee",
+    "Marquee file says is has %d entries, but at %d bytes each that would take %d bytes, and there are %d bytes left in the file.\n",
+    "/title/00010000/%02x%02x%02x%02x/data/",
+    "%sredemption_offers",
+    "Redemption file says is has %d entries, but at %d bytes each that would take %d bytes, and there are %d bytes left in the file.\n",
+    "Store: ERROR: redeemed offer %s does not match any in the store.\n",
+    "sizeof(StorePackedSubmenu) == %d\n",
+    "sizeof(StorePackedPage) == %d\n",
+    "by_artist",
+    "by_song_first_letter",
+    "by_subgenre",
+    "by_year_released",
+    "by_author",
+    "by_label",
+    "by_difficulty",
+    "by_review",
+    "by_release_date",
+    "by_pack_first_letter",
+    "%spages",
+    "store",
+    "title_starting_indices",
+    "local_metadata",
+    "PCPW",
+    "%sversion",
+    "Store: delete index by popping tmpcache failed: %d\n",
+    "Store: delete index by EC_DeleteContents failed: %d\n",
+    "Store: offer %s from ecommerce says titleid %llx but store index data says %llx\n",
+    "Store: offer %s from ecommerce says there are %d contents but store index data says %d\n",
+    "MaxUserFileSize",
+    "Store: for offer %s, ecommerce lists content units [",
+    "%d, ",
+    "%d] but store index lists [",
+    "%d]\n",
+    "Store: ECContentCatalogInfo %d has null licensePricings",
+    "offer_id",
+    "Store: upgrade offer %s says upgrade is at %llx %d, but store index data says %llx %d",
+    "CNTSDGetUserAvailableArea(%d, %d, %d, %d);\n",
+    "async op %d done: %d err: %d\n",
+    "DebugPurchase: out of money\n",
+    "DebugPurchase: %s\n",
+    "DebugDownload: found offer %s\n",
+    "DebugDownload: EC_DownloadTitle %llx\n",
+    "DebugDownload: downloading %d content units\n",
+    "DebugDownload: failed, so quitting.\n",
+    "DebugDownload: starting a content refresh.\n",
+    "%s(%d): %s unhandled msg: %s",
+    "vector"
+)
+#endif
 #include "meta/StoreOffer.h"
+#include "os/CommerceMgr_Wii.h"
 
 StoreMetadataManager TheStoreMetadata;
 std::vector<int> StoreMetadataManager::mSetlistOffers;
 bool gDebugMakeAllSongsAvailable;
 bool gDebugDontRelyOnCommerceServer;
+
+bool StoreMetadataManager::LoadingFailed() const { return mLoadingState == 11; }
+StoreError StoreMetadataManager::LoadError() const { return (StoreError)mErrorMsg; }
+void StoreMetadataManager::SetMetadataIndex(
+    unsigned long long title, unsigned short content, long size
+) {
+    mMetadataTitleId = title;
+    unk90 = content;
+    unk94 = size;
+}
+unsigned long long StorePackedSong::DataTitle() const {
+    return WiiCommerceMgr::MakeDataTitleId(&unk6);
+}
 
 bool StoreLoadPackedFile(const char *, bool, int, bool, bool, char **, char **, char **, int *) {
 
@@ -133,7 +235,7 @@ struct test {
 bool StoreOfferTable::Load(const char *cc) {
     char buf[256];
     sprintf(buf, "%soffers", cc);
-    test t;
+    struct test t;
     StorePackedOffer **loc130;
     bool ret = StoreLoadPackedFile(
         buf,

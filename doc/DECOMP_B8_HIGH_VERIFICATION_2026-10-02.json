@@ -1,0 +1,727 @@
+{
+  "model_setting": "GPT-6.1 Sol High (user-reported)",
+  "started_utc": "2026-10-03T02:20:55Z",
+  "deadline_utc": "2026-10-03T05:20:55Z",
+  "start_usage": {
+    "primary": {
+      "usedPercent": 2,
+      "windowDurationMins": 300,
+      "resetsAt": 1791011536
+    },
+    "secondary": {
+      "usedPercent": 16,
+      "windowDurationMins": 10080,
+      "resetsAt": 1791580276
+    }
+  },
+  "baseline": {
+    "fuzzy_match_percent": 68.76726,
+    "total_code": "11431676",
+    "matched_code": "6264020",
+    "matched_code_percent": 54.795288,
+    "total_data": "2755932",
+    "matched_data": "613848",
+    "matched_data_percent": 22.273699,
+    "total_functions": 41333,
+    "matched_functions": 28336,
+    "matched_functions_percent": 68.55539,
+    "complete_code": "1227236",
+    "complete_code_percent": 10.735398,
+    "complete_data": "496268",
+    "complete_data_percent": 18.007267,
+    "total_units": 1876,
+    "complete_units": 532
+  },
+  "status": "complete",
+  "primary_version": "SZBE69_B8",
+  "usage_note": "Account-wide percentage points, rounded by provider; concurrent account activity cannot be isolated. No token count is exposed by usage API.",
+  "usage_snapshots": [
+    {
+      "at_utc": "2026-10-03T02:30:45Z",
+      "primary_used": 8,
+      "secondary_used": 17
+    },
+    {
+      "at_utc": "2026-10-03T02:43:30Z",
+      "primary_used": 17,
+      "secondary_used": 18
+    },
+    {
+      "at_utc": "2026-10-03T02:49:31Z",
+      "primary_used": 21,
+      "secondary_used": 19
+    },
+    {
+      "at_utc": "2026-10-03T03:01:14Z",
+      "primary_used": 27,
+      "secondary_used": 20
+    },
+    {
+      "at_utc": "2026-10-03T03:09:32Z",
+      "primary_used": 32,
+      "secondary_used": 21
+    },
+    {
+      "at_utc": "2026-10-03T03:17:13Z",
+      "primary_used": 37,
+      "secondary_used": 21
+    },
+    {
+      "at_utc": "2026-10-03T03:24:54Z",
+      "primary_used": 41,
+      "secondary_used": 22
+    },
+    {
+      "at_utc": "2026-10-03T03:33:23Z",
+      "primary_used": 48,
+      "secondary_used": 23
+    },
+    {
+      "at_utc": "2026-10-03T03:44:38Z",
+      "primary_used": 56,
+      "secondary_used": 24
+    },
+    {
+      "at_utc": "2026-10-03T03:51:55Z",
+      "primary_used": 60,
+      "secondary_used": 25
+    },
+    {
+      "at_utc": "2026-10-03T03:58:52Z",
+      "primary_used": 65,
+      "secondary_used": 26
+    },
+    {
+      "at_utc": "2026-10-03T04:07:24Z",
+      "primary_used": 69,
+      "secondary_used": 27
+    },
+    {
+      "at_utc": "2026-10-03T04:13:36Z",
+      "primary_used": 73,
+      "secondary_used": 27
+    },
+    {
+      "at_utc": "2026-10-03T04:25:53Z",
+      "primary_used": 83,
+      "secondary_used": 29
+    },
+    {
+      "at_utc": "2026-10-03T04:30:51Z",
+      "primary_used": 86,
+      "secondary_used": 29
+    },
+    {
+      "at_utc": "2026-10-03T04:33:42Z",
+      "primary_used": 88,
+      "secondary_used": 29
+    },
+    {
+      "at_utc": "2026-10-03T04:40:05Z",
+      "primary_used": 92,
+      "secondary_used": 30
+    },
+    {
+      "at_utc": "2026-10-03T04:44:29Z",
+      "primary_used": 95,
+      "secondary_used": 31
+    },
+    {
+      "at_utc": "2026-10-03T04:49:57Z",
+      "primary_used": 98,
+      "secondary_used": 31
+    },
+    {
+      "at_utc": "2026-10-03T04:51:34Z",
+      "primary_used": 99,
+      "secondary_used": 31
+    }
+  ],
+  "checkpoint_utc": "2026-10-03T04:51:34Z",
+  "measures": {
+    "fuzzy_match_percent": 68.82857,
+    "total_code": "11431676",
+    "matched_code": "6314044",
+    "matched_code_percent": 55.232883,
+    "total_data": "2755932",
+    "matched_data": "613848",
+    "matched_data_percent": 22.273699,
+    "total_functions": 41333,
+    "matched_functions": 28494,
+    "matched_functions_percent": 68.93765,
+    "complete_code": "1234060",
+    "complete_code_percent": 10.795093,
+    "complete_data": "497004",
+    "complete_data_percent": 18.033972,
+    "total_units": 1876,
+    "complete_units": 535
+  },
+  "gains": {
+    "matched_code": 50024,
+    "matched_functions": 158,
+    "complete_code": 6824,
+    "complete_units": 3,
+    "matched_data": 0,
+    "complete_data": 736
+  },
+  "elapsed_seconds": 9039,
+  "new_reconstructions": [
+    {
+      "symbol": "SetADSR__11EnvelopeWiiFRC4ADSR",
+      "bytes": 104,
+      "before": 0,
+      "after": 100,
+      "source_linked": true
+    },
+    {
+      "symbol": "calculateOverlapLength__Q210soundtouch9TDStretchFUi",
+      "bytes": 304,
+      "before": 0,
+      "after": 100,
+      "source_linked": true
+    },
+    {
+      "symbol": "processNominalTempo__Q210soundtouch9TDStretchFv",
+      "bytes": 344,
+      "before": 0,
+      "after": 100,
+      "source_linked": true
+    },
+    {
+      "symbol": "GetX__15CharClipDisplayCFf",
+      "bytes": 148,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "GetXY__15CharClipDisplayCFR7Vector2f",
+      "bytes": 72,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "DrawBeatString__15CharClipDisplayFfRCQ23Hmx5Color",
+      "bytes": 160,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "DrawBeatString__15CharClipDisplayFPCcfRCQ23Hmx5Color",
+      "bytes": 140,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "DrawCursor__15CharClipDisplayFv",
+      "bytes": 264,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "CanModal__6WiiRndFb",
+      "bytes": 8,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "SetSync__6WiiRndFi",
+      "bytes": 8,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "YRatio__6WiiRndFv",
+      "bytes": 44,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "GetOverscan__6WiiRndCFv",
+      "bytes": 8,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "SetOverscan__6WiiRndFb",
+      "bytes": 8,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "SetTriFrameRendering__6WiiRndFb",
+      "bytes": 80,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "DiscErrorStart__6WiiRndFv",
+      "bytes": 48,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "DiscErrorEnd__6WiiRndFv",
+      "bytes": 4,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "PostProcessTexture__6WiiRndFv",
+      "bytes": 28,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "Ntsc__6WiiRndFv",
+      "bytes": 52,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "note": ""
+    },
+    {
+      "symbol": "SetupDrawStringVertexDesc__Fv",
+      "bytes": 56,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "note": ""
+    },
+    {
+      "symbol": "ClearBuffer__6WiiRndFv",
+      "bytes": 4,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "note": "Original no-op implementation"
+    },
+    {
+      "symbol": "DoWorldEnd__6WiiRndFv",
+      "bytes": 84,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "note": ""
+    },
+    {
+      "symbol": "DrawPreClear__6WiiRndFv",
+      "bytes": 56,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "note": ""
+    },
+    {
+      "symbol": "GetCurrentFrameTex__6WiiRndFb",
+      "bytes": 4,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "note": ""
+    },
+    {
+      "symbol": "SetGPHangDetectEnabled__FbPCc",
+      "bytes": 228,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "HomeMenuOpen__6WiiRndFb",
+      "bytes": 104,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    },
+    {
+      "symbol": "GXReInit__6WiiRndFb",
+      "bytes": 584,
+      "before": 0,
+      "after": 100,
+      "source_linked": false
+    }
+  ],
+  "partial_reconstructions": [
+    {
+      "symbol": "CheatNextServer__11NetCacheMgrFv",
+      "bytes": 236,
+      "before": 86.440674,
+      "after": 98.305084,
+      "instruction_differences_before": 8,
+      "instruction_differences_after": 1,
+      "note": "Existing implementation; recovered condition evaluation. One comparison operand-order difference remains."
+    },
+    {
+      "type": "header_layout",
+      "source": "src/system/char/CharClipDisplay.h",
+      "note": "Recovered 64-byte inline buffer at 0x24. SetText now exact; other unit functions remain incomplete."
+    },
+    {
+      "symbol": "SetStartEnd__15CharClipDisplayFffb",
+      "bytes": 412,
+      "before": 0,
+      "after": 49.51456,
+      "note": "Range and zoom behavior reconstructed; expression evaluation/register differences remain."
+    },
+    {
+      "symbol": "DrawBlend__15CharClipDisplayFff",
+      "bytes": 396,
+      "before": 0,
+      "after": 83.83839,
+      "note": "Blend interval and blue midpoint marker reconstructed; floating-point rounding and scheduling differences remain."
+    },
+    {
+      "symbol": "transposeMono__Q210soundtouch19RateTransposerFloatFPsPCsUi",
+      "bytes": 360,
+      "before": 81.31868,
+      "after": 82.41759,
+      "instruction_differences_before": 17,
+      "instruction_differences_after": 16,
+      "note": "Existing implementation, explicit interpolation weight temporary; still NonMatching."
+    }
+  ],
+  "metadata_gains": {
+    "matched_code": 35056,
+    "matched_functions": 66,
+    "linked_code": 0,
+    "note": "Eleven reviewed literal-pool corrections, separately counted from missing behavior."
+  },
+  "linked_units": [
+    {
+      "unit": "main/system/synthwii/EnvelopeWii",
+      "bytes": 948
+    },
+    {
+      "unit": "main/system/synthwii/soundtouch/source/SoundTouch/TDStretch",
+      "bytes": 4672
+    },
+    {
+      "unit": "main/system/synthwii/soundtouch/source/SoundTouch/FIFOSampleBuffer",
+      "bytes": 1204
+    }
+  ],
+  "usage_delta_percentage_points": {
+    "primary": 97,
+    "secondary": 15
+  },
+  "tooling_changes": [
+    {
+      "file": "tools/decomp_rtti.py",
+      "note": "Relocation-anchored pairing of anonymous class-name/base-chain RTTI data for strict unit comparisons. No object bytes, config status or global report mappings changed. Unique relocation-free generated string constants are also paired by exact complete payload; ambiguity and changed data are rejected.",
+      "tests": 41
+    }
+  ],
+  "layout_recoveries": [
+    {
+      "file": "src/system/rndwii/Rnd.h",
+      "note": "Restored B8 HomeMenu/VirtualKeyboard/DiscError callback bases, GXRenderModeObj, two 4x4 projection matrices and one 3x4 position matrix, OSFontHeader pointer, saved projection/viewport arrays and flag initialization. Retail layout preserved.",
+      "code_gain": 1708,
+      "function_gain": 17
+    }
+  ],
+  "library_source_activation": [
+    {
+      "unit": "main/system/synthwii/soundtouch/source/SoundTouch/FIFOSampleBuffer",
+      "exact_functions": 14,
+      "matched_code_gain": 1204,
+      "linked_code_gain": 1204,
+      "note": "Enabled existing licensed upstream source for B8; restored 20 KiB preallocation, both buffer deletions, unsigned signatures, fast-heap scope, failure logging, allocator ownership and inlining. Full executable checksum verifies all code and data."
+    }
+  ],
+  "existing_function_corrections": [
+    {
+      "symbol": "isEmpty__Q210soundtouch14RateTransposerFv",
+      "bytes": 96,
+      "before": 0,
+      "after": 100,
+      "note": "Recovered nonconst signature of existing implementation."
+    },
+    {
+      "symbol": "processSamples__Q210soundtouch14RateTransposerFPCsUi",
+      "bytes": 292,
+      "before": 19.91342,
+      "after": 100,
+      "note": "Moved filter method definitions after caller to recover original inlining."
+    }
+  ],
+  "verification": {
+    "sha1": {
+      "SZBE69": "189b001188a2f8ab769e72364440022407fe09d2",
+      "SZBE69_B8": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    "build_logs": [
+      "build/high-retail-final.log",
+      "build/high-b8-final.log"
+    ],
+    "automation_tests_passed": 41,
+    "diff_check_passed": true,
+    "pending_journals": [],
+    "active_version": "SZBE69_B8",
+    "ledger_function_checks": [
+      {
+        "symbol": "SetADSR__11EnvelopeWiiFRC4ADSR",
+        "exact_report_units": [
+          "main/system/synthwii/EnvelopeWii"
+        ],
+        "report_entries": 1,
+        "bytes": 104
+      },
+      {
+        "symbol": "calculateOverlapLength__Q210soundtouch9TDStretchFUi",
+        "exact_report_units": [
+          "main/system/synthwii/soundtouch/source/SoundTouch/TDStretch"
+        ],
+        "report_entries": 1,
+        "bytes": 304
+      },
+      {
+        "symbol": "processNominalTempo__Q210soundtouch9TDStretchFv",
+        "exact_report_units": [
+          "main/system/synthwii/soundtouch/source/SoundTouch/TDStretch"
+        ],
+        "report_entries": 1,
+        "bytes": 344
+      },
+      {
+        "symbol": "GetX__15CharClipDisplayCFf",
+        "exact_report_units": [
+          "main/system/char/CharClipDisplay"
+        ],
+        "report_entries": 1,
+        "bytes": 148
+      },
+      {
+        "symbol": "GetXY__15CharClipDisplayCFR7Vector2f",
+        "exact_report_units": [
+          "main/system/char/CharClipDisplay"
+        ],
+        "report_entries": 1,
+        "bytes": 72
+      },
+      {
+        "symbol": "DrawBeatString__15CharClipDisplayFfRCQ23Hmx5Color",
+        "exact_report_units": [
+          "main/system/char/CharClipDisplay"
+        ],
+        "report_entries": 1,
+        "bytes": 160
+      },
+      {
+        "symbol": "DrawBeatString__15CharClipDisplayFPCcfRCQ23Hmx5Color",
+        "exact_report_units": [
+          "main/system/char/CharClipDisplay"
+        ],
+        "report_entries": 1,
+        "bytes": 140
+      },
+      {
+        "symbol": "DrawCursor__15CharClipDisplayFv",
+        "exact_report_units": [
+          "main/system/char/CharClipDisplay"
+        ],
+        "report_entries": 1,
+        "bytes": 264
+      },
+      {
+        "symbol": "CanModal__6WiiRndFb",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 8
+      },
+      {
+        "symbol": "SetSync__6WiiRndFi",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 8
+      },
+      {
+        "symbol": "YRatio__6WiiRndFv",
+        "exact_report_units": [],
+        "report_entries": 1,
+        "bytes": 44
+      },
+      {
+        "symbol": "GetOverscan__6WiiRndCFv",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 8
+      },
+      {
+        "symbol": "SetOverscan__6WiiRndFb",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 8
+      },
+      {
+        "symbol": "SetTriFrameRendering__6WiiRndFb",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 80
+      },
+      {
+        "symbol": "DiscErrorStart__6WiiRndFv",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 48
+      },
+      {
+        "symbol": "DiscErrorEnd__6WiiRndFv",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 4
+      },
+      {
+        "symbol": "PostProcessTexture__6WiiRndFv",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 28
+      },
+      {
+        "symbol": "Ntsc__6WiiRndFv",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 52
+      },
+      {
+        "symbol": "SetupDrawStringVertexDesc__Fv",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 56
+      },
+      {
+        "symbol": "ClearBuffer__6WiiRndFv",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 4
+      },
+      {
+        "symbol": "DoWorldEnd__6WiiRndFv",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 84
+      },
+      {
+        "symbol": "DrawPreClear__6WiiRndFv",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 56
+      },
+      {
+        "symbol": "GetCurrentFrameTex__6WiiRndFb",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 4
+      },
+      {
+        "symbol": "SetGPHangDetectEnabled__FbPCc",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 228
+      },
+      {
+        "symbol": "HomeMenuOpen__6WiiRndFb",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 104
+      },
+      {
+        "symbol": "GXReInit__6WiiRndFb",
+        "exact_report_units": [
+          "main/system/rndwii/Rnd"
+        ],
+        "report_entries": 1,
+        "bytes": 584
+      },
+      {
+        "symbol": "isEmpty__Q210soundtouch14RateTransposerFv",
+        "exact_report_units": [
+          "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer"
+        ],
+        "report_entries": 1,
+        "bytes": 96
+      },
+      {
+        "symbol": "processSamples__Q210soundtouch14RateTransposerFPCsUi",
+        "exact_report_units": [
+          "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer"
+        ],
+        "report_entries": 1,
+        "bytes": 292
+      }
+    ],
+    "ledger_note": "Inline function symbols recur across units; owner-unit strict trial evidence determines acceptance. Global report may differ when anonymous data mappings are deliberately confined to strict unit comparison."
+  },
+  "remaining_issues": [
+    {
+      "unit": "main/system/rndwii/Rnd",
+      "note": "BeginDrawing trial reaches 98.52941% with zero instruction-text differences and two unresolved local-call relocations. HomeMenuClose instruction text also recovered, but generated Light class-name string ownership fails conservative data gate. Both rolled back. Trial manifests saved in doc/DECOMP_B8_HIGH_REMAINING_TRIALS_2026-10-02.json."
+    },
+    {
+      "unit": "main/system/synthwii/soundtouch/source/SoundTouch/RateTransposer",
+      "note": "Stereo interpolation remains 73.758865%; float destructor has one delete-helper relocation difference. Inline weight temporary and definition-order evidence saved in ignored trial logs."
+    },
+    {
+      "unit": "main/band3/game/TrainingPanel",
+      "note": "Source adoption changes BSS ownership/alignment for SetType static; rolled back."
+    },
+    {
+      "note": "Nintendo management destructor vtable ownership, RefCountedObject data ownership, and Singer anonymous RTTI/literal identity still block source adoption."
+    },
+    {
+      "unit": "main/system/os/Timer",
+      "note": "Reset stays 98.36066%, with one fadds operand-order difference. Five threshold/index/local expression trials failed to improve and were restored. No assembly workaround retained."
+    }
+  ],
+  "last_observed_usage": {
+    "primary_used": 99,
+    "secondary_used": 31
+  },
+  "stop_reason": "usage_threshold_reached",
+  "ended_utc": "2026-10-03T04:51:34Z"
+}

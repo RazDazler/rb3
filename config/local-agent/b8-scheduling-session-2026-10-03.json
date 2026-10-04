@@ -1,0 +1,32 @@
+{
+  "version": "SZBE69_B8",
+  "tasks": [
+    {
+      "id": "profile-excess-audio",
+      "unit": "main/band3/meta_band/ProfileMgr",
+      "source": "src/band3/meta_band/ProfileMgr.cpp",
+      "symbol": "GetExcessAudioLag__10ProfileMgrCFv",
+      "signature": "float ProfileMgr::GetExcessAudioLag() const",
+      "instruction": "Float register allocation only: keep operation order/grouping and getters, try explicit temporary lifetimes and declaration order.",
+      "context": "mPlatformAudioLatency float at0x578, GetSongToTaskMgrMsRaw returns float from0x57c, GetSyncOffsetRaw returns float from0x1c. Original loads song(f2), sync(f1), platform(f0), adds sync+song intof1, then +platform intof0, then negates intof1. Getters are pure inline member reads; no side effects."
+    },
+    {
+      "id": "player-bonus-points",
+      "unit": "main/band3/game/Player",
+      "source": "src/band3/game/Player.cpp",
+      "symbol": "AddBonusPoints__6PlayerFi",
+      "signature": "void Player::AddBonusPoints(int i)",
+      "instruction": "Preserve counter increment and Game call semantics; try explicit temporaries for existing field/global loads to match scheduling. Do not change method arguments.",
+      "context": "unk28c is int bonus serial at0x28c. mUser is BandUser* at0x230. TheGame is Game* global. Game::AddBonusPoints(BandUser*,int,int) must get original counter then counter increment stored before call. Input points i preserved. Original order counter load, points copy, user load, counter+1, game global load, increment store, tail-call."
+    },
+    {
+      "id": "byte-op4-reviewed",
+      "unit": "main/system/synth/ByteGrinder",
+      "source": "src/system/synth/ByteGrinder.cpp",
+      "symbol": "op4__FP9DataArray",
+      "signature": "DataNode op4(DataArray *msg)",
+      "instruction": "Improve boolean byte duplication scheduling; original source has now been corrected and reviewed. Preserve reads and exact behavior. Try lifetime/reuse of intermediate boolean before byte duplication.",
+      "context": "Read operand=Int(1) then w=Int(2). Result if u8(w)!=0 is0; ifu8(w)==0 and operand!=0 is1; ifu8(w)==0 and operand==0 is128. Original cntlzw on u8(w) plus rotate-left3 maskedFFFFFF00 and rotate-left27 bit0 produces duplicated boolean bits0,8. Then shift right by(operand==0), truncateu8. u32/unsigned long32bits, u8unsigned8bits. Do not recreate the earlier erroneous alwayszero source."
+    }
+  ]
+}

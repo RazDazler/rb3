@@ -121,6 +121,22 @@ int GameGem::GetHighestSlot(unsigned int ui) {
 
 bool GameGem::PlayableBy(int i) const { return GemPlayableBy(unk18, i); }
 
+#ifdef VERSION_SZBE69
+void GameGem::Flip(const GameGem &gem) {
+    unsigned int slot = gem.mSlots;
+    bool cymbal;
+    if (slot == 2) {
+        mSlots = 4;
+        cymbal = true;
+    } else if (slot == 4) {
+        mSlots = 2;
+        cymbal = false;
+    } else {
+        return;
+    }
+    mIsCymbal = cymbal;
+}
+#else
 void GameGem::Flip(const GameGem &gem) {
     unsigned int slot = gem.mSlots;
     if (slot == 2) {
@@ -133,6 +149,7 @@ void GameGem::Flip(const GameGem &gem) {
     mSlots = 2;
     mIsCymbal = false;
 }
+#endif
 
 void GameGem::RecalculateTimes(TempoMap *tmap) {
     mMs = tmap->TickToTime(mTick);

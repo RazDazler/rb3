@@ -27,7 +27,9 @@ BEGIN_HANDLERS(SaveLoadManager)
     )
     if (sym == get_dialog_msg) { // This handler doesn't return. Why?
         GetDialogMsg();
+#ifdef MILO_DEBUG
         timer.~MessageTimer();
+#endif
     }
     HANDLE_EXPR(get_dialog_opt1, GetDialogOpt1())
     HANDLE_EXPR(get_dialog_opt2, GetDialogOpt2())

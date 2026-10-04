@@ -1,4 +1,44 @@
 #include "game/GamePanel.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolGamePanel,
+    "time",
+    "latency",
+    "delta_time",
+    "game_panel_load",
+    "GamePanel.cpp",
+    "!TheGamePanel",
+    "gamecfg",
+    ".",
+    "sound",
+    "banks",
+    "kit",
+    "world_panel",
+    "load_chars",
+    "trackPanelDir",
+    "cam",
+    "vocal_test",
+    "game_poll",
+    "Should not set game panel paused! Use SetGamePaused(bool) or {game set_game_paused <bool> instead!",
+    "mGame",
+    "MBT %d:%d:%03d [%s %c%s %4.1f%%] (%.2fsec %dtk)\n",
+    "latency_test",
+    "pad_button",
+    "test/latency.milo",
+    "beep.cue",
+    "Joy %d Beat %.3f\nms %.2f last %.2f",
+    "dt: %5.1f, ddt: %5.1f\n",
+    "",
+    "band_fail_rock.cue",
+    "excitement",
+    "%s(%d): %s unhandled msg: %s",
+    "last_excitement",
+    "replay"
+)
+#endif
 #include "GamePanel.h"
 #include "bandobj/BandDirector.h"
 #include "bandobj/BandWardrobe.h"

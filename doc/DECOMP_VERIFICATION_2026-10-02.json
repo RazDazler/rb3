@@ -1,0 +1,1903 @@
+{
+  "version": "SZBE69",
+  "dol_sha1": "189b001188a2f8ab769e72364440022407fe09d2",
+  "newly_source_linked_units": [
+    "band3/game/ScoreUtl.cpp",
+    "band3/meta_band/AccomplishmentCategory.cpp",
+    "band3/meta_band/StandIn.cpp",
+    "network/Platform/StringConversion.cpp",
+    "network/Core/InstantiationContext.cpp",
+    "system/beatmatch/Output.cpp",
+    "system/beatmatch/RGState.cpp",
+    "system/math/Decibels.cpp",
+    "system/meta/DeJitterPanel.cpp",
+    "system/meta/Meta.cpp",
+    "system/midi/MidiVarLen.cpp",
+    "system/os/ProfilePicture_Wii.cpp",
+    "system/os/SynchronizationEvent.cpp",
+    "system/os/System_Wii.cpp",
+    "system/ui/UIResource.cpp",
+    "system/utl/Cache.cpp",
+    "system/utl/Compress.cpp",
+    "system/oggvorbis/VorbisMem.cpp",
+    "system/synth/tomcrypt/ctr.c",
+    "sdk/RVL_SDK/src/os/OSReboot.c"
+  ],
+  "units": [
+    {
+      "name": "main/network/Platform/StringConversion",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "316",
+        "matched_code": "316",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 7,
+        "matched_functions": 7,
+        "matched_functions_percent": 100.0,
+        "complete_code": "316",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "Latin1ToUtf8__30@unnamed@StringConversion_cpp@FPCcPcUi",
+          "size": "100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "@unnamed@StringConversion_cpp@::Latin1ToUtf8(const char*, char*, unsigned int)",
+            "virtual_address": "2147584368"
+          }
+        },
+        {
+          "name": "Utf8ToLatin1__30@unnamed@StringConversion_cpp@FPCcPcUi",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "@unnamed@StringConversion_cpp@::Utf8ToLatin1(const char*, char*, unsigned int)",
+            "virtual_address": "2147584468"
+          }
+        },
+        {
+          "name": "Char8_2T__Q26Quazal16StringConversionFPCcPcUi",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::StringConversion::Char8_2T(const char*, char*, unsigned int)",
+            "virtual_address": "2147584604"
+          }
+        },
+        {
+          "name": "T2Char8__Q26Quazal16StringConversionFPCcPcUi",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::StringConversion::T2Char8(const char*, char*, unsigned int)",
+            "virtual_address": "2147584620"
+          }
+        },
+        {
+          "name": "Utf8ToT__Q26Quazal16StringConversionFPCcPcUi",
+          "size": "4",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::StringConversion::Utf8ToT(const char*, char*, unsigned int)",
+            "virtual_address": "2147584636"
+          }
+        },
+        {
+          "name": "TToUtf8__Q26Quazal16StringConversionFPCcPcUi",
+          "size": "4",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::StringConversion::TToUtf8(const char*, char*, unsigned int)",
+            "virtual_address": "2147584640"
+          }
+        },
+        {
+          "name": "GetTToUtf8BufferSize__Q26Quazal16StringConversionFPCc",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::StringConversion::GetTToUtf8BufferSize(const char*)",
+            "virtual_address": "2147584644"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/network/Core/InstantiationContext",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "464",
+        "matched_code": "464",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 6,
+        "matched_functions": 6,
+        "matched_functions_percent": 100.0,
+        "complete_code": "464",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__ct__Q26Quazal20InstantiationContextFv",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::InstantiationContext::InstantiationContext()",
+            "virtual_address": "2147613936"
+          }
+        },
+        {
+          "name": "InitContext__Q26Quazal20InstantiationContextFv",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::InstantiationContext::InitContext()",
+            "virtual_address": "2147614000"
+          }
+        },
+        {
+          "name": "__dt__Q26Quazal20InstantiationContextFv",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::InstantiationContext::~InstantiationContext()",
+            "virtual_address": "2147614032"
+          }
+        },
+        {
+          "name": "AddInstance__Q26Quazal20InstantiationContextFPQ26Quazal15InstanceControlUi",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::InstantiationContext::AddInstance(Quazal::InstanceControl*, unsigned int)",
+            "virtual_address": "2147614116"
+          }
+        },
+        {
+          "name": "DelInstance__Q26Quazal20InstantiationContextFPQ26Quazal15InstanceControlUi",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::InstantiationContext::DelInstance(Quazal::InstanceControl*, unsigned int)",
+            "virtual_address": "2147614240"
+          }
+        },
+        {
+          "name": "GetInstance__Q26Quazal20InstantiationContextFUi",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Quazal::InstantiationContext::GetInstance(unsigned int)",
+            "virtual_address": "2147614324"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/band3/game/ScoreUtl",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "80",
+        "matched_code": "80",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "complete_code": "80",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "GetStarsForScore__FiRC8UserGuid",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "GetStarsForScore(int, const UserGuid&)",
+            "virtual_address": "2148870436"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/band3/meta_band/AccomplishmentCategory",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "380",
+        "matched_code": "380",
+        "matched_code_percent": 100.0,
+        "total_data": "112",
+        "total_functions": 8,
+        "matched_functions": 8,
+        "matched_functions_percent": 100.0,
+        "complete_code": "380",
+        "complete_code_percent": 100.0,
+        "complete_data": "112",
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__ct__22AccomplishmentCategoryFPC9DataArrayi",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "AccomplishmentCategory::AccomplishmentCategory(const DataArray*, int)",
+            "virtual_address": "2149244792"
+          }
+        },
+        {
+          "name": "__dt__22AccomplishmentCategoryFv",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "AccomplishmentCategory::~AccomplishmentCategory()",
+            "virtual_address": "2149244916"
+          }
+        },
+        {
+          "name": "Configure__22AccomplishmentCategoryFPC9DataArray",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "AccomplishmentCategory::Configure(const DataArray*)",
+            "virtual_address": "2149244980"
+          }
+        },
+        {
+          "name": "GetName__22AccomplishmentCategoryCFv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "AccomplishmentCategory::GetName() const",
+            "virtual_address": "2149245124"
+          }
+        },
+        {
+          "name": "GetIndex__22AccomplishmentCategoryCFv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "AccomplishmentCategory::GetIndex() const",
+            "virtual_address": "2149245132"
+          }
+        },
+        {
+          "name": "GetGroup__22AccomplishmentCategoryCFv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "AccomplishmentCategory::GetGroup() const",
+            "virtual_address": "2149245140"
+          }
+        },
+        {
+          "name": "GetAward__22AccomplishmentCategoryCFv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "AccomplishmentCategory::GetAward() const",
+            "virtual_address": "2149245148"
+          }
+        },
+        {
+          "name": "HasAward__22AccomplishmentCategoryCFv",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "AccomplishmentCategory::HasAward() const",
+            "virtual_address": "2149245156"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/band3/meta_band/StandIn",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "860",
+        "matched_code": "860",
+        "matched_code_percent": 100.0,
+        "total_data": "56",
+        "total_functions": 11,
+        "matched_functions": 11,
+        "matched_functions_percent": 100.0,
+        "complete_code": "860",
+        "complete_code_percent": 100.0,
+        "complete_data": "56",
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__ct__7StandInFv",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::StandIn()",
+            "virtual_address": "2150152460"
+          }
+        },
+        {
+          "name": "__dt__7StandInFv",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::~StandIn()",
+            "virtual_address": "2150152556"
+          }
+        },
+        {
+          "name": "SetNone__7StandInFv",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::SetNone()",
+            "virtual_address": "2150152644"
+          }
+        },
+        {
+          "name": "SetName__7StandInF6Symbol",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::SetName(Symbol)",
+            "virtual_address": "2150152720"
+          }
+        },
+        {
+          "name": "SetGuid__7StandInF6HxGuid",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::SetGuid(HxGuid)",
+            "virtual_address": "2150152776"
+          }
+        },
+        {
+          "name": "IsNone__7StandInCFv",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::IsNone() const",
+            "virtual_address": "2150152868"
+          }
+        },
+        {
+          "name": "IsPrefabCharacter__7StandInCFv",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::IsPrefabCharacter() const",
+            "virtual_address": "2150152956"
+          }
+        },
+        {
+          "name": "IsCustomCharacter__7StandInCFv",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::IsCustomCharacter() const",
+            "virtual_address": "2150153044"
+          }
+        },
+        {
+          "name": "SaveSize__7StandInFi",
+          "size": "36",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::SaveSize(int)",
+            "virtual_address": "2150153132"
+          }
+        },
+        {
+          "name": "SaveFixed__7StandInCFR23FixedSizeSaveableStream",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::SaveFixed(FixedSizeSaveableStream&) const",
+            "virtual_address": "2150153168"
+          }
+        },
+        {
+          "name": "LoadFixed__7StandInFR23FixedSizeSaveableStreami",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "StandIn::LoadFixed(FixedSizeSaveableStream&, int)",
+            "virtual_address": "2150153244"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/math/Rot",
+      "measures": {
+        "fuzzy_match_percent": 53.592518,
+        "total_code": "8128",
+        "matched_code": "4108",
+        "matched_code_percent": 50.54134,
+        "matched_data_percent": 100.0,
+        "total_functions": 57,
+        "matched_functions": 39,
+        "matched_functions_percent": 68.42105,
+        "complete_data_percent": 100.0,
+        "total_units": 1
+      },
+      "functions": [
+        {
+          "name": "ToTransform__16TransformNoScaleCFR9Transform",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "TransformNoScale::ToTransform(Transform&) const",
+            "virtual_address": "2150489760"
+          }
+        },
+        {
+          "name": "ToQuat__9ShortQuatCFRQ23Hmx4Quat",
+          "size": "164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ShortQuat::ToQuat(Hmx::Quat&) const",
+            "virtual_address": "2150489848"
+          }
+        },
+        {
+          "name": "Set__16TransformNoScaleFRC9Transform",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "TransformNoScale::Set(const Transform&)",
+            "virtual_address": "2150490012"
+          }
+        },
+        {
+          "name": "Set__9ShortQuatFRCQ23Hmx4Quat",
+          "size": "240",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ShortQuat::Set(const Hmx::Quat&)",
+            "virtual_address": "2150490080"
+          }
+        },
+        {
+          "name": "Set__16TransformNoScaleFRC16TransformNoScale",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "TransformNoScale::Set(const TransformNoScale&)",
+            "virtual_address": "2150490320"
+          }
+        },
+        {
+          "name": "__as__9ShortQuatFRC9ShortQuat",
+          "size": "36",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ShortQuat::operator=(const ShortQuat&)",
+            "virtual_address": "2150490388"
+          }
+        },
+        {
+          "name": "Set__9ShortQuatFRCQ23Hmx7Matrix3",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ShortQuat::Set(const Hmx::Matrix3&)",
+            "virtual_address": "2150490424"
+          }
+        },
+        {
+          "name": "__ct__Q23Hmx4QuatFRCQ23Hmx7Matrix3",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Hmx::Quat::Quat(const Hmx::Matrix3&)",
+            "virtual_address": "2150490484"
+          }
+        },
+        {
+          "name": "GetRot__16TransformNoScaleCFRQ23Hmx4Quat",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "TransformNoScale::GetRot(Hmx::Quat&) const",
+            "virtual_address": "2150490532"
+          }
+        },
+        {
+          "name": "SetRot__16TransformNoScaleFRCQ23Hmx4Quat",
+          "size": "4",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "TransformNoScale::SetRot(const Hmx::Quat&)",
+            "virtual_address": "2150490580"
+          }
+        },
+        {
+          "name": "Reset__16TransformNoScaleFv",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "TransformNoScale::Reset()",
+            "virtual_address": "2150490584"
+          }
+        },
+        {
+          "name": "__eq__7Vector3CFRC7Vector3",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Vector3::operator==(const Vector3&) const",
+            "virtual_address": "2150490632"
+          }
+        },
+        {
+          "name": "__ne__7Vector3CFRC7Vector3",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Vector3::operator!=(const Vector3&) const",
+            "virtual_address": "2150490696"
+          }
+        },
+        {
+          "name": "__ls__FR9BinStreamRC7Vector3",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "operator<<(BinStream&, const Vector3&)",
+            "virtual_address": "2150490760"
+          }
+        },
+        {
+          "name": "__rs__FR9BinStreamR16TransformNoScale",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "operator>>(BinStream&, TransformNoScale&)",
+            "virtual_address": "2150490840"
+          }
+        },
+        {
+          "name": "__rs__FR9BinStreamR7Vector3",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "operator>>(BinStream&, Vector3&)",
+            "virtual_address": "2150490936"
+          }
+        },
+        {
+          "name": "__rs__FR9BinStreamRQ23Hmx7Matrix3",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "operator>>(BinStream&, Hmx::Matrix3&)",
+            "virtual_address": "2150491012"
+          }
+        },
+        {
+          "name": "Normalize__FRCQ23Hmx4QuatRQ23Hmx4Quat",
+          "size": "104",
+          "metadata": {
+            "demangled_name": "Normalize(const Hmx::Quat&, Hmx::Quat&)",
+            "virtual_address": "2150491088"
+          }
+        },
+        {
+          "name": "Set__Q23Hmx4QuatFRC7Vector3f",
+          "size": "156",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Hmx::Quat::Set(const Vector3&, float)",
+            "virtual_address": "2150491192"
+          }
+        },
+        {
+          "name": "Cosine__Ff",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Cosine(float)",
+            "virtual_address": "2150491348"
+          }
+        },
+        {
+          "name": "MakeEuler__FRCQ23Hmx7Matrix3R7Vector3",
+          "size": "208",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "MakeEuler(const Hmx::Matrix3&, Vector3&)",
+            "virtual_address": "2150491364"
+          }
+        },
+        {
+          "name": "asinf",
+          "size": "36",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2150491572"
+          }
+        },
+        {
+          "name": "MakeVertical__FRQ23Hmx7Matrix3",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "MakeVertical(Hmx::Matrix3&)",
+            "virtual_address": "2150491608"
+          }
+        },
+        {
+          "name": "MakeScale__FRCQ23Hmx7Matrix3R7Vector3",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "MakeScale(const Hmx::Matrix3&, Vector3&)",
+            "virtual_address": "2150491720"
+          }
+        },
+        {
+          "name": "MakeEulerScale__FRCQ23Hmx7Matrix3R7Vector3R7Vector3",
+          "size": "216",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "MakeEulerScale(const Hmx::Matrix3&, Vector3&, Vector3&)",
+            "virtual_address": "2150491904"
+          }
+        },
+        {
+          "name": "GetXAngle__FRCQ23Hmx7Matrix3",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "GetXAngle(const Hmx::Matrix3&)",
+            "virtual_address": "2150492120"
+          }
+        },
+        {
+          "name": "GetYAngle__FRCQ23Hmx7Matrix3",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "GetYAngle(const Hmx::Matrix3&)",
+            "virtual_address": "2150492132"
+          }
+        },
+        {
+          "name": "GetZAngle__FRCQ23Hmx7Matrix3",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "GetZAngle(const Hmx::Matrix3&)",
+            "virtual_address": "2150492148"
+          }
+        },
+        {
+          "name": "Multiply__FRCQ23Hmx4QuatRCQ23Hmx4QuatRQ23Hmx4Quat",
+          "size": "108",
+          "fuzzy_match_percent": 25.925926,
+          "metadata": {
+            "demangled_name": "Multiply(const Hmx::Quat&, const Hmx::Quat&, Hmx::Quat&)",
+            "virtual_address": "2150492192"
+          }
+        },
+        {
+          "name": "__ct__Q23Hmx4QuatFRC7Vector3f",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Hmx::Quat::Quat(const Vector3&, float)",
+            "virtual_address": "2150492300"
+          }
+        },
+        {
+          "name": "Set__Q23Hmx4QuatFRC7Vector3",
+          "size": "260",
+          "fuzzy_match_percent": 84.61539,
+          "metadata": {
+            "demangled_name": "Hmx::Quat::Set(const Vector3&)",
+            "virtual_address": "2150492348"
+          }
+        },
+        {
+          "name": "Set__Q23Hmx4QuatFRCQ23Hmx7Matrix3",
+          "size": "360",
+          "metadata": {
+            "demangled_name": "Hmx::Quat::Set(const Hmx::Matrix3&)",
+            "virtual_address": "2150492608"
+          }
+        },
+        {
+          "name": "FastInterp__FRCQ23Hmx4QuatRCQ23Hmx4QuatfRQ23Hmx4Quat",
+          "size": "328",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "FastInterp(const Hmx::Quat&, const Hmx::Quat&, float, Hmx::Quat&)",
+            "virtual_address": "2150492968"
+          }
+        },
+        {
+          "name": "__ml__FRCQ23Hmx4QuatRCQ23Hmx4Quat",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "operator*(const Hmx::Quat&, const Hmx::Quat&)",
+            "virtual_address": "2150493296"
+          }
+        },
+        {
+          "name": "IdentityInterp__FRCQ23Hmx4QuatfRQ23Hmx4Quat",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "IdentityInterp(const Hmx::Quat&, float, Hmx::Quat&)",
+            "virtual_address": "2150493348"
+          }
+        },
+        {
+          "name": "InterpThunk__FRCQ23Hmx4QuatRCQ23Hmx4QuatfRQ23Hmx4Quat",
+          "size": "4",
+          "metadata": {
+            "demangled_name": "InterpThunk(const Hmx::Quat&, const Hmx::Quat&, float, Hmx::Quat&)",
+            "virtual_address": "2150493492"
+          }
+        },
+        {
+          "name": "Interp__FRCQ23Hmx4QuatRCQ23Hmx4QuatfRQ23Hmx4Quat",
+          "size": "328",
+          "metadata": {
+            "demangled_name": "Interp(const Hmx::Quat&, const Hmx::Quat&, float, Hmx::Quat&)",
+            "virtual_address": "2150493496"
+          }
+        },
+        {
+          "name": "Interp__FRCQ23Hmx7Matrix3RCQ23Hmx7Matrix3fRQ23Hmx7Matrix3",
+          "size": "120",
+          "metadata": {
+            "demangled_name": "Interp(const Hmx::Matrix3&, const Hmx::Matrix3&, float, Hmx::Matrix3&)",
+            "virtual_address": "2150493824"
+          }
+        },
+        {
+          "name": "acosf",
+          "size": "36",
+          "metadata": {
+            "virtual_address": "2150493944"
+          }
+        },
+        {
+          "name": "MakeRotMatrix__FRC7Vector3RQ23Hmx7Matrix3b",
+          "size": "372",
+          "metadata": {
+            "demangled_name": "MakeRotMatrix(const Vector3&, Hmx::Matrix3&, bool)",
+            "virtual_address": "2150493980"
+          }
+        },
+        {
+          "name": "MakeRotMatrix__FRC7Vector3RC7Vector3RQ23Hmx7Matrix3",
+          "size": "124",
+          "metadata": {
+            "demangled_name": "MakeRotMatrix(const Vector3&, const Vector3&, Hmx::Matrix3&)",
+            "virtual_address": "2150494352"
+          }
+        },
+        {
+          "name": "MakeRotMatrix__FRCQ23Hmx4QuatRQ23Hmx7Matrix3",
+          "size": "168",
+          "metadata": {
+            "demangled_name": "MakeRotMatrix(const Hmx::Quat&, Hmx::Matrix3&)",
+            "virtual_address": "2150494476"
+          }
+        },
+        {
+          "name": "RotateAboutX__FRCQ23Hmx7Matrix3fRQ23Hmx7Matrix3",
+          "size": "204",
+          "metadata": {
+            "demangled_name": "RotateAboutX(const Hmx::Matrix3&, float, Hmx::Matrix3&)",
+            "virtual_address": "2150494644"
+          }
+        },
+        {
+          "name": "RotateAboutZ__FRCQ23Hmx7Matrix3fRQ23Hmx7Matrix3",
+          "size": "204",
+          "metadata": {
+            "demangled_name": "RotateAboutZ(const Hmx::Matrix3&, float, Hmx::Matrix3&)",
+            "virtual_address": "2150494848"
+          }
+        },
+        {
+          "name": "MakeEuler__FRCQ23Hmx4QuatR7Vector3",
+          "size": "84",
+          "metadata": {
+            "demangled_name": "MakeEuler(const Hmx::Quat&, Vector3&)",
+            "virtual_address": "2150495052"
+          }
+        },
+        {
+          "name": "MakeRotQuat__FRC7Vector3RC7Vector3RQ23Hmx4Quat",
+          "size": "252",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "MakeRotQuat(const Vector3&, const Vector3&, Hmx::Quat&)",
+            "virtual_address": "2150495136"
+          }
+        },
+        {
+          "name": "MakeRotQuatUnitX__FRC7Vector3RQ23Hmx4Quat",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "MakeRotQuatUnitX(const Vector3&, Hmx::Quat&)",
+            "virtual_address": "2150495388"
+          }
+        },
+        {
+          "name": "Multiply__FRC7Vector3RCQ23Hmx4QuatR7Vector3",
+          "size": "268",
+          "metadata": {
+            "demangled_name": "Multiply(const Vector3&, const Hmx::Quat&, Vector3&)",
+            "virtual_address": "2150495560"
+          }
+        },
+        {
+          "name": "__ls__FR10TextStreamRCQ23Hmx4Quat",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "operator<<(TextStream&, const Hmx::Quat&)",
+            "virtual_address": "2150495828"
+          }
+        },
+        {
+          "name": "__ls__FR10TextStreamRC7Vector3",
+          "size": "120",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "operator<<(TextStream&, const Vector3&)",
+            "virtual_address": "2150495964"
+          }
+        },
+        {
+          "name": "__ls__FR10TextStreamRC7Vector2",
+          "size": "104",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "operator<<(TextStream&, const Vector2&)",
+            "virtual_address": "2150496084"
+          }
+        },
+        {
+          "name": "__ls__FR10TextStreamRCQ23Hmx7Matrix3",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "operator<<(TextStream&, const Hmx::Matrix3&)",
+            "virtual_address": "2150496188"
+          }
+        },
+        {
+          "name": "__ls__FR10TextStreamRC9Transform",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "operator<<(TextStream&, const Transform&)",
+            "virtual_address": "2150496300"
+          }
+        },
+        {
+          "name": "Multiply__FRC9TransformRC9TransformR9Transform",
+          "size": "368",
+          "metadata": {
+            "demangled_name": "Multiply(const Transform&, const Transform&, Transform&)",
+            "virtual_address": "2150496384"
+          }
+        },
+        {
+          "name": "fn_802DF9F0",
+          "size": "588",
+          "metadata": {
+            "virtual_address": "2150496752"
+          }
+        },
+        {
+          "name": "FastInvert__FRCQ23Hmx7Matrix3RQ23Hmx7Matrix3",
+          "size": "228",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "FastInvert(const Hmx::Matrix3&, Hmx::Matrix3&)",
+            "virtual_address": "2150497340"
+          }
+        },
+        {
+          "name": "Invert__FRCQ23Hmx7Matrix3RQ23Hmx7Matrix3",
+          "size": "320",
+          "metadata": {
+            "demangled_name": "Invert(const Hmx::Matrix3&, Hmx::Matrix3&)",
+            "virtual_address": "2150497568"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/math/Decibels",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "160",
+        "matched_code": "160",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "complete_code": "160",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "DbToRatio__Ff",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DbToRatio(float)",
+            "virtual_address": "2150503744"
+          }
+        },
+        {
+          "name": "RatioToDb__Ff",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "RatioToDb(float)",
+            "virtual_address": "2150503808"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/os/ProfilePicture_Wii",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "112",
+        "matched_code": "112",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 5,
+        "matched_functions": 5,
+        "matched_functions_percent": 100.0,
+        "complete_code": "112",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__ct__14ProfilePictureFiPQ23Hmx6Object",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ProfilePicture::ProfilePicture(int, Hmx::Object*)",
+            "virtual_address": "2150686348"
+          }
+        },
+        {
+          "name": "FetchUserData__14ProfilePictureFv",
+          "size": "4",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ProfilePicture::FetchUserData()",
+            "virtual_address": "2150686436"
+          }
+        },
+        {
+          "name": "ReceiveUserData__14ProfilePictureFv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ProfilePicture::ReceiveUserData()",
+            "virtual_address": "2150686440"
+          }
+        },
+        {
+          "name": "FetchUserPicture__14ProfilePictureFv",
+          "size": "4",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ProfilePicture::FetchUserPicture()",
+            "virtual_address": "2150686448"
+          }
+        },
+        {
+          "name": "ReceiveUserPicture__14ProfilePictureFv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ProfilePicture::ReceiveUserPicture()",
+            "virtual_address": "2150686452"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/os/System_Wii",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "428",
+        "matched_code": "428",
+        "matched_code_percent": 100.0,
+        "total_data": "32",
+        "total_functions": 4,
+        "matched_functions": 4,
+        "matched_functions_percent": 100.0,
+        "complete_code": "428",
+        "complete_code_percent": 100.0,
+        "complete_data": "32",
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "SystemPreInit__FiPPcPCc",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "SystemPreInit(int, char**, const char*)",
+            "virtual_address": "2150692080"
+          }
+        },
+        {
+          "name": "GetSystemLanguage__F6Symbol",
+          "size": "156",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "GetSystemLanguage(Symbol)",
+            "virtual_address": "2150692172"
+          }
+        },
+        {
+          "name": "CaptureStackTrace__FiPUi",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "CaptureStackTrace(int, unsigned int*)",
+            "virtual_address": "2150692328"
+          }
+        },
+        {
+          "name": "PlatformDebugBreak__Fv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "PlatformDebugBreak()",
+            "virtual_address": "2150692500"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/os/SynchronizationEvent",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "312",
+        "matched_code": "312",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 4,
+        "matched_functions": 4,
+        "matched_functions_percent": 100.0,
+        "complete_code": "312",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__ct__20SynchronizationEventFv",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "SynchronizationEvent::SynchronizationEvent()",
+            "virtual_address": "2150704108"
+          }
+        },
+        {
+          "name": "__dt__20SynchronizationEventFv",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "SynchronizationEvent::~SynchronizationEvent()",
+            "virtual_address": "2150704172"
+          }
+        },
+        {
+          "name": "Set__20SynchronizationEventFv",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "SynchronizationEvent::Set()",
+            "virtual_address": "2150704236"
+          }
+        },
+        {
+          "name": "Wait__20SynchronizationEventFi",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "SynchronizationEvent::Wait(int)",
+            "virtual_address": "2150704304"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/utl/Cache",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "196",
+        "matched_code": "196",
+        "matched_code_percent": 100.0,
+        "total_data": "112",
+        "total_functions": 6,
+        "matched_functions": 6,
+        "matched_functions_percent": 100.0,
+        "complete_code": "196",
+        "complete_code_percent": 100.0,
+        "complete_data": "112",
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "GetDeviceID__7CacheIDCFv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "CacheID::GetDeviceID() const",
+            "virtual_address": "2150908472"
+          }
+        },
+        {
+          "name": "__ct__5CacheFv",
+          "size": "28",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Cache::Cache()",
+            "virtual_address": "2150908480"
+          }
+        },
+        {
+          "name": "__dt__5CacheFv",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Cache::~Cache()",
+            "virtual_address": "2150908508"
+          }
+        },
+        {
+          "name": "IsDone__5CacheFv",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Cache::IsDone()",
+            "virtual_address": "2150908572"
+          }
+        },
+        {
+          "name": "GetLastResult__5CacheFv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Cache::GetLastResult()",
+            "virtual_address": "2150908588"
+          }
+        },
+        {
+          "name": "WaitForResult__5CacheFv",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "Cache::WaitForResult()",
+            "virtual_address": "2150908596"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/utl/Compress",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "328",
+        "matched_code": "328",
+        "matched_code_percent": 100.0,
+        "total_data": "32",
+        "matched_data": "32",
+        "matched_data_percent": 100.0,
+        "total_functions": 4,
+        "matched_functions": 4,
+        "matched_functions_percent": 100.0,
+        "complete_code": "328",
+        "complete_code_percent": 100.0,
+        "complete_data": "32",
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "ZAlloc__FPvUiUi",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ZAlloc(void*, unsigned int, unsigned int)",
+            "virtual_address": "2150940688"
+          }
+        },
+        {
+          "name": "ZFree__FPvPv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ZFree(void*, void*)",
+            "virtual_address": "2150940700"
+          }
+        },
+        {
+          "name": "DecompressMem__FPCviPvRibPCc",
+          "size": "152",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DecompressMem(const void*, int, void*, int&, bool, const char*)",
+            "virtual_address": "2150940708"
+          }
+        },
+        {
+          "name": "CompressMem__FPCviPvRiPCc",
+          "size": "156",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "CompressMem(const void*, int, void*, int&, const char*)",
+            "virtual_address": "2150940860"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/beatmatch/Output",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "80",
+        "matched_code": "80",
+        "matched_code_percent": 100.0,
+        "total_data": "76",
+        "matched_data": "4",
+        "matched_data_percent": 5.263158,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "complete_code": "80",
+        "complete_code_percent": 100.0,
+        "complete_data": "76",
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__sinit_\\Output_cpp",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2152132044"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/beatmatch/RGState",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "208",
+        "matched_code": "208",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 8,
+        "matched_functions": 8,
+        "matched_functions_percent": 100.0,
+        "complete_code": "208",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__ct__7RGStateFv",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "RGState::RGState()",
+            "virtual_address": "2152161404"
+          }
+        },
+        {
+          "name": "FretDown__7RGStateFii",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "RGState::FretDown(int, int)",
+            "virtual_address": "2152161460"
+          }
+        },
+        {
+          "name": "FretUp__7RGStateFii",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "RGState::FretUp(int, int)",
+            "virtual_address": "2152161472"
+          }
+        },
+        {
+          "name": "GetFret__7RGStateCFi",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "RGState::GetFret(int) const",
+            "virtual_address": "2152161488"
+          }
+        },
+        {
+          "name": "__ne__7RGStateCFRC7RGState",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "RGState::operator!=(const RGState&) const",
+            "virtual_address": "2152161500"
+          }
+        },
+        {
+          "name": "__as__7RGStateFRC7RGState",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "RGState::operator=(const RGState&)",
+            "virtual_address": "2152161544"
+          }
+        },
+        {
+          "name": "PackRGData__Fii",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "PackRGData(int, int)",
+            "virtual_address": "2152161576"
+          }
+        },
+        {
+          "name": "UnpackRGData__FUiRiRi",
+          "size": "24",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "UnpackRGData(unsigned int, int&, int&)",
+            "virtual_address": "2152161588"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/meta/DeJitterPanel",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1272",
+        "matched_code": "1272",
+        "matched_code_percent": 100.0,
+        "total_data": "188",
+        "total_functions": 13,
+        "matched_functions": 13,
+        "matched_functions_percent": 100.0,
+        "complete_code": "1272",
+        "complete_code_percent": 100.0,
+        "complete_data": "188",
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__ct__13DeJitterPanelFv",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::DeJitterPanel()",
+            "virtual_address": "2152786568"
+          }
+        },
+        {
+          "name": "__dt__13DeJitterPanelFv",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::~DeJitterPanel()",
+            "virtual_address": "2152786712"
+          }
+        },
+        {
+          "name": "Enter__13DeJitterPanelFv",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::Enter()",
+            "virtual_address": "2152786852"
+          }
+        },
+        {
+          "name": "__dt__18DeJitterPanelTimerFv",
+          "size": "104",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanelTimer::~DeJitterPanelTimer()",
+            "virtual_address": "2152786944"
+          }
+        },
+        {
+          "name": "__ct__18DeJitterPanelTimerFR8DeJitterP5Timer",
+          "size": "180",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanelTimer::DeJitterPanelTimer(DeJitter&, Timer*)",
+            "virtual_address": "2152787048"
+          }
+        },
+        {
+          "name": "Poll__13DeJitterPanelFv",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::Poll()",
+            "virtual_address": "2152787228"
+          }
+        },
+        {
+          "name": "SetType__13DeJitterPanelF6Symbol",
+          "size": "308",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::SetType(Symbol)",
+            "virtual_address": "2152787372"
+          }
+        },
+        {
+          "name": "StaticClassName__13DeJitterPanelFv",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::StaticClassName()",
+            "virtual_address": "2152787680"
+          }
+        },
+        {
+          "name": "ClassName__13DeJitterPanelCFv",
+          "size": "4",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::ClassName() const",
+            "virtual_address": "2152787756"
+          }
+        },
+        {
+          "name": "@132@28@__dt__13DeJitterPanelFv",
+          "size": "20",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2152787760"
+          }
+        },
+        {
+          "name": "@132@28@Handle__7UIPanelFP9DataArrayb",
+          "size": "20",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "UIPanel::@132@28@Handle(DataArray*, bool)",
+            "virtual_address": "2152787780"
+          }
+        },
+        {
+          "name": "@132@28@SetType__13DeJitterPanelF6Symbol",
+          "size": "20",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::@132@28@SetType(Symbol)",
+            "virtual_address": "2152787800"
+          }
+        },
+        {
+          "name": "@132@28@ClassName__13DeJitterPanelCFv",
+          "size": "20",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::@132@28@ClassName() const",
+            "virtual_address": "2152787820"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/meta/Meta",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "496",
+        "matched_code": "496",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 9,
+        "matched_functions": 9,
+        "matched_functions_percent": 100.0,
+        "complete_code": "496",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "MetaTerminate__Fv",
+          "size": "4",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "MetaTerminate()",
+            "virtual_address": "2152794508"
+          }
+        },
+        {
+          "name": "MetaInit__Fv",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "MetaInit()",
+            "virtual_address": "2152794512"
+          }
+        },
+        {
+          "name": "Init__12PreloadPanelFv",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "PreloadPanel::Init()",
+            "virtual_address": "2152794580"
+          }
+        },
+        {
+          "name": "NewObject__12PreloadPanelFv",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "PreloadPanel::NewObject()",
+            "virtual_address": "2152794632"
+          }
+        },
+        {
+          "name": "StaticClassName__12PreloadPanelFv",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "PreloadPanel::StaticClassName()",
+            "virtual_address": "2152794696"
+          }
+        },
+        {
+          "name": "Init__13DeJitterPanelFv",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::Init()",
+            "virtual_address": "2152794772"
+          }
+        },
+        {
+          "name": "NewObject__13DeJitterPanelFv",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "DeJitterPanel::NewObject()",
+            "virtual_address": "2152794824"
+          }
+        },
+        {
+          "name": "Init__21ConnectionStatusPanelFv",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ConnectionStatusPanel::Init()",
+            "virtual_address": "2152794888"
+          }
+        },
+        {
+          "name": "NewObject__21ConnectionStatusPanelFv",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "ConnectionStatusPanel::NewObject()",
+            "virtual_address": "2152794940"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/midi/MidiVarLen",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "160",
+        "matched_code": "160",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "complete_code": "160",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__ct__16MidiVarLenNumberFR9BinStream",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "MidiVarLenNumber::MidiVarLenNumber(BinStream&)",
+            "virtual_address": "2152946940"
+          }
+        },
+        {
+          "name": "Read__16MidiVarLenNumberFR9BinStream",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "MidiVarLenNumber::Read(BinStream&)",
+            "virtual_address": "2152946988"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/ui/UIResource",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "352",
+        "matched_code": "352",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 5,
+        "matched_functions": 5,
+        "matched_functions_percent": 100.0,
+        "complete_code": "352",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__ct__10UIResourceFRC8FilePath",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "UIResource::UIResource(const FilePath&)",
+            "virtual_address": "2153211800"
+          }
+        },
+        {
+          "name": "Load__10UIResourceFb",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "UIResource::Load(bool)",
+            "virtual_address": "2153211868"
+          }
+        },
+        {
+          "name": "PostLoad__10UIResourceFv",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "UIResource::PostLoad()",
+            "virtual_address": "2153211976"
+          }
+        },
+        {
+          "name": "Release__10UIResourceFv",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "UIResource::Release()",
+            "virtual_address": "2153212052"
+          }
+        },
+        {
+          "name": "ForceRelease__10UIResourceFv",
+          "size": "20",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "demangled_name": "UIResource::ForceRelease()",
+            "virtual_address": "2153212132"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/synth/tomcrypt/ctr",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "988",
+        "matched_code": "988",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 5,
+        "matched_functions": 5,
+        "matched_functions_percent": 100.0,
+        "complete_code": "988",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "ctr_start",
+          "size": "260",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2154425188"
+          }
+        },
+        {
+          "name": "ctr_reinit",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2154425448"
+          }
+        },
+        {
+          "name": "ctr_encrypt_fast",
+          "size": "244",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2154425592"
+          }
+        },
+        {
+          "name": "ctr_encrypt",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2154425836"
+          }
+        },
+        {
+          "name": "ctr_decrypt",
+          "size": "4",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2154426172"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/system/oggvorbis/VorbisMem",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "100",
+        "matched_code": "100",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 4,
+        "matched_functions": 4,
+        "matched_functions_percent": 100.0,
+        "complete_code": "100",
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "OggMalloc",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2154634080"
+          }
+        },
+        {
+          "name": "OggCalloc",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2154634088"
+          }
+        },
+        {
+          "name": "OggRealloc",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2154634168"
+          }
+        },
+        {
+          "name": "OggFree",
+          "size": "4",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2154634176"
+          }
+        }
+      ]
+    },
+    {
+      "name": "main/sdk/RVL_SDK/src/os/OSReboot",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "128",
+        "matched_code": "128",
+        "matched_code_percent": 100.0,
+        "total_data": "8",
+        "matched_data": "8",
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "complete_code": "128",
+        "complete_code_percent": 100.0,
+        "complete_data": "8",
+        "complete_data_percent": 100.0,
+        "total_units": 1,
+        "complete_units": 1
+      },
+      "functions": [
+        {
+          "name": "__OSReboot",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2155257392"
+          }
+        },
+        {
+          "name": "OSGetSaveRegion",
+          "size": "20",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2155257504"
+          }
+        }
+      ]
+    }
+  ]
+}

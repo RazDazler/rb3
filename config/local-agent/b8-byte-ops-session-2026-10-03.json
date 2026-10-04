@@ -1,0 +1,78 @@
+{
+  "version": "SZBE69_B8",
+  "note": "Pure integer arithmetic candidates; avoid metadata-only differences and forbidden constructs.",
+  "tasks": [
+    {
+      "id": "byte-op-3",
+      "unit": "main/system/synth/ByteGrinder",
+      "source": "src/system/synth/ByteGrinder.cpp",
+      "symbol": "op3__FP9DataArray",
+      "signature": "DataNode op3(DataArray *msg)",
+      "instruction": "Improve integer temporary lifetimes, truncation scheduling and equivalent expression forms. Preserve Int(1) then Int(2) call order and exact result for every integer. No static_cast, unsigned(...) functional casts or new helpers; permitted casts are u8,u32,int,bool. Do not merely rename variables.",
+      "context": "CodeWarrior Wii uses 32-bit unsigned long and u32, 8-bit u8. DataArray::Int returns signed int; converting to unsigned is modulo 2^32. DataNode(kDataInt, integer) constructs integer result; implicit integer return is equivalent. u8 truncates modulo256. Logical not ! is boolean 0/1. Preserve distinction logical ! versus bitwise ~. Original rotate macros OP_ROT_L and OP_ROT_R mask shift distances with31 and final value255; no shifts by32 or more. Preserve all original masks/constants and sequence of reads. Matching is judged by original instruction stream, not just semantic equivalence."
+    },
+    {
+      "id": "byte-op-4",
+      "unit": "main/system/synth/ByteGrinder",
+      "source": "src/system/synth/ByteGrinder.cpp",
+      "symbol": "op4__FP9DataArray",
+      "signature": "DataNode op4(DataArray *msg)",
+      "instruction": "Improve integer temporary lifetimes, truncation scheduling and equivalent expression forms. Preserve Int(1) then Int(2) call order and exact result for every integer. No static_cast, unsigned(...) functional casts or new helpers; permitted casts are u8,u32,int,bool. Do not merely rename variables.",
+      "context": "CodeWarrior Wii uses 32-bit unsigned long and u32, 8-bit u8. DataArray::Int returns signed int; converting to unsigned is modulo 2^32. DataNode(kDataInt, integer) constructs integer result; implicit integer return is equivalent. u8 truncates modulo256. Logical not ! is boolean 0/1. Preserve distinction logical ! versus bitwise ~. Original rotate macros OP_ROT_L and OP_ROT_R mask shift distances with31 and final value255; no shifts by32 or more. Preserve all original masks/constants and sequence of reads. Matching is judged by original instruction stream, not just semantic equivalence."
+    },
+    {
+      "id": "byte-op-5",
+      "unit": "main/system/synth/ByteGrinder",
+      "source": "src/system/synth/ByteGrinder.cpp",
+      "symbol": "op5__FP9DataArray",
+      "signature": "DataNode op5(DataArray *msg)",
+      "instruction": "Improve integer temporary lifetimes, truncation scheduling and equivalent expression forms. Preserve Int(1) then Int(2) call order and exact result for every integer. No static_cast, unsigned(...) functional casts or new helpers; permitted casts are u8,u32,int,bool. Do not merely rename variables.",
+      "context": "CodeWarrior Wii uses 32-bit unsigned long and u32, 8-bit u8. DataArray::Int returns signed int; converting to unsigned is modulo 2^32. DataNode(kDataInt, integer) constructs integer result; implicit integer return is equivalent. u8 truncates modulo256. Logical not ! is boolean 0/1. Preserve distinction logical ! versus bitwise ~. Original rotate macros OP_ROT_L and OP_ROT_R mask shift distances with31 and final value255; no shifts by32 or more. Preserve all original masks/constants and sequence of reads. Matching is judged by original instruction stream, not just semantic equivalence."
+    },
+    {
+      "id": "byte-op-7",
+      "unit": "main/system/synth/ByteGrinder",
+      "source": "src/system/synth/ByteGrinder.cpp",
+      "symbol": "op7__FP9DataArray",
+      "signature": "DataNode op7(DataArray *msg)",
+      "instruction": "Improve integer temporary lifetimes, truncation scheduling and equivalent expression forms. Preserve Int(1) then Int(2) call order and exact result for every integer. No static_cast, unsigned(...) functional casts or new helpers; permitted casts are u8,u32,int,bool. Do not merely rename variables.",
+      "context": "CodeWarrior Wii uses 32-bit unsigned long and u32, 8-bit u8. DataArray::Int returns signed int; converting to unsigned is modulo 2^32. DataNode(kDataInt, integer) constructs integer result; implicit integer return is equivalent. u8 truncates modulo256. Logical not ! is boolean 0/1. Preserve distinction logical ! versus bitwise ~. Original rotate macros OP_ROT_L and OP_ROT_R mask shift distances with31 and final value255; no shifts by32 or more. Preserve all original masks/constants and sequence of reads. Matching is judged by original instruction stream, not just semantic equivalence."
+    },
+    {
+      "id": "byte-op-10",
+      "unit": "main/system/synth/ByteGrinder",
+      "source": "src/system/synth/ByteGrinder.cpp",
+      "symbol": "op10__FP9DataArray",
+      "signature": "DataNode op10(DataArray *msg)",
+      "instruction": "Improve integer temporary lifetimes, truncation scheduling and equivalent expression forms. Preserve Int(1) then Int(2) call order and exact result for every integer. No static_cast, unsigned(...) functional casts or new helpers; permitted casts are u8,u32,int,bool. Do not merely rename variables.",
+      "context": "CodeWarrior Wii uses 32-bit unsigned long and u32, 8-bit u8. DataArray::Int returns signed int; converting to unsigned is modulo 2^32. DataNode(kDataInt, integer) constructs integer result; implicit integer return is equivalent. u8 truncates modulo256. Logical not ! is boolean 0/1. Preserve distinction logical ! versus bitwise ~. Original rotate macros OP_ROT_L and OP_ROT_R mask shift distances with31 and final value255; no shifts by32 or more. Preserve all original masks/constants and sequence of reads. Matching is judged by original instruction stream, not just semantic equivalence."
+    },
+    {
+      "id": "byte-op-11",
+      "unit": "main/system/synth/ByteGrinder",
+      "source": "src/system/synth/ByteGrinder.cpp",
+      "symbol": "op11__FP9DataArray",
+      "signature": "DataNode op11(DataArray *msg)",
+      "instruction": "Improve integer temporary lifetimes, truncation scheduling and equivalent expression forms. Preserve Int(1) then Int(2) call order and exact result for every integer. No static_cast, unsigned(...) functional casts or new helpers; permitted casts are u8,u32,int,bool. Do not merely rename variables.",
+      "context": "CodeWarrior Wii uses 32-bit unsigned long and u32, 8-bit u8. DataArray::Int returns signed int; converting to unsigned is modulo 2^32. DataNode(kDataInt, integer) constructs integer result; implicit integer return is equivalent. u8 truncates modulo256. Logical not ! is boolean 0/1. Preserve distinction logical ! versus bitwise ~. Original rotate macros OP_ROT_L and OP_ROT_R mask shift distances with31 and final value255; no shifts by32 or more. Preserve all original masks/constants and sequence of reads. Matching is judged by original instruction stream, not just semantic equivalence."
+    },
+    {
+      "id": "byte-op-12",
+      "unit": "main/system/synth/ByteGrinder",
+      "source": "src/system/synth/ByteGrinder.cpp",
+      "symbol": "op12__FP9DataArray",
+      "signature": "DataNode op12(DataArray *msg)",
+      "instruction": "Improve integer temporary lifetimes, truncation scheduling and equivalent expression forms. Preserve Int(1) then Int(2) call order and exact result for every integer. No static_cast, unsigned(...) functional casts or new helpers; permitted casts are u8,u32,int,bool. Do not merely rename variables.",
+      "context": "CodeWarrior Wii uses 32-bit unsigned long and u32, 8-bit u8. DataArray::Int returns signed int; converting to unsigned is modulo 2^32. DataNode(kDataInt, integer) constructs integer result; implicit integer return is equivalent. u8 truncates modulo256. Logical not ! is boolean 0/1. Preserve distinction logical ! versus bitwise ~. Original rotate macros OP_ROT_L and OP_ROT_R mask shift distances with31 and final value255; no shifts by32 or more. Preserve all original masks/constants and sequence of reads. Matching is judged by original instruction stream, not just semantic equivalence."
+    },
+    {
+      "id": "byte-op-13",
+      "unit": "main/system/synth/ByteGrinder",
+      "source": "src/system/synth/ByteGrinder.cpp",
+      "symbol": "op13__FP9DataArray",
+      "signature": "DataNode op13(DataArray *msg)",
+      "instruction": "Improve integer temporary lifetimes, truncation scheduling and equivalent expression forms. Preserve Int(1) then Int(2) call order and exact result for every integer. No static_cast, unsigned(...) functional casts or new helpers; permitted casts are u8,u32,int,bool. Do not merely rename variables.",
+      "context": "CodeWarrior Wii uses 32-bit unsigned long and u32, 8-bit u8. DataArray::Int returns signed int; converting to unsigned is modulo 2^32. DataNode(kDataInt, integer) constructs integer result; implicit integer return is equivalent. u8 truncates modulo256. Logical not ! is boolean 0/1. Preserve distinction logical ! versus bitwise ~. Original rotate macros OP_ROT_L and OP_ROT_R mask shift distances with31 and final value255; no shifts by32 or more. Preserve all original masks/constants and sequence of reads. Matching is judged by original instruction stream, not just semantic equivalence."
+    }
+  ]
+}

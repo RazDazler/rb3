@@ -1,4 +1,23 @@
 #include "meta_band/PatchPanel.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolPatchPanel,
+    "%s(%d): %s unhandled msg: %s",
+    "PatchPanel.cpp",
+    "move",
+    "patch.rndtex",
+    "rotate",
+    "scale",
+    "warp",
+    "mPatch",
+    "baseX > 0.0f",
+    "baseY > 0.0f",
+    "patch",
+    "on_set_mode"
+)
+#endif
 #include "bandobj/InlineHelp.h"
 #include "bandobj/PatchDir.h"
 #include "decomp.h"

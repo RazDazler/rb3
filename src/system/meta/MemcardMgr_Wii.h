@@ -3,6 +3,8 @@
 #include "obj/Msg.h"
 #include "os/ThreadCall.h"
 
+class UIChangedMsg;
+class StorageChangedMsg;
 class MemcardMgr : public MsgSource, public ThreadCallback {
 public:
     MemcardMgr();
@@ -10,7 +12,11 @@ public:
     virtual ~MemcardMgr();
     virtual int ThreadStart();
     virtual void ThreadDone(int);
-    bool IsWriteMode();
+    bool IsWriteMode() const;
+    bool IsDisableWriting() const;
+    void DisableWriting(bool);
+    DataNode OnMsg(const UIChangedMsg &);
+    DataNode OnMsg(const StorageChangedMsg &);
 
     bool unk20;
     char unk21[64];
@@ -21,7 +27,7 @@ public:
     int unkb0;
     int unkb4;
     bool unkb8;
-    bool mIsWriteMode; // 0xB9
+    unsigned char mIsWriteMode; // 0xB9: disable bit0, write mode bit1
     int unkbc;
     int unkc0; // mState
     int unkc4;

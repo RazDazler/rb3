@@ -14,7 +14,15 @@ void UIButton::Init() {
     Register();
 }
 
+#ifdef VERSION_SZBE69
+#pragma push
+#pragma dont_inline off
+#pragma inline_depth(1)
+#endif
 Hmx::Object *UIButton::NewObject() { return new UIButton; }
+#ifdef VERSION_SZBE69
+#pragma pop
+#endif
 
 BEGIN_COPYS(UIButton)
     CREATE_COPY_AS(UIButton, f);

@@ -1,4 +1,46 @@
 #include "game/VocalPart.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolVocalPart,
+    "scoring",
+    "vocals",
+    "slop",
+    "pitch_margin",
+    "phrase_value",
+    "note_length_factor",
+    "pitch_hit_multiplier",
+    "nonpitch_hit_multiplier",
+    "nonpitch_easy_multiplier",
+    "vocal_cap_growth",
+    "short_note_threshold_ms",
+    "short_note_multiplier",
+    "nonpitch_energy_threshold",
+    "VocalPart.cpp",
+    "i_pTalkyMatcher",
+    "o_rCache.GetHitPercentage() == 0.0f",
+    "noteMatched != -1",
+    "=== HandlePhraseEnd singer %d ms %f\n",
+    "\tNext Phrase Data:\n",
+    "\tStart ms: %f\n",
+    "\tEnd ms: %f\n",
+    "\tBegin Note: %d\n",
+    "\tEnd Note: %d\n",
+    "\tEnd Of Song\n",
+    "mThisPhrase->mTambourinePhrase",
+    "fast song scoring should only be done on PC.",
+    "InFreestyleSection()",
+    "i_pA",
+    "i_pB",
+    "( 0.0f) <= ( fPercentage) && ( fPercentage) <= ( 1.0f)",
+    "error getting min pitch for part %d at ms: %f, defaulting to 36\n",
+    "error getting max pitch for part %d at ms: %f, defaulting to 84\n",
+    "i_newList",
+    "vector"
+)
+#endif
 #include "game/SongDB.h"
 #include "game/VocalPlayer.h"
 #include "obj/Data.h"
@@ -153,3 +195,182 @@ void VocalPart::OnGameOver() {}
 int VocalPart::GetSpotlightPhrase() const { return mSpotlightPhraseID; }
 
 void VocalPart::SetFirstPhraseMsToScore(float f1) { mFirstPhraseMsToScore = f1; }
+
+int VocalPart::CurrentPhraseIndex() const {
+    return mThisPhrase - mVocalNoteList->mPhrases.begin();
+}
+
+const VocalPhrase *VocalPart::GetFirstPhraseMarker() const {
+    return mVocalNoteList->mPhrases.begin();
+}
+
+const VocalPhrase *VocalPart::GetNextPhraseMarker(const VocalPhrase *const &phrase
+) const {
+    if (phrase == mVocalNoteList->mPhrases.end())
+        return phrase;
+    return phrase + 1;
+}
+
+bool VocalPart::IsPhraseMarkerAtEnd(const VocalPhrase *const &phrase) const {
+    return phrase == mVocalNoteList->mPhrases.end();
+}
+
+bool VocalNoteEndCmp(float ms, const VocalNote &note) {
+    return ms < note.mMs + note.mDurationMs;
+}
+
+bool VocalPart::InEmptyPhrase() const { return IsEmptyPhrase(mThisPhrase); }
+
+bool VocalPart::InPlayablePhrase() const { return true; }
+
+bool VocalPart::PhraseHasUnpitchedNotes() const {
+    if (mThisPhrase == mVocalNoteList->mPhrases.end())
+        return false;
+    return mThisPhrase->unk19;
+}
+
+bool VocalPart::InTambourinePhrase() const {
+    bool result = false;
+    const VocalNoteList *notes = mVocalNoteList;
+    const VocalPhrase *phrase = mThisPhrase;
+    if (phrase != notes->mPhrases.end() && phrase->mTambourinePhrase)
+        result = true;
+    return result;
+}
+
+void VocalPart::AddSingerCandidate(Singer *singer, float distance) {
+    if (mBestSinger && !(distance > mBestSingerPitchDistance))
+        return;
+    mBestSinger = singer;
+    mBestSingerPitchDistance = distance;
+}
+
+void VocalPart::ClearSingerCandidates() {
+    mBestSinger = 0;
+    mBestSingerPitchDistance = FLT_MAX;
+}
+
+Singer *VocalPart::GetBestSingerCandidate() { return mBestSinger; }
+int VocalPart::NumPracticePhrases(const std::vector<VocalPhrase> &phrases) const {
+    if (mVocalNoteList)
+        return mVocalNoteList->GetNumPracticePhrases(phrases);
+    return 0;
+}
+
+bool VocalPart::HasBestSingerCandidate() { return mBestSinger != 0; }
+
+bool VocalPart::IsEmptyPhrase(const VocalPhrase *const &phrase) const {
+    if (phrase == mVocalNoteList->mPhrases.end())
+        return true;
+    if (phrase->mTambourinePhrase)
+        return false;
+    if (phrase->unk10 != phrase->unk14)
+        return false;
+    int previous = phrase->unk10 - 1;
+    if (previous >= 0) {
+        const VocalNote &note = mVocalNoteList->mNotes[previous];
+        if (note.mMs + note.mDurationMs > phrase->unk0)
+            return false;
+    }
+    return true;
+}
+
+bool VocalPart::AtPhraseEnd(float ms) const {
+    if (mThisPhrase != mVocalNoteList->mPhrases.end()) {
+        if (ms > mThisPhrase->unk0 + mThisPhrase->unk4)
+            return true;
+    }
+    return false;
+}
+
+float VocalPart::FramePhraseMeterFrac() const {
+    bool local = !mPlayer->IsNet();
+    if (local) {
+        float fraction = 0.0f;
+        if (fraction != mPhraseScoreMax)
+            fraction = mPhraseScore / mPhraseScoreMax;
+        return Clamp(0.0f, 1.0f, fraction);
+    }
+    return mRemotePhraseMeterFrac;
+}
+
+float VocalPart::GetFreestyleSectionDurationMs() const {
+    MILO_ASSERT(InFreestyleSection(), 0x6AB);
+    if (mFreestyleSection == mVocalNoteList->mFreestyleSections.end())
+        return 0.0f;
+    return mFreestyleSection->second - mFreestyleSection->first;
+}
+
+float VocalPart::GetOverallPartHitPercentage() const {
+    if (!unk50)
+        return 0.0f;
+    float fPercentage = unk4c / (float)unk50;
+    MILO_ASSERT(( 0.0f) <= ( fPercentage) && ( fPercentage) <= ( 1.0f), 0x6D6);
+    return fPercentage;
+}
+
+int VocalPart::CalculateRemainingTambourineTicks() {
+    MILO_ASSERT(mThisPhrase->mTambourinePhrase, 0x614);
+    int ticks = mThisPhrase->unkc;
+    const VocalPhrase *phrase = GetNextPhraseMarker(mThisPhrase);
+    while (phrase != mVocalNoteList->mPhrases.end() && phrase->mTambourinePhrase) {
+        ticks += phrase->unkc;
+        phrase = GetNextPhraseMarker(phrase);
+    }
+    return ticks;
+}
+
+bool VocalPart::FramePhraseMeterFracSorter(const VocalPart *i_pA, const VocalPart *i_pB) {
+    MILO_ASSERT(i_pA, 0x6C8);
+    MILO_ASSERT(i_pB, 0x6C9);
+    double fractionB = i_pB->FramePhraseMeterFrac();
+    return i_pA->FramePhraseMeterFrac() > fractionB;
+}
+
+void VocalPart::SetVocalNoteList(VocalNoteList *i_newList) {
+    MILO_ASSERT(i_newList, 0x771);
+    mVocalNoteList = i_newList;
+    CalcNoteWeights();
+    ResetScoring();
+}
+
+float VocalPart::CalcPhraseScoreMax(const VocalPhrase *const &phrase) const {
+    const VocalNoteList *notes = mVocalNoteList;
+    const VocalPhrase *current = phrase;
+    int begin = current->unk10;
+    if (begin > 0) {
+        const VocalNote &previous = notes->mNotes[begin - 1];
+        if (previous.mMs + previous.mDurationMs > current->unk0)
+            --begin;
+    }
+    int end = current->unk14;
+    float total = 0.0f;
+    if ((unsigned int)begin == (unsigned int)end)
+        return total;
+    float phraseStart = current->unk0;
+    float phraseEnd = phraseStart + current->unk4;
+    for (unsigned int i = begin; i != (unsigned int)end; ++i) {
+        const VocalNote &note = notes->mNotes[i];
+        const float noteStart = note.mMs;
+        const float duration = note.mDurationMs;
+        float start = Max(noteStart, phraseStart);
+        float stop = Min(noteStart + duration, phraseEnd);
+        float fraction = (stop - start) / duration;
+        total += fraction * mNoteWeights[i];
+    }
+    return total;
+}
+
+void VocalPart::AddPhrasePoints(float points) {
+    float previous = mPhraseScore;
+    float limit = unk38;
+    float maximum = mPhraseScoreMax;
+    float next = previous + points;
+    float cap = Min(limit, maximum);
+    mPhraseScore = Min(next, cap);
+    float delta = mPhraseScore - previous;
+    int multiplier, bonus1, bonus2;
+    mPlayer->GetMultiplier(true, multiplier, bonus1, bonus2);
+    unk44 += delta * (float)(bonus1 - 1);
+    unk48 += delta * (float)(bonus2 - 1);
+}

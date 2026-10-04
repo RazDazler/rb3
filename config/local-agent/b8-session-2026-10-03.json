@@ -1,0 +1,42 @@
+{
+  "version": "SZBE69_B8",
+  "note": "Session queue: trusted reconstructed functions; proposals require independent review.",
+  "tasks": [
+    {
+      "id": "guitar-shift",
+      "unit": "main/system/beatmatch/GuitarController",
+      "source": "src/system/beatmatch/GuitarController.cpp",
+      "symbol": "IsShifted__16GuitarControllerCFv",
+      "signature": "bool GuitarController::IsShifted() const",
+      "instruction": "Preserve virtual calls and short-circuit order. Try integer temporary lifetime and bitwise operand scheduling; no arithmetic changes.",
+      "context": "mUser->IsLocal() is checked first. If not local return false. If mAutoSoloButtons return true. Otherwise read JoypadData::mButtons through the pad query, AND with unsigned mShiftButtonMask and convert to bool. Calls must remain in the original order."
+    },
+    {
+      "id": "timer-reset",
+      "unit": "main/system/os/Timer",
+      "source": "src/system/os/Timer.cpp",
+      "symbol": "Reset__5TimerFv",
+      "signature": "void Timer::Reset()",
+      "instruction": "Improve float add/register allocation using explicit temporary lifetimes. Preserve float conversions, increment/store order, and calls.",
+      "context": "Timer fields: long long mCycles; int mRunning,mFrame,mWorstMsFrame; float mWorstMs. SetLastMs(Ms()) must execute before clearing mCycles and mRunning. Increment mFrame then compare to float(mWorstMsFrame)+60.0f. If greater clear mWorstMsFrame and mWorstMs. NaN behavior and float rounding must stay equivalent."
+    },
+    {
+      "id": "singer-scream",
+      "unit": "main/band3/game/Singer",
+      "source": "src/band3/game/Singer.cpp",
+      "symbol": "DetectScream__6SingerFfff",
+      "signature": "void Singer::DetectScream(float f1, float f2, float f3)",
+      "instruction": "Try condition scheduling and equivalent branch scopes; preserve exact comparisons and call order. Preserve MILO_ASSERT unchanged.",
+      "context": "mPlayer->IsLocal() assertion must remain. unk48 and unk50 are floats; unk80 is bool; mPlayer->mIsInCoda is bool. f2 is unused. Existing code fully specifies behavior. MILO_ASSERT uses a line constant which must stay unchanged."
+    },
+    {
+      "id": "mat-frame-blend",
+      "unit": "main/system/rndwii/Mat",
+      "source": "src/system/rndwii/Mat.cpp",
+      "symbol": "SetFrameBlend__6WiiMatFQ26RndMat5Blend",
+      "signature": "void WiiMat::SetFrameBlend(Blend b)",
+      "instruction": "Try equivalent switch branch termination and shared call scheduling. Preserve every blend mode and diagnostic string exactly.",
+      "context": "GXSetBlendMode takes mode, source factor, destination factor, logic operation. Existing cases specify the exact arguments. Default MILO_WARN must remain before the fallback GXSetBlendMode; do not add/remove cases or change enum constants."
+    }
+  ]
+}

@@ -1,4 +1,34 @@
 #include "synth/BinkReader.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolBinkReader,
+    "BinkReaderHeapAlloc: warning: fallback to normal malloc\n",
+    "BinkReader.cpp",
+    "gBinkReaderHeap[i].inUse",
+    "BinkReaderHeapAlloc: warning: fallback to normal free\n",
+    "Error opening Bink audio file: %s\n",
+    "BinkReader: 0x%08x free %d\n",
+    "mBink->NumTracks < BINK_AUDIO_CHANNEL_MAX",
+    "hBinkTrack->Bits == 16",
+    "hBinkTrack->Channels == 1",
+    "BinkReader: 0x%08x alloc %d %d\n",
+    "bink_consume",
+    "iSamplesConsumed <= mSamplesReady",
+    "bink_read",
+    "bink_decode",
+    "bink_audio",
+    "BinkReader::Poll() failed from read error!\n",
+    "iSample >= 0",
+    "BinkReader: Seek past last frame (seek to %d, there are %d)",
+    "BinkReader::Seek mSamplesJump %d > %d",
+    "mSamplesJump < (kfBinkFreq / kfBinkRate)",
+    "mSamplesJump >= 0",
+    "mStream"
+)
+#endif
 #include "lib/binkwii/binkread.h"
 #include "os/Debug.h"
 #include "os/Timer.h"

@@ -71,10 +71,10 @@ public:
         MILO_FAIL("not implemented for this platform");
         return 0;
     }
-    virtual Quazal::Data *GetCustomAuthData() {
+    virtual Quazal::AnyObjectHolder<Quazal::Data, Quazal::String> *GetCustomAuthData() {
         MILO_FAIL("not implemented for this platform");
         static Quazal::AnyObjectHolder<Quazal::Data, Quazal::String> emptyDataHolder;
-        return emptyDataHolder;
+        return &emptyDataHolder;
     }
 
     CriticalSection mLogoutCritSec; // 0x1c

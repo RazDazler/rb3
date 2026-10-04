@@ -451,9 +451,18 @@ void UILabel::SetIcon(char c) {
 
 void UILabel::AppendIcon(char c) { SetDisplayText(MakeString("%s%c", unk114, c), true); }
 
+#ifdef VERSION_SZBE69
+// Retail retains these warning literals although warning calls are stripped.
+DECOMP_FORCEACTIVE(
+    UILabel,
+    "%s: %s has fixed length of %i but text is %i long (%s)",
+    "%s: %s has reserve lines of %i, but text has %i lines (%s)"
+)
+#else
 DECOMP_FORCEACTIVE(
     UILabel, "LabelDir is not yet loaded, can't tell if edit text is allowed"
 )
+#endif
 
 void UILabel::SetDateTime(const DateTime &dt, Symbol s) {
     String str(Localize(s, false));

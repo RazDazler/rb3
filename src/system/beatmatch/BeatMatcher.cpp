@@ -359,7 +359,12 @@ float BeatMatcher::GetCapStrip() const {
         return 0;
 }
 
-int BeatMatcher::GetMaxSlots() const {}
+int BeatMatcher::GetMaxSlots() const {
+    TrackType type = mTrackTypes[mCurTrack];
+    if (type == kTrackRealKeys)
+        return 25;
+    return 5 + (u32(type) - 6 <= 3);
+}
 
 TrackType BeatMatcher::GetTrackType(int idx) const { return mTrackTypes[idx]; }
 bool BeatMatcher::IsAutoplay() { return mAutoplay; }
@@ -535,8 +540,9 @@ void BeatMatcher::E3CheatDecSlop() { mWatcher->E3CheatDecSlop(); }
 
 void BeatMatcher::CheckMercurySwitch(float f) {
     if (mMercurySwitchFilter) {
-        bool b1 =
-            mMercurySwitchFilter->Poll(f, mRawMercurySwitchState) | mForceMercurySwitch;
+        bool polled = mMercurySwitchFilter->Poll(f, mRawMercurySwitchState);
+        bool forced = mForceMercurySwitch;
+        bool b1 = polled | forced;
         if (b1 != mMercurySwitchState) {
             mMercurySwitchState = b1;
             UpdateMercurySwitch();

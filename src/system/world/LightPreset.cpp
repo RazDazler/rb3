@@ -954,15 +954,21 @@ void LightPreset::FillSpotlightDrawerPresetData(
 void LightPreset::AnimateSpotlightDrawerFromPreset(
     SpotlightDrawer *sd, const LightPreset::SpotlightDrawerEntry &e, float f
 ) {
-    float val;
-    Interp(sd->mParams.mBaseIntensity, e.mBaseIntensity, f, val);
-    sd->mParams.mBaseIntensity = val;
-    Interp(sd->mParams.mSmokeIntensity, e.mSmokeIntensity, f, val);
-    sd->mParams.mSmokeIntensity = val;
-    Interp(sd->mParams.mLightingInfluence, e.mLightInfluence, f, val);
-    sd->mParams.mLightingInfluence = val;
-    Interp(sd->mParams.mIntensity, e.mTotalIntensity, f, val);
-    sd->mParams.mIntensity = val;
+    float val_mBaseIntensity = sd->mParams.mBaseIntensity;
+    val_mBaseIntensity = f * (e.mBaseIntensity - val_mBaseIntensity) + val_mBaseIntensity;
+    float val_mSmokeIntensity = sd->mParams.mSmokeIntensity;
+    val_mSmokeIntensity =
+        f * (e.mSmokeIntensity - val_mSmokeIntensity) + val_mSmokeIntensity;
+    float val_mLightInfluence = sd->mParams.mLightingInfluence;
+    val_mLightInfluence =
+        f * (e.mLightInfluence - val_mLightInfluence) + val_mLightInfluence;
+    float val_mTotalIntensity = sd->mParams.mIntensity;
+    val_mTotalIntensity =
+        f * (e.mTotalIntensity - val_mTotalIntensity) + val_mTotalIntensity;
+    sd->mParams.mSmokeIntensity = val_mSmokeIntensity;
+    sd->mParams.mLightingInfluence = val_mLightInfluence;
+    sd->mParams.mIntensity = val_mTotalIntensity;
+    sd->mParams.mBaseIntensity = val_mBaseIntensity;
 }
 
 void LightPreset::SetSpotlight(Spotlight *s, int data) {
@@ -1229,10 +1235,21 @@ void LightPreset::SpotlightDrawerEntry::Load(BinStream &bs) {
 void LightPreset::SpotlightDrawerEntry::Animate(
     const LightPreset::SpotlightDrawerEntry &e, float f
 ) {
-    Interp(mBaseIntensity, e.mBaseIntensity, f, mBaseIntensity);
-    Interp(mSmokeIntensity, e.mSmokeIntensity, f, mSmokeIntensity);
-    Interp(mLightInfluence, e.mLightInfluence, f, mLightInfluence);
-    Interp(mTotalIntensity, e.mTotalIntensity, f, mTotalIntensity);
+    float val_mBaseIntensity = mBaseIntensity;
+    val_mBaseIntensity = f * (e.mBaseIntensity - val_mBaseIntensity) + val_mBaseIntensity;
+    float val_mSmokeIntensity = mSmokeIntensity;
+    val_mSmokeIntensity =
+        f * (e.mSmokeIntensity - val_mSmokeIntensity) + val_mSmokeIntensity;
+    float val_mLightInfluence = mLightInfluence;
+    val_mLightInfluence =
+        f * (e.mLightInfluence - val_mLightInfluence) + val_mLightInfluence;
+    float val_mTotalIntensity = mTotalIntensity;
+    val_mTotalIntensity =
+        f * (e.mTotalIntensity - val_mTotalIntensity) + val_mTotalIntensity;
+    mSmokeIntensity = val_mSmokeIntensity;
+    mLightInfluence = val_mLightInfluence;
+    mTotalIntensity = val_mTotalIntensity;
+    mBaseIntensity = val_mBaseIntensity;
 }
 
 bool LightPreset::SpotlightDrawerEntry::operator!=(

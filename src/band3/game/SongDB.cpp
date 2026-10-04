@@ -1,4 +1,22 @@
 #include "game/SongDB.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolSongDB,
+    "SongDB.cpp",
+    "mTrackData.size() > track",
+    "track_num < mTrackData.size()",
+    "(trackBits & (1<<track)) == (1<<track)",
+    "drum_map",
+    "0 <= slot && slot <= 1",
+    "Duplicate end text event",
+    "gem_star_state.size() == gems.size()",
+    "GetGemStates called with bad type %d",
+    "prc_",
+    "vector"
+)
+#endif
 #include "beatmatch/DrumMap.h"
 #include "beatmatch/FillInfo.h"
 #include "beatmatch/GameGemList.h"
@@ -208,7 +226,14 @@ bool SongDB::GetCommonPhraseExtent(int i1, int i2, Extent &ext) {
     }
 }
 
-bool SongDB::IsInPhrase(BeatmatchPhraseType ty, int i2, int i3) const {}
+bool SongDB::IsInPhrase(BeatmatchPhraseType ty, int i2, int i3) const {
+    const std::vector<unsigned char> &states = mTrackData[i2].GetGemStates(ty);
+    bool result = false;
+    if (states.size() > u32(i3) && (states[i3] & 2)) {
+        result = true;
+    }
+    return result;
+}
 
 bool SongDB::IsUnisonPhrase(int i) const {
     return mSongData->GetPhraseAnalyzer()->IsUnisonPhrase(i);
@@ -553,3 +578,17 @@ void SongDB::SetTrainerGems(int i, int j) {
     unk24 = i;
     unk28 = j;
 }
+#ifdef VERSION_SZBE69_B8
+const std::vector<unsigned char> &SongDB::TrackData::GetGemStates(BeatmatchPhraseType ty
+) const {
+    switch (ty) {
+    case kSoloPhrase:
+        return unk24;
+    case kCommonPhrase:
+        return unk2c;
+    default:
+        TheDebug.Fail(MakeString("GetGemStates called with bad type %d", ty));
+        return unk24;
+    }
+}
+#endif

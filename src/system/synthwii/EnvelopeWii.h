@@ -14,6 +14,7 @@ public:
     void Resume();
     void StartAttack();
     void StartRelease();
+    void SetADSR(const class ADSR &);
 
     class Timer mTimer; // 0x0
     float mAttackDuration; // 0x30

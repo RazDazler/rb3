@@ -1,4 +1,34 @@
 #include "meta_band/EditSetlistPanel.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolEditSetlistPanel,
+    "EditSetlistPanel.cpp",
+    "mEditState == kEntering",
+    "mEditingSetlist",
+    "Bad mode %i!",
+    "GetState() != kUp",
+    "user",
+    "setlist",
+    "Bad fail reason %i!",
+    "In bad EditState %i in GetMessageToken!",
+    "mProfile",
+    "In bad EditState %i in MessageOK!",
+    "success",
+    "Bad retcode %i while checking battle limits!",
+    "battle_id",
+    "Bad retcode %i while submitting battle!",
+    "In bad EditState %i with RockCentralOpCompleteMsg!",
+    "mStringResponses",
+    "mEditState == kCheckingProfanity",
+    "Bad edit state %i!",
+    "Bad ui state %i!",
+    "No matching sym for %i days in EditSetlistPanel::DayCountToSym",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "MusicLibrary.h"
 #include "game/BandUser.h"
 #include "game/Defines.h"

@@ -17,19 +17,20 @@ public:
     void Poll();
     int HdrSize();
     bool WriteAsync(int, int, const void *);
-    void WriteDone();
+    bool WriteDone();
     void WriteHdr();
     bool ReadAsync(int, int, void *);
     bool ReadFail();
     bool ReadDone();
     FileStream *OpenHeader();
+    void OpenFiles(int);
 
     int **mBlockState; // 0x0
-    std::vector<ArkFile *> mReadArkFiles; // 0x4
-    std::vector<ArkFile *> mWriteArkFiles; // 0xc
+    std::vector<File *> mReadArkFiles; // 0x4
+    std::vector<File *> mWriteArkFiles; // 0xc
     int mWriteFileIdx; // 0x14
     int unk18; // 0x18
-    int unk1c;
+    bool mWritingHeader; // 0x1c
     int unk20; // 0x20
     int unk24;
     int unk28;

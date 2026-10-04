@@ -69,6 +69,10 @@ int Quest::GetTier() const { return mTier; }
 float Quest::GetWeight() const { return mWeight; }
 const TourCondition *Quest::GetPrereqs() const { return &mPrerequisites; }
 
+#ifdef VERSION_SZBE69
+bool Quest::HasCustomIntro() const { return mIntroVignette != ""; }
+bool Quest::HasCustomOutro() const { return mOutroVignette != ""; }
+#else
 static inline bool QuestEmptySymbolHack(const Symbol &s) { return s != ""; }
 
 DECOMP_FORCEFUNC(Quest, Quest, HasCustomIntro())
@@ -77,9 +81,9 @@ DECOMP_FORCEFUNC(Quest, Quest, HasCustomOutro())
 #pragma push
 #pragma force_active on
 inline bool Quest::HasCustomIntro() const { return QuestEmptySymbolHack(mIntroVignette); }
-
 inline bool Quest::HasCustomOutro() const { return QuestEmptySymbolHack(mOutroVignette); }
 #pragma pop
+#endif
 
 Symbol Quest::GetCustomIntro() const {
     MILO_ASSERT(HasCustomIntro(), 184);

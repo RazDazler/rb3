@@ -131,6 +131,7 @@ public:
             return table->mNonLocalized.GetString(idx - 1);
     }
     StoreError LoadError() const;
+    void SetMetadataIndex(unsigned long long, unsigned short, long);
 
     static std::vector<int> mSetlistOffers;
 
@@ -156,8 +157,7 @@ public:
     int unk80; // 0x80 - yet another buffer
     // end struct
     int mErrorMsg; // 0x84
-    int unk88;
-    int unk8c;
+    unsigned long long mMetadataTitleId; // 0x88
     unsigned short unk90;
     int unk94;
     std::list<std::pair<unsigned long long, unsigned short> > unk98;

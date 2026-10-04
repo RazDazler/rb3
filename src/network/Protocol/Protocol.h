@@ -4,6 +4,9 @@
 namespace Quazal {
 
     class EndPoint;
+    class Message;
+    class ProtocolCallContext;
+    class ProtocolRequestBroker;
 
     class Protocol : public SystemComponent {
     public:
@@ -20,9 +23,25 @@ namespace Quazal {
         virtual void FaultDetected(EndPoint *, unsigned int);
         virtual int Clone() const;
 
-        bool unk18;
-        int unk1c;
-        int unk20;
+        static void AddProtocolKey(Message *, unsigned char);
+        static void AddMethodID(Message *, unsigned int);
+        static unsigned int ExtractMethodID(Message *);
+        static unsigned int ExtractCallContextID(Message *);
+        static void ExtractCallOutcome(Message *, qResult *);
+        static bool RegisterCallContext(Message *, ProtocolCallContext *);
+        void UseLocalLoopback(unsigned int, unsigned int);
+        void SetProtocolID(unsigned char);
+        void AssociateProtocolRequestBroker(ProtocolRequestBroker *);
+        bool FlagIsSet(uint) const;
+        void SetFlag(uint);
+        EndPoint *GetOutgoingConnection() const;
+        void SetOutgoingConnection(EndPoint *);
+        int GetCallerPID() const;
+        int GetCallerCID() const;
+
+        unsigned char unk18;
+        EndPoint *unk1c;
+        ProtocolRequestBroker *unk20;
         unsigned int unk24;
         int unk28;
         bool unk2c;

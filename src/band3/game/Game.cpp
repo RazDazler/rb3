@@ -563,12 +563,10 @@ void Game::PopulatePlayerLists() {
         if (p)
             mAllActivePlayers.push_back(p);
     }
-    NullLocalBandUser *nullUser = TheBandUserMgr->GetNullUser();
-    if (nullUser) {
-        Player *p = nullUser->GetPlayer();
-        if (p)
-            mAllActivePlayers.push_back(p);
-    }
+    BandUser *nullUser = TheBandUserMgr->GetNullUser();
+    Player *p = nullUser->GetPlayer();
+    if (p)
+        mAllActivePlayers.push_back(p);
 }
 
 DECOMP_FORCEACTIVE(Game, "pPlayer", "player")

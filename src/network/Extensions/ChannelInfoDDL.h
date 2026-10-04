@@ -4,12 +4,16 @@
 #include "Platform/RootObject.h"
 
 namespace Quazal {
-    class _DS_ChannelInfo : public RootObject {
+    class _DS_ChannelInfo : public DataSet {
     public:
+#ifdef VERSION_SZBE69
+        _DS_ChannelInfo();
+        ~_DS_ChannelInfo();
+#else
         _DS_ChannelInfo() {}
         ~_DS_ChannelInfo() {}
 
-        DataSet unk0;
+#endif
         String unk4;
         unsigned short unk8;
     };

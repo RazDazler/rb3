@@ -1,4 +1,47 @@
 #include "rndobj/MeshDeform.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolMeshDeform,
+    "MeshDeform.cpp",
+    "vert <= End()",
+    "from >= 0 && from < num",
+    "can't copy vert past end",
+    "RndMeshDeform",
+    "num < VertArray::kMaxWeights",
+    "%s vert %d has negative weight %g on bone, won't export",
+    "%s vert %d weights sum to %g, check the skinning",
+    "0",
+    "%s could not find bone, using zero",
+    "md->Mesh() == m",
+    "exo_",
+    "%s null bone %d\n",
+    "%s cannot reskin %s, the vert counts differ mesh:%d me:%d",
+    "ObjPtr_p.h",
+    "f.Owner()",
+    "",
+    "num_verts ",
+    "\n",
+    "mesh_inverse ",
+    "skip_inverse ",
+    "mesh ",
+    "bone",
+    ":\n",
+    "   ",
+    "weights",
+    ": ",
+    "(",
+    " ",
+    ") ",
+    "%s can't load new %s version %d > %d",
+    "%s can't load new %s alt version %d > %d",
+    "%s(%d): %s unhandled msg: %s",
+    "PropSync_p.h",
+    "i == prop->Size() && op <= kPropInsert"
+)
+#endif
 #include "obj/ObjMacros.h"
 #include "obj/Object.h"
 #include "rndobj/Mesh.h"

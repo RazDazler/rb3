@@ -1,4 +1,19 @@
 #include "game/VocalGuidePitch.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolVocalGuidePitch,
+    "sound",
+    "instruments",
+    "chamberlin",
+    ".",
+    "VocalGuidePitch.cpp",
+    "list",
+    "Chamberlin.inst"
+)
+#endif
 #include "meta_band/BandSongMetadata.h"
 #include "meta_band/BandSongMgr.h"
 #include "obj/Data.h"

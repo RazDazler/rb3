@@ -43,23 +43,23 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#if 0
+#if defined(VERSION_SZBE69_B8)
 #include <stdlib.h>
-#include <memory.h>
 #include <string.h>
 #include <assert.h>
-#include <stdexcept>
+#include "utl/MemMgr.h"
+#include "os/Debug.h"
 
-#include "FIFOSampleBuffer.h"
+#include "synthwii/soundtouch/include/FIFOSampleBuffer.h"
 
 using namespace soundtouch;
 
 // Constructor
-FIFOSampleBuffer::FIFOSampleBuffer(int numChannels)
+FIFOSampleBuffer::FIFOSampleBuffer(uint numChannels)
 {
     assert(numChannels > 0);
-    sizeInBytes = 0; // reasonable initial value
-    buffer = NULL;
+    sizeInBytes = 0x5000; // B8 preallocates 20 KiB.
+    buffer = new SAMPLETYPE[sizeInBytes / sizeof(SAMPLETYPE)];
     bufferUnaligned = NULL;
     samplesInBuffer = 0;
     bufferPos = 0;
@@ -71,13 +71,12 @@ FIFOSampleBuffer::FIFOSampleBuffer(int numChannels)
 FIFOSampleBuffer::~FIFOSampleBuffer()
 {
     delete[] bufferUnaligned;
-    bufferUnaligned = NULL;
-    buffer = NULL;
+    delete[] buffer;
 }
 
 
 // Sets number of channels, 1 = mono, 2 = stereo
-void FIFOSampleBuffer::setChannels(int numChannels)
+void FIFOSampleBuffer::setChannels(uint numChannels)
 {
     uint usedBytes;
 
@@ -91,15 +90,19 @@ void FIFOSampleBuffer::setChannels(int numChannels)
 // if output location pointer 'bufferPos' isn't zero, 'rewinds' the buffer and
 // zeroes this pointer by copying samples from the 'bufferPos' pointer
 // location on to the beginning of the buffer.
+#pragma push
+#pragma dont_inline on
 void FIFOSampleBuffer::rewind()
 {
-    if (buffer && bufferPos)
+    if (bufferPos)
     {
         memmove(buffer, ptrBegin(), sizeof(SAMPLETYPE) * channels * samplesInBuffer);
         bufferPos = 0;
     }
 }
 
+
+#pragma pop
 
 // Adds 'numSamples' pcs of samples from the 'samples' memory position to
 // the sample buffer.
@@ -162,8 +165,15 @@ SAMPLETYPE *FIFOSampleBuffer::ptrBegin() const
 // 'capacityRequirement' number of samples. The buffer is grown in steps of
 // 4 kilobytes to eliminate the need for frequently growing up the buffer,
 // as well as to round the buffer size up to the virtual memory page size.
+inline uint FIFOSampleBuffer::getCapacity() const
+{
+    return sizeInBytes / (channels * sizeof(SAMPLETYPE));
+}
+
 void FIFOSampleBuffer::ensureCapacity(uint capacityRequirement)
 {
+    static int _x = MemFindHeap("fast");
+    MemPushHeap(_x);
     SAMPLETYPE *tempUnaligned, *temp;
 
     if (capacityRequirement > getCapacity())
@@ -174,7 +184,7 @@ void FIFOSampleBuffer::ensureCapacity(uint capacityRequirement)
         tempUnaligned = new SAMPLETYPE[sizeInBytes / sizeof(SAMPLETYPE) + 16 / sizeof(SAMPLETYPE)];
         if (tempUnaligned == NULL)
         {
-            throw std::runtime_error("Couldn't allocate memory!\n");
+            MILO_FAIL("Couldn't allocate memory!\n");
         }
         temp = (SAMPLETYPE *)(((ulong)tempUnaligned + 15) & (ulong)-16);
         memcpy(temp, ptrBegin(), samplesInBuffer * channels * sizeof(SAMPLETYPE));
@@ -188,14 +198,11 @@ void FIFOSampleBuffer::ensureCapacity(uint capacityRequirement)
         // simply rewind the buffer (if necessary)
         rewind();
     }
+    MemPopHeap();
 }
 
 
 // Returns the current buffer capacity in terms of samples
-uint FIFOSampleBuffer::getCapacity() const
-{
-    return sizeInBytes / (channels * sizeof(SAMPLETYPE));
-}
 
 
 // Returns the number of samples currently in the buffer

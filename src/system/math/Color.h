@@ -199,12 +199,27 @@ inline Hmx::Color &Average(Hmx::Color &res, const Hmx::Color &c1, const Hmx::Col
 }
 
 inline void Interp(const Hmx::Color &c1, const Hmx::Color &c2, float f, Hmx::Color &res) {
+#ifdef VERSION_SZBE69_B8
+    float old_alpha = c1.alpha;
+    float old_blue = c1.blue;
+    float old_green = c1.green;
+    float old_red = c1.red;
+    float alpha = f * (c2.alpha - old_alpha) + old_alpha;
+    float blue = f * (c2.blue - old_blue) + old_blue;
+    float green = f * (c2.green - old_green) + old_green;
+    float red = f * (c2.red - old_red) + old_red;
+    res.alpha = alpha;
+    res.blue = blue;
+    res.green = green;
+    res.red = red;
+#else
     res.Set(
         Interp(c1.red, c2.red, f),
         Interp(c1.green, c2.green, f),
         Interp(c1.blue, c2.blue, f),
         Interp(c1.alpha, c2.alpha, f)
     );
+#endif
 }
 
 void Interp(const Hmx::Color32 &, const Hmx::Color32 &, float, Hmx::Color32 &);

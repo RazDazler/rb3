@@ -16,4 +16,6 @@ void Mic::Set(const DataArray *data) {
 DECOMP_FORCEFUNC(Mic, Mic, GetDroppedSamples())
 DECOMP_FORCEFUNC(Mic, Mic, IsPlaying())
 
+#ifdef MILO_DEBUG
 DECOMP_FORCEACTIVE(Mic, "mBuffer", "len <= mSize")
+#endif

@@ -1,4 +1,66 @@
 #include "Rnd.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original B8 literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolRnd,
+    "%s(%d): %s unhandled msg: %s",
+    "Rnd.cpp",
+    "%s\n",
+    "Rnd::Modal",
+    "\n\n-- Waiting on Stack Trace --\n",
+    "\n\n-- Program ended --\n",
+    "\n\n-- Press any button to continue --\n",
+    "",
+    "    ",
+    "rnd",
+    "font",
+    "bpp",
+    "height",
+    "clear_color",
+    "sync",
+    "aspect",
+    "widescreen",
+    "(mScreenBpp == 16) || (mScreenBpp == 32)",
+    "rate",
+    "heap",
+    "stats",
+    "timers",
+    "keep_going",
+    "restart_console",
+    "timer_stats",
+    "config showing timers\n",
+    "Flare %s can't be drawn in rendered texture",
+    "timer_script",
+    "%s %2.1f (%.2f, %.2f) %.2f",
+    "%s %.2f (%.2f)",
+    "gs",
+    "world",
+    "sTexture",
+    "RndOverlay::DrawAll",
+    "cpu",
+    " gs ",
+    " cpu",
+    "rate:",
+    "/",
+    " avg ",
+    " sync avg ",
+    "\n",
+    "[world cam copy]",
+    "[default cam]",
+    "[default env]",
+    "[default lit]",
+    "textureType < kDefaultTex_Max",
+    "%s: texture added to compression twice",
+    "ur_hi",
+    "%s_%06d.bmp",
+    "Screenshot failed; could not open destination file (%s).",
+    "title",
+    "debug/%s/rnd/particlesys/max",
+    "count",
+    "SSSC(%d)\n"
+)
+#endif
 #include "decomp.h"
 #include "math/Color.h"
 #include "math/Geo.h"
@@ -828,7 +890,9 @@ void Rnd::UploadDebugStats() {
     }
 }
 
+#if !defined(VERSION_SZBE69_B8)
 DECOMP_FORCEACTIVE(Rnd, "SSSC(%d)\n")
+#endif
 
 DataNode Rnd::OnShowConsole(const DataArray *) {
     ShowConsole(true);

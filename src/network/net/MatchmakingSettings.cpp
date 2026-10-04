@@ -96,7 +96,7 @@ void SessionSettings::SetMode(Symbol mode, int filt) {
 }
 
 void SessionSettings::SetRanked(bool ranked) {
-    bool changed = mRanked != ranked;
+    bool changed = ranked != mRanked;
     mRanked = ranked;
     if (changed) {
         SetSyncDirty(-1, false);

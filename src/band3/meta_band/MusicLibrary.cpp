@@ -712,8 +712,8 @@ void MusicLibrary::ReSort(Symbol s) {
     for (int i = 0; i < 9; i++) {
         if (s == TheSongSortMgr->GetSort((SongSortType)i)->GetName()) {
             theType = (SongSortType)i;
-        } else
             break;
+        }
     }
     if (theType == kNumSongSortTypes) {
         MILO_WARN(

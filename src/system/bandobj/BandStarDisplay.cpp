@@ -1,4 +1,30 @@
 #include "bandobj/BandStarDisplay.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolBandStarDisplay,
+    "normal",
+    "pulse_success.trig",
+    "sweep.mnm",
+    "full.trig",
+    "gold.trig",
+    "star%d",
+    "stars_offset.tnm",
+    "achieve_star.cue",
+    "achieve_spade.cue",
+    "reset.trig",
+    "Invalid star type %s, defaulting to normal\n",
+    "config.anim",
+    "BandStarDisplay.cpp",
+    "0",
+    "rhs",
+    "%s can't load new %s version %d > %d",
+    "%s can't load new %s alt version %d > %d",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "obj/ObjVersion.h"
 #include "utl/Symbols.h"
 

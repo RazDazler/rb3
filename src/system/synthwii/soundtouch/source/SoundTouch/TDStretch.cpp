@@ -44,6 +44,7 @@
 #include <types.h>
 #include <string.h>
 #include <limits.h>
+#include <math.h>
 #include <assert.h>
 
 #include "synthwii/soundtouch/include/STTypes.h"
@@ -179,7 +180,7 @@ void TDStretch::overlapMono(SAMPLETYPE *pOutput, const SAMPLETYPE *pInput) const
 {
     int i, itemp;
 
-    for (i = 0; i < overlapLength ; i ++)
+    for (i = 0; i < (int)overlapLength ; i ++)
     {
         itemp = overlapLength - i;
         pOutput[i] = (pInput[i] * i + pMidBuffer[i] * itemp ) / overlapLength;    // >> overlapDividerBits;
@@ -198,20 +199,26 @@ void TDStretch::clearMidBuffer()
 }
 
 
+#pragma push
+#pragma dont_inline on
 void TDStretch::clearInput()
 {
     inputBuffer.clear();
     clearMidBuffer();
 }
+#pragma pop
 
 
 // Clears the sample buffers
+#pragma push
+#pragma dont_inline on
 void TDStretch::clear()
 {
     outputBuffer.clear();
     inputBuffer.clear();
     clearMidBuffer();
 }
+#pragma pop
 
 
 
@@ -330,7 +337,8 @@ int TDStretch::seekBestOverlapPositionStereoQuick(const SAMPLETYPE *refPos)
     int j;
     int bestOffs;
     LONG_SAMPLETYPE bestCorr, corr;
-    int scanCount, corrOffset, tempOffset;
+    uint scanCount;
+    int corrOffset, tempOffset;
 
     // Slopes the amplitude of the 'midBuffer' samples
     precalcCorrReferenceStereo();
@@ -430,7 +438,8 @@ int TDStretch::seekBestOverlapPositionMonoQuick(const SAMPLETYPE *refPos)
     int j;
     int bestOffs;
     LONG_SAMPLETYPE bestCorr, corr;
-    int scanCount, corrOffset, tempOffset;
+    uint scanCount;
+    int corrOffset, tempOffset;
 
     // Slopes the amplitude of the 'midBuffer' samples
     precalcCorrReferenceMono();
@@ -517,52 +526,43 @@ void TDStretch::setChannels(uint numChannels)
 
 // nominal tempo, no need for processing, just pass the samples through
 // to outputBuffer
-/*
+#pragma push
+#pragma dont_inline on
 void TDStretch::processNominalTempo()
 {
-    assert(tempo == 1.0f);
-
     if (bMidBufferDirty)
     {
-        // If there are samples in pMidBuffer waiting for overlapping,
-        // do a single sliding overlapping with them in order to prevent a
-        // clicking distortion in the output sound
-        if (inputBuffer.numSamples() < overlapLength)
-        {
-            // wait until we've got overlapLength input samples
-            return;
-        }
-        // Mix the samples in the beginning of 'inputBuffer' with the
-        // samples in 'midBuffer' using sliding overlapping
-        overlap(outputBuffer.ptrEnd(overlapLength), inputBuffer.ptrBegin(), 0);
+        if (inputBuffer.numSamples() < overlapLength) return;
+        SAMPLETYPE *pInput = inputBuffer.ptrBegin();
+        SAMPLETYPE *pOutput = outputBuffer.ptrEnd(overlapLength);
+        if (channels == 2) overlapStereo(pOutput, pInput);
+        else overlapMono(pOutput, pInput);
         outputBuffer.putSamples(overlapLength);
         inputBuffer.receiveSamples(overlapLength);
         clearMidBuffer();
-        // now we've caught the nominal sample flow and may switch to
-        // bypass mode
     }
-
-    // Simply bypass samples from input to output
-    outputBuffer.moveSamples(inputBuffer);
+    uint numSamples = inputBuffer.numSamples();
+    outputBuffer.putSamples(inputBuffer.ptrBegin(), numSamples);
+    inputBuffer.receiveSamples(numSamples);
 }
-*/
+#pragma pop
 
 // Processes as many processing frames of the samples 'inputBuffer', store
 // the result into 'outputBuffer'
+#pragma push
+#pragma dont_inline on
 void TDStretch::processSamples()
 {
-    int ovlSkip, offset;
+    uint ovlSkip;
+    int offset;
     int temp;
 
-    /* Removed this small optimization - can introduce a click to sound when tempo setting
-       crosses the nominal value
+    // B8 retains the nominal-tempo bypass.
     if (tempo == 1.0f)
     {
-        // tempo not changed from the original, so bypass the processing
         processNominalTempo();
         return;
     }
-    */
 
     if (bMidBufferDirty == FALSE)
     {
@@ -590,7 +590,10 @@ void TDStretch::processSamples()
         // samples in 'midBuffer' using sliding overlapping
         // ... first partially overlap with the end of the previous sequence
         // (that's in 'midBuffer')
-        overlap(outputBuffer.ptrEnd((uint)overlapLength), inputBuffer.ptrBegin(), (uint)offset);
+        SAMPLETYPE *pInput = inputBuffer.ptrBegin();
+        SAMPLETYPE *pOutput = outputBuffer.ptrEnd(overlapLength);
+        if (channels == 2) overlapStereo(pOutput, pInput + 2 * offset);
+        else overlapMono(pOutput, pInput + offset);
         outputBuffer.putSamples((uint)overlapLength);
 
         // ... then copy sequence samples from 'inputBuffer' to output
@@ -617,6 +620,7 @@ void TDStretch::processSamples()
         inputBuffer.receiveSamples((uint)ovlSkip);
     }
 }
+#pragma pop
 
 
 // Adds 'numsamples' pcs of samples from the 'samples' memory position into
@@ -632,9 +636,11 @@ void TDStretch::putSamples(const SAMPLETYPE *samples, uint nSamples)
 
 
 /// Set new overlap length parameter & reallocate RefMidBuffer if necessary.
-void TDStretch::acceptNewOverlapLength(int newOverlapLength)
+#pragma push
+#pragma dont_inline on
+void TDStretch::acceptNewOverlapLength(uint newOverlapLength)
 {
-    int prevOvl;
+    uint prevOvl;
 
     assert(newOverlapLength >= 0);
     prevOvl = overlapLength;
@@ -654,6 +660,7 @@ void TDStretch::acceptNewOverlapLength(int newOverlapLength)
         pRefMidBuffer = (SAMPLETYPE *)((((ulong)pRefMidBufferUnaligned) + 15) & (ulong)-16);
     }
 }
+#pragma pop
 
 
 // Operator 'new' is overloaded so that it automatically creates a suitable instance
@@ -753,6 +760,20 @@ void TDStretch::calculateOverlapLength(int overlapMs)
 }
 */
 
+
+#pragma push
+#pragma dont_inline on
+void TDStretch::calculateOverlapLength(uint overlapMs)
+{
+    double log2 = log(2.0);
+    overlapDividerBits = (int)(0.5 + log((sampleRate * overlapMs) / 1000.0) / log2);
+    if (overlapDividerBits > 9) overlapDividerBits = 9;
+    if (overlapDividerBits < 4) overlapDividerBits = 4;
+    uint newOvl = (uint)(float)pow(2.0, (float)(int)overlapDividerBits);
+    acceptNewOverlapLength(newOvl);
+    slopingDivider = (newOvl * newOvl - 1) / 3;
+}
+#pragma pop
 
 long TDStretch::calcCrossCorrMono(const short *mixingPos, const short *compare) const
 {

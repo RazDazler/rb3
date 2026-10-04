@@ -1,0 +1,42 @@
+{
+  "version": "SZBE69_B8",
+  "note": "Trusted pilot queue; small reconstructed functions, review-only source trials. Prior hand-written variants failed to fully match these; do not repeat obvious renames.",
+  "tasks": [
+    {
+      "id": "project-z",
+      "unit": "main/system/rndwii/Cam",
+      "source": "src/system/rndwii/Cam.cpp",
+      "symbol": "ProjectZ__6WiiCamFf",
+      "signature": "u32 WiiCam::ProjectZ(float z)",
+      "instruction": "Improve float-register allocation by temporary lifetime/reuse and declaration scheduling. Preserve original fused-operation structure; do not algebraically reassociate floating point. Simple renames/reordered load declarations were tried already.",
+      "context": "u32 is unsigned 32-bit; float is IEEE binary32. this arrives in r3, z in f1. RndCam members: float mNearPlane at 0x240, float mFarPlane at 0x244, Vector2 mZRange at 0x250 with float x at 0x250 and y at 0x254. The final branch __cvt_fp2unsigned converts the float to u32; it is emitted by the compiler, not called manually. Constant @F_ffff7f4b is 16777215.0f. Current correct operation chain: distance=far-near; range=max-min; scale=far/distance; p=scale*near; p=z*scale-p; z=p/z; z=z*range+min; return u32(16777215.0f*z). Original float register targets are f6 near, f5 far/scale, f4 min, f3 distance/projected, f2 max/range. Do not change the function signature or member layout. VERSION_SZBE69_B8 branch is explicitly selected."
+    },
+    {
+      "id": "byte-grinder-op8",
+      "unit": "main/system/synth/ByteGrinder",
+      "source": "src/system/synth/ByteGrinder.cpp",
+      "symbol": "op8__FP9DataArray",
+      "signature": "DataNode op8(DataArray *msg)",
+      "instruction": "Resolve the remaining ADD operand/register scheduling difference using explicit temporary lifetimes. Preserve the sequence of msg->Int calls and 8-bit truncations.",
+      "context": "u32 = unsigned 32-bit, u8 = unsigned 8-bit. DataArray::Int(int) returns int. DataNode(int) represents kDataInt; implicit conversion from integer is intentional. DataNode has enum type and 4-byte value storage. Function reads Int(1), then Int(2); result is (((u8)Int(2)+(u8)Int(1)) modulo 256) XOR ((u8)Int(1)), returned as integer DataNode. Do not reorder calls or eliminate either read."
+    },
+    {
+      "id": "bitmap-pixel-index",
+      "unit": "main/system/rndobj/Bitmap",
+      "source": "src/system/rndobj/Bitmap.cpp",
+      "symbol": "SetPixelIndex__9RndBitmapFiiUc",
+      "signature": "void RndBitmap::SetPixelIndex(int i1, int i2, unsigned char uc)",
+      "instruction": "Resolve the final OR operand/register ordering difference through equivalent expression/temporary forms. Preserve memory reads and writes and PixelOffset call.",
+      "context": "u8 = unsigned 8-bit. mPixels is u8*, mBpp is bits-per-pixel. PixelOffset(int x, int y, bool &highNibble) returns byte offset and initializes the boolean. At 8bpp store uc. Otherwise highNibble: (uc<<4)|(old&0xF), lowNibble: (old&0xF0)|uc. Do not mask uc additionally or change API semantics. Current behavior is fully understood; only final register/operand scheduling differs."
+    },
+    {
+      "id": "yuv444-rgb",
+      "unit": "main/system/rndwii/Tex",
+      "source": "src/system/rndwii/Tex.cpp",
+      "symbol": "YUV444ToRGB__FP6YUV444P3RGBii",
+      "signature": "void YUV444ToRGB(YUV444 *source, RGB *destination, int width, int height)",
+      "instruction": "Improve integer temporary register scheduling and row/column loop variable lifetime. Preserve conversion equations, signed division rounding toward zero, clamp order, and exactly width*height 3-byte pixels.",
+      "context": "struct YUV444 { unsigned char y,u,v; }; struct RGB { unsigned char r,g,b; }; sizeof both = 3. y'=y-16; u'=u-128; v'=v-128. r=(1164*y'+1596*v'+500)/1000, g=(1164*y'-813*v'-391*u'+500)/1000, b=(1164*y'+2018*u'+500)/1000. Arithmetic uses 32-bit signed int. Clamp each to 0..255 then store. Input and output may alias according to original read-before-write behavior; preserve ordering of all reads before the first pixel store. Outer row and inner column loops do nothing when height or width is nonpositive. Advance each row by width elements. No helpers or lookup tables."
+    }
+  ]
+}

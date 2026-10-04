@@ -1,0 +1,14 @@
+{
+  "version": "SZBE69_B8",
+  "tasks": [
+    {
+      "id": "joypad-fret-reconcile",
+      "unit": "main/system/beatmatch/JoypadGuitarController",
+      "source": "src/system/beatmatch/JoypadGuitarController.cpp",
+      "symbol": "ReconcileFretState__22JoypadGuitarControllerFv",
+      "signature": "void JoypadGuitarController::ReconcileFretState()",
+      "instruction": "Improve loop register allocation and temporary lifetime; preserve evaluation order and every callback. Try bool/int existing mask temporary scopes, do not change masks or loop range. No new helpers or cast forms outside int,float,bool,u8,u32.",
+      "context": "mFretMask is int; JoypadData::IsButtonInMask returns bool; SlotToButton maps the slot; callbacks may mutate controller state. Keep read of current mFretMask before SlotToButton/IsButtonInMask calls each iteration. Five iterations i=0..4. Accumulate mask then store only after loop; ForceMercurySwitch must run last. bool inFretMask=(mFretMask & (1<<i)) normalizes to0/1; do not compare raw nonzero mask directly to bool."
+    }
+  ]
+}

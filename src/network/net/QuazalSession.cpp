@@ -1,4 +1,17 @@
 #include "network/net/QuazalSession.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolQuazalSession,
+    "QuazalSession.cpp",
+    "mNetZ->IsValid()",
+    "Error in Quazal CreateSession(): %s\n",
+    "!mTerminatingContext",
+    "!(*addr)"
+)
+#endif
 #include "Core/CallContext.h"
 #include "net/NetSession.h"
 #include "os/Debug.h"

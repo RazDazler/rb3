@@ -1,4 +1,23 @@
 #include "midi/DataEvent.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolDataEventList,
+    "DataEventList.cpp",
+    "mCompType == kDataSymbol || mCompType == kDataInt",
+    "Trying to add event %s but mCompType is %s, ignoring",
+    "kDataInt",
+    "kDataSymbol",
+    "index < mSize",
+    "mComps.empty()",
+    "mEvents.empty()",
+    " ",
+    "\n",
+    "vector"
+)
+#endif
 #include "os/Debug.h"
 #include "utl/VectorSizeDefs.h"
 #include "utl/Std.h"

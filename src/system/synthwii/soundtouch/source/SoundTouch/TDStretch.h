@@ -94,19 +94,19 @@ namespace soundtouch
 class TDStretch : public FIFOProcessor
 {
 protected:
-    int channels;
-    int sampleReq;
+    uint channels;
+    uint sampleReq;
     float tempo;
 
     SAMPLETYPE *pMidBuffer;
     SAMPLETYPE *pRefMidBuffer;
     SAMPLETYPE *pRefMidBufferUnaligned;
-    int overlapLength;
-    int overlapDividerBits;
-    int slopingDivider;
-    int seekLength;
-    int seekWindowLength;
-    int maxOffset;
+    uint overlapLength;
+    uint overlapDividerBits;
+    uint slopingDivider;
+    uint seekLength;
+    uint seekWindowLength;
+    uint maxOffset;
     float nominalSkip;
     float skipFract;
     FIFOSampleBuffer outputBuffer;
@@ -114,15 +114,15 @@ protected:
     BOOL bQuickseek;
     BOOL bMidBufferDirty;
 
-    int sampleRate;
-    int sequenceMs;
-    int seekWindowMs;
-    int overlapMs;
+    uint sampleRate;
+    uint sequenceMs;
+    uint seekWindowMs;
+    uint overlapMs;
 
-    void acceptNewOverlapLength(int newOverlapLength);
+    void acceptNewOverlapLength(uint newOverlapLength);
 
     virtual void clearCrossCorrState();
-    void calculateOverlapLength(int overlapMs);
+    void calculateOverlapLength(uint overlapMs);
 
     virtual LONG_SAMPLETYPE calcCrossCorrStereo(const SAMPLETYPE *mixingPos, const SAMPLETYPE *compare) const;
     virtual LONG_SAMPLETYPE calcCrossCorrMono(const SAMPLETYPE *mixingPos, const SAMPLETYPE *compare) const;
@@ -146,6 +146,7 @@ protected:
     /// Returns amount of samples returned in the "output" buffer.
     /// The maximum amount of samples that can be returned at a time is set by
     /// the 'set_returnBuffer_size' function.
+    void processNominalTempo();
     void processSamples();
     
 public:
@@ -155,6 +156,8 @@ public:
     void *operator new(size_t t) {
         return _MemAlloc(t, 32);
     }
+
+    void operator delete(void *p) { _MemFree(p); }
 
     /// Returns the output buffer object
     FIFOSamplePipe *getOutput() { return &outputBuffer; };

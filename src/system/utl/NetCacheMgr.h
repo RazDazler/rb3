@@ -4,6 +4,7 @@
 #include "utl/Symbols.h"
 #include "utl/Cache.h"
 #include "utl/NetLoader.h"
+#include "utl/NetLoaderRef.h"
 #include "utl/NetCacheLoader.h"
 #include <vector>
 #include <list>
@@ -38,6 +39,12 @@ class NetCacheMgr : public Hmx::Object {
 public:
     enum CacheSize {
     };
+    enum RefType {
+        kRefCache,
+        kRefNet
+    };
+    NetLoaderRef *AddLoaderRef(const char *, RefType, NetLoaderPos);
+    bool UseSSL();
 
     NetCacheMgr();
     virtual ~NetCacheMgr();
@@ -49,14 +56,22 @@ public:
     virtual void UnloadInit();
     virtual bool IsDoneUnloading() const;
 
-    int GetServerRoot() const;
-    int GetPort() const;
+    const char *GetServerRoot() const;
+    const char *GetServer() const;
+    bool IsServerLocal() const;
+    NetLoader *AddNetLoader(const char *, NetLoaderPos);
+    void DeleteNetLoader(NetLoader *);
+    unsigned short GetPort() const;
     NetCacheMgrFailType GetFailType() const;
     void SetState(NetCacheMgrState);
+    void PollLoaders();
+    void EnterLoadState();
+    void EnterUnloadState();
+    bool IsUnloadStateDone() const;
     void Unload();
     bool IsLocalFile(const char *) const;
-    void OnInit();
-    void CheatNextServer();
+    void OnInit(DataArray *);
+    Symbol CheatNextServer();
     void DebugClearCache();
     void DeleteNetCacheLoader(NetCacheLoader *);
     void Load(CacheSize);
@@ -69,11 +84,24 @@ public:
     NetCacheMgrFailType mFailType; // 0x24
     String mStrXLSPFilter; // 0x28 unsure if this name is still correct, but there is
                            // indeed a String here
-    std::list<int> mServers; // 0x34
+    struct ServerData {
+        Symbol mType; // 0x0
+        bool mLocal; // 0x4
+        const char *mServer; // 0x8
+        unsigned short mPort; // 0xc
+        const char *mRoot; // 0x10
+        bool mVerifySSL; // 0x14
+    };
+
+    const ServerData &Server() const;
+
+    int mXLSPServiceId; // 0x34
+    std::list<ServerData> mServers; // 0x38
     Symbol mServerType; // 0x40
     unsigned int mLoadCacheSize; // 0x44
-    Cache *mCache; // 0x48
-    std::vector<int> mNetLoaderRefs; // 0x4C
+    FileCache *mCache; // 0x48
+    std::list<NetLoaderRef> mNetLoaderRefs; // 0x4c
+    int mLoadCount; // 0x54
 };
 
 extern NetCacheMgr *TheNetCacheMgr;

@@ -1,4 +1,50 @@
 #include "meta_band/AppLabel.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// B8 literal order precedes the retained retail metadata helper.
+DECOMP_FORCEACTIVE(
+    HighB8LiteralPoolAppLabel,
+    "%s) %s",
+    "heading",
+    "slot_heading",
+    "slot_left",
+    "slot_right",
+    "slot_centered",
+    "AppLabel.cpp",
+    "profile",
+    "<alt>%s</alt> %s",
+    "%s %s",
+    "ssn",
+    "%i (%i)",
+    "p",
+    "Could not set user name, unknown class",
+    "",
+    "pProfile",
+    "pMachineMgr",
+    "<alt>%s</alt> %s (%s %s)",
+    "panel",
+    "practice_mbt",
+    "%s (%d:%d:%d)",
+    "!e->mOffer",
+    "bsp",
+    "pUser",
+    "pitch %d doesn't map to a white key",
+    "linking code is not 10 characters!\n",
+    "linking code has spaces!\n",
+    "setting",
+    "%s",
+    "%s%s",
+    "smp",
+    "store_browser_panel",
+    "sbp",
+    "%s::%s",
+    "Bad ScoreType in AppLabel::SetBattleInstrumentString!",
+    "setlist",
+    "ratingIcons",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "bandobj/BandTrack.h"
 #include "decomp.h"
 #include "game/BandUser.h"
@@ -12,6 +58,7 @@
 #include "meta_band/MainHubMessageProvider.h"
 #include "meta_band/MainHubPanel.h"
 #include "meta_band/MetaPerformer.h"
+#include "meta_band/MusicLibrary.h"
 #include "meta_band/ProfileMgr.h"
 #include "meta_band/SavedSetlist.h"
 #include "meta_band/SessionMgr.h"
@@ -141,8 +188,8 @@ void AppLabel::SetSongNameWithNumber(int songID, int i2, const char *cc) {
     BandSongMetadata *data = (BandSongMetadata *)TheSongMgr.Data(songID);
     if (data)
         cc = data->Title();
-    else if (!cc) {
-        cc = Localize(unknown_song, 0);
+    else {
+        cc = cc ? cc : Localize(unknown_song, 0);
     }
     if (i2 > 0) {
         SetTokenFmt(setlist_song_fmt, i2, cc);
@@ -395,16 +442,26 @@ void AppLabel::SetSetlistOwner(const SetlistRecord *setlist) {
 void AppLabel::SetEditSetlistName(const UIPanel *) {}
 void AppLabel::SetEditSetlistDesc(const UIPanel *) {}
 
-void AppLabel::SetOfferName(const StoreOffer *) {}
-void AppLabel::SetOfferCost(const StoreOffer *) {}
+void AppLabel::SetOfferName(const StoreOffer *offer) {
+    SetDisplayText(offer->OfferName(), true);
+}
+void AppLabel::SetOfferCost(const StoreOffer *offer) {
+    SetDisplayText(offer->CostStr(), true);
+}
 void AppLabel::SetOfferArtist(const StoreOffer *) {}
 void AppLabel::SetOfferAlbum(const StoreOffer *) {}
-void AppLabel::SetOfferDescription(const StoreOffer *) {}
+void AppLabel::SetOfferDescription(const StoreOffer *offer) {
+    SetDisplayText(offer->Description(), true);
+}
 
 void AppLabel::SetStoreCrumbText() {}
-void AppLabel::SetMusicLibraryStatus() {}
+void AppLabel::SetMusicLibraryStatus() {
+    SetDisplayText(TheMusicLibrary->GetStatusText(), true);
+}
 
-void AppLabel::SetRecommendation(const StoreInfoPanel *) {}
+void AppLabel::SetRecommendation(const StoreInfoPanel *panel) {
+    SetDisplayText(panel->CurrentRecommendation()->unk0.c_str(), true);
+}
 
 void AppLabel::SetLinkingCode(const char *cc) {
     String s(cc);

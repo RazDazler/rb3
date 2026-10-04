@@ -17,5 +17,7 @@ void DeJitter::Reset() {
     unk_0xC = -2;
     unk_0x10 = 0;
     unk_0x14 = 0;
+#ifdef MILO_DEBUG
     unk_0x18 = 1e30;
+#endif
 }

@@ -1,0 +1,38 @@
+{
+  "target": "SZBE69_B8",
+  "status": "active",
+  "started_at": 1791089231,
+  "started_utc": "2026-10-04T04:47:11Z",
+  "model_label": "Current Codex model/effort not independently retrieved",
+  "baseline": {
+    "fuzzy_match_percent": 68.993546,
+    "total_code": "11431676",
+    "matched_code": "6369380",
+    "matched_code_percent": 55.716938,
+    "total_data": "2755932",
+    "matched_data": "614776",
+    "matched_data_percent": 22.307373,
+    "total_functions": 41333,
+    "matched_functions": 28774,
+    "matched_functions_percent": 69.61508,
+    "complete_code": "1245308",
+    "complete_code_percent": 10.893486,
+    "complete_data": "498140",
+    "complete_data_percent": 18.075191,
+    "total_units": 1876,
+    "complete_units": 545
+  },
+  "initial_usage": {
+    "primary_used_percent": 1,
+    "weekly_used_percent": 78,
+    "primary_resets_at": 1791107162,
+    "weekly_resets_at": 1791580276
+  },
+  "accepted_changes": [],
+  "rejected_experiments": [],
+  "retained_partial_reconstructions": [],
+  "notes": [
+    "Setup and upstream gains must be separated from this session decompilation gains.",
+    "User authorizes commits and pushes to RazDazler/rb3 master with ChatGPT attribution at session end."
+  ]
+}

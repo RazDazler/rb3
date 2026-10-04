@@ -18,6 +18,8 @@ public:
     NetCacheLoader(FileCache *, const String &);
     ~NetCacheLoader();
 
+    bool NeedsToDownload() const { return mState == kS_0x1 || mState == kS_0x2; }
+    bool IsDownloading() const { return mState == kS_0x2; }
     bool IsLoaded() const;
     int GetSize();
     void *GetBuffer();

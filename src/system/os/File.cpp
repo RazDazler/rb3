@@ -1,4 +1,58 @@
 #include "os/File.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolFile,
+    "calling synchproc on non-pc platform",
+    "",
+    "_keep_%s.dta",
+    "File.cpp",
+    "gFrameRateArray",
+    "ui/framerate/venue_test/*%s",
+    ".",
+    "../../system/run",
+    "file_root",
+    "file_exec_root",
+    "file_get_drive",
+    "file_get_path",
+    "file_get_base",
+    "file_get_ext",
+    "file_match",
+    "file_absolute_path",
+    "file_relative_path",
+    "with_file_root",
+    "synch_proc",
+    "toggle_fake_file_errors",
+    "enumerate_frame_rate_results",
+    "file_order",
+    "gOpenCaptureFile",
+    "NewFile(%s) from !MainThread()",
+    "/band3_ng/",
+    "Loading files from the wrong branch: %s",
+    ".wav",
+    "_norm.",
+    "_spec.",
+    "'%s'\n",
+    "(iMode & ~FILE_OPEN_NOARK) == 0",
+    "root && file",
+    "%s:%s",
+    "%s/%s",
+    "/",
+    "endDir - dirs <= 32",
+    "c - buffer < File::MaxFileNameLen",
+    "root && filepath",
+    "p - relative < sizeof(relative)",
+    "FileGetBase called from !MainThread with \"%s\"\n",
+    "Can't open file, too many already open!!!",
+    "( 0) <= (iFd) && (iFd) < ( gFiles.size())",
+    "gFiles[iFd] != NULL",
+    "pttn && pttn[0]",
+    "&",
+    "?*",
+    "%s/%s%s"
+)
+#endif
 #include "decomp.h"
 #include "obj/Data.h"
 #include "os/OSFuncs.h"

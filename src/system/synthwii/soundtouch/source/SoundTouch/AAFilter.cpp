@@ -41,8 +41,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#if 0
-#include <memory.h>
+#if 1
+#include <string.h>
 #include <assert.h>
 #include <math.h>
 #include <stdlib.h>
@@ -51,7 +51,7 @@
 
 using namespace soundtouch;
 
-#define PI        3.141592655357989
+#define PI        3.1415927410125732421875
 #define TWOPI    (2 * PI)
 
 /*****************************************************************************
@@ -62,7 +62,7 @@ using namespace soundtouch;
 
 AAFilter::AAFilter(uint len)
 {
-    pFIR = FIRFilter::newInstance();
+    pFIR = new FIRFilter;
     cutoffFreq = 0.5;
     setLength(len);
 }
@@ -157,10 +157,10 @@ void AAFilter::calculateCoeffs()
     {
         // scale & round to nearest integer
         temp = work[i] * scaleCoeff;
-        temp += (temp >= 0) ? 0.5 : -0.5;
+        double rounded = temp + ((temp >= 0) ? 0.5 : -0.5);
         // ensure no overfloods
-        assert(temp >= -32768 && temp <= 32767);
-        coeffs[i] = (SAMPLETYPE)temp;
+        assert(rounded >= -32768 && rounded <= 32767);
+        coeffs[i] = (SAMPLETYPE)rounded;
     }
 
     // Set coefficients. Use divide factor 14 => divide result by 2^14 = 16384
@@ -180,7 +180,7 @@ uint AAFilter::evaluate(SAMPLETYPE *dest, const SAMPLETYPE *src, uint numSamples
 }
 
 
-uint AAFilter::getLength() const
+inline uint AAFilter::getLength() const
 {
     return pFIR->getLength();
 }

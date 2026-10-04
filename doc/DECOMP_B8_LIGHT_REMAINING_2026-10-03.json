@@ -1,0 +1,33 @@
+{
+  "environment_linking": {
+    "code_bytes": 4044,
+    "data_bytes": 492,
+    "original_code_order": [
+      "LightId",
+      "DebugToggleShadows",
+      "DebugToggleShowShadowTextureOnScreen",
+      "WiiEnviron constructor",
+      "WiiEnviron destructor",
+      "SetLight",
+      "ClearLights",
+      "SetDirLight",
+      "Select",
+      "ApplyApproxLighting",
+      "RenderCharactersToShadowBuffers"
+    ],
+    "resolved_issue": "Force-active Light helper was emitted in every include unit, shifting Env code by 0x50. Scoped retention to Rnd.cpp, restored definition order, then exact source-linked DOL passed."
+  },
+  "remaining_renderer_layout": {
+    "StartRenderingFrame": "Only sFrameTimer, sCurrentFrame and sRenderingFrame BSS offset differences after recovering behavior.",
+    "SetNextGXBreakpoint": "Original shared BSS base and queue/free/current pointer offsets.",
+    "FrameQueueSync": "Original shared BSS grouping; do not add synthetic padding or absolute addresses.",
+    "statistics": "Three real 56-byte records / fourteen 32-bit counters; unknown names retained as indices.",
+    "camera": "WiiCam derived Transform at 0x278..0x2a7; virtual base starts 0x2a8, confirmed by constructor. Select missing."
+  },
+  "candidate_review": {
+    "YRatio": "Shared return attempts, reversed/switch/nested/ternary control flow did not improve beyond71.42857.",
+    "ProjectZ": "Correct formula restored; six permutations/reused locals did not improve beyond33.333336.",
+    "Compress": "Original postincrement pointer-reference endian swaps and unsigned-int selector specialization recovered; twenty-four local/register differences remain.",
+    "ColorConstructor": "Three/four-float, packed and named Color temporaries did not eliminate original-absent stack stores; real direct RGB/dirty writes plus cached material pointer matched."
+  }
+}

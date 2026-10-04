@@ -7,7 +7,11 @@ static inline const char *TrackSymStr() { return "TRACK_SYMBOLS"; }
 #pragma push
 #pragma force_active on
 inline Symbol TrackTypeToSym(TrackType type) {
+#ifdef VERSION_SZBE69
+    return DataGetMacro("TRACK_SYMBOLS")->Sym(type);
+#else
     return DataGetMacro(TrackSymStr())->Sym(type);
+#endif
 }
 #pragma pop
 

@@ -1,4 +1,30 @@
 #include "meta_band/SetlistMergePanel.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolSetlistMergePanel,
+    "setlist_merge_lock",
+    "SetlistMergePanel.cpp",
+    "IsLeaderLocal()",
+    "GetState() == kUp",
+    "mSetlistMergeLock->InLock()",
+    "set_machine_info",
+    "hide_machine_info",
+    "",
+    "setlist_merge_screen",
+    "( 0) <= (i) && (i) < ( 100)",
+    "( 1) <= (setlistSize) && (setlistSize) <= ( 100)",
+    "index < setlistSize",
+    "i != 0 || index == 0",
+    "tour",
+    "!mSetlists.empty()",
+    "songs.size() == targetSize",
+    "targetSize == mergedSetlist.size()",
+    "bss",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "decomp.h"
 #include "game/BandUserMgr.h"
 #include "game/NetGameMsgs.h"

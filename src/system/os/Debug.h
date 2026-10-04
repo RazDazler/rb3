@@ -22,14 +22,16 @@ public:
     bool mNoModal; // 0x8
     int mTry; // 0xc
     TextFileStream *mLog; // 0x10
+#ifdef MILO_DEBUG
     bool mAlwaysFlush; // 0x14
-    TextStream *mReflect; // 0x18
-    ModalCallbackFunc *mModalCallback; // 0x1c
-    std::list<ExitCallbackFunc *> mFailCallbacks; // 0x20
-    std::list<ExitCallbackFunc *> mExitCallbacks; // 0x28
-    unsigned int mFailThreadStack[50]; // starts at 0x30
-    const char *mFailThreadMsg; // 0xf8
-    const char *mNotifyThreadMsg; // 0xfc
+#endif
+    TextStream *mReflect; // retail 0x14, debug 0x18
+    ModalCallbackFunc *mModalCallback; // retail 0x18, debug 0x1c
+    std::list<ExitCallbackFunc *> mFailCallbacks; // retail 0x1c, debug 0x20
+    std::list<ExitCallbackFunc *> mExitCallbacks; // retail 0x24, debug 0x28
+    unsigned int mFailThreadStack[50]; // retail 0x2c, debug 0x30
+    const char *mFailThreadMsg; // retail 0xf4, debug 0xf8
+    const char *mNotifyThreadMsg; // retail 0xf8, debug 0xfc
 
     Debug();
     virtual ~Debug();

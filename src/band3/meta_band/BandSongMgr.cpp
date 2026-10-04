@@ -681,19 +681,15 @@ int BandSongMgr::NumRankedSongs(TrackType ty, bool b2, Symbol s3) const {
         BandSongMetadata *data = (BandSongMetadata *)Data(*it);
         MILO_ASSERT(data, 0x5F3);
         if (b2) {
-            if (data->HasVocalHarmony()) {
-                goto checkSym;
-            }
-        } else {
-            if (ty != kNumTrackTypes) {
-                Symbol trackSym = TrackTypeToSym(ty);
-                if (!data->HasPart(trackSym, false))
-                    continue;
-            }
-        checkSym:
-            if (s3 == gNullStr || data->SourceSym() == s3) {
-                num++;
-            }
+            if (!data->HasVocalHarmony())
+                continue;
+        } else if (ty != kNumTrackTypes) {
+            Symbol trackSym = TrackTypeToSym(ty);
+            if (!data->HasPart(trackSym, false))
+                continue;
+        }
+        if (s3 == gNullStr || data->SourceSym() == s3) {
+            num++;
         }
     }
     return num;

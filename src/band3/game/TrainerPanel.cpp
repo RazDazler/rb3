@@ -113,7 +113,7 @@ int TrainerPanel::GetNumSections() const { return mSections.size(); }
 
 void TrainerPanel::SetCurrentProgressSection(int cur) { mProgressMeter->SetCurrent(cur); }
 
-int TrainerPanel::GetTick() const {}
+int TrainerPanel::GetTick() const { return (int)TheTaskMgr.mSongPos.mTotalTick; }
 
 int TrainerPanel::GetSectionTicks(int idx) const {
     const TrainerSection &sect = mSections[idx];

@@ -69,9 +69,14 @@ void CharFaceServo::Poll() {
 // fn_804D35EC - matches in retail
 void CharFaceServo::ScaleAdd(CharClip *clip, float weight, float f2, float f3) {
     if (!clip->Relative()) {
+#ifdef VERSION_SZBE69
+        PathName(clip);
+        PathName(this);
+#else
         MILO_NOTIFY_ONCE(
             "%s playing non-relative clip %s, cut it out!", PathName(this), PathName(clip)
         );
+#endif
     } else {
         MILO_ASSERT(weight >= 0, 0x88);
         TryScaleDown();

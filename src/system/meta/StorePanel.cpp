@@ -1,4 +1,32 @@
 #include "meta/StorePanel.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original B8 string ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolStorePanelB8,
+    "StorePanel.cpp",
+    "!mStorePreviewMgr",
+    "!mPurchaser",
+    "Failure %d in NetCacheMgr.\n",
+    "Unknown failure %d in NetCacheMgr.\n",
+    "( 0) <= (failType) && (failType) < ( kNCMFT_Max)",
+    "Unknown failure %d in a net cache loader!\n",
+    "store_test/",
+    "mPendingArtCallback",
+    "pBuffer",
+    "StorePanel: downloaded album art is too big (%d bytes) so ignoring it.",
+    "An enumeration failed!\n",
+    "store_panel",
+    "checkout_finished",
+    "enumerate_from_checkout",
+    "This metadata contained no offers!\n",
+    "sp",
+    "ep",
+    "StorePanel: ExitError with kStoreErrorSuccess?",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "meta/StorePackedMetadata.h"
 #include "meta/StoreOffer.h"
 #include "os/ContentMgr.h"

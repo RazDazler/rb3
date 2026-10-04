@@ -169,9 +169,8 @@ DataNode op3(DataArray *msg) {
 DataNode op4(DataArray *msg) {
     u32 operand = msg->Int(1);
     u32 w = msg->Int(2);
-
-    u32 ret = ((u8(w) == 0) << 3) & ~0xFF;
-    ret = ((u8(w) << 27) & 1) | (ret & ~0x1);
+    u32 ret = !u8(w);
+    ret |= ret << 8;
     ret >>= (operand == 0);
     return u8(ret);
 }
@@ -207,8 +206,10 @@ DataNode op7(DataArray *msg) {
 
 DataNode op8(DataArray *msg) {
     u32 op = msg->Int(1);
-    u8 ret = u8(msg->Int(2)) + u8(op);
-    return ret ^ u8(op);
+    u8 temp1 = u8(msg->Int(2));
+    u8 temp2 = u8(op);
+    u8 ret = temp1 + temp2;
+    return ret ^ temp2;
 }
 
 DataNode op9(DataArray *msg) {
@@ -223,37 +224,37 @@ DataNode op9(DataArray *msg) {
 DataNode op10(DataArray *msg) {
     u32 operand = msg->Int(1);
     u32 w = msg->Int(2);
-    u8 w2 = (w & 0xFF) << 8;
-    u32 w3 = (w2 & 0xFFFFFF00) | (w & 0xFF);
-
-    return DataNode(kDataInt, u8(operand ^ u32(w2 >> !operand)));
+    u32 ret = u8(w);
+    ret |= ret << 8;
+    ret >>= (operand == 0);
+    return u8(ret ^ operand);
 }
 
 DataNode op11(DataArray *msg) {
     u32 operand = msg->Int(1);
     u32 w = msg->Int(2);
-    u8 w2 = (w & 0xFF) << 8;
-    u32 w3 = (w & 0xFFFFFF00) | (w2 & 0xFF);
-
-    return DataNode(kDataInt, u8(u32(w2 >> !operand) + operand));
+    u32 ret = u8(w);
+    ret |= ret << 8;
+    ret >>= (operand & 7);
+    return u8(ret ^ operand);
 }
 
 DataNode op12(DataArray *msg) {
     u32 operand = msg->Int(1);
     u32 w = msg->Int(2);
-    u8 w2 = (w & 0xFF) << 8;
-    u32 w3 = (w & 0xFFFFFF00) | (w2 & 0xFF);
-
-    return u8(u32(w2 >> !operand) + operand);
+    u32 ret = u8(w);
+    ret |= ret << 8;
+    ret >>= (operand & 7);
+    return u8(ret + operand);
 }
 
 DataNode op13(DataArray *msg) {
     u32 operand = msg->Int(1);
     u32 w = msg->Int(2);
-    u32 w2 = (w & 0xFF) << 8;
-    u32 w3 = (w2 & 0xFFFFFF00) | (w & 0xFF);
-
-    return u8(u32(w3 >> !operand) + operand);
+    u32 ret = u8(w);
+    ret |= ret << 8;
+    ret >>= (operand == 0);
+    return u8(ret + operand);
 }
 
 DataNode op14(DataArray *msg) {

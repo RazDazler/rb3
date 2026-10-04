@@ -1,0 +1,1818 @@
+{
+  "model_setting": "GPT-6.1 Sol Light (user-reported)",
+  "started_utc": "2026-10-03T07:23:54Z",
+  "deadline_utc": "2026-10-03T12:23:54Z",
+  "start_epoch": 1791012234,
+  "deadline_epoch": 1791030234,
+  "status": "complete",
+  "primary_version": "SZBE69_B8",
+  "baseline": {
+    "fuzzy_match_percent": 68.82857,
+    "total_code": "11431676",
+    "matched_code": "6314044",
+    "matched_code_percent": 55.232883,
+    "total_data": "2755932",
+    "matched_data": "613848",
+    "matched_data_percent": 22.273699,
+    "total_functions": 41333,
+    "matched_functions": 28494,
+    "matched_functions_percent": 68.93765,
+    "complete_code": "1234060",
+    "complete_code_percent": 10.795093,
+    "complete_data": "497004",
+    "complete_data_percent": 18.033972,
+    "total_units": 1876,
+    "complete_units": 535
+  },
+  "start_usage": {
+    "primary_used": 1,
+    "secondary_used": 31,
+    "primary_resets_at": 1791030235,
+    "secondary_resets_at": 1791580276
+  },
+  "usage_note": "Rounded account-wide percentage points, not actual token counts. Goal tool tokensUsed is internal context accounting and is not substituted for account/billable token usage.",
+  "usage_snapshots": [
+    {
+      "at_utc": "2026-10-03T07:33:29Z",
+      "primary_used": 7,
+      "secondary_used": 32
+    },
+    {
+      "at_utc": "2026-10-03T07:39:50Z",
+      "primary_used": 11,
+      "secondary_used": 33
+    },
+    {
+      "at_utc": "2026-10-03T07:47:42Z",
+      "primary_used": 15,
+      "secondary_used": 34
+    },
+    {
+      "at_utc": "2026-10-03T08:05:01Z",
+      "primary_used": 25,
+      "secondary_used": 35
+    },
+    {
+      "at_utc": "2026-10-03T08:17:00Z",
+      "primary_used": 30,
+      "secondary_used": 36
+    },
+    {
+      "at_utc": "2026-10-03T08:21:44Z",
+      "primary_used": 33,
+      "secondary_used": 36
+    },
+    {
+      "at_utc": "2026-10-03T08:29:22Z",
+      "primary_used": 38,
+      "secondary_used": 37
+    },
+    {
+      "at_utc": "2026-10-03T08:40:54Z",
+      "primary_used": 45,
+      "secondary_used": 38
+    },
+    {
+      "at_utc": "2026-10-03T08:47:17Z",
+      "primary_used": 51,
+      "secondary_used": 39
+    },
+    {
+      "at_utc": "2026-10-03T08:56:51Z",
+      "primary_used": 58,
+      "secondary_used": 40
+    },
+    {
+      "at_utc": "2026-10-03T09:08:06Z",
+      "primary_used": 67,
+      "secondary_used": 42
+    },
+    {
+      "at_utc": "2026-10-03T09:15:16Z",
+      "primary_used": 70,
+      "secondary_used": 42
+    },
+    {
+      "at_utc": "2026-10-03T09:19:59Z",
+      "primary_used": 73,
+      "secondary_used": 42
+    },
+    {
+      "at_utc": "2026-10-03T09:25:05Z",
+      "primary_used": 76,
+      "secondary_used": 43
+    },
+    {
+      "at_utc": "2026-10-03T09:33:45Z",
+      "primary_used": 81,
+      "secondary_used": 44
+    },
+    {
+      "at_utc": "2026-10-03T09:38:15Z",
+      "primary_used": 83,
+      "secondary_used": 44
+    },
+    {
+      "at_utc": "2026-10-03T09:41:48Z",
+      "primary_used": 86,
+      "secondary_used": 45
+    },
+    {
+      "at_utc": "2026-10-03T09:46:10Z",
+      "primary_used": 90,
+      "secondary_used": 45
+    },
+    {
+      "at_utc": "2026-10-03T09:49:06Z",
+      "primary_used": 92,
+      "secondary_used": 45
+    },
+    {
+      "at_utc": "2026-10-03T09:50:36Z",
+      "primary_used": 93,
+      "secondary_used": 46
+    },
+    {
+      "at_utc": "2026-10-03T09:52:39Z",
+      "primary_used": 94,
+      "secondary_used": 46
+    },
+    {
+      "at_utc": "2026-10-03T09:55:30Z",
+      "primary_used": 96,
+      "secondary_used": 46
+    },
+    {
+      "at_utc": "2026-10-03T09:58:09Z",
+      "primary_used": 98,
+      "secondary_used": 46
+    },
+    {
+      "at_utc": "2026-10-03T10:00:44Z",
+      "primary_used": 99,
+      "secondary_used": 47
+    }
+  ],
+  "accepted_trials": [
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791012548393744200-source-trial.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "ClearLights__10WiiEnvironFv",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 20,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791012559216913400-source-trial.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "GetMovieLoadingFramePtr__6WiiTexFv",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 36,
+        "matched_functions": 2,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791012641012410100-source-trial.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "__ct__6WiiTexFv",
+      "before": [
+        75.0,
+        -6
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 268,
+        "matched_functions": 3,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791012912402111000-source-trial.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "Select__6WiiTexF11_GXTexMapID",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 324,
+        "matched_functions": 5,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791013047603887000-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "DeleteSurface__6WiiTexFv",
+      "before": [
+        1.1363636,
+        -87
+      ],
+      "after": [
+        73.86364,
+        -23
+      ],
+      "accepted_variant": "recover_owned_surfaces",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791013483307697800-source-trial.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "MovieSwapFrames__6WiiTexFv",
+      "before": [
+        1.7241379,
+        -57
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 232,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791013793485288900-source-trial.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "LockBitmap__6WiiTexFR9RndBitmapi",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        68.656715,
+        -21
+      ],
+      "measure_gains": {
+        "matched_code": 248,
+        "matched_functions": 2,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791014098507080900-source-trial.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "SetLOD__6WiiTexFv",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 488,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791014314936360000-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "ConvertAndStoreYUV2BMP__FPviiPv",
+      "before": [
+        1.923077,
+        -51
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "recover_screenshot_conversion",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791014443323350900-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "YUV422To444__FP6YUV422P6YUV444ii",
+      "before": [
+        52.54237,
+        -28
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "original_pointer_counter_order",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791014454831696600-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "YUV444ToRGB__FP6YUV444P3RGBii",
+      "before": [
+        75.94936,
+        -19
+      ],
+      "after": [
+        89.87341,
+        -8
+      ],
+      "accepted_variant": "original_color_pointer_order",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791014691774792200-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "RGBToBMP__FP3RGBPvUlUl",
+      "before": [
+        12.413793,
+        -127
+      ],
+      "after": [
+        86.206894,
+        -20
+      ],
+      "accepted_variant": "direct_pixel_fields",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791014735410114600-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "RGBToBMP__FP3RGBPvUlUl",
+      "before": [
+        86.206894,
+        -20
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "original_bgr_counter_order",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791015402792741800-source-trial.json",
+      "unit": "main/sdk/RVL_SDK/src/os/OSAudioSystem",
+      "symbol": "__OSInitAudioSystem",
+      "before": [
+        96.61017,
+        -4
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 672,
+        "matched_functions": 2,
+        "complete_code": 1216,
+        "matched_data": 0
+      },
+      "source_adopted": true,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791015614382731500-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "CopyFromFB__6WiiTexFiiiibb",
+      "before": [
+        88.2353,
+        -12
+      ],
+      "after": [
+        94.117645,
+        -6
+      ],
+      "accepted_variant": "packed_clear_color",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791015639158711500-source-trial.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "CreateScreenShot__6WiiTexFv",
+      "before": [
+        49.20635,
+        -32
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 252,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791015699263899400-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "CopyFromFB__6WiiTexFiiiibb",
+      "before": [
+        94.117645,
+        -6
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "color_reference",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791015774549920700-source-trial.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "SetTexWrapMode__6WiiTexFQ26RndMat7TexWrapQ26RndMat7TexWrap",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        51.162792,
+        -21
+      ],
+      "measure_gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791015872609493000-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "SetTexWrapMode__6WiiTexFQ26RndMat7TexWrapQ26RndMat7TexWrap",
+      "before": [
+        51.162792,
+        -21
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "original_mutable_wrap_table",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791016043950652200-source-trial.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "Compress__6WiiTexFb",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        78.81773,
+        -43
+      ],
+      "measure_gains": {
+        "matched_code": 616,
+        "matched_functions": 2,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791016126867550500-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "Compress__6WiiTexFb",
+      "before": [
+        78.81773,
+        -43
+      ],
+      "after": [
+        79.31035,
+        -42
+      ],
+      "accepted_variant": "original_selector_word_type",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791016145473634900-source-trial.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "Compress__6WiiTexFb",
+      "before": [
+        79.31035,
+        -42
+      ],
+      "after": [
+        79.802956,
+        -41
+      ],
+      "measure_gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791016266786518800-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "Compress__6WiiTexFb",
+      "before": [
+        79.802956,
+        -41
+      ],
+      "after": [
+        83.25123,
+        -34
+      ],
+      "accepted_variant": "pointer_reference_postincrement",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791016373842656900-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "Compress__6WiiTexFb",
+      "before": [
+        83.25123,
+        -34
+      ],
+      "after": [
+        85.22167,
+        -30
+      ],
+      "accepted_variant": "source_before_output",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791016453155090700-variants.json",
+      "unit": "main/system/rndwii/Tex",
+      "symbol": "Compress__6WiiTexFb",
+      "before": [
+        85.22167,
+        -30
+      ],
+      "after": [
+        88.17734,
+        -24
+      ],
+      "accepted_variant": "tiling_order_33_secondRow_out_copyEnd_rowEnd_firstRow",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791016848717228000-variants.json",
+      "unit": "main/band3/tour/Tour",
+      "symbol": "HasBronzeMedal__4TourCF6Symbol",
+      "before": [
+        98.333336,
+        -1
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "B8_original_assertion_lines",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791017005689151700-source-trial.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "SetDirLight__10WiiEnvironFi8_GXColorRC7Vector3",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        75.409836,
+        -15
+      ],
+      "measure_gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791017131531703000-variants.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "SetDirLight__10WiiEnvironFi8_GXColorRC7Vector3",
+      "before": [
+        75.409836,
+        -15
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "explicit_light_mask",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791017176787727000-variants.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "SetLight__10WiiEnvironFiP8WiiLight",
+      "before": [
+        91.17647,
+        -3
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "B8_explicit_light_mask",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791017572719745400-source-trial.json",
+      "unit": "main/network/Extensions/ChannelInfo",
+      "symbol": "__dt__Q26Quazal11ChannelInfoFv",
+      "before": [
+        96.296295,
+        -1
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 108,
+        "matched_functions": 1,
+        "complete_code": 164,
+        "matched_data": 0
+      },
+      "source_adopted": true,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791017729192687600-variants.json",
+      "unit": "main/band3/game/OverdriveTimeTracker",
+      "symbol": "Poll___20OverdriveTimeTrackerFf",
+      "before": [
+        92.413795,
+        -11
+      ],
+      "after": [
+        97.24138,
+        -4
+      ],
+      "accepted_variant": "existing_MaxEq_second",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791017774419397100-variants.json",
+      "unit": "main/band3/game/OverdriveTimeTracker",
+      "symbol": "Poll___20OverdriveTimeTrackerFf",
+      "before": [
+        97.24138,
+        -4
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "explicit_start_copy",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791017978401247200-source-trial.json",
+      "unit": "main/band3/game/OverdriveTimeTracker",
+      "symbol": "TargetSuccess__20OverdriveTimeTrackerCFi",
+      "before": [
+        100.0,
+        0
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 2356,
+        "matched_data": 0
+      },
+      "source_adopted": true,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791018238212990200-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "SyncFree__6WiiRndFPv",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        77.41935,
+        -7
+      ],
+      "measure_gains": {
+        "matched_code": 268,
+        "matched_functions": 2,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791018402519279400-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "SyncFree__6WiiRndFPv",
+      "before": [
+        77.41935,
+        -7
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 160,
+        "matched_functions": 3,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791018535037240900-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "FrameQueueSize__Fv",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 112,
+        "matched_functions": 2,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791019218428872100-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "BeginDrawing__6WiiRndFb",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 728,
+        "matched_functions": 2,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791019276794258600-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "CopyBuffer__6WiiRndFv",
+      "before": [
+        77.27273,
+        -5
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 88,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791019339482675600-variants.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "YRatio__6WiiRndFv",
+      "before": [
+        54.545456,
+        -5
+      ],
+      "after": [
+        71.42857,
+        -4
+      ],
+      "accepted_variant": "separate_returns",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791019492244257700-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "DoPointTests__6WiiRndFv",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        78.66667,
+        -16
+      ],
+      "measure_gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791019553578392900-variants.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "DoPointTests__6WiiRndFv",
+      "before": [
+        78.66667,
+        -16
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "depth_and_area_order",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791019666734536400-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "PrepareRenderAlley__6WiiRndFv",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        94.44444,
+        -2
+      ],
+      "measure_gains": {
+        "matched_code": 144,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791019802469273100-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "OnVIPostRetrace__FUl",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        97.2973,
+        -1
+      ],
+      "measure_gains": {
+        "matched_code": 148,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791019880425491900-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "GetSharedTex__6WiiRndFQ26WiiRnd13SharedTexTypeb",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        84.90566,
+        -8
+      ],
+      "measure_gains": {
+        "matched_code": 212,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791019990745667800-variants.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "GetSharedTex__6WiiRndFQ26WiiRnd13SharedTexTypeb",
+      "before": [
+        84.90566,
+        -8
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "readonly_configuration_table",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791020069097065500-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "MemErrorHandler",
+      "before": [
+        6.4516125,
+        -29
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 28,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791020129217638500-source-trial.json",
+      "unit": "main/system/rndwii/Rnd",
+      "symbol": "ResetStats__6WiiRndFv",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 156,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791020244605391200-source-trial.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "Select__10WiiEnvironFPC7Vector3",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 284,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791020366013366100-source-trial.json",
+      "unit": "main/system/rndwii/Cam",
+      "symbol": "__ct__6WiiCamFv",
+      "before": [
+        82.35294,
+        -9
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 612,
+        "matched_functions": 14,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791020431160552800-source-trial.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "ApplyApproxLighting__10WiiEnvironFPC8_GXColor",
+      "before": [
+        0.0,
+        0
+      ],
+      "after": [
+        80.72289,
+        -16
+      ],
+      "measure_gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791020502519444100-variants.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "ApplyApproxLighting__10WiiEnvironFPC8_GXColor",
+      "before": [
+        80.72289,
+        -16
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "accepted_variant": "camera_reference_local",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791020687484545000-variants.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "__ct__10WiiEnvironFv",
+      "before": [
+        83.56164,
+        -36
+      ],
+      "after": [
+        96.296295,
+        -8
+      ],
+      "accepted_variant": "direct_rgb_update",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791020749102004900-source-trial.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "__ct__10WiiEnvironFv",
+      "before": [
+        96.296295,
+        -8
+      ],
+      "after": [
+        99.06977,
+        -2
+      ],
+      "measure_gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791020834808625100-source-trial.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "__ct__10WiiEnvironFv",
+      "before": [
+        99.06977,
+        -2
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 860,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791020998528947300-source-trial.json",
+      "unit": "main/system/rndwii/Env",
+      "symbol": "__ct__10WiiEnvironFv",
+      "before": [
+        100.0,
+        0
+      ],
+      "after": [
+        100.0,
+        0
+      ],
+      "measure_gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 4044,
+        "matched_data": 0
+      },
+      "source_adopted": true,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791021066051753000-source-trial.json",
+      "unit": "main/system/rndwii/Cam",
+      "symbol": "ProjectZ__6WiiCamFf",
+      "before": [
+        13.333334,
+        -13
+      ],
+      "after": [
+        26.666668,
+        -11
+      ],
+      "measure_gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "matched_data": 0
+      },
+      "source_adopted": false,
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "evidence": "build/decomp/SZBE69_B8/1791021149718786800-variants.json",
+      "unit": "main/system/rndwii/Cam",
+      "symbol": "ProjectZ__6WiiCamFf",
+      "before": [
+        26.666668,
+        -11
+      ],
+      "after": [
+        33.333336,
+        -10
+      ],
+      "accepted_variant": "cached_planes_range",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    }
+  ],
+  "new_reconstructions": [
+    {
+      "symbol": "ClearLights__10WiiEnvironFv",
+      "bytes": 20,
+      "before": 0,
+      "after": 100,
+      "source_linked": true,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Env-diff-summary.json"
+    },
+    {
+      "symbol": "GetMovieLoadingFramePtr__6WiiTexFv",
+      "bytes": 20,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "TexelsPitch__6WiiTexCFv",
+      "bytes": 16,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "Select__6WiiTexF11_GXTexMapID",
+      "bytes": 220,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "SelectAlpha__6WiiTexF11_GXTexMapID",
+      "bytes": 24,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "CopyContent__6WiiTexFb",
+      "bytes": 40,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "MakeDrawTarget__6WiiTexFv",
+      "bytes": 4,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "FinishDrawTarget__6WiiTexFv",
+      "bytes": 36,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "MovieSwapFrames__6WiiTexFv",
+      "bytes": 232,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "UnlockBitmap__6WiiTexFv",
+      "bytes": 116,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "SetLOD__6WiiTexFv",
+      "bytes": 488,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "Resize__6WiiTexFiiUlb",
+      "bytes": 132,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "ConvertAndStoreYUV2BMP__FPviiPv",
+      "bytes": 208,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "YUV422To444__FP6YUV422P6YUV444ii",
+      "bytes": 236,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "RGBToBMP__FP3RGBPvUlUl",
+      "bytes": 580,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "SetTexWrapMode__6WiiTexFQ26RndMat7TexWrapQ26RndMat7TexWrap",
+      "bytes": 172,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json"
+    },
+    {
+      "symbol": "SetDirLight__10WiiEnvironFi8_GXColorRC7Vector3",
+      "bytes": 240,
+      "before": 0,
+      "after": 100,
+      "source_linked": true,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Env-diff-summary.json"
+    },
+    {
+      "symbol": "SyncFree__6WiiRndFPv",
+      "bytes": 124,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "SyncDestroy__6WiiRndFv",
+      "bytes": 144,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "FrameQueueSize__Fv",
+      "bytes": 44,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "StopRenderingFrame__Fv",
+      "bytes": 68,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "BeginDrawing__6WiiRndFb",
+      "bytes": 544,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "note": "Global report counts exact instructions; HomeMenuClose retains two __FUNCTION__ metadata relocations in strict objdiff.",
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "HomeMenuClose__6WiiRndFb",
+      "bytes": 184,
+      "before": 0,
+      "after": 95.652176,
+      "source_linked": false,
+      "note": "Global report counts exact instructions; HomeMenuClose retains two __FUNCTION__ metadata relocations in strict objdiff.",
+      "strict_match_percent": 95.652176,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "DoPointTests__6WiiRndFv",
+      "bytes": 300,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "PrepareRenderAlley__6WiiRndFv",
+      "bytes": 144,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "GetSharedTex__6WiiRndFQ26WiiRnd13SharedTexTypeb",
+      "bytes": 212,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "OnVIPostRetrace__FUl",
+      "bytes": 148,
+      "before": 0,
+      "after": 97.2973,
+      "source_linked": false,
+      "strict_match_percent": 97.2973,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "ResetStats__6WiiRndFv",
+      "bytes": 156,
+      "before": 0,
+      "after": 100,
+      "source_linked": false,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json"
+    },
+    {
+      "symbol": "Select__10WiiEnvironFPC7Vector3",
+      "bytes": 284,
+      "before": 0,
+      "after": 100,
+      "source_linked": true,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Env-diff-summary.json"
+    },
+    {
+      "symbol": "ApplyApproxLighting__10WiiEnvironFPC8_GXColor",
+      "bytes": 332,
+      "before": 0,
+      "after": 100,
+      "source_linked": true,
+      "strict_match_percent": 100.0,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Env-diff-summary.json"
+    }
+  ],
+  "partial_reconstructions": [
+    {
+      "symbol": "DeleteSurface__6WiiTexFv",
+      "bytes": 352,
+      "before": 1.1363636,
+      "after": 73.86364,
+      "note": "Missing owned surface/palette/alpha/movie cleanup and render-set removal reconstructed; packed flag accesses remain.",
+      "strict_match_percent": 73.86364,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json",
+      "source_linked": false
+    },
+    {
+      "symbol": "LockBitmap__6WiiTexFR9RndBitmapi",
+      "bytes": 268,
+      "before": 0,
+      "after": 68.656715,
+      "note": "Read/write behavior recovered; boolean normalization and register differences remain.",
+      "strict_match_percent": 68.656715,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json",
+      "source_linked": false
+    },
+    {
+      "symbol": "DisableFiltering__6WiiTexFb",
+      "bytes": 44,
+      "before": 0,
+      "after": 33.333336,
+      "note": "Packed boolean update differs.",
+      "strict_match_percent": 33.333336,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json",
+      "source_linked": false
+    },
+    {
+      "symbol": "YUV444ToRGB__FP6YUV444P3RGBii",
+      "bytes": 316,
+      "before": 0,
+      "after": 89.87341,
+      "note": "Eight temporary-register and scheduling differences.",
+      "strict_match_percent": 89.87341,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json",
+      "source_linked": false
+    },
+    {
+      "symbol": "Compress__6WiiTexFb",
+      "bytes": 812,
+      "before": 0,
+      "after": 88.17734,
+      "note": "Full compression/endianness/tiling behavior recovered; 24 temporary-register differences remain.",
+      "strict_match_percent": 88.17734,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Tex-diff-summary.json",
+      "source_linked": false
+    },
+    {
+      "symbol": "FrameQueueSync__Fi",
+      "bytes": 180,
+      "before": 0,
+      "after": 31.111113,
+      "note": "Queue wake/sleep and timer behavior recovered; original shared BSS base-address grouping remains.",
+      "strict_match_percent": 31.111113,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json",
+      "source_linked": false
+    },
+    {
+      "symbol": "YRatio__6WiiRndFv",
+      "bytes": 44,
+      "before": 54.545456,
+      "after": 71.42857,
+      "note": "Separate aspect checks closer; duplicate return blocks differ.",
+      "strict_match_percent": 71.42857,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json",
+      "source_linked": false
+    },
+    {
+      "symbol": "StartRenderingFrame__Fv",
+      "bytes": 84,
+      "before": 0,
+      "after": 85.71429,
+      "note": "Three shared BSS offset differences.",
+      "strict_match_percent": 85.71429,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json",
+      "source_linked": false
+    },
+    {
+      "symbol": "SetNextGXBreakpoint__Fv",
+      "bytes": 132,
+      "before": 0,
+      "after": 54.285717,
+      "note": "Frame recycling behavior recovered; common BSS base/storage remains.",
+      "strict_match_percent": 54.285717,
+      "strict_objdiff_evidence": "build/decomp/SZBE69_B8/main_system_rndwii_Rnd-diff-summary.json",
+      "source_linked": false
+    },
+    {
+      "symbol": "ProjectZ__6WiiCamFf",
+      "bytes": 60,
+      "before": 13.333334,
+      "after": 33.333336,
+      "note": "Corrected depth projection formula; ten floating-point register differences remain.",
+      "source_linked": false
+    }
+  ],
+  "linked_units": [
+    {
+      "unit": "main/sdk/RVL_SDK/src/os/OSAudioSystem",
+      "code_bytes": 1216,
+      "data_bytes": 128,
+      "all_functions_and_data_match": true,
+      "dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "unit": "main/network/Extensions/ChannelInfo",
+      "code_bytes": 164,
+      "data_bytes": 0,
+      "all_functions_and_data_match": true,
+      "dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "unit": "main/band3/game/OverdriveTimeTracker",
+      "code_bytes": 2356,
+      "data_bytes": 184,
+      "all_functions_and_data_match": true,
+      "dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    },
+    {
+      "unit": "main/system/rndwii/Env",
+      "code_bytes": 4044,
+      "data_bytes": 492,
+      "all_functions_match": true,
+      "all_data_strict_objdiff_match": false,
+      "dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+      "note": "Seventeen functions exact. Weak RTTI object comparison remains 50%; exact source-linked executable proves final linked data. Original definition order and renderer-only Light helper retention restored."
+    }
+  ],
+  "remaining_issues": [
+    "BeginDrawing accepted after retaining genuine original Light class-name metadata. StaticClassName inline helper emitted out of line by force_active; not counted as matched progress. HomeMenuClose strict residual is metadata relocation pairing.",
+    "Texture compression: 24 register differences; surface flags/bitmap locking and YUV integer scheduling remain partial.",
+    "Frame queue routines: shared original BSS ordering and offsets remain; callback hang recovery is still missing.",
+    "WiiCam::Select remains missing. Its real derived view transform now provides context for recovery.",
+    "Environment is source-linked and exact; generic statistics record indices intentionally retain unknown counter names.",
+    "Other near-match candidates reviewed unsuccessfully: OggMap seek clamp registers, GuitarController shift AND operand order, ByteGrinder ADD order, Bitmap pixel OR order, Timer float add scheduling, OutfitProvider iterator registers."
+  ],
+  "existing_function_corrections": [
+    {
+      "symbol": "__ct__6WiiTexFv",
+      "bytes": 96,
+      "before": 75,
+      "after": 100,
+      "note": "Recovered missing B8 texture fields and original initialization order; whole layout trial gained 268 bytes/3 functions."
+    },
+    {
+      "symbol": "CreateScreenShot__6WiiTexFv",
+      "bytes": 252,
+      "before": 49.20635,
+      "after": 100,
+      "note": "Recovered allocation and display dimensions."
+    },
+    {
+      "symbol": "CopyFromFB__6WiiTexFiiiibb",
+      "bytes": 408,
+      "before": 88.2353,
+      "after": 100,
+      "note": "Recovered paired-single clear-color packing."
+    },
+    {
+      "symbol": "SetLight__10WiiEnvironFiP8WiiLight",
+      "bytes": 132,
+      "before": 91.17647,
+      "after": 100
+    },
+    {
+      "symbol": "Poll___20OverdriveTimeTrackerFf",
+      "bytes": 580,
+      "before": 92.413795,
+      "after": 100,
+      "note": "Recovered existing MaxEq helper and explicit start-time local."
+    },
+    {
+      "symbol": "__dt__Q26Quazal11ChannelInfoFv",
+      "bytes": 108,
+      "before": 96.296295,
+      "after": 100,
+      "note": "Restored DataSet base inheritance and 4-byte layout."
+    },
+    {
+      "symbol": "CopyBuffer__6WiiRndFv",
+      "bytes": 88,
+      "before": 77.27273,
+      "after": 100,
+      "note": "Recovered GX sample pattern and vertical filter arguments."
+    },
+    {
+      "symbol": "MemErrorHandler",
+      "bytes": 28,
+      "before": 6.4516125,
+      "after": 100,
+      "note": "Fixed-argument callback and original cached-address conversion."
+    },
+    {
+      "symbol": "__ct__10WiiEnvironFv",
+      "bytes": 860,
+      "before": 83.56164,
+      "after": 100,
+      "note": "Existing constructor: direct RGB/dirty updates, cached material pointer, original class name and assertion literal.",
+      "source_linked": true
+    },
+    {
+      "symbol": "__ct__6WiiCamFv",
+      "bytes": 204,
+      "before": 82.35294,
+      "after": 100,
+      "note": "Missing derived transform recovered from constructor and view-matrix accesses; matched gain 612 bytes / 14 functions includes generated destructor/thunks.",
+      "source_linked": false
+    }
+  ],
+  "measures": {
+    "fuzzy_match_percent": 68.90546,
+    "total_code": "11431676",
+    "matched_code": "6324704",
+    "matched_code_percent": 55.326126,
+    "total_data": "2755932",
+    "matched_data": "613848",
+    "matched_data_percent": 22.273699,
+    "total_functions": 41333,
+    "matched_functions": 28558,
+    "matched_functions_percent": 69.09249,
+    "complete_code": "1241840",
+    "complete_code_percent": 10.86315,
+    "complete_data": "497808",
+    "complete_data_percent": 18.063147,
+    "total_units": 1876,
+    "complete_units": 539
+  },
+  "gains": {
+    "matched_code": 10660,
+    "matched_functions": 64,
+    "complete_code": 7780,
+    "complete_units": 4,
+    "matched_data": 0,
+    "complete_data": 804
+  },
+  "checkpoint_utc": "2026-10-03T10:00:44Z",
+  "elapsed_seconds": 9410,
+  "latest_measures": {
+    "fuzzy_match_percent": 68.90546,
+    "total_code": "11431676",
+    "matched_code": "6324704",
+    "matched_code_percent": 55.326126,
+    "total_data": "2755932",
+    "matched_data": "613848",
+    "matched_data_percent": 22.273699,
+    "total_functions": 41333,
+    "matched_functions": 28558,
+    "matched_functions_percent": 69.09249,
+    "complete_code": "1241840",
+    "complete_code_percent": 10.86315,
+    "complete_data": "497808",
+    "complete_data_percent": 18.063147,
+    "total_units": 1876,
+    "complete_units": 539
+  },
+  "metadata_only_gains": {
+    "matched_bytes": 408,
+    "matched_functions": 2,
+    "notes": [
+      "Tour::GetConclusionText (168 bytes) and HasBronzeMedal (240 bytes): original B8 assertion line numbers."
+    ]
+  },
+  "automation_changes": [
+    {
+      "path": "tools/decomp_variants.py",
+      "description": "Supports mixed LF/CRLF source with unique newline-flexible span matching and byte preservation outside edits.",
+      "validation": "43 automation tests pass, including two new mixed-newline cases."
+    }
+  ],
+  "reconstruction_accounting": {
+    "new_source_function_records": 30,
+    "new_strict_exact_functions": 28,
+    "new_strict_exact_code_bytes": 5136,
+    "new_report_exact_with_metadata_relocations": [
+      "HomeMenuClose__6WiiRndFb",
+      "OnVIPostRetrace__FUl"
+    ],
+    "metadata_only_gains": {
+      "matched_bytes": 408,
+      "matched_functions": 2,
+      "notes": [
+        "Tour::GetConclusionText (168 bytes) and HasBronzeMedal (240 bytes): original B8 assertion line numbers."
+      ]
+    },
+    "mixed_existing_constructor_gain": {
+      "matched_code": 860,
+      "matched_functions": 1,
+      "note": "Source correction preceded final assertion literal repair; report credits the whole function when its last differences disappear."
+    },
+    "note": "Global report matches and relocation-aware strict objdiff are distinct. Generated helpers/thunks are included in global gains but are not counted as newly written game behaviors."
+  },
+  "verification": {
+    "b8_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+    "original_b8_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+    "retail_reference_dol_sha1": "189b001188a2f8ab769e72364440022407fe09d2",
+    "full_build_log": "build/light-20261003-final-verification.log",
+    "automation_tests": 43,
+    "automation_tests_passed": true,
+    "test_log": "build/light-20261003-final-tests.log",
+    "git_diff_check_passed": true,
+    "pending_source_journal": false,
+    "clang_format": "Not available on PATH; no upstream submission performed. Format before submitting under CONTRIBUTING.md."
+  },
+  "account_usage_consumed_percentage_points": {
+    "primary": 98,
+    "secondary": 16
+  },
+  "usage_remaining_percent": {
+    "primary": 1,
+    "secondary": 53
+  },
+  "partial_reconstruction_accounting": {
+    "new_partial_implementations": 8,
+    "improved_existing_partial_implementations": 2,
+    "total_records": 10,
+    "new_partial_code_bytes": 2188,
+    "note": "No exact matching credit for partials. HomeMenuClose and OnVIPostRetrace are counted separately as instruction-exact with strict relocation residuals."
+  },
+  "stop_reason": "critical_usage_primary_1_percent_remaining",
+  "ended_utc": "2026-10-03T10:00:44Z",
+  "elapsed_human": "2 hours 36 minutes 50 seconds",
+  "final_usage": {
+    "primary_used": 99,
+    "secondary_used": 47,
+    "primary_resets_at": 1791030235,
+    "secondary_resets_at": 1791580276
+  },
+  "goal_completion_elapsed_seconds": 9445,
+  "elapsed_note": "9410 seconds to critical-usage stop checkpoint; 9445 seconds through final report saving and goal completion."
+}

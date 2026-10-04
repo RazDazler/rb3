@@ -1,4 +1,46 @@
 #include "network/net/Jobs_Wii.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolJobs_Wii,
+    "JobDeleteOrphanedProfiles::StepGetProfiles",
+    "JobDeleteOrphanedProfiles::StepCompleteJob",
+    "JobDeleteOrphanedProfiles::StepPrepareToDeleteProfiles",
+    "JobDeleteOrphanedProfiles::StepPickNextProfile",
+    "",
+    "Encountered qError [%s]\n",
+    "JobDeleteOrphanedProfiles::StepLookUpProfile",
+    "JobDeleteOrphanedProfiles::StepDeleteProfile",
+    "JobEnumerateFriends::StepGetConsoleFriends",
+    "JobEnumerateFriends::StepCompleteJob",
+    "JobEnumerateFriends::StepGetProfileNames",
+    "JobEnumerateFriends::StepProcessProfileNames",
+    "JobEnumerateFriends::StepGetPrincipalID",
+    "JobEnumerateFriends::StepRecordPrincipalID",
+    "JobEnumerateFriends::StepGetStatus",
+    "JobEnumerateFriends::StepProcessStatus",
+    "Jobs_Wii.cpp",
+    "JobSendMessage::StepSendMessage",
+    "JobSendMessage::StepCompleteJob",
+    "JobSendMessage::StepProcessResults",
+    "MessagingClient::Send fails - %d %d\n",
+    "JobEnumerateMessages::StepGetHeaders",
+    "JobEnumerateMessages::StepCompleteJob",
+    "JobEnumerateMessages::StepProcessHeaders",
+    "JobEnumerateMessages::StepGetMessages",
+    "JobEnumerateMessages::StepProcessMessages",
+    "JobCreateProfile::StepCompleteJob",
+    "JobCreateProfile::StepCheckDWC",
+    "JobCreateProfile::StepCheckRockCentral",
+    "JobCreateProfile::StepProcessResults",
+    "%s(%d): %s unhandled msg: %s",
+    "JobDeleteProfile::StepCompleteJob",
+    "JobDeleteProfile::StepDeleteProfile",
+    "JobDeleteProfile::StepProcessResults"
+)
+#endif
 #include "Core/StepSequenceJob.h"
 #include "RVPackages/NintendoManagementProtocolClient.h"
 #include "Services/AccountManagementClient.h"

@@ -64,7 +64,11 @@ void WiiSplitPostProc::EndWorld() { START_AUTO_TIMER("postproc"); }
 void WiiSplitPostProc::DoPost() {
     START_AUTO_TIMER("postproc");
     if (TheWiiRnd.ProcCmds() == kProcessAll) {
+#ifdef VERSION_SZBE69_B8
+        mTex->CopyContent(1);
+#else
         mTex->unk(1);
+#endif
         unk_0x9 = 1;
 #ifdef VERSION_SZBE69_B8
         _at.mTimer->Stop();
@@ -73,16 +77,32 @@ void WiiSplitPostProc::DoPost() {
     } else if (TheWiiRnd.ProcCmds() == kProcessWorld) {
         WiiTex *a = (WiiTex *)TheWiiRnd.GetSharedTex((WiiRnd::SharedTexType)0, 1);
         WiiTex *b = (WiiTex *)TheWiiRnd.GetSharedTex((WiiRnd::SharedTexType)1, 1);
+#ifdef VERSION_SZBE69_B8
+        a->CopyContent(0);
+#else
         a->unk(0);
+#endif
+#ifdef VERSION_SZBE69_B8
+        b->CopyContent(1);
+#else
         b->unk(1);
+#endif
         unk_0x8 = true;
     }
 
     if (TheWiiRnd.ProcCmds() == kProcessChar) {
+#ifdef VERSION_SZBE69_B8
+        ((WiiTex *)TheWiiRnd.GetSharedTex((WiiRnd::SharedTexType)0, 1))->CopyContent(1);
+#else
         ((WiiTex *)TheWiiRnd.GetSharedTex((WiiRnd::SharedTexType)0, 1))->unk(1);
+#endif
     }
     if (TheWiiRnd.ProcCmds() & kProcessPost) {
+#ifdef VERSION_SZBE69_B8
+        mTex->CopyContent(1);
+#else
         mTex->unk(1);
+#endif
         GXPixModeSync();
         unk_0x9 = true;
     }
@@ -161,7 +181,11 @@ void WiiSplitPostProc::DrawFinalTex() {
         if (pp != nullptr && !TheRnd->DisablePP()) {
             pp->DrawKaleidoscope();
             if (TheWiiRnd.ProcCmds() == kProcessAll) {
+#ifdef VERSION_SZBE69_B8
+                mTex->CopyContent(0);
+#else
                 mTex->unk(0);
+#endif
                 GXPixModeSync();
             }
         } else {

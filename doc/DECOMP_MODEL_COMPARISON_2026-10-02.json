@@ -1,0 +1,242 @@
+{
+  "note": "Different targets, available candidates, preparation, and metadata accounting prevent causal model-efficiency conclusions. Account usage observations are rounded percentage points, not tokens. Medium lacks a comparable starting usage snapshot.",
+  "sessions": [
+    {
+      "model": "GPT-6.1 Sol Medium (user-reported)",
+      "target": "SZBE69_B8",
+      "elapsed_seconds": 10250,
+      "gains": {
+        "matched_code": 60288,
+        "matched_functions": 163,
+        "complete_code": 6600,
+        "complete_units": 3,
+        "matched_data": 2488
+      },
+      "account_usage_consumed": null,
+      "observed_throughput": {
+        "matched_code_bytes_per_hour": 21174.32,
+        "matched_functions_per_hour": 57.25,
+        "source_linked_code_bytes_per_hour": 2318.05
+      }
+    },
+    {
+      "model": "GPT-6.1 Sol High (user-reported)",
+      "target": "SZBE69_B8",
+      "elapsed_seconds": 9039,
+      "gains": {
+        "matched_code": 50024,
+        "matched_functions": 158,
+        "complete_code": 6824,
+        "complete_units": 3,
+        "matched_data": 0,
+        "complete_data": 736
+      },
+      "account_usage_consumed_percentage_points": {
+        "primary": 97,
+        "secondary": 15
+      },
+      "metadata_only_gains": {
+        "matched_code": 35056,
+        "matched_functions": 66,
+        "linked_code": 0,
+        "note": "Eleven reviewed literal-pool corrections, separately counted from missing behavior."
+      },
+      "new_exact_implementations": 26,
+      "new_partial_implementations": 2,
+      "observed_throughput": {
+        "matched_code_bytes_per_hour": 19923.27,
+        "matched_functions_per_hour": 62.93,
+        "source_linked_code_bytes_per_hour": 2717.82,
+        "matched_bytes_per_primary_percentage_point": 515.71,
+        "linked_bytes_per_primary_percentage_point": 70.35
+      }
+    },
+    {
+      "model": "GPT-6.1 Sol Light (user-reported)",
+      "session_id": "light-2026-10-03",
+      "target": "SZBE69_B8",
+      "status": "complete",
+      "time_limit_seconds": 18000,
+      "elapsed_seconds": 9410,
+      "gains": {
+        "matched_code": 10660,
+        "matched_functions": 64,
+        "complete_code": 7780,
+        "complete_units": 4,
+        "matched_data": 0,
+        "complete_data": 804
+      },
+      "account_usage_consumed_percentage_points": {
+        "primary": 98,
+        "secondary": 16
+      },
+      "metadata_only_gains": {
+        "matched_bytes": 408,
+        "matched_functions": 2,
+        "notes": [
+          "Tour::GetConclusionText (168 bytes) and HasBronzeMedal (240 bytes): original B8 assertion line numbers."
+        ]
+      },
+      "new_strict_exact_implementations": 28,
+      "new_strict_exact_code_bytes": 5136,
+      "new_instruction_exact_metadata_residuals": 2,
+      "partial_reconstruction_records": 10,
+      "verification_ledger": "doc/DECOMP_B8_LIGHT_VERIFICATION_2026-10-03.json",
+      "note": "Source-linked environment unit recovered. Two new report-exact functions have residual strict metadata relocations. Ten partial records include two corrected existing partial functions.",
+      "new_partial_implementations": 8,
+      "improved_existing_partial_implementations": 2,
+      "observed_throughput": {
+        "matched_code_bytes_per_hour": 4078.21,
+        "matched_functions_per_hour": 24.48,
+        "source_linked_code_bytes_per_hour": 2976.41,
+        "matched_bytes_per_primary_percentage_point": 108.78,
+        "linked_bytes_per_primary_percentage_point": 79.39
+      },
+      "ended_utc": "2026-10-03T10:00:44Z",
+      "stop_reason": "critical_usage_primary_1_percent_remaining"
+    },
+    {
+      "session_id": "b8-local-assisted-2026-10-03",
+      "status": "complete",
+      "model": "Codex continuation with local PC helper (user-reported GPT-6.1 Sol Light context)",
+      "target": "SZBE69_B8",
+      "elapsed_seconds": 9551.07,
+      "gains": {
+        "matched_code": 37544,
+        "matched_functions": 91,
+        "complete_code": 1504,
+        "complete_units": 4,
+        "matched_data": 792,
+        "complete_data": 196
+      },
+      "starting_account_usage": {
+        "primary_used_percent": 23,
+        "weekly_used_percent": 50,
+        "primary_resets_at": 1791070945,
+        "weekly_resets_at": 1791580276
+      },
+      "ending_account_usage": {
+        "primary_used_percent": 99,
+        "weekly_used_percent": 62,
+        "primary_resets_at": 1791070945,
+        "weekly_resets_at": 1791580276
+      },
+      "account_usage_consumed_percentage_points": {
+        "primary": 76,
+        "weekly": 12
+      },
+      "matched_gain_breakdown": {
+        "new_behavior_or_scheduling": {
+          "bytes": 1824,
+          "functions": 25
+        },
+        "compiler_generated_typed_formatting_helper": {
+          "bytes": 72,
+          "functions": 1
+        },
+        "original_string_metadata": {
+          "bytes": 35512,
+          "functions": 64
+        },
+        "original_global_storage_definitions": {
+          "bytes": 136,
+          "functions": 1
+        }
+      },
+      "new_exact_implementations": 25,
+      "compiler_generated_matching_helpers": 1,
+      "new_partial_implementations": 7,
+      "local_helper_totals": {
+        "completed_runs": 9,
+        "attempts": 143,
+        "prompt_tokens": 383979,
+        "output_tokens": 31065,
+        "native_verified_proposals": 1,
+        "semantically_reviewed_retained_proposals": 0
+      },
+      "observed_throughput": {
+        "matched_code_bytes_per_hour": 14151.13,
+        "matched_functions_per_hour": 34.3,
+        "source_linked_code_bytes_per_hour": 566.89,
+        "matched_bytes_per_primary_percentage_point": 494.0,
+        "linked_bytes_per_primary_percentage_point": 19.79
+      },
+      "notes": "Starts at77% primary remaining. Most matched gains restore existing metadata; no retained local-model proposals. Deterministic PC automation and debug-guided reconstruction supplied gains. Model setting is user-reported context, not independently verified. Conditions differ from prior runs."
+    },
+    {
+      "session_id": "b8-prepared-2026-10-03",
+      "status": "complete",
+      "model": "Current Codex model/effort not independently retrieved; earlier user-reported GPT-6.1 Sol Light context",
+      "target": "SZBE69_B8",
+      "elapsed_seconds": 8523.16,
+      "gains": {
+        "matched_code": 6864,
+        "matched_functions": 123,
+        "complete_code": 1964,
+        "complete_units": 2,
+        "matched_data": 136,
+        "complete_data": 136
+      },
+      "matched_gain_breakdown": {
+        "reviewed_game_network_behavior": {
+          "matched_code": 4900,
+          "matched_functions": 111
+        },
+        "existing_licensed_soundtouch_source": {
+          "matched_code": 1964,
+          "matched_functions": 12,
+          "linked_code": 1964,
+          "linked_units": 2
+        },
+        "metadata_only": {
+          "matched_code": 0,
+          "matched_functions": 0
+        },
+        "included_report_exact_strict_metadata_residual": {
+          "matched_code": 192,
+          "matched_functions": 1,
+          "symbol": "__ct__Q26Quazal11CallContextFv",
+          "strict_score": 95.83333
+        }
+      },
+      "partial_summary": {
+        "retained_records": 7,
+        "new_semantic_reconstructions": 3,
+        "new_semantic_bytes": 516,
+        "improved_existing_semantic_functions": 3,
+        "improved_existing_instruction_exact_metadata_residuals": 1
+      },
+      "account_usage_start": {
+        "primary_used_percent": 20,
+        "weekly_used_percent": 65,
+        "primary_resets_at": 1791089070,
+        "weekly_resets_at": 1791580276
+      },
+      "account_usage_end": {
+        "primary_used_percent": 99,
+        "weekly_used_percent": 78,
+        "primary_resets_at": 1791089070,
+        "weekly_resets_at": 1791580276
+      },
+      "account_usage_consumed_percentage_points": {
+        "primary": 79,
+        "weekly": 13
+      },
+      "refill_observed": false,
+      "local_model_source_edit_runs": 0,
+      "observed_throughput": {
+        "matched_code_bytes_per_hour": 2899.21,
+        "matched_functions_per_hour": 51.95,
+        "source_linked_code_bytes_per_hour": 829.55,
+        "matched_bytes_per_primary_percentage_point": 86.89,
+        "linked_bytes_per_primary_percentage_point": 24.86
+      },
+      "ledger": "doc/DECOMP_B8_PREPARED_SESSION_2026-10-03.json",
+      "report": "doc/DECOMP_B8_PREPARED_SESSION_2026-10-03.md",
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+      "stop_reason": "critical_usage_primary_1_percent_remaining",
+      "note": "Matched report gains include192 constructor bytes with residual strict constant relocations. No metadata-only matched gains. Account percentages rounded/shared; model/effort unverified. Prepared targets/candidate mix prevent causal model-efficiency conclusions."
+    }
+  ],
+  "throughput_note": "Descriptive observed ratios only. Percentage points are rounded account usage, not tokens, and include this session tooling/reviews/reporting plus other account activity. Starting candidates and metadata accounting differ; do not use these ratios as a controlled model estimate."
+}

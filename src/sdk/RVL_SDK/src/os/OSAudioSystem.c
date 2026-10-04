@@ -113,7 +113,11 @@ void __OSInitAudioSystem(void) {
     start = OSGetTick();
     do {
         ;
+#ifdef VERSION_SZBE69_B8
+    } while ((s32)(OSGetTick() - start) < 2194);
+#else
     } while (OS_TICKS_DELTA(OSGetTick(), start) < 2194);
+#endif
 
     *(u32*)&DSP_HW_REGS[DSP_AR_DMA_MMADDR_H] = 0x01000000;
     *(u32*)&DSP_HW_REGS[DSP_AR_DMA_ARADDR_H] = 0x00000000;
@@ -187,7 +191,11 @@ void __OSStopAudioSystem(void) {
     start = OSGetTick();
     do {
         ;
+#ifdef VERSION_SZBE69_B8
+    } while ((s32)(OSGetTick() - start) < 44);
+#else
     } while (OS_TICKS_DELTA(OSGetTick(), start) < 44);
+#endif
 
     // Reset DSP
     DSP_HW_REGS[DSP_CSR] |= 0x1;

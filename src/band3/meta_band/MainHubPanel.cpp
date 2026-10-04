@@ -136,7 +136,7 @@ void MainHubPanel::Exit() {
     if (matchmaker->IsFinding()) {
         matchmaker->CancelFind();
     }
-    if (mHubOverride == kMainHubOverride_ChooseBand && TheSessionMgr->IsLocal()) {
+    if (mHubOverride == kMainHubOverride_Waiting && TheSessionMgr->IsLocal()) {
         SetMainHubOverride(kMainHubOverride_None);
     }
     UIPanel::Exit();

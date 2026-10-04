@@ -1,4 +1,25 @@
 #include "utl/Str.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolUTF8,
+    "HMX wide chars cannot exceed 16 bits: %s (0x%02x)",
+    "Invalid UTF character: %s (0x%02x)",
+    "HMX wide chars cannot exceed 16 bits: %d (0x%02x)",
+    "*",
+    "Invalid UTF character: %d (0x%02x)",
+    "UTF8.cpp",
+    "out",
+    "in",
+    "len > 0",
+    "allowed",
+    "(out - out_beg) < len",
+    "maxSize > 0",
+    "HMX wide chars cannot exceed 16 bits"
+)
+#endif
 #include <string.h>
 #include "utl/UTF8.h"
 #include "os/Debug.h"

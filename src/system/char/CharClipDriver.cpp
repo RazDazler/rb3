@@ -1,4 +1,19 @@
 #include "char/CharClipDriver.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolCharClipDriver,
+    "exit",
+    "CharClipDriver.cpp",
+    "mBlendFrac >= 0",
+    "CharClipDriver: blend width < 0 with clip %s",
+    "%s could not find event %s",
+    "clip.instant",
+    "clip.dude"
+)
+#endif
 #include "char/CharClip.h"
 #include "math/Rand.h"
 #include "math/Utl.h"

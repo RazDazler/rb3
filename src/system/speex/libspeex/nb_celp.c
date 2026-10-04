@@ -1,3 +1,4 @@
+
 /* Copyright (C) 2002-2006 Jean-Marc Valin 
    File: nb_celp.c
 
@@ -456,7 +457,7 @@ int nb_encode(void *state, void *vin, SpeexBits *bits)
          int choice=0;
          float min_diff=100;
          mode = 8;
-         while (mode)
+         while (mode>0)
          {
             int v1;
             float thresh;

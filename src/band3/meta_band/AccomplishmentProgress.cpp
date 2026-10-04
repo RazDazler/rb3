@@ -1,4 +1,39 @@
 #include "meta_band/AccomplishmentProgress.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolAccomplishmentProgress,
+    "* %s = %i\n",
+    "GamerpicAward",
+    "AccomplishmentProgress.cpp",
+    "pAccomplishment",
+    "pUser",
+    "pPerformer",
+    "pCategory",
+    "pGroup",
+    "pLevel",
+    "mParentProfile",
+    "career/levelup",
+    "HasNewAwards()",
+    "HasNewRewardVignettes()",
+    "pAward",
+    "AccomplishmentProgress",
+    "iMax > 0",
+    "iCurrent < iMax",
+    "user",
+    "",
+    "iNewFanCount >= iOldFanCount",
+    "group != gNullStr",
+    "pCategoryList",
+    "pMachineMgr",
+    "i_pBand",
+    "o_rLeaderboardGoalToValueMap.empty()",
+    "iterNewGoal != mNewlyAcquiredAccomplishments.end()",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "Accomplishment.h"
 #include "Campaign.h"
 #include "game/BandUser.h"

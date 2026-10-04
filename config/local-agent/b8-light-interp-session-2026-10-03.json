@@ -1,0 +1,14 @@
+{
+  "version": "SZBE69_B8",
+  "tasks": [
+    {
+      "unit": "main/system/world/LightPreset",
+      "source": "src/system/world/LightPreset.cpp",
+      "instruction": "Match original fused interpolation scheduling. Preserve all four field results and e aliasing this. Compute temporaries for all results before storing. Try original smoke,light,total,base order and temporary lifetimes; no types or fields changes. fmadds is an assembly instruction, never a callable C++ helper. Express a fused interpolation as f * (e.field - old) + old using ordinary C++ arithmetic. Do not call fmadds, fma, or any new function.",
+      "context": "sd parameters: mBaseIntensity offset0x24,mSmokeIntensity0x38,mLightingInfluence0x3c,mIntensity0x44. Entry floats offsets0,4,8,12. Original read/compute smoke,light,total,base then write smoke,light,total,base. Preserve fmadds f*(entry-current)+current. Use four explicit result temporaries computed before stores; all fields are float.",
+      "id": "light-drawer-interp",
+      "symbol": "AnimateSpotlightDrawerFromPreset__11LightPresetFP15SpotlightDrawerRCQ211LightPreset20SpotlightDrawerEntryf",
+      "signature": "void LightPreset::AnimateSpotlightDrawerFromPreset(\n    SpotlightDrawer *sd, const LightPreset::SpotlightDrawerEntry &e, float f\n)"
+    }
+  ]
+}

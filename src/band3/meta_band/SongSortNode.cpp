@@ -1,4 +1,20 @@
 #include "meta_band/SongSortNode.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolSongSortNode,
+    "%s(%d): %s unhandled msg: %s",
+    "SongSortNode.cpp",
+    "Compare(node, kNodeHeader) == 0",
+    "ui/image/song_select_header_keep.png",
+    "Compare(node, kNodeSubheader) == 0",
+    "child",
+    "Subheader has no song children!",
+    "ui/image/blank_album_art_keep.png",
+    "ui/image/song_select_setlist_keep.png"
+)
+#endif
 #include "meta_band/SongSort.h"
 #include "decomp.h"
 #include "meta_band/BandSongMgr.h"

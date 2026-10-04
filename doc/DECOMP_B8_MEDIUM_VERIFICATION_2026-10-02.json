@@ -1,0 +1,76 @@
+{
+  "started_utc": "2026-10-02T20:34:17Z",
+  "deadline_utc": "2026-10-02T23:34:17Z",
+  "checkpoint_utc": "2026-10-02T23:24:49.291870+00:00",
+  "status": "complete",
+  "primary_version": "SZBE69_B8",
+  "baseline": {
+    "fuzzy_match_percent": 68.60082,
+    "total_code": "11431676",
+    "matched_code": "6203732",
+    "matched_code_percent": 54.267914,
+    "total_data": "2755932",
+    "matched_data": "611360",
+    "matched_data_percent": 22.183422,
+    "total_functions": 41333,
+    "matched_functions": 28173,
+    "matched_functions_percent": 68.16103,
+    "complete_code": "1220636",
+    "complete_code_percent": 10.677665,
+    "complete_data": "495100",
+    "complete_data_percent": 17.964884,
+    "total_units": 1876,
+    "complete_units": 529
+  },
+  "measures": {
+    "fuzzy_match_percent": 68.76726,
+    "total_code": "11431676",
+    "matched_code": "6264020",
+    "matched_code_percent": 54.795288,
+    "total_data": "2755932",
+    "matched_data": "613848",
+    "matched_data_percent": 22.273699,
+    "total_functions": 41333,
+    "matched_functions": 28336,
+    "matched_functions_percent": 68.55539,
+    "complete_code": "1227236",
+    "complete_code_percent": 10.735398,
+    "complete_data": "496268",
+    "complete_data_percent": 18.007267,
+    "total_units": 1876,
+    "complete_units": 532
+  },
+  "gains": {
+    "matched_code": 60288,
+    "matched_functions": 163,
+    "complete_code": 6600,
+    "complete_units": 3,
+    "matched_data": 2488
+  },
+  "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+  "checkpoint_note": "Both Wii executables recompiled and verified against pinned checksums and original inputs; B8 is active. Three newly source-linked units total 6,600 bytes. Partial cache and block-manager code remains NonMatching.",
+  "versions": {
+    "SZBE69_B8": {
+      "built_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+      "matches_original": true,
+      "report": "build/SZBE69_B8/report.json"
+    },
+    "SZBE69": {
+      "built_dol_sha1": "189b001188a2f8ab769e72364440022407fe09d2",
+      "matches_original": true,
+      "report": "build/SZBE69/report.json"
+    }
+  },
+  "recovery_clean": true,
+  "runner_lock_note": "Advisory lock acquired and released successfully; its persistent marker is expected.",
+  "active_configuration": "SZBE69_B8",
+  "automation_tests": {
+    "passed": 32,
+    "log": "build/automation-tests-medium-final.log"
+  },
+  "stop_reason": "usage_threshold_reached",
+  "stopped_utc": "2026-10-02T23:25:07.035535+00:00",
+  "elapsed_seconds": 10250,
+  "remaining_primary_percent": 1,
+  "remaining_weekly_percent": 85
+}

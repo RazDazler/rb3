@@ -54,11 +54,72 @@ void SOHeapInit() {
 }
 #pragma pop
 
+#if defined(VERSION_SZBE69_B8)
+// Preserve the full original B8 literal pool.
+DECOMP_FORCEACTIVE(
+    LiteralPoolRecoveredPlatformMgr_Wii,
+    "main",
+    "SOHeap: Created heap of size %d.\n",
+    "Warning: calling SOHeapDeinit but %d bytes are still allocated\n",
+    "SOHeap: Used %d of %d total.\n",
+    "PlatformMgr_Wii.cpp",
+    "gSOTotalAlloc < gSOHeapSize",
+    "",
+    "CCS DEBUG: DNS error %d\n",
+    "%d",
+    "%s.%d",
+    "platform_mgr",
+    "overflow_dialog_panel",
+    "mOverflowDialog->CheckIsLoaded()",
+    "This is a string",
+    "0 && \"PlatformMgr::SignInUsers not used on Wii!\"",
+    "(a->Size() > 4) && \"Signing in needs User info on Wii - check for bad .dta merges using platform_mgr signin\"",
+    "0 && \"PlatformMgr::SignOutUsers not used on Wii!\"",
+    "pUser",
+    "PadNum = %d",
+    "0 && \"SO Fails to initialize - are we starving some system thread?\"",
+    "0 && \"SOInit fails - out of memory?\"",
+    "0 && \"SO Cleanup fails - are we starving some system thread?\"",
+    "0 && \"SO Fails to finish - are we starving some system thread?\"",
+    "0 && \"SO claims we didn't SOCleanup, but we just did like 10 lines ago\"",
+    "0 && \"SOCleanup fails?\"",
+    "SOThread",
+    "0 && \"SO thread reports SO_EALREADY - this should never happen\"",
+    "SOShutdownThreadFunc",
+    "DWCInit()\n",
+    "net",
+    "game",
+    "name",
+    "code",
+    "iResult == 0 && \"DWC_Init returns an error code?\"",
+    "DWCThread",
+    "DNSThread",
+    "DWC_GetLastError \n-DWCError: %d\n-Error type: %d \n-Error Code: %d\n",
+    "DWC says we should shut down SO, but we can't because we're talking to holmes!",
+    "!bStoreFailed && \"Store error codes are no longer handled similarly to DWC error codes - see Ian S. or Chris M.\"",
+    "proj9",
+    "credits",
+    "path",
+    "Exit",
+    "%s %d",
+    "CCS DEBUG: DWC Profanity check on: %s\n",
+    "CCS DEBUG: Profanity Check failed to initialize\n",
+    "CCS DEBUG: Username is very un classy\n",
+    "0 && \"Improper use of DWC profanity check - tell Ian S.\"",
+    "CCS DEBUG: DWC Check failed\n",
+    "%04d",
+    "PCPW",
+    "PrintParentalPin: parental pin enabled %s\n",
+    "PrintParentalPin: not found!\n",
+    "mHomeMenuDisabled >= 0"
+)
+#else
 DECOMP_FORCEACTIVE(
     PlatformMgr_Wii,
     "Warning: calling SOHeapDeinit but %d bytes are still allocated\n",
     "SOHeap: Used %d of %d total.\n"
 )
+#endif
 
 void *SOAllocFunc(int i1, int i2) {
     if (i1 <= 0)

@@ -1,4 +1,52 @@
 #include "bandobj/OutfitConfig.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolOutfitConfig,
+    "OutfitConfig.cpp",
+    "mp->mesh",
+    "Mesh",
+    "%s: Cannot render to texture (%s) while already rendering to texture (%s).",
+    "head.mesh",
+    "%s can't apply piercing deformation, before verts different than head (0x%x) vert count (%d v %d)",
+    "%s can't do piercing piece %d deform, head verts out of date, need to re-ao",
+    "%s mesh %s no longer matches piece %d, has fewer verts (%d v %d), must re-AO file",
+    "%s MeshAO has different vert count %d v %d from %s, can't apply",
+    "%s MeshAO %s can't find matching mesh to apply",
+    "skin.cfg",
+    "%s_%s_diff.tex",
+    "%s_%s_interp_gw.tex",
+    "%s_skin_diffuse_output.tex",
+    "%s could not find %s",
+    "%s_tattoo_torso.mesh",
+    "torso_naked.mat",
+    "%s_tattoo_legs.mesh",
+    "legs_skin.mat",
+    "%s_tattoo_head.mesh",
+    "head_naked.mat",
+    "norm_%s.texblendctl",
+    "%s_head_norm%02d.tex",
+    "ObjPtr_p.h",
+    "f.Owner()",
+    "",
+    "0",
+    "%s can't load new %s version %d > %d",
+    "%s can't load new %s alt version %d > %d",
+    "BandCharacter",
+    "female",
+    "male",
+    "milo",
+    "milo.dir",
+    "main",
+    "option > 0 && option < BandCharDesc::kNumPalettes",
+    "%s(%d): %s unhandled msg: %s",
+    "PropSync_p.h",
+    "i == prop->Size() && op <= kPropInsert",
+    "op == kPropSize"
+)
+#endif
 #include "math/Rand.h"
 #include "rndobj/Cam.h"
 #include "rndobj/Dir.h"

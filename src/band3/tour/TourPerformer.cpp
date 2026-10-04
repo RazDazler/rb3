@@ -23,7 +23,28 @@ TourPerformerImpl::TourPerformerImpl(BandUserMgr &mgr)
     mMetaPerformer = MetaPerformer::Current();
 }
 
+#if defined(VERSION_SZBE69_B8)
+// Preserve the full original B8 literal pool.
+DECOMP_FORCEACTIVE(
+    LiteralPoolRecoveredTourPerformer,
+    "",
+    "TourPerformer.cpp",
+    "!members.empty()",
+    "pProgress",
+    "pQuest",
+    "pTourDesc",
+    "pTrackerManager",
+    "i_pProgress",
+    "stats",
+    "iMostRecentSong >= 0",
+    "i_pLabel",
+    "i_pUser",
+    "pMetaPerformer",
+    "%s(%d): %s unhandled msg: %s"
+)
+#else
 DECOMP_FORCEACTIVE(TourPerformer, __FILE__, "!members.empty()")
+#endif
 
 TourPerformerImpl::~TourPerformerImpl() {}
 

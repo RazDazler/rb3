@@ -65,6 +65,7 @@ protected:
     void calculateCoeffs();
 public:
     void* operator new(size_t s) { return _MemAlloc(s, 0x20); }
+    void operator delete(void *p) { _MemFree(p); }
     AAFilter(uint length);
 
     ~AAFilter();

@@ -31,4 +31,8 @@ void VarTimer::SetSpeed(float f) {
         Start();
 }
 
-float VarTimer::Ms() { return mRawTimer.SplitMs(); }
+float VarTimer::Ms() {
+    if (mRawTimer.Running())
+        mRawTimer.Split();
+    return mAccumMs + mSpeed * mRawTimer.Ms();
+}

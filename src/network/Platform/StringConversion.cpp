@@ -4,10 +4,10 @@
 
 namespace {
     void Latin1ToUtf8(const char *in, char *out, unsigned int len) {
-        u8 srch = *in;
+        int srch = (u8)*in;
         len--;
         while (srch != 0 && len != 0) {
-            if ((s16)srch >= 0x80) {
+            if (srch >= 0x80) {
                 u8 nu_hi = ((u16)srch >> 6) & 0x1F;
                 srch &= 0x3F;
                 *out = nu_hi | 0xC0;
@@ -32,7 +32,7 @@ namespace {
                 out++;
                 len--;
             } else {
-                if ((srch - 0xC0) <= 0x1F) {
+                if ((unsigned int)(srch - 0xC0) <= 0x1F) {
                     u8 hi = *in;
                     len--;
                     u8 lo = *((const u8 *)++in);

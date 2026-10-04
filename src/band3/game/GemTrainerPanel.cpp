@@ -383,10 +383,12 @@ void GemTrainerPanel::HandleTrackShifting() {
     } else {
         tick = GetLoopTick(tick);
         if (tick > sect.GetEndTick()) {
-            if (unkc4 < unkbc) {
+            float targetOffset = unkbc;
+            float currentOffset = unkc4;
+            if (currentOffset < targetOffset) {
                 unkc4 += TheTaskMgr.DeltaSeconds() * 10.0f;
                 unkc4 = Min(unkc4, unkbc);
-            } else if (unkc4 > unkbc) {
+            } else if (currentOffset > targetOffset) {
                 unkc4 -= TheTaskMgr.DeltaSeconds() * 10.0f;
                 unkc4 = Max(unkc4, unkbc);
             }

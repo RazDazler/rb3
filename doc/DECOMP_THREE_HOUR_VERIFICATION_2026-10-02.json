@@ -1,0 +1,95 @@
+{
+  "checkpoint_utc": "2026-10-02T18:32:15.496179+00:00",
+  "session_started_utc": "2026-10-02T15:31:25Z",
+  "deadline_utc": "2026-10-02T18:31:25Z",
+  "primary_version": "SZBE69_B8",
+  "status": "completed_verified_timeboxed_session",
+  "automation_tests_passed": 27,
+  "pending_recovery_journals": [],
+  "versions": {
+    "SZBE69": {
+      "verified_dol_sha1": "189b001188a2f8ab769e72364440022407fe09d2",
+      "report_sha256": "d90037644d6e00442a3ce027c778b30af5411ecb8d4d115da543d04ced3a9149",
+      "baseline": {
+        "matched_code": 2094468,
+        "matched_functions": 19099,
+        "complete_code": 98120,
+        "complete_units": 81,
+        "total_code": 8253332,
+        "total_functions": 59456
+      },
+      "measures": {
+        "fuzzy_match_percent": 40.94946,
+        "total_code": "8253332",
+        "matched_code": "2103112",
+        "matched_code_percent": 25.481976,
+        "total_data": "2451724",
+        "matched_data": "12744",
+        "matched_data_percent": 0.5197975,
+        "total_functions": 59456,
+        "matched_functions": 19132,
+        "matched_functions_percent": 32.178417,
+        "complete_code": "112348",
+        "complete_code_percent": 1.3612442,
+        "complete_data": "14040",
+        "complete_data_percent": 0.57265824,
+        "total_units": 2014,
+        "complete_units": 93
+      },
+      "gains": {
+        "matched_code": 8644,
+        "matched_functions": 33,
+        "complete_code": 14228,
+        "complete_units": 12
+      }
+    },
+    "SZBE69_B8": {
+      "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+      "report_sha256": "9cde3729e107cf5706905e643f8caac27dca57aecd1a3fb71c74ac412be7b5eb",
+      "baseline": {
+        "fuzzy_match_percent": 68.59613,
+        "total_code": "11431676",
+        "matched_code": "6203180",
+        "matched_code_percent": 54.263084,
+        "total_data": "2755932",
+        "matched_data": "611360",
+        "matched_data_percent": 22.183422,
+        "total_functions": 41333,
+        "matched_functions": 28170,
+        "matched_functions_percent": 68.15378,
+        "complete_code": "1217928",
+        "complete_code_percent": 10.6539755,
+        "complete_data": "494684",
+        "complete_data_percent": 17.94979,
+        "total_units": 1876,
+        "complete_units": 524
+      },
+      "measures": {
+        "fuzzy_match_percent": 68.60082,
+        "total_code": "11431676",
+        "matched_code": "6203732",
+        "matched_code_percent": 54.267914,
+        "total_data": "2755932",
+        "matched_data": "611360",
+        "matched_data_percent": 22.183422,
+        "total_functions": 41333,
+        "matched_functions": 28173,
+        "matched_functions_percent": 68.16103,
+        "complete_code": "1220636",
+        "complete_code_percent": 10.677665,
+        "complete_data": "495100",
+        "complete_data_percent": 17.964884,
+        "total_units": 1876,
+        "complete_units": 529
+      },
+      "gains": {
+        "matched_code": 552,
+        "matched_functions": 3,
+        "complete_code": 2708,
+        "complete_units": 5
+      }
+    }
+  },
+  "stopped_utc": "2026-10-02T18:32:15.496179+00:00",
+  "stop_reason": "three_hour_time_limit; no new experiments after deadline"
+}

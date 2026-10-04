@@ -1,4 +1,53 @@
 #include "HolmesClient.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolHolmesClient,
+    "HolmesClient buffer exceeded %d < %d",
+    "HolmesClient.cpp",
+    "gPendingResponse != Holmes::kInvalidOpcode",
+    "holmes closed",
+    "this shouldn't be happening %s %s\n",
+    "Holmes::WaitForAnyResponse",
+    "[Holmes] %s opcode blocked for %.0f seconds\n",
+    ".harmonixmusic.com",
+    "Couldn't resolve holmes_host: %s",
+    "Holmes version mismatch\nResync/rebuild both projects\nHolmes=%d  Console=%d",
+    "Holmes protocol mismatch\nCould not connect to console",
+    "Holmes fileroot missing!",
+    "holmes.csv",
+    ", ",
+    "\n\n",
+    "AsyncFileWiiOpen,",
+    "\n",
+    "PollFrontLoader,",
+    "MemAlloc,",
+    "name,",
+    "count,",
+    "wait,",
+    "work\n",
+    "holmes_host",
+    "",
+    "xb_host",
+    "NO HOSTNAME PROVIDER, ADD \"-holmes_host <hostname>\" to your args",
+    "HolmesClientInit(host={%s",
+    ", %s",
+    "})\n",
+    "holmes_share",
+    "xb_share",
+    "holmes_target",
+    "\n\nCOULD NOT RESOLVE HOST ADDRESS '%s'\n\n",
+    "\n\nCOULD NOT CONNECT TO HOLMES ADDRESS '%s'\n\n",
+    "COULD NOT CONNECT TO HOLMES",
+    "dump_holmes_log",
+    "gHolmesStream",
+    "gHostLogging tried to read file: %s",
+    "HolmesClientCacheFile",
+    "vector"
+)
+#endif
 #include "milo_types.h"
 #include "obj/DataFunc.h"
 #include "os/AsyncFileHolmes.h"

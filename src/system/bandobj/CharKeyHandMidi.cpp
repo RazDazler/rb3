@@ -1,4 +1,25 @@
 #include "bandobj/CharKeyHandMidi.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolCharKeyHandMidi,
+    "CharKeyHandMidi.cpp",
+    "key > kNoKey && key <= kKeyC4",
+    "CharKeyHandMidi: Trying to key non-existent finger",
+    "CharKeyHandMidi: Trying to put finger on non-existent key",
+    "finger >= 0 && finger < CharIKFingers::kFingerNone",
+    "Too many keyboard keys down in one poll: %d\n",
+    "Keyboard fingers: not enough free fingers to play a note, please check the authoring!",
+    "0",
+    "%s can't load new %s version %d > %d",
+    "%s can't load new %s alt version %d > %d",
+    "%s(%d): %s unhandled msg: %s",
+    "PropSync_p.h",
+    "i == prop->Size() && op <= kPropInsert"
+)
+#endif
 #include "utl/Symbols.h"
 
 CharKeyHandMidi::CharKeyHandMidi()

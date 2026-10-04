@@ -6,6 +6,7 @@
 #include "ui/UILabel.h"
 #include "utl/Locale.h"
 #include "utl/Symbols.h"
+#include "math/Utl.h"
 
 OverdriveTimeTracker::OverdriveTimeTracker(
     TrackerSource *src, TrackerBandDisplay &banddisp, TrackerBroadcastDisplay &bcdisp
@@ -42,10 +43,11 @@ void OverdriveTimeTracker::Poll_(float f) {
             }
         }
         if (o2) {
-            if (unk64 == -1.0f) {
+            float start = unk64;
+            if (start == -1.0f) {
                 unk64 = f;
             } else {
-                unk5c = f - unk64;
+                unk5c = f - start;
                 if (unk60 < unk5c) {
                     unk60 = unk5c;
                 }
@@ -53,9 +55,7 @@ void OverdriveTimeTracker::Poll_(float f) {
             UpdateTimeRemainingDisplay();
         } else if (unk64 != -1.0f) {
             unk58 += unk5c;
-            if (unk60 < unk5c) {
-                unk60 = unk5c;
-            }
+            MaxEq(unk60, unk5c);
             unk5c = 0;
             unk64 = -1.0f;
         }
@@ -96,6 +96,14 @@ void OverdriveTimeTracker::SavePlayerStats() const {
         pPlayer->mStats.unk1c0 = pPlayer->mStats.mTotalOverdriveDurationMs;
     }
 }
+
+#ifdef VERSION_SZBE69_B8
+void OverdriveTimeTracker::TargetSuccess(int) const {}
+DataArrayPtr OverdriveTimeTracker::GetTargetDescription(int idx) const {
+    return TrackerDisplay::MakeTimeTargetDescription(mTargets[idx]);
+}
+float OverdriveTimeTracker::GetCurrentValue() const { return unk60; }
+#endif
 
 void OverdriveTimeTracker::UpdateTimeRemainingDisplay() {
     float f60 = unk60;

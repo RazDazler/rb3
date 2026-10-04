@@ -1131,7 +1131,7 @@ void GemPlayer::RecordTrillStats() {
         if (i28 == 0)
             i3++;
         else if (i24 > 0) {
-            mStats.IncrementTrillsHit(i28 == i24);
+            mStats.IncrementTrillsHit(i24 == i28);
         }
     }
     mStats.SetTrillCount(num - i3);
@@ -1187,8 +1187,10 @@ float GemPlayer::OnGetPercentHitGemsPractice(int i1, float f2, float f3) const {
     for (int i = 0; i < gems.size(); i++) {
         if (gems[i].PlayableBy(i1)) {
             float f11 = gems[i].GetMs();
-            float f10 = f11;
-            if (!gems[i].IgnoreDuration()) {
+            float f10;
+            if (gems[i].IgnoreDuration()) {
+                f10 = f11;
+            } else {
                 f10 = f11 + gems[i].DurationMs();
             }
             if (f11 >= f2 && f10 < f3) {

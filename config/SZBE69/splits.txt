@@ -501,6 +501,7 @@ band3/meta_band/Accomplishment.cpp:
 
 band3/meta_band/AccomplishmentCategory.cpp:
 	.text       start:0x801ADF78 end:0x801AE0F4
+	.data       start:0x8083A560 end:0x8083A5D0
 
 band3/meta_band/AccomplishmentConditional.cpp:
 	.text       start:0x801AE0F4 end:0x801AED34
@@ -922,6 +923,7 @@ band3/meta_band/SongUpgradeMgr.cpp:
 
 band3/meta_band/StandIn.cpp:
 	.text       start:0x8028B90C end:0x8028BC68
+	.data       start:0x8084BBC0 end:0x8084BBF8
 
 band3/meta_band/StandInProvider.cpp:
 	.text       start:0x8028BC68 end:0x8028BE14
@@ -1144,6 +1146,9 @@ system/math/Geo.cpp:
 system/math/Color.cpp:
 	.text       start:0x802DCAB4 end:0x802DCEDC
 	.ctors      start:0x807EFEA0 end:0x807EFEA4
+	.rodata     start:0x807F0954 end:0x807F0958
+	.data       start:0x80851360 end:0x80851378
+	.bss        start:0x809014A8 end:0x809014D8
 
 system/math/Interp.cpp:
 	.text       start:0x802DCEDC end:0x802DD9A4
@@ -1314,6 +1319,7 @@ system/os/NetworkSocket_Wii.cpp:
 
 system/os/OnlineID.cpp:
 	.text       start:0x803092C0 end:0x803093D0
+	.data       start:0x80853DA0 end:0x80853DA8
 
 system/os/PlatformMgr.cpp:
 	.text       start:0x803093D0 end:0x8030A55C
@@ -1336,6 +1342,7 @@ system/os/System.cpp:
 
 system/os/System_Wii.cpp:
 	.text       start:0x8030F4F0 end:0x8030F69C
+	.data       start:0x80854270 end:0x80854290
 
 system/os/ThreadCall_Wii.cpp:
 	.text       start:0x8030F69C end:0x8030F9EC
@@ -1349,6 +1356,8 @@ system/os/User.cpp:
 
 system/os/UserMgr.cpp:
 	.text       start:0x803120A0 end:0x803123EC
+	.data       start:0x80854508 end:0x80854580
+	.bss        start:0x8091A040 end:0x8091A048
 
 system/os/SynchronizationEvent.cpp:
 	.text       start:0x803123EC end:0x80312524
@@ -1478,6 +1487,7 @@ system/utl/BufStreamNAND.cpp:
 
 system/utl/Cache.cpp:
 	.text       start:0x80344238 end:0x803442FC
+	.data       start:0x80856908 end:0x80856978
 
 system/utl/Cache_Wii.cpp:
 	.text       start:0x803442FC end:0x80345CD0
@@ -1506,6 +1516,7 @@ system/utl/ChunkStream.cpp:
 
 system/utl/Compress.cpp:
 	.text       start:0x8034C010 end:0x8034C158
+	.data       start:0x80856DC0 end:0x80856DE0
 
 system/utl/DataPointMgr.cpp:
 	.text       start:0x8034C158 end:0x8034C444
@@ -1573,6 +1584,8 @@ system/utl/MakeString.cpp:
 
 system/utl/MBT.cpp:
 	.text       start:0x80351AD0 end:0x80351C18
+	.rodata     start:0x807F1DC0 end:0x807F1DD0
+	.data       start:0x80857170 end:0x80857198
 
 system/utl/MeasureMap.cpp:
 	.text       start:0x80351C18 end:0x80352830
@@ -1934,6 +1947,7 @@ system/bandobj/GemTrackResourceManager.cpp:
 
 system/bandobj/VocalTrackDir.cpp:
 	.text       start:0x80431DC8 end:0x8043B9C0
+	.data       start:0x80880C20 end:0x80881190
 
 system/bandobj/BandTrack.cpp:
 	.text       start:0x8043B9C0 end:0x80440C44
@@ -2044,6 +2058,8 @@ system/beatmatch/MercurySwitchFilter.cpp:
 system/beatmatch/Output.cpp:
 	.text       start:0x8046EDCC end:0x8046EE1C
 	.ctors      start:0x807EFF9C end:0x807EFFA0
+	.data       start:0x80884D48 end:0x80884D60
+	.bss        start:0x80986F80 end:0x80986FB0
 
 system/beatmatch/PhraseAnalyzer.cpp:
 	.text       start:0x8046EE1C end:0x80470CF8
@@ -2094,6 +2110,7 @@ system/beatmatch/TimeSpanVector.cpp:
 
 system/beatmatch/TrackType.cpp:
 	.text       start:0x80492A78 end:0x80492B28
+	.data       start:0x80886720 end:0x80886730
 
 system/beatmatch/TrackWatcher.cpp:
 	.text       start:0x80492B28 end:0x804936F0
@@ -2343,6 +2360,7 @@ system/meta/DataArraySongInfo.cpp:
 
 system/meta/DeJitterPanel.cpp:
 	.text       start:0x8050EA88 end:0x8050EF80
+	.data       start:0x8088BD40 end:0x8088BDFC
 
 system/meta/FixedSizeSaveable.cpp:
 	.text       start:0x8050EF80 end:0x8050FA30
@@ -2508,6 +2526,7 @@ system/ui/UIComponent.cpp:
 
 system/ui/UILabel.cpp:
 	.text       start:0x80555FFC end:0x8055A388
+	.data       start:0x80890A28 end:0x80890AC0
 
 system/ui/UIFontImporter.cpp:
 	.text       start:0x8055A388 end:0x8055F3A8
@@ -3017,6 +3036,7 @@ system/synth/MetaMusic.cpp:
 
 system/synth/Mic.cpp:
 	.text       start:0x80679F0C end:0x8067A02C
+	.data       start:0x8089CC24 end:0x8089CC38
 
 system/synth/MicClientMapper.cpp:
 	.text       start:0x8067A02C end:0x8067BA90
@@ -3093,6 +3113,8 @@ system/synth/SynthSample.cpp:
 
 system/synth/Utl.cpp:
 	.text       start:0x8069927C end:0x80699384
+	.data       start:0x8089F038 end:0x8089F090
+	.bss        start:0x80990F98 end:0x80991098
 
 system/synth/VoiceBeat.cpp:
 	.text       start:0x80699384 end:0x8069A7E4
@@ -3322,7 +3344,7 @@ libs/bt/stack/rfcomm/port_api.c:
 	.text       start:0x807281FC end:0x8072A538
 
 sdk/RVL_SDK/src/os/OSReboot.c:
-	.text       start:0x80769E30 end:0x80769EC0
+	.text       start:0x80769E30 end:0x80769EB4
 	.sbss       start:0x808E5498 end:0x808E54A0
 
 sdk/RVL_SDK/src/os/OSSemaphore.c:

@@ -238,11 +238,12 @@ void GuitarController::ReconcileFretState() {
         for (int i = 0; i < 5; i++) {
             int i10 = 1 << i;
             int i2 = mFretMask;
+            bool oldInMask = (i2 & i10);
             bool inMask = padData->IsButtonInMask(SlotToButton(i));
             if (inMask) {
                 mask |= i10;
             }
-            if ((i2 & i10) != inMask) {
+            if (oldInMask != inMask) {
                 if (inMask) {
                     mSink->FretButtonDown(i, -1);
                 } else

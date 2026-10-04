@@ -437,9 +437,11 @@ void RndBitmap::SetPixelIndex(int i1, int i2, unsigned char uc) {
     if (mBpp == 8) {
         *(pixels + offset) = uc;
     } else if (bb) {
-        *(pixels + offset) = uc << 4 | *(pixels + offset) & 0xF;
+        u8 old = *(pixels + offset);
+        *(pixels + offset) = (uc << 4) | (old & 0xF);
     } else {
-        *(pixels + offset) = *(pixels + offset) & 0xF0 | uc;
+        u8 old = *(pixels + offset);
+        *(pixels + offset) = (old & 0xF0) | uc;
     }
 }
 

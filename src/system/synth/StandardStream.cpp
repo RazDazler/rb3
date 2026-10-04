@@ -204,11 +204,13 @@ int StandardStream::ConsumeData(void **v, int i1, int i2) {
 bool StandardStream::Fail() { return mRdr && mRdr->Fail(); }
 
 bool StandardStream::IsReady() const {
-    if (mState - 2 <= 3U) {
-        if ((1 << mState) & 0xB)
-            return true;
+    bool ready = false;
+    unsigned int state = mState - 2;
+    if (state <= 3) {
+        if ((1 << state) & 0xB)
+            ready = true;
     }
-    return false;
+    return ready;
 }
 
 bool StandardStream::IsFinished() const { return mState == kFinished; }

@@ -1,5 +1,6 @@
 #include "Movie.h"
 #include "os/Timer.h"
+#include "os/File.h"
 #include "rndobj/Tex.h"
 #include "rndwii/Tex.h"
 
@@ -35,7 +36,11 @@ void WiiMovie::Update() {
     tex->MovieSwapFrames();
 }
 
-void WiiMovie::StreamReadFinish() {}
+void WiiMovie::StreamReadFinish() {
+    int bytes;
+    while (!unk_0x48->ReadDone(bytes)) {
+    }
+}
 
 void WiiMovie::StreamNextBuffer() { StreamReadFinish(); }
 

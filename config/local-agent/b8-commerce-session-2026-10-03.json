@@ -1,0 +1,23 @@
+{
+  "version": "SZBE69_B8",
+  "tasks": [
+    {
+      "id": "cancel-commerce",
+      "unit": "main/system/os/CommerceMgr_Wii",
+      "source": "src/system/os/CommerceMgr_Wii.cpp",
+      "symbol": "CancelCurrentOperation__14WiiCommerceMgrFv",
+      "signature": "int WiiCommerceMgr::CancelCurrentOperation()",
+      "instruction": "Improve small original instruction/register scheduling with equivalent control-flow or temporary lifetimes. Preserve all call and store order. Assembly mnemonics are not callable C++ helpers.",
+      "context": "mCommerceAsyncOpId long at0x1c. Test id!=-1, then EC_CancelOperation(id)==ECResult_Success(0); if successful re-read member id AFTER the call, call WaitAsyncOp(id,kCancel(7)), return1; otherwise return0. Original loads first test into r0, then re-loads id into r3 for the call. Preserve possibility that callback changes the member."
+    },
+    {
+      "id": "wait-commerce",
+      "unit": "main/system/os/CommerceMgr_Wii",
+      "source": "src/system/os/CommerceMgr_Wii.cpp",
+      "symbol": "WaitAsyncOp__14WiiCommerceMgrFlQ214WiiCommerceMgr21LastCommerceOperation",
+      "signature": "void WiiCommerceMgr::WaitAsyncOp(long opId, WiiCommerceMgr::LastCommerceOperation opName)",
+      "instruction": "Improve small original instruction/register scheduling with equivalent control-flow or temporary lifetimes. Preserve all call and store order. Assembly mnemonics are not callable C++ helpers.",
+      "context": "Preserve field assignments at0x1c and0x20 before TimeoutForOp(opName). Store float result in mOpId0x58, Restart mCommerceTimeout0x28, then unke8 int0xe8=0. Only difference may be register restore/load order in function epilogue; never remove a store or call."
+    }
+  ]
+}

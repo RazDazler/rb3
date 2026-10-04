@@ -1,4 +1,66 @@
 #include "bandobj/BandTrack.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolBandTrack,
+    "",
+    "BandTrack.cpp",
+    "0",
+    "%s can't load new %s version %d > %d",
+    "%s can't load new %s alt version %d > %d",
+    "reset.trig",
+    "popup_help_disabled",
+    "reset_practice.trig",
+    "G",
+    "set_icon",
+    "player_name.lbl",
+    "gamemode",
+    "update_crowd_meter",
+    "immediate_retract.trig",
+    "retract.trig",
+    "end_game_start_inst",
+    "objects",
+    "min_finale_help_time",
+    "spotlight_fail_guilty.trig",
+    "spotlight_fail.trig",
+    "solo_reset.trig",
+    "(mTrackInstrument == kInstBass) || (mTrackInstrument == kInstRealBass)",
+    "warning_anims.grp",
+    "bfb_reset.trig",
+    "bfb_failed.trig",
+    "failed_task",
+    "failed",
+    "bfb_saved.trig",
+    "enter_coda.trig",
+    "rock_ending",
+    "bre_success.trig",
+    "help",
+    "practice",
+    "guitar_solo_start.trig",
+    "solo_rating.lbl",
+    "score.lbl",
+    "guitar_solo_stop.trig",
+    "solo_percent.lbl",
+    "hide_solo.anim",
+    "tour_moment_goal",
+    "show.trig",
+    "Spotlight",
+    "hide.trig",
+    "BandTrack::AsRndDir() base impl should never be called",
+    "unrecognized instrument type \"%d\"",
+    "tg_main_jolt.trig",
+    "top",
+    "bottom",
+    "tg_main_text_top.lbl",
+    "tg_main_text_bottom.lbl",
+    "unexpected instrument symbol \"%s\"",
+    "PropSync_p.h",
+    "i == prop->Size() && op <= kPropInsert",
+    "%s(%d): %s unhandled msg: %s"
+)
+#endif
 #include "bandobj/TrackPanelDirBase.h"
 #include "utl/Symbols.h"
 #include "utl/Messages.h"

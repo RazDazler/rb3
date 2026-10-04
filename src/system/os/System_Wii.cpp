@@ -56,6 +56,7 @@ void CaptureStackTrace(int depth, unsigned int *trace) {
 }
 
 bool PlatformDebugBreak() {
+#ifdef MILO_DEBUG
     if (OSGetConsoleType() & OS_CONSOLE_MASK_EMU) {
         register int breakState, ogState;
         ASM_BLOCK(mfmsr ogState) // Move from Machine State Register
@@ -67,6 +68,9 @@ bool PlatformDebugBreak() {
         return true;
     } else
         return false;
+#else
+    return false;
+#endif
 }
 
 // Hack to match below; empty string must come first in the string pool

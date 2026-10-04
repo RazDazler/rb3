@@ -3,6 +3,7 @@
 #include "game/BandUserMgr.h"
 #include "game/Player.h"
 #include "meta_band/AccomplishmentManager.h"
+#include "meta_band/MusicLibrary.h"
 #include "obj/Data.h"
 #include "obj/Dir.h"
 #include "obj/Object.h"
@@ -232,7 +233,8 @@ void SetPartyShuffleModeMsg::Save(BinStream &) const {}
 void SetPartyShuffleModeMsg::Load(BinStream &) {}
 
 void SetPartyShuffleModeMsg::Dispatch() {
-    // requires musiclibrary
+    if (TheMusicLibrary)
+        TheMusicLibrary->ClientSetPartyShuffleMode();
 }
 
 TourHideShowFiltersMsg::TourHideShowFiltersMsg(bool show) : mShowMode(show) {}

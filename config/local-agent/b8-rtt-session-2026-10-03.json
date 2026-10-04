@@ -1,0 +1,19 @@
+{
+  "version": "SZBE69_B8",
+  "tasks": [
+    {
+      "id": "rtt-variance-reconstruct",
+      "unit": "main/network/Plugins/RTT",
+      "source": "src/network/Plugins/RTT.cpp",
+      "symbol": "Adjust__Q26Quazal3RTTFUi",
+      "signature": "void RTT::Adjust(uint i)",
+      "instruction": "The current draft is incomplete: restore the missing variance update from the original assembly, then improve register scheduling. Preserve original behavior, not the incorrect missing statement. Use local temporary declarations/lifetimes and signed absolute-value forms. No new calls; use u32/int casts only. A pure scalar leaf function. Keep smoothed and variance temporaries unsigned uint/u32, never int: both shifts must remain logical. Only delta and sign are signed. Store latest before updating either accumulator. Cast constants need no changes.",
+      "permitted_numbers": [
+        "2",
+        "3",
+        "31"
+      ],
+      "context": "uint and u32 are unsigned32bit. this has uint unk_0x0 smoothed RTT accumulator at0; uint unk_0x4 variance accumulator at4; uint unk_0x8 latest sample at8. Original first loads smoothed and variance; stores latest=i; delta is signed interpretation of unsigned(i-(smoothed>>3)); sign=delta>>31 arithmetic; deviation=(u32(delta)^u32(sign))-u32(sign), unsigned magnitude. Update smoothed+=delta modulo2^32, variance+=deviation-(variance>>2) modulo2^32. No division rounding change: accumulators unsigned. Original register targets r7smoothed, r5variance, r8delta/deviation, r6sign, r4xor intermediate, r0shift temporary. Original instruction order: loadbothfields, smoothed>>3, storelatest, delta, sign, variance>>2, xor, addsmoothed, absolutemagnitude, storesmoothed, subtractvarshift, addvariance, storevariance. Current source fails to update variance. All sideeffects are these three field stores; no externalcalls."
+    }
+  ]
+}

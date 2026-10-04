@@ -54,8 +54,7 @@ void RndAnimFilter::Load(BinStream &bs) {
     RndAnimatable::Load(bs);
     bs >> mAnim >> mScale >> mOffset >> mStart >> mEnd;
     if (gRev != 0) {
-        bs >> (int &)mType;
-        bs >> mPeriod;
+        bs >> (int &)mType >> mPeriod;
     } else {
         bool b;
         bs >> b;
