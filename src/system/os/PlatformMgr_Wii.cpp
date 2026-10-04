@@ -364,7 +364,7 @@ bool PlatformMgr::StartDNSLookup(const char *cc) {
             OSCreateThread(
                 &mDNSThread, DNSThread, &mDNSResult, &mDNSResult, 0x4000, 0xF, 1
             );
-            mThread.specific[0] = (void *)"DNSThread";
+            mDNSThread.specific[0] = (void *)"DNSThread";
             OSResumeThread(&mDNSThread);
             return true;
         }

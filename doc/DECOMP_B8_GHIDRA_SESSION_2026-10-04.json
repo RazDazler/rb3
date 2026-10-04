@@ -5625,6 +5625,378 @@
         "matched_data": 0,
         "complete_data": 0
       }
+    },
+    {
+      "candidate": "Store DNS thread label on the actual DNS thread rather than DWC thread; original field offset",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094123526262100/manifest.json",
+      "started_at": 1791094123.5270345,
+      "elapsed_seconds": 11.71,
+      "result": {
+        "unit": "main/system/os/PlatformMgr_Wii",
+        "symbol": "StartDNSLookup__11PlatformMgrFPCc",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094128559591300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094127778893500-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "StartDNSLookup__11PlatformMgrFPCc",
+          "compiled_symbol": "StartDNSLookup__11PlatformMgrFPCc",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          97.72727,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 176,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 176,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Initialize store offer in constructor member initializer before ShortName call, as in original assembly",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094163683427900/manifest.json",
+      "started_at": 1791094163.6847582,
+      "elapsed_seconds": 11.61,
+      "result": {
+        "unit": "main/band3/meta_band/StoreSongSortNode",
+        "symbol": "__ct__17StoreSongSortNodeFP11SongSortCmpP10StoreOffer",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094168994712300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094168182801300-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "__ct__17StoreSongSortNodeFP11SongSortCmpP10StoreOffer",
+          "compiled_symbol": "__ct__17StoreSongSortNodeFP11SongSortCmpP10StoreOffer",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          97.560974,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 164,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 164,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Original USB type interval uses inclusive lower bound after separately excluding no-device type",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094267486527600/manifest.json",
+      "started_at": 1791094267.4875877,
+      "elapsed_seconds": 11.27,
+      "result": {
+        "unit": "main/system/usbwii/UsbWii",
+        "symbol": "UsbAttachHandler__6UsbWiiFP10_HIDClientP9HIDDeviceUl",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094272262513300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094271465691600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "UsbAttachHandler__6UsbWiiFP10_HIDClientP9HIDDeviceUl",
+          "compiled_symbol": "UsbAttachHandler__6UsbWiiFP10_HIDClientP9HIDDeviceUl",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          97.91667,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 192,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 192,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Use named CacheMgr poll FormatString before Str call to match original temporary receiver reload",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094395025238400/manifest.json",
+      "started_at": 1791094395.0267098,
+      "elapsed_seconds": 10.77,
+      "result": {
+        "unit": "main/system/utl/CacheMgr_Wii",
+        "symbol": "Poll__11CacheMgrWiiFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094399551895600-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094398732487600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "Poll__11CacheMgrWiiFv",
+          "compiled_symbol": "Poll__11CacheMgrWiiFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          97.5,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 160,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 160,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Store-song handler with original integer DataNode ID type and offer forwarding",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094560701663800/manifest.json",
+      "started_at": 1791094560.7025304,
+      "elapsed_seconds": 11.72,
+      "result": {
+        "unit": "main/band3/meta_band/StoreSongSortNode",
+        "symbol": "Handle__17StoreSongSortNodeFP9DataArrayb",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094565436987700-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094564620371700-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "Handle__17StoreSongSortNodeFP9DataArrayb",
+          "compiled_symbol": "Handle__17StoreSongSortNodeFP9DataArrayb",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          29.376856,
+          -238
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 1348,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 1348,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore original StoreSongSortNode definition order and link verified unit",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094877913554100/manifest.json",
+      "started_at": 1791094877.9144087,
+      "elapsed_seconds": 11.33,
+      "result": {
+        "unit": "main/band3/meta_band/StoreSongSortNode",
+        "symbol": "Handle__17StoreSongSortNodeFP9DataArrayb",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094882642775200-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094881859154400-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "Handle__17StoreSongSortNodeFP9DataArrayb",
+          "compiled_symbol": "Handle__17StoreSongSortNodeFP9DataArrayb",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          100.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 1776,
+          "matched_data": 0
+        },
+        "source_adopted": true,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 1776,
+        "complete_units": 1,
+        "matched_data": 0,
+        "complete_data": 344
+      }
+    },
+    {
+      "candidate": "Track-widget Y-offset evaluation scheduling candidates",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094918748275600/manifest.json",
+      "started_at": 1791094918.7493384,
+      "elapsed_seconds": 13.35,
+      "result": {
+        "unit": "main/system/track/TrackWidget",
+        "symbol": "RemoveAt__11TrackWidgetFfi",
+        "started_at": 1791094922.9471636,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "reverse-y-add",
+        "before": [
+          96.666664,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 240,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Band restart loop increment representations",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094991275694600/manifest.json",
+      "started_at": 1791094991.2767322,
+      "elapsed_seconds": 12.7,
+      "result": {
+        "unit": "main/band3/game/Band",
+        "symbol": "Restart__4BandFb",
+        "started_at": 1791094995.3403676,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "unsigned-index",
+        "before": [
+          96.666664,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 2,
+      "gains": {
+        "matched_code": 240,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
     }
   ],
   "rejected_experiments": [
@@ -6322,6 +6694,500 @@
         "matched_data": 0,
         "complete_data": 0
       }
+    },
+    {
+      "candidate": "Vocal note-confidence octave rounding and folded-distance lifetime from original instructions",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094024302228100/manifest.json",
+      "started_at": 1791094024.3029888,
+      "elapsed_seconds": 12.33,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "ScoreNote__9VocalPartCFfiRfRiRfRf",
+        "started_at": 1791094028.4186192,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          49.57265,
+          -59
+        ],
+        "after": [
+          49.57265,
+          -59
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Initialize StoreSongSortNode offer pointer used by title, artist and album getters; missing original constructor store",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094087739955700/manifest.json",
+      "started_at": 1791094087.7407014,
+      "elapsed_seconds": 19.15,
+      "result": {
+        "unit": "main/band3/meta_band/StoreSongSortNode",
+        "symbol": "__ct__17StoreSongSortNodeFP11SongSortCmpP10StoreOffer",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094092529153600-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094091720374500-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "__ct__17StoreSongSortNodeFP11SongSortCmpP10StoreOffer",
+          "compiled_symbol": "__ct__17StoreSongSortNodeFP11SongSortCmpP10StoreOffer",
+          "match_percent": 95.12195,
+          "instruction_differences": [
+            {
+              "row": 30,
+              "original_address": "120",
+              "original": "stw r31, 0x38(r29)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 34,
+              "original_address": null,
+              "original": null,
+              "compiled": "stw r31, 0x38(r29)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          97.560974,
+          -1
+        ],
+        "after": [
+          95.12195,
+          -2
+        ],
+        "reason": "target_did_not_improve",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Read Song load flag into a local bool; remove unsupported global flag and extra store absent from original B8",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094193143173200/manifest.json",
+      "started_at": 1791094193.144003,
+      "elapsed_seconds": 20.42,
+      "result": {
+        "unit": "main/system/utl/Song",
+        "symbol": "Load__4SongFR9BinStream",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094198328573400-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094197539489300-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "Load__4SongFR9BinStream",
+          "compiled_symbol": "Load__4SongFR9BinStream",
+          "match_percent": 92.59259,
+          "instruction_differences": [
+            {
+              "row": 40,
+              "original_address": "1552",
+              "original": "lbz r3, 0x8(r1)",
+              "compiled": "lbz r0, 0x8(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 41,
+              "original_address": "1556",
+              "original": "neg r0, r3",
+              "compiled": "cmpwi r0, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 42,
+              "original_address": "1560",
+              "original": "or r0, r0, r3",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 43,
+              "original_address": "1564",
+              "original": "srwi. r0, r0, 31",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          98.18182,
+          -1
+        ],
+        "after": [
+          92.59259,
+          -4
+        ],
+        "reason": "target_did_not_improve",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Bounded local Song flag condition variants to preserve original bool normalization without unsupported global",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094320618327000/manifest.json",
+      "started_at": 1791094320.6191163,
+      "elapsed_seconds": 12.78,
+      "result": {
+        "unit": "main/system/utl/Song",
+        "symbol": "Load__4SongFR9BinStream",
+        "started_at": 1791094324.6768558,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          98.18182,
+          -1
+        ],
+        "after": [
+          98.18182,
+          -1
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "RetryAudioPanel load Symbol temporary lifetime variants from original stack slots",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094430629219500/manifest.json",
+      "started_at": 1791094430.6300936,
+      "elapsed_seconds": 12.28,
+      "result": {
+        "unit": "main/band3/meta_band/RetryAudioPanel",
+        "symbol": "Load__15RetryAudioPanelFv",
+        "started_at": 1791094434.9145255,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          96.0,
+          -2
+        ],
+        "after": [
+          96.0,
+          -2
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct store-song id and offer messages plus null-checked offer forwarding from original handler assembly",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094494484212400/manifest.json",
+      "started_at": 1791094494.4852853,
+      "elapsed_seconds": 12.48,
+      "result": {
+        "unit": "main/band3/meta_band/StoreSongSortNode",
+        "symbol": "Handle__17StoreSongSortNodeFP9DataArrayb",
+        "accepted": false,
+        "build_verified": false,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094499063982600-006-source-trial.log",
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Capture final fill extent before writing coda output references, matching original pointer lifetime",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094524207940700/manifest.json",
+      "started_at": 1791094524.2086856,
+      "elapsed_seconds": 18.63,
+      "result": {
+        "unit": "main/band3/game/MultiplayerAnalyzer",
+        "symbol": "GetCodaExtents__19MultiplayerAnalyzerFRC8UserGuidRiRi",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094528858445800-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094528042670600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetCodaExtents__19MultiplayerAnalyzerFRC8UserGuidRiRi",
+          "compiled_symbol": "GetCodaExtents__19MultiplayerAnalyzerFRC8UserGuidRiRi",
+          "match_percent": 73.46939,
+          "instruction_differences": [
+            {
+              "row": 18,
+              "original_address": "4920",
+              "original": "beq 0x5c",
+              "compiled": "beq 0x50",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 24,
+              "original_address": "4944",
+              "original": "beq 0x44",
+              "compiled": "beq 0x38",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 29,
+              "original_address": "4964",
+              "original": "beq 0x30",
+              "compiled": "beq 0x24",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 30,
+              "original_address": "4968",
+              "original": "mulli r0, r0, 0xc",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 31,
+              "original_address": "4972",
+              "original": "lwz r4, 0xc(r3)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 32,
+              "original_address": "4976",
+              "original": "add r4, r4, r0",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 33,
+              "original_address": "4980",
+              "original": "lwz r0, -0xc(r4)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 34,
+              "original_address": "4984",
+              "original": "stw r0, 0x0(r30)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 39,
+              "original_address": "5004",
+              "original": "lwz r0, -0x8(r3)",
+              "compiled": "lwz r0, -0xc(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 40,
+              "original_address": "5008",
+              "original": "stw r0, 0x0(r31)",
+              "compiled": "stw r0, 0x0(r30)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 41,
+              "original_address": "5012",
+              "original": "lwz r0, 0x24(r1)",
+              "compiled": "lwz r0, -0x8(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 42,
+              "original_address": null,
+              "original": null,
+              "compiled": "stw r0, 0x0(r31)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 43,
+              "original_address": null,
+              "original": null,
+              "compiled": "lwz r0, 0x24(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          96.0,
+          -2
+        ],
+        "after": [
+          73.46939,
+          -13
+        ],
+        "reason": "target_did_not_improve",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Link fully matched StoreSongSortNode from source",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094816769390100/manifest.json",
+      "started_at": 1791094816.7701623,
+      "elapsed_seconds": 18.03,
+      "result": {
+        "unit": "main/band3/meta_band/StoreSongSortNode",
+        "symbol": "Handle__17StoreSongSortNodeFP9DataArrayb",
+        "accepted": false,
+        "build_verified": false,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094821572740300-006-source-trial.log",
+        "physical_diff": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094820792353200-dol-diff.json",
+        "layout_log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791094826345041100-007-source-layout-diff.log",
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Band configuration target-name and wardrobe evaluation order",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791094963756761600/manifest.json",
+      "started_at": 1791094963.7579105,
+      "elapsed_seconds": 12.39,
+      "result": {
+        "unit": "main/system/bandobj/BandConfiguration",
+        "symbol": "SyncPlayMode__17BandConfigurationFv",
+        "started_at": 1791094968.2843757,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          96.875,
+          -2
+        ],
+        "after": [
+          96.875,
+          -2
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 2,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
     }
   ],
   "retained_partial_reconstructions": [
@@ -6420,6 +7286,10 @@
     {
       "commit": "ba38f84c",
       "note": "Pushed first Ghidra and exact vocal-function milestone"
+    },
+    {
+      "commit": "5a7ebbc2",
+      "note": "Pushed Ghidra ABI context, vocal partials and exact source linking; excludes game inputs."
     }
   ],
   "usage_snapshots": [
@@ -6446,51 +7316,51 @@
     }
   ],
   "latest_checkpoint": {
-    "at": 1791093851.9914346,
+    "at": 1791095019.4146957,
     "measures": {
-      "fuzzy_match_percent": 69.03085,
+      "fuzzy_match_percent": 69.03947,
       "total_code": "11431676",
-      "matched_code": "6371904",
-      "matched_code_percent": 55.73902,
+      "matched_code": "6374424",
+      "matched_code_percent": 55.761063,
       "total_data": "2755932",
       "matched_data": "615568",
       "matched_data_percent": 22.336111,
       "total_functions": 41333,
-      "matched_functions": 28788,
-      "matched_functions_percent": 69.64895,
-      "complete_code": "1246236",
-      "complete_code_percent": 10.901604,
-      "complete_data": "498140",
-      "complete_data_percent": 18.075191,
+      "matched_functions": 28795,
+      "matched_functions_percent": 69.665886,
+      "complete_code": "1248012",
+      "complete_code_percent": 10.917139,
+      "complete_data": "498484",
+      "complete_data_percent": 18.087675,
       "total_units": 1876,
-      "complete_units": 547
+      "complete_units": 548
     },
     "gains": {
-      "matched_code": 1904,
-      "matched_functions": 9,
-      "complete_code": 928,
-      "complete_units": 2,
+      "matched_code": 4424,
+      "matched_functions": 16,
+      "complete_code": 2704,
+      "complete_units": 3,
       "matched_data": 792,
-      "complete_data": 0
+      "complete_data": 344
     },
-    "elapsed_seconds": 4620.99,
+    "elapsed_seconds": 5788.41,
     "account_usage": {
       "primary": {
-        "remaining_percent": 49,
-        "consumed_percentage_points": 50,
+        "remaining_percent": 32,
+        "consumed_percentage_points": 67,
         "same_window": true
       },
       "weekly": {
-        "remaining_percent": 14,
-        "consumed_percentage_points": 8,
+        "remaining_percent": 11,
+        "consumed_percentage_points": 11,
         "same_window": true
       }
     },
     "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
   },
   "latest_usage": {
-    "primary_used_percent": 51,
-    "weekly_used_percent": 86,
+    "primary_used_percent": 68,
+    "weekly_used_percent": 89,
     "primary_resets_at": 1791107162,
     "weekly_resets_at": 1791580276
   },
@@ -6528,6 +7398,7 @@
     "Seven retained vocal partials remain assembly-linked; floating-point order and pointer/register lifetimes need further matching.",
     "Ghidra CodeWarrior demangler compatibility error remains; selected vocal signatures now reviewed, unlisted types/signatures remain inferred.",
     "Tracker metadata-only gains (492 bytes / two functions) are separate from newly reconstructed vocal behavior and its canonical library helper.",
-    "CircleBuffer source linking uses the synced upstream implementation, not newly authored behavior; customer-support source pre-existed."
+    "CircleBuffer source linking uses the synced upstream implementation, not newly authored behavior; customer-support source pre-existed.",
+    "StoreSongSortNode now fully source-linked after matching handler and restoring original definition order; near-match register/scheduling trials remain for other units."
   ]
 }

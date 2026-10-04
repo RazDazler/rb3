@@ -47,7 +47,7 @@ int UsbWii::UsbAttachHandler(_HIDClient *client, HIDDevice *device, unsigned lon
     if (!mDiscError) {
         if (user != NULL) {
             UsbType type = (UsbType)GetType(device);
-            if (type != kUsbNone && (type > kUsbNone && type < kUsbTypeMax)) {
+            if (type != kUsbNone && (type >= kUsbNone && type < kUsbTypeMax)) {
                 return AddDevice(device, (UsbType)type);
             }
             return 0;

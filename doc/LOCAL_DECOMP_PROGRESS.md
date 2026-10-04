@@ -105,3 +105,5 @@ Recovered previous session: +6864 matched bytes / 123 functions, +1964 linked by
 
 
 2026-10-04 continued Ghidra milestone by ChatGPT: 1,904 matched code bytes / nine exact functions, 928 source-linked bytes / two units, 792 matched data bytes, seven retained vocal partials. Includes 492 bytes of tracker literal/assertion metadata repair; synced upstream matched gains remain excluded. Ghidra now annotates reviewed vocal signatures and narrowly justified GQR0=0, with ABI register verification. Exact B8 SHA-1 preserved; 72 automation tests pass. Session remains active.
+
+2026-10-04 ChatGPT checkpoint: session gains 4424 matched bytes / 16 functions; 2704 linked code bytes / 3 units; 792 matched data bytes and 344 linked data bytes. StoreSongSortNode handler reconstructed and entire unit linked after original definition-order restoration. DNS thread pointer and store-offer constructor pointer corrected; USB device-range and cache error formatting matched; TrackWidget RemoveAt and Band Restart matched. Seven vocal partials retained. Exact B8 DOL SHA-1 preserved. Game inputs and generated artifacts excluded.

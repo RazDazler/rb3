@@ -89,7 +89,7 @@ void Band::SetGameOver() {
 }
 
 void Band::Restart(bool b1) {
-    for (int i = 0; i != mActivePlayers.size(); i++) {
+    for (unsigned int i = 0; i != mActivePlayers.size(); i++) {
         mActivePlayers[i]->Restart(b1);
     }
     mBandPerformer->Restart();

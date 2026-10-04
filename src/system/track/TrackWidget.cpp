@@ -202,7 +202,7 @@ void TrackWidget::AddMeshInstance(const Transform &Ct, RndMesh *m, float f) {
 void TrackWidget::RemoveAt(float f) { mImp->RemoveAt(NewYOffset(f), mXOffset, -1.0f); }
 
 void TrackWidget::RemoveAt(float f, int i) {
-    float y = NewYOffset(f);
+    float y = mTrackDir->SecondsToY(f) + mYOffset;
     float x_added = mXOffset + mTrackDir->SlotAt(i).v.x;
     float f4;
     if (i > 0)

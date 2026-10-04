@@ -65,9 +65,8 @@ void CacheMgrWii::Poll() {
             PollUnmount();
             break;
         default:
-            TheDebug.Fail(
-                FormatString("Unknown OpType encountered in CacheMgr::Poll()\n").Str()
-            );
+            FormatString error("Unknown OpType encountered in CacheMgr::Poll()\n");
+            TheDebug.Fail(error.Str());
             break;
         }
     }

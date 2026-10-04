@@ -242,14 +242,14 @@
       "status": "active",
       "model": "Current Codex model/effort not independently retrieved",
       "target": "SZBE69_B8",
-      "elapsed_seconds": 4620.99,
+      "elapsed_seconds": 5788.41,
       "gains": {
-        "matched_code": 1904,
-        "matched_functions": 9,
-        "complete_code": 928,
-        "complete_units": 2,
+        "matched_code": 4424,
+        "matched_functions": 16,
+        "complete_code": 2704,
+        "complete_units": 3,
         "matched_data": 792,
-        "complete_data": 0
+        "complete_data": 344
       },
       "upstream_gains_excluded": {
         "matched_code": 620,
@@ -269,22 +269,22 @@
         "weekly_resets_at": 1791580276
       },
       "account_usage_end": {
-        "primary_used_percent": 51,
-        "weekly_used_percent": 86,
+        "primary_used_percent": 68,
+        "weekly_used_percent": 89,
         "primary_resets_at": 1791107162,
         "weekly_resets_at": 1791580276
       },
       "account_usage_consumed_percentage_points": {
-        "primary": 50,
-        "weekly": 8
+        "primary": 67,
+        "weekly": 11
       },
       "refill_observed": false,
       "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
       "ledger": "doc/DECOMP_B8_GHIDRA_SESSION_2026-10-04.json",
       "report": "doc/DECOMP_B8_GHIDRA_SESSION_2026-10-04.md",
       "observed_throughput": {
-        "matched_code_bytes_per_hour": 1483.32,
-        "matched_functions_per_hour": 7.01
+        "matched_code_bytes_per_hour": 2751.43,
+        "matched_functions_per_hour": 9.95
       },
       "note": "Elapsed and usage include setup/integration. Target mix and rounded shared-account percentages prevent causal model conclusions. Endpoint consumption is unavailable across refills; usage snapshots are retained."
     }
