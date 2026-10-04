@@ -114,6 +114,8 @@ public:
     void AddLyricShift(float);
     void StartPlayerPhrase(int, int);
     void EndPlayerPhrase(int, int);
+    float PitchAt(float) const;
+    const VocalNote *NoteAt(float) const;
     VocalNote *NextNote(float) const;
     void CapLastFreestyleSection(float);
     void GetPracticePhrases(std::vector<VocalPhrase> &, int, int) const;

@@ -85,6 +85,7 @@ public:
 
 class VocalPlayer : public Player, public RndOverlay::Callback {
 public:
+    static const float kInvalidPitch;
     VocalPlayer(BandUser *, BeatMaster *, Band *, int, Performer *, int);
     virtual DataNode Handle(DataArray *, bool);
     virtual ~VocalPlayer();

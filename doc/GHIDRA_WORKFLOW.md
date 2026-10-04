@@ -64,11 +64,15 @@ headers must decide calling convention, types, NaN behavior, field layout and
 floating-point operation order. Do not copy these artifacts into reconstructed
 source or claim a generated draft matches merely because decompilation completed.
 
-Seven explicitly reviewed vocal/pitch signatures now override inference in the
+Ten explicitly reviewed vocal/pitch signatures now override inference in the
 temporary view. Primitive references retain their types; class pointees remain
 opaque. The PowerPC default calling convention assigns float parameters to
 `f1`, `f2`, etc. independently of `r3`, `r4`, etc. for ordinary parameters.
 The exporter verifies each assignment and fails if that ABI mapping changes.
+For `GetBestHit`, the original `ScoreSinger` caller fills `r3` through `r10`
+and passes the final two output pointers at stack offsets 8 and 12. The exporter
+also checks these stack locations. `ScoreSinger` retains its unused third float
+argument so that its fourth float remains in `f4`.
 In `ScoreNote`, correcting the return to `float` restored the omitted Gaussian
 confidence calculation and zero-weight gate; the untyped draft had incorrectly
 returned an integer address. Header declarations and original caller/callee

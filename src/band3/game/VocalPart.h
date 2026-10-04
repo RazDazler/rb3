@@ -3,6 +3,7 @@
 #include "game/Singer.h"
 
 class VocalPlayer;
+class SongPos;
 
 class VocalPart {
 public:
@@ -46,9 +47,14 @@ public:
     void Rollback(float, float);
     void GetNoteRange(float, int &, int &);
     bool NearNote(float);
+    void Poll(float, const SongPos &);
     void AfterPoll(float);
     float GetPartHitPercentage(const std::vector<VocalPhrase> &, int, int) const;
     void ResetScoring();
+    void
+    ScoreSinger(float, float, float, float, int, TalkyMatcher *, VocalScoreCache &, int &, float &);
+    float
+    GetBestHit(float, int, int, TalkyMatcher *, float &, float, int &, int &, float &, float &, bool &);
     float ScoreNote(float, int, float &, int &, float &, float &) const;
     bool CouldScoreAgainstPart(float, TalkyMatcher *, float, float, float &);
     float GetSloppyPitch(float, int, float, float &) const;

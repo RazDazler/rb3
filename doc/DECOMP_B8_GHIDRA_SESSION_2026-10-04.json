@@ -5997,6 +5997,843 @@
         "matched_data": 0,
         "complete_data": 0
       }
+    },
+    {
+      "candidate": "Use original float-rounded 0.1 promoted to double in vocal difficulty logarithm",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095160843117500/manifest.json",
+      "started_at": 1791095160.8442998,
+      "elapsed_seconds": 11.12,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "SetDifficultyVariables__9VocalPartFi",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791095165508050200-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791095164728653800-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "SetDifficultyVariables__9VocalPartFi",
+          "compiled_symbol": "SetDifficultyVariables__9VocalPartFi",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          98.89503,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Vocal phrase-score cap local lifetime ordering",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095180141765300/manifest.json",
+      "started_at": 1791095180.1427853,
+      "elapsed_seconds": 12.8,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "AddPhrasePoints__9VocalPartFf",
+        "started_at": 1791095183.9987683,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "declare-next-first",
+        "before": [
+          85.2459,
+          -9
+        ],
+        "after": [
+          90.16393,
+          -6
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Vocal phrase maximum pointer and float local lifetimes",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095215420823300/manifest.json",
+      "started_at": 1791095215.4220493,
+      "elapsed_seconds": 13.44,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "CalcPhraseScoreMax__9VocalPartCFRCPC11VocalPhrase",
+        "started_at": 1791095219.5934255,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "end-declared-before-start",
+        "before": [
+          61.538464,
+          -20
+        ],
+        "after": [
+          71.15385,
+          -15
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Vocal best-hit and singer reconstruction with original float subtraction promoted for double fmod",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095510386017700/manifest.json",
+      "started_at": 1791095510.387357,
+      "elapsed_seconds": 42.91,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791095515822023600-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791095515040408600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
+          "compiled_symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
+          "match_percent": 80.0,
+          "instruction_differences": [
+            {
+              "row": 29,
+              "original_address": "8372",
+              "original": "li r26, 0x0",
+              "compiled": "li r28, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 33,
+              "original_address": "8388",
+              "original": "stb r26, 0x0(r23)",
+              "compiled": "stb r28, 0x0(r23)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 37,
+              "original_address": "8404",
+              "original": "mr r25, r4",
+              "compiled": "mr r27, r4",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 66,
+              "original_address": "8520",
+              "original": "lbz r28, 0x1(r17)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 68,
+              "original_address": "8528",
+              "original": "lbz r27, 0x0(r17)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 69,
+              "original_address": "8532",
+              "original": "mfcr r24",
+              "compiled": "mfcr r26",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 72,
+              "original_address": "8544",
+              "original": "extrwi r24, r24, 1, 1",
+              "compiled": "extrwi r26, r26, 1, 1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 74,
+              "original_address": null,
+              "original": null,
+              "compiled": "lbz r25, 0x1(r17)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 75,
+              "original_address": null,
+              "original": null,
+              "compiled": "lwz r12, 0x100(r12)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 76,
+              "original_address": null,
+              "original": null,
+              "compiled": "lbz r24, 0x0(r17)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 78,
+              "original_address": "8556",
+              "original": "lwz r12, 0x100(r12)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 83,
+              "original_address": "8576",
+              "original": "cmpwi r28, 0x0",
+              "compiled": "cmpwi r25, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 85,
+              "original_address": "8584",
+              "original": "cmpwi r27, 0x0",
+              "compiled": "cmpwi r24, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 87,
+              "original_address": "8592",
+              "original": "cmpwi r24, 0x0",
+              "compiled": "cmpwi r26, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 89,
+              "original_address": "8600",
+              "original": "cmpwi r26, 0x0",
+              "compiled": "cmpwi r28, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 111,
+              "original_address": "8688",
+              "original": "fadds f1, f2, f1",
+              "compiled": "fadds f2, f2, f1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 112,
+              "original_address": "8692",
+              "original": "fsubs f0, f0, f29",
+              "compiled": "fsubs f1, f0, f29",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 113,
+              "original_address": "8696",
+              "original": "fsubs f1, f1, f29",
+              "compiled": "fsubs f0, f2, f29",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 114,
+              "original_address": "8700",
+              "original": "fabs f0, f0",
+              "compiled": "fabs f1, f1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 115,
+              "original_address": "8704",
+              "original": "fabs f1, f1",
+              "compiled": "fabs f0, f0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 116,
+              "original_address": "8708",
+              "original": "frsp f0, f0",
+              "compiled": "frsp f1, f1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 117,
+              "original_address": "8712",
+              "original": "frsp f1, f1",
+              "compiled": "frsp f0, f0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 118,
+              "original_address": "8716",
+              "original": "fcmpo cr0, f1, f0",
+              "compiled": "fcmpo cr0, f0, f1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 128,
+              "original_address": "8756",
+              "original": "li r26, 0x1",
+              "compiled": "li r28, 0x1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 129,
+              "original_address": "8760",
+              "original": "stw r25, 0x0(r20)",
+              "compiled": "stw r27, 0x0(r20)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 133,
+              "original_address": "8776",
+              "original": "stb r26, 0x0(r23)",
+              "compiled": "stb r28, 0x0(r23)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 141,
+              "original_address": "8808",
+              "original": "mr r4, r25",
+              "compiled": "mr r4, r27",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 144,
+              "original_address": "8820",
+              "original": "stw r0, 0xc(r1)",
+              "compiled": "stw r0, 0x10(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 145,
+              "original_address": "8824",
+              "original": "addi r6, r1, 0xc",
+              "compiled": "addi r6, r1, 0x10",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 146,
+              "original_address": "8828",
+              "original": "addi r7, r1, 0x10",
+              "compiled": "addi r7, r1, 0xc",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 154,
+              "original_address": "8860",
+              "original": "cmpwi r26, 0x0",
+              "compiled": "cmpwi r28, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 159,
+              "original_address": "8880",
+              "original": "li r26, 0x0",
+              "compiled": "li r28, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 160,
+              "original_address": "8884",
+              "original": "stw r25, 0x0(r20)",
+              "compiled": "stw r27, 0x0(r20)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 161,
+              "original_address": "8888",
+              "original": "lfs f0, 0x10(r1)",
+              "compiled": "lfs f0, 0xc(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 163,
+              "original_address": "8896",
+              "original": "lwz r0, 0xc(r1)",
+              "compiled": "lwz r0, 0x10(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 167,
+              "original_address": "8912",
+              "original": "stb r26, 0x0(r23)",
+              "compiled": "stb r28, 0x0(r23)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 168,
+              "original_address": "8916",
+              "original": "addi r25, r25, 0x1",
+              "compiled": "addi r27, r27, 0x1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 170,
+              "original_address": "8924",
+              "original": "cmpw r25, r16",
+              "compiled": "cmpw r27, r16",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          80.0,
+          -38
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Finite local search of phrase-score declaration lifetimes with fixed assignment order",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095575141607500/manifest.json",
+      "started_at": 1791095575.1427941,
+      "elapsed_seconds": 19.05,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "AddPhrasePoints__9VocalPartFf",
+        "started_at": 1791095579.4553478,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "declaration-order-next,limit,maximum,previous,cap",
+        "before": [
+          90.16393,
+          -6
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 15,
+      "gains": {
+        "matched_code": 244,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore singer-scoring original output-local stack order",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095641307490800/manifest.json",
+      "started_at": 1791095641.3088613,
+      "elapsed_seconds": 11.32,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "ScoreSinger__9VocalPartFffffiP12TalkyMatcherR15VocalScoreCacheRiRf",
+        "started_at": 1791095645.4600594,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "original-singer-local-order",
+        "before": [
+          89.30818,
+          -17
+        ],
+        "after": [
+          98.11321,
+          -3
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Scoped best-hit stack and talky/loop local lifetimes",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095699172516300/manifest.json",
+      "started_at": 1791095699.1733723,
+      "elapsed_seconds": 11.73,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
+        "started_at": 1791095702.6884015,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "separate-talky-local-declarations",
+        "before": [
+          80.0,
+          -38
+        ],
+        "after": [
+          84.210526,
+          -30
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Best-hit talky state and distance local lifetimes",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095789939235900/manifest.json",
+      "started_at": 1791095789.9400742,
+      "elapsed_seconds": 13.18,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
+        "started_at": 1791095793.8007276,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "talky-declarations-and-distances",
+        "before": [
+          84.210526,
+          -30
+        ],
+        "after": [
+          93.15789,
+          -13
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Vocal poll reconstruction with explicit SongPos forward declaration",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096107619250900/manifest.json",
+      "started_at": 1791096107.620336,
+      "elapsed_seconds": 40.44,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "Poll__9VocalPartFfRC7SongPos",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096112007378700-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096111223466000-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "Poll__9VocalPartFfRC7SongPos",
+          "compiled_symbol": "Poll__9VocalPartFfRC7SongPos",
+          "match_percent": 88.82682,
+          "instruction_differences": [
+            {
+              "row": 21,
+              "original_address": "7188",
+              "original": "lwz r4, 0xc(r3)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 22,
+              "original_address": "7192",
+              "original": "lfs f0, 0x4(r4)",
+              "compiled": "lfs f0, 0x4(r5)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 54,
+              "original_address": "7320",
+              "original": "lwz r3, 0xc(r31)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 55,
+              "original_address": "7324",
+              "original": "lfs f0, 0x0(r3)",
+              "compiled": "lfs f0, 0x0(r4)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 59,
+              "original_address": "7340",
+              "original": "lfs f0, 0x4(r3)",
+              "compiled": "lfs f0, 0x4(r4)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 121,
+              "original_address": "7588",
+              "original": "cmpw r0, r5",
+              "compiled": "cmpw r5, r0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 122,
+              "original_address": "7592",
+              "original": "ble 0x14",
+              "compiled": "bge 0x14",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 128,
+              "original_address": "7616",
+              "original": "addi r3, r1, 0xc",
+              "compiled": "addi r3, r1, 0x8",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 132,
+              "original_address": "7632",
+              "original": "cmpw r4, r0",
+              "compiled": "cmpw r0, r4",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 134,
+              "original_address": "7640",
+              "original": "addi r3, r1, 0x8",
+              "compiled": "addi r3, r1, 0xc",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 161,
+              "original_address": "7748",
+              "original": "lwz r30, 0x420(r3)",
+              "compiled": "lwz r3, 0x420(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 162,
+              "original_address": "7752",
+              "original": "cmpwi r30, 0x0",
+              "compiled": "cmpwi r3, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 164,
+              "original_address": null,
+              "original": null,
+              "compiled": "lwz r0, 0x4(r31)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 166,
+              "original_address": "7764",
+              "original": "lwz r3, 0x8(r31)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 167,
+              "original_address": "7768",
+              "original": "bl 0x0",
+              "compiled": null,
+              "original_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "PitchAt__13VocalNoteListCFf",
+                    "demangled_name": "VocalNoteList::PitchAt(float) const",
+                    "flags": 1
+                  }
+                }
+              },
+              "compiled_relocation": null
+            },
+            {
+              "row": 168,
+              "original_address": "7772",
+              "original": "lwz r0, 0x4(r31)",
+              "compiled": "lwz r30, 0x10(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 169,
+              "original_address": "7776",
+              "original": "lwz r3, 0x10(r30)",
+              "compiled": "lwz r3, 0x8(r31)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 170,
+              "original_address": "7780",
+              "original": "slwi r0, r0, 5",
+              "compiled": "slwi r31, r0, 5",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 171,
+              "original_address": null,
+              "original": null,
+              "compiled": "bl 0x0",
+              "original_relocation": null,
+              "compiled_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "PitchAt__13VocalNoteListCFf",
+                    "demangled_name": "VocalNoteList::PitchAt(float) const",
+                    "flags": 1
+                  }
+                }
+              }
+            },
+            {
+              "row": 172,
+              "original_address": "7784",
+              "original": "stfsx f1, r3, r0",
+              "compiled": "stfsx f1, r30, r31",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          88.82682,
+          -20
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
     }
   ],
   "rejected_experiments": [
@@ -7188,6 +8025,157 @@
         "matched_data": 0,
         "complete_data": 0
       }
+    },
+    {
+      "candidate": "Band-director category source-string evaluation scheduling",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095093667520900/manifest.json",
+      "started_at": 1791095093.6684537,
+      "elapsed_seconds": 18.63,
+      "result": {
+        "unit": "main/system/bandobj/BandDirector",
+        "symbol": "ExtractCatAdj__F6SymbolR6SymbolR6Symbol",
+        "started_at": 1791095098.0131745,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          96.55172,
+          -2
+        ],
+        "after": [
+          96.55172,
+          -2
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct vocal best-hit selection and singer cache update from typed Ghidra context and original B8 assembly",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095433104403300/manifest.json",
+      "started_at": 1791095433.1053956,
+      "elapsed_seconds": 55.11,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
+        "accepted": false,
+        "build_verified": false,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791095437431267400-006-source-trial.log",
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Local six-candidate search for phrase maximum pointer declaration order",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095859073995100/manifest.json",
+      "started_at": 1791095859.0752304,
+      "elapsed_seconds": 13.21,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "CalcPhraseScoreMax__9VocalPartCFRCPC11VocalPhrase",
+        "started_at": 1791095862.6777825,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          71.15385,
+          -15
+        ],
+        "after": [
+          71.15385,
+          -15
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 6,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Singer-score floating local declaration lifetimes around assertion",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791095898330924100/manifest.json",
+      "started_at": 1791095898.3318117,
+      "elapsed_seconds": 12.75,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "ScoreSinger__9VocalPartFffffiP12TalkyMatcherR15VocalScoreCacheRiRf",
+        "started_at": 1791095902.437445,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          98.11321,
+          -3
+        ],
+        "after": [
+          98.11321,
+          -3
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct vocal poll freestyle gates, cap growth, note state and frame spew from typed Ghidra and reviewed vtable/assembly",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096029727894600/manifest.json",
+      "started_at": 1791096029.7287576,
+      "elapsed_seconds": 54.36,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "Poll__9VocalPartFfRC7SongPos",
+        "accepted": false,
+        "build_verified": false,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096034430050200-006-source-trial.log",
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
     }
   ],
   "retained_partial_reconstructions": [
@@ -7246,6 +8234,38 @@
         49.57265
       ],
       "note": "468-byte pitch confidence reconstruction; floating fabs, octave correction, Gaussian cutoff and zero-weight gate; register and conversion ordering remain."
+    },
+    {
+      "unit": "main/band3/game/VocalPart",
+      "symbol": "CalcPhraseScoreMax__9VocalPartCFRCPC11VocalPhrase",
+      "after": [
+        71.15385
+      ],
+      "note": "208-byte existing phrase maximum reconstruction improved from 61.538464%; pointer register allocation remains."
+    },
+    {
+      "unit": "main/band3/game/VocalPart",
+      "symbol": "ScoreSinger__9VocalPartFffffiP12TalkyMatcherR15VocalScoreCacheRiRf",
+      "after": [
+        98.11321
+      ],
+      "note": "636-byte new singer cache/scoring reconstruction; original argument and output-local stack order verified, three assertion-register differences remain."
+    },
+    {
+      "unit": "main/band3/game/VocalPart",
+      "symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
+      "after": [
+        93.15789
+      ],
+      "note": "760-byte new pitched/talky best-hit selection; exact output-stack ABI, tie handling and talky snapshots reviewed; floating operation scheduling remains."
+    },
+    {
+      "unit": "main/band3/game/VocalPart",
+      "symbol": "Poll__9VocalPartFfRC7SongPos",
+      "after": [
+        88.82682
+      ],
+      "note": "716-byte new vocal update: freestyle gates, phrase-cap growth, note mode and frame spew; virtual calls verified from original vtable, pointer reload/scheduling remains."
     }
   ],
   "notes": [
@@ -7290,6 +8310,10 @@
     {
       "commit": "5a7ebbc2",
       "note": "Pushed Ghidra ABI context, vocal partials and exact source linking; excludes game inputs."
+    },
+    {
+      "commit": "bc05788e",
+      "note": "Pushed store-song source link and six smaller verified B8 fixes by ChatGPT."
     }
   ],
   "usage_snapshots": [
@@ -7316,18 +8340,18 @@
     }
   ],
   "latest_checkpoint": {
-    "at": 1791095019.4146957,
+    "at": 1791096238.001135,
     "measures": {
-      "fuzzy_match_percent": 69.03947,
+      "fuzzy_match_percent": 69.05717,
       "total_code": "11431676",
-      "matched_code": "6374424",
-      "matched_code_percent": 55.761063,
+      "matched_code": "6374668",
+      "matched_code_percent": 55.7632,
       "total_data": "2755932",
       "matched_data": "615568",
       "matched_data_percent": 22.336111,
       "total_functions": 41333,
-      "matched_functions": 28795,
-      "matched_functions_percent": 69.665886,
+      "matched_functions": 28796,
+      "matched_functions_percent": 69.668304,
       "complete_code": "1248012",
       "complete_code_percent": 10.917139,
       "complete_data": "498484",
@@ -7336,37 +8360,37 @@
       "complete_units": 548
     },
     "gains": {
-      "matched_code": 4424,
-      "matched_functions": 16,
+      "matched_code": 4668,
+      "matched_functions": 17,
       "complete_code": 2704,
       "complete_units": 3,
       "matched_data": 792,
       "complete_data": 344
     },
-    "elapsed_seconds": 5788.41,
+    "elapsed_seconds": 7007.0,
     "account_usage": {
       "primary": {
-        "remaining_percent": 32,
-        "consumed_percentage_points": 67,
+        "remaining_percent": 19,
+        "consumed_percentage_points": 80,
         "same_window": true
       },
       "weekly": {
-        "remaining_percent": 11,
-        "consumed_percentage_points": 11,
+        "remaining_percent": 9,
+        "consumed_percentage_points": 13,
         "same_window": true
       }
     },
     "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
   },
   "latest_usage": {
-    "primary_used_percent": 68,
-    "weekly_used_percent": 89,
+    "primary_used_percent": 81,
+    "weekly_used_percent": 91,
     "primary_resets_at": 1791107162,
     "weekly_resets_at": 1791580276
   },
   "local_helper_runs": [],
   "partial_summary": {
-    "retained_records": 7
+    "retained_records": 11
   },
   "ghidra": {
     "home": "build/references/ghidra/ghidra_12.1.4_PUBLIC",
@@ -7385,20 +8409,47 @@
     "compiler_abi_annotations": "Register-preserving no-op injection for standard save/rest compiler helpers, applied only in read-only export view.",
     "vocal_abi_annotations": {
       "parameter_registers_verified": true,
-      "signature_count": 7,
+      "signature_count": 10,
       "gqr0_evidence": "__OSPSInit clears GQR0; named writer audit only additionally finds MetroTRK save/restore",
       "gqr0_scope": "Requested VocalPart routines only in discarded read-only view",
       "eligibility_draft_lines_before": 260,
       "eligibility_draft_lines_after": 141,
       "typed_score_export": "build/decomp/ghidra/SZBE69_B8/packets/5ac7dcd651f42469c26a",
-      "result": "Reviewed float return restores ScoreNote confidence and zero-weight calculations omitted by untyped inference"
+      "result": "Reviewed float return restores ScoreNote confidence and zero-weight calculations omitted by untyped inference",
+      "stack_arguments_verified": {
+        "GetBestHit": {
+          "targetMs": 8,
+          "unpitched": 12
+        }
+      },
+      "typed_singer_export": "build/decomp/ghidra/SZBE69_B8/packets/02313a46f2d974dfd12a",
+      "typed_poll_export": "build/decomp/ghidra/SZBE69_B8/packets/5e854787ee38aa90dde3"
     }
   },
   "remaining_issues": [
-    "Seven retained vocal partials remain assembly-linked; floating-point order and pointer/register lifetimes need further matching.",
+    "Eleven retained vocal partials remain assembly-linked; three newly reconstructed methods plus existing scoring/rollback methods need remaining matching work.",
     "Ghidra CodeWarrior demangler compatibility error remains; selected vocal signatures now reviewed, unlisted types/signatures remain inferred.",
     "Tracker metadata-only gains (492 bytes / two functions) are separate from newly reconstructed vocal behavior and its canonical library helper.",
     "CircleBuffer source linking uses the synced upstream implementation, not newly authored behavior; customer-support source pre-existed.",
     "StoreSongSortNode now fully source-linked after matching handler and restoring original definition order; near-match register/scheduling trials remain for other units."
+  ],
+  "local_declaration_search": {
+    "model_calls": 0,
+    "candidate_limit": 120,
+    "candidates_tried": 15,
+    "matched_symbol": "AddPhrasePoints__9VocalPartFf",
+    "matched_bytes": 244,
+    "assignment_order_preserved": true,
+    "generator": "tools/decomp_declaration_order.py",
+    "manual_verification": "120 unique candidates; fixed assignment suffix; bounded limit and invalid input checks; source hash unchanged"
+  },
+  "strict_gains_without_report_counter_gain": [
+    {
+      "symbol": "SetDifficultyVariables__9VocalPartFi",
+      "bytes": 724,
+      "before": 98.89503,
+      "after": 100,
+      "reason": "Original float-rounded 0.1 promoted to double; report already counted relocations as matched"
+    }
   ]
 }

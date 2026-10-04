@@ -35,6 +35,7 @@ public class ExportB8Context extends GhidraScript {
             case 'b': return BooleanDataType.dataType;
             case 'F': return new PointerDataType(FloatDataType.dataType, currentProgram.getDataTypeManager());
             case 'I': return new PointerDataType(IntegerDataType.dataType, currentProgram.getDataTypeManager());
+            case 'B': return new PointerDataType(BooleanDataType.dataType, currentProgram.getDataTypeManager());
             case 'p': return new PointerDataType(VoidDataType.dataType, currentProgram.getDataTypeManager());
             default: return VoidDataType.dataType;
         }
@@ -54,7 +55,13 @@ public class ExportB8Context extends GhidraScript {
         for (ghidra.program.model.listing.Parameter p : f.getParameters()) {
             String expected = p.getDataType() instanceof FloatDataType
                 ? "f" + floatRegister++ : "r" + generalRegister++;
-            if (!p.getVariableStorage().toString().startsWith(expected + ":"))
+            // ScoreSinger's call to GetBestHit places its last two pointer
+            // arguments at stack offsets 8 and 12 after r3-r10 are filled.
+            boolean overflowPointer = !expected.startsWith("f") && generalRegister > 11;
+            boolean correctStorage = overflowPointer
+                ? p.getVariableStorage().isStackStorage() && p.getStackOffset() == 8 + 4 * (generalRegister - 12)
+                : p.getVariableStorage().toString().startsWith(expected + ":");
+            if (!correctStorage)
                 throw new IllegalStateException("Unexpected Wii parameter storage: " +
                     f.getName() + " " + p.getName() + " " + p.getVariableStorage());
             println("  " + p.getName() + " " + p.getVariableStorage());
@@ -80,6 +87,12 @@ public class ExportB8Context extends GhidraScript {
                 signature(f, 'v', "pfII", "self,ms,first,last"); break;
             case "PitchBetween__FfffRf":
                 signature(f, 'b', "fffF", "pitch,a,b,adjusted"); break;
+            case "ScoreSinger__9VocalPartFffffiP12TalkyMatcherR15VocalScoreCacheRiRf":
+                signature(f, 'v', "pffffippIF", "self,ms,pitch,unused,margin,octaveOffset,talkyMatcher,cache,resultOctave,pitchDeviation"); break;
+            case "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb":
+                signature(f, 'f', "pfiipFfIIFFB", "self,ms,first,last,talkyMatcher,pitch,margin,octaveOffset,noteMatched,targetPitch,targetMs,unpitched"); break;
+            case "Poll__9VocalPartFfRC7SongPos":
+                signature(f, 'v', "pfp", "self,ms,songPos"); break;
         }
     }
 

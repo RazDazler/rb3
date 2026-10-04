@@ -64,7 +64,7 @@ void VocalPart::SetDifficultyVariables(int diff) {
     DataArray *voxCfg = SystemConfig("scoring", "vocals");
     mSlop = voxCfg->FindArray("slop")->Float(diff + 1);
     mPitchMaximumDistance = voxCfg->FindArray("pitch_margin")->Float(diff + 1);
-    float log = std::log(0.1);
+    float log = std::log((double)0.1f);
     mPitchSigma = -(mPitchMaximumDistance * mPitchMaximumDistance) / log;
     mPhraseValue = voxCfg->FindArray("phrase_value")->Int(diff + 1);
     mNoteLengthFactor = voxCfg->FindArray("note_length_factor")->Float(diff + 1);
@@ -416,8 +416,8 @@ void VocalPart::SetVocalNoteList(VocalNoteList *i_newList) {
 }
 
 float VocalPart::CalcPhraseScoreMax(const VocalPhrase *const &phrase) const {
-    const VocalNoteList *notes = mVocalNoteList;
     const VocalPhrase *current = phrase;
+    const VocalNoteList *notes = mVocalNoteList;
     int begin = current->unk10;
     if (begin > 0) {
         const VocalNote &previous = notes->mNotes[begin - 1];
@@ -428,8 +428,9 @@ float VocalPart::CalcPhraseScoreMax(const VocalPhrase *const &phrase) const {
     float total = 0.0f;
     if ((unsigned int)begin == (unsigned int)end)
         return total;
+    float phraseEnd;
     float phraseStart = current->unk0;
-    float phraseEnd = phraseStart + current->unk4;
+    phraseEnd = phraseStart + current->unk4;
     for (unsigned int i = begin; i != (unsigned int)end; ++i) {
         const VocalNote &note = notes->mNotes[i];
         const float noteStart = note.mMs;
@@ -442,18 +443,141 @@ float VocalPart::CalcPhraseScoreMax(const VocalPhrase *const &phrase) const {
     return total;
 }
 
+void VocalPart::Poll(float ms, const SongPos &) {
+    while (mFreestyleSection != mVocalNoteList->mFreestyleSections.end()
+           && ms > mFreestyleSection->second) {
+        ++mFreestyleSection;
+    }
+    if ((mPlayer->CanDeployOverdrive() || mPlayer->mIsInCoda
+         || mPlayer->IsDeployingBandEnergy())
+        && (mThisPhrase == mVocalNoteList->mPhrases.end()
+            || (mFreestyleSection != mVocalNoteList->mFreestyleSections.end()
+                && ms >= mFreestyleSection->first && ms < mFreestyleSection->second))) {
+        mInFreestyleSection = true;
+    } else {
+        mInFreestyleSection = false;
+        unkad = false;
+    }
+    // Preserve the original virtual call even though its result is unused.
+    mPlayer->IsNet();
+    if (mPlayer->mIsInCoda && ms > unkb0)
+        unkb4 = true;
+    if (mInFreestyleSection)
+        unk98 = 3;
+    else if (mPlayer->InTambourinePhrase())
+        unk98 = 2;
+    else
+        unk98 = 0;
+    int first = -1, last = -1;
+    GetNoteRange(ms, first, last);
+    while (unk3c < last && unk3c < mThisPhrase->unk14) {
+        unk38 += mPhraseScoreCapGrowth * mNoteWeights[unk3c];
+        ++unk3c;
+    }
+    last = std::min((int)mVocalNoteList->mNotes.size(), last);
+    bool allUnpitched = true;
+    for (int i = first; i < last; ++i) {
+        if (!mVocalNoteList->mNotes[i].IsUnpitched()) {
+            allUnpitched = false;
+            break;
+        }
+    }
+    if (allUnpitched && first != last)
+        unk98 = 1;
+    VocalFrameSpewData *spew = mPlayer->mFrameSpewData;
+    if (spew)
+        spew->mPartData[mPartIndex].unk0 = mVocalNoteList->PitchAt(ms);
+}
+
 void VocalPart::AddPhrasePoints(float points) {
-    float previous = mPhraseScore;
-    float limit = unk38;
-    float maximum = mPhraseScoreMax;
-    float next = previous + points;
-    float cap = Min(limit, maximum);
+    float next;
+    float limit;
+    float maximum;
+    float previous;
+    float cap;
+    previous = mPhraseScore;
+    maximum = mPhraseScoreMax;
+    limit = unk38;
+    next = previous + points;
+    cap = Min(limit, maximum);
     mPhraseScore = Min(next, cap);
     float delta = mPhraseScore - previous;
     int multiplier, bonus1, bonus2;
     mPlayer->GetMultiplier(true, multiplier, bonus1, bonus2);
     unk44 += delta * (float)(bonus1 - 1);
     unk48 += delta * (float)(bonus2 - 1);
+}
+
+float VocalPart::GetBestHit(
+    float ms,
+    int first,
+    int last,
+    TalkyMatcher *i_pTalkyMatcher,
+    float &pitch,
+    float,
+    int &octaveOffset,
+    int &noteMatched,
+    float &targetPitch,
+    float &targetMs,
+    bool &unpitched
+) {
+    noteMatched = -1;
+    float best = 0.0f;
+    const float originalPitch = pitch;
+    bool voiced;
+    bool rejected;
+    bool bestIsUnpitched = false;
+    unpitched = false;
+    for (int i = first; i < last; ++i) {
+        if (mVocalNoteList->mNotes[i].IsUnpitched()) {
+            MILO_ASSERT(i_pTalkyMatcher, 0x46D);
+            bool energy = i_pTalkyMatcher->mVoiceBeat.unk4 > mTalkyEnergyThreshold;
+            voiced = i_pTalkyMatcher->mVoiceBeat.unk1;
+            rejected = i_pTalkyMatcher->mVoiceBeat.unk0;
+            float hit = 1.0f;
+            if (mPlayer->IsAutoplay() || (voiced && !rejected && energy)) {
+                if (bestIsUnpitched) {
+                    MILO_ASSERT(noteMatched != -1, 0x486);
+                    const VocalNote &previous = mVocalNoteList->mNotes[noteMatched];
+                    const VocalNote &current = mVocalNoteList->mNotes[i];
+                    float previousEnd = previous.EndMs();
+                    float currentDistance = std::fabs(current.mMs - ms);
+                    float previousDistance = std::fabs(previousEnd - ms);
+                    if (previousDistance < currentDistance)
+                        hit = 0.0f;
+                }
+                if (hit >= best) {
+                    pitch = originalPitch;
+                    best = hit;
+                    bestIsUnpitched = true;
+                    noteMatched = i;
+                    targetPitch = -1.0f;
+                    octaveOffset = 0;
+                    targetMs = ms;
+                    unpitched = true;
+                }
+            }
+        } else if (pitch != 0.0f) {
+            float adjustedPitch = originalPitch;
+            float noteTargetPitch;
+            int adjustedOctave = octaveOffset;
+            float noteTargetMs;
+            float hit = ScoreNote(
+                ms, i, adjustedPitch, adjustedOctave, noteTargetPitch, noteTargetMs
+            );
+            if (hit >= best || (hit > 0.0 && bestIsUnpitched)) {
+                pitch = adjustedPitch;
+                best = hit;
+                bestIsUnpitched = false;
+                noteMatched = i;
+                targetPitch = noteTargetPitch;
+                octaveOffset = adjustedOctave;
+                targetMs = noteTargetMs;
+                unpitched = false;
+            }
+        }
+    }
+    return best;
 }
 
 void VocalPart::CalculateScore(float ms, int noteIndex, float hit, VocalScoreCache &cache)
@@ -525,6 +649,66 @@ float VocalPart::GetSloppyPitch(float ms, int noteIndex, float pitch, float &tar
         targetMs = Clamp(ms, note.mMs, note.EndMs());
     return late;
 }
+void VocalPart::ScoreSinger(
+    float ms,
+    float pitch,
+    float,
+    float margin,
+    int octaveOffset,
+    TalkyMatcher *talkyMatcher,
+    VocalScoreCache &o_rCache,
+    int &resultOctave,
+    float &pitchDeviation
+) {
+    MILO_ASSERT(o_rCache.GetHitPercentage() == 0.0f, 0x2C3);
+    o_rCache.unk8 = Min(unk38, mPhraseScoreMax);
+    pitchDeviation = VocalPlayer::kInvalidPitch;
+    if (pitch == 0.0f && !mVocalNoteList->NoteAt(ms)) {
+        o_rCache.unk0 = 1.0f;
+        resultOctave = octaveOffset;
+        return;
+    }
+    int first = -1, last = -1;
+    int noteMatched;
+    float targetPitch = 0.0f;
+    float adjustedPitch = pitch;
+    int adjustedOctave = octaveOffset;
+    float targetMs;
+    bool unpitched;
+    GetNoteRange(ms, first, last);
+    float hit = GetBestHit(
+        ms,
+        first,
+        last,
+        talkyMatcher,
+        adjustedPitch,
+        margin,
+        adjustedOctave,
+        noteMatched,
+        targetPitch,
+        targetMs,
+        unpitched
+    );
+    resultOctave = adjustedOctave;
+    if (noteMatched != -1) {
+        pitchDeviation = std::fmod((double)(pitch - targetPitch), 12.0);
+        if (pitchDeviation > 6.0f)
+            pitchDeviation -= 12.0f;
+        else if (pitchDeviation < -6.0f)
+            pitchDeviation += 12.0f;
+        if (mVocalNoteList->mNotes[noteMatched].IsUnpitched())
+            unk98 = 1;
+        else
+            unk98 = 0;
+    }
+    o_rCache.unk0 = hit;
+    o_rCache.unk14 = targetPitch;
+    o_rCache.unk18 = targetMs;
+    o_rCache.unk1c = adjustedOctave;
+    o_rCache.unk20 = unpitched;
+    CalculateScore(ms, noteMatched, hit, o_rCache);
+}
+
 float VocalPart::ScoreNote(
     float ms,
     int noteIndex,
