@@ -96,6 +96,7 @@ DECOMP_FORCEACTIVE(
 #include "rndobj/Rnd.h"
 #ifdef VERSION_SZBE69_B8
 #include "rndobj/Utl.h"
+#include "rndwii/PostProc.h"
 #endif
 #ifdef VERSION_SZBE69_B8
 // Retain the original renderer Light class-name metadata in this unit only.
@@ -565,6 +566,9 @@ void WiiRnd::WiiPreInit() {
     Rnd::PreInit();
     WiiTex::Register();
     WiiMat::PreInit();
+#ifdef VERSION_SZBE69_B8
+    WiiPostProc::PreInit();
+#endif
 }
 
 bool WiiRnd::GetProgressiveScan() { return mProgScan; }

@@ -1,6 +1,6 @@
 {
   "target": "SZBE69_B8",
-  "status": "active",
+  "status": "complete",
   "started_at": 1791089231,
   "started_utc": "2026-10-04T04:47:11Z",
   "model_label": "Current Codex model/effort not independently retrieved",
@@ -6834,6 +6834,477 @@
         "matched_data": 0,
         "complete_data": 0
       }
+    },
+    {
+      "candidate": "Vocal poll pitch-call, minimum selection and cap-loop operand evaluation",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096366427982800/manifest.json",
+      "started_at": 1791096366.4288974,
+      "elapsed_seconds": 13.29,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "Poll__9VocalPartFfRC7SongPos",
+        "started_at": 1791096370.7160532,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "all-poll-evaluation-orders",
+        "before": [
+          88.82682,
+          -20
+        ],
+        "after": [
+          97.2067,
+          -5
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 4,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Correct HTTP cancellation global to original one-byte bool from B8 symbol and byte stores",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096618998794000/manifest.json",
+      "started_at": 1791096618.9996035,
+      "elapsed_seconds": 10.51,
+      "result": {
+        "unit": "main/system/utl/HttpWii",
+        "symbol": "Stop__7HttpWiiFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096623375260900-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096622568522600-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "Stop__7HttpWiiFv",
+          "compiled_symbol": "Stop__7HttpWiiFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          89.47369,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 72,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 72,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore original high/low palette nibble selection consistent with SetPixelIndex",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096639763266900/manifest.json",
+      "started_at": 1791096639.764048,
+      "elapsed_seconds": 11.32,
+      "result": {
+        "unit": "main/system/rndobj/Bitmap",
+        "symbol": "PixelIndex__9RndBitmapCFii",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096644888708700-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096644111530400-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "PixelIndex__9RndBitmapCFii",
+          "compiled_symbol": "PixelIndex__9RndBitmapCFii",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          92.30769,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 104,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 104,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Trainer loop lead-in as original positive beat multiplication and subtraction",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096696635571600/manifest.json",
+      "started_at": 1791096696.636513,
+      "elapsed_seconds": 10.93,
+      "result": {
+        "unit": "main/band3/game/TrainerPanel",
+        "symbol": "GetSectionLoopStart__12TrainerPanelCFi",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096701101822500-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096700320134200-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetSectionLoopStart__12TrainerPanelCFi",
+          "compiled_symbol": "GetSectionLoopStart__12TrainerPanelCFi",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          92.85714,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 112,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 112,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Content mount flag signed-byte type inferred from original extsb comparison",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096778522268200/manifest.json",
+      "started_at": 1791096778.5233955,
+      "elapsed_seconds": 12.93,
+      "result": {
+        "unit": "main/system/os/ContentMgr_Wii",
+        "symbol": "Mount__10WiiContentFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096783558460700-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096782779412700-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "Mount__10WiiContentFv",
+          "compiled_symbol": "Mount__10WiiContentFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          92.85714,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 56,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 56,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Use first validated coda fill count while preserving second size/pointer reload after aliased output write",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096852793429100/manifest.json",
+      "started_at": 1791096852.7946744,
+      "elapsed_seconds": 11.92,
+      "result": {
+        "unit": "main/band3/game/MultiplayerAnalyzer",
+        "symbol": "GetCodaExtents__19MultiplayerAnalyzerFRC8UserGuidRiRi",
+        "started_at": 1791096856.5503972,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "cache-first-count",
+        "before": [
+          96.0,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 196,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore Wii post-process initialization while preserving existing literal-helper line identity",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096899990900200/manifest.json",
+      "started_at": 1791096899.9919574,
+      "elapsed_seconds": 12.09,
+      "result": {
+        "unit": "main/system/rndwii/Rnd",
+        "symbol": "WiiPreInit__6WiiRndFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096905039204900-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096904256375400-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "WiiPreInit__6WiiRndFv",
+          "compiled_symbol": "WiiPreInit__6WiiRndFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          96.296295,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 108,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 108,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Correct boot-partition name low-memory address to original B8 0x80003194",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096988117284500/manifest.json",
+      "started_at": 1791096988.1184044,
+      "elapsed_seconds": 11.43,
+      "result": {
+        "unit": "main/sdk/RVL_SDK/src/os/OS",
+        "symbol": "OSGetAppGamename",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096993307214500-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096992527666000-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "OSGetAppGamename",
+          "compiled_symbol": "OSGetAppGamename",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          93.93939,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 132,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 132,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Character hair emulation FPS explicit branch returns",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791097034979655000/manifest.json",
+      "started_at": 1791097034.980844,
+      "elapsed_seconds": 14.75,
+      "result": {
+        "unit": "main/system/char/CharHair",
+        "symbol": "GetFPS__8CharHairFv",
+        "started_at": 1791097039.8149583,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "explicit-equal-return",
+        "before": [
+          93.333336,
+          -2
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 120,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Best-hit distance staging and six local declaration orders preserving original float operations",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791097089722991400/manifest.json",
+      "started_at": 1791097089.7238808,
+      "elapsed_seconds": 13.3,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
+        "started_at": 1791097093.4696627,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "distance-order-previousEnd,currentDistance,previousDistance",
+        "before": [
+          93.15789,
+          -13
+        ],
+        "after": [
+          96.8421,
+          -6
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 6,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Best-hit talky snapshot loads before energy comparison, all captured before virtual autoplay call",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791097149829454700/manifest.json",
+      "started_at": 1791097149.8305302,
+      "elapsed_seconds": 11.99,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
+        "started_at": 1791097154.1994765,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "voice-snapshot-before-energy",
+        "before": [
+          96.8421,
+          -6
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 760,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
     }
   ],
   "rejected_experiments": [
@@ -8176,6 +8647,291 @@
         "matched_data": 0,
         "complete_data": 0
       }
+    },
+    {
+      "candidate": "Review read-only freestyle-section iterator pointee constness against original cursor reloads",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096390066865300/manifest.json",
+      "started_at": 1791096390.0676937,
+      "elapsed_seconds": 21.4,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "Rollback__9VocalPartFff",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096394836268100-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096394058465700-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "Rollback__9VocalPartFff",
+          "compiled_symbol": "Rollback__9VocalPartFff",
+          "match_percent": 96.0,
+          "instruction_differences": [
+            {
+              "row": 41,
+              "original_address": "2148",
+              "original": "lwz r4, 0xc(r3)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 42,
+              "original_address": "2152",
+              "original": "lfs f0, 0x4(r4)",
+              "compiled": "lfs f0, 0x4(r5)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          96.0,
+          -2
+        ],
+        "after": [
+          96.0,
+          -2
+        ],
+        "reason": "target_did_not_improve",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore original signed MIDI drum-map marker bounds",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096662964737200/manifest.json",
+      "started_at": 1791096662.9655597,
+      "elapsed_seconds": 19.31,
+      "result": {
+        "unit": "main/system/beatmatch/SongParser",
+        "symbol": "CheckDrumMapMarker__10SongParserFiib",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096667888241900-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096667112147500-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "CheckDrumMapMarker__10SongParserFiib",
+          "compiled_symbol": "CheckDrumMapMarker__10SongParserFiib",
+          "match_percent": 63.333332,
+          "instruction_differences": [
+            {
+              "row": 2,
+              "original_address": "30968",
+              "original": "mr r9, r3",
+              "compiled": "mr r8, r3",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 3,
+              "original_address": "30972",
+              "original": "mr r8, r5",
+              "compiled": "mr r7, r6",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 10,
+              "original_address": "31000",
+              "original": "cmpwi r5, 0x6c",
+              "compiled": "subi r6, r5, 0x6c",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 11,
+              "original_address": "31004",
+              "original": "blt 0x38",
+              "compiled": "cmplwi r6, 0x4",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 12,
+              "original_address": "31008",
+              "original": "cmpwi r5, 0x71",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 13,
+              "original_address": "31012",
+              "original": "bge 0x30",
+              "compiled": "bgt 0x28",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 15,
+              "original_address": "31020",
+              "original": "mr r5, r4",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 16,
+              "original_address": "31024",
+              "original": "mr r7, r6",
+              "compiled": "mr r5, r4",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 17,
+              "original_address": "31028",
+              "original": "subi r6, r8, 0x6c",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 18,
+              "original_address": "31032",
+              "original": "lwz r12, 0x0(r3)",
+              "compiled": "lwz r4, 0x54(r8)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 19,
+              "original_address": "31036",
+              "original": "lwz r4, 0x54(r9)",
+              "compiled": "lwz r12, 0x0(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          93.333336,
+          -2
+        ],
+        "after": [
+          63.333332,
+          -11
+        ],
+        "reason": "target_did_not_improve",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore missing Wii post-processing preinitialization call and static declaration from original B8 callee",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096732409256300/manifest.json",
+      "started_at": 1791096732.4100788,
+      "elapsed_seconds": 13.18,
+      "result": {
+        "unit": "main/system/rndwii/Rnd",
+        "symbol": "WiiPreInit__6WiiRndFv",
+        "accepted": false,
+        "build_verified": false,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096737594705900-006-source-trial.log",
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Restore original Wii post-process initialization with its explicit class header",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791096831338689700/manifest.json",
+      "started_at": 1791096831.3394918,
+      "elapsed_seconds": 19.32,
+      "result": {
+        "unit": "main/system/rndwii/Rnd",
+        "symbol": "WiiPreInit__6WiiRndFv",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096836208810600-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791096835432196900-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "WiiPreInit__6WiiRndFv",
+          "compiled_symbol": "WiiPreInit__6WiiRndFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          96.296295,
+          -1
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "new_unpaired_helpers: FORCEACTIVEHighB8LiteralPoolRnd77__Fv",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 108,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
     }
   ],
   "retained_partial_reconstructions": [
@@ -8253,19 +9009,11 @@
     },
     {
       "unit": "main/band3/game/VocalPart",
-      "symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
-      "after": [
-        93.15789
-      ],
-      "note": "760-byte new pitched/talky best-hit selection; exact output-stack ABI, tie handling and talky snapshots reviewed; floating operation scheduling remains."
-    },
-    {
-      "unit": "main/band3/game/VocalPart",
       "symbol": "Poll__9VocalPartFfRC7SongPos",
       "after": [
-        88.82682
+        97.2067
       ],
-      "note": "716-byte new vocal update: freestyle gates, phrase-cap growth, note mode and frame spew; virtual calls verified from original vtable, pointer reload/scheduling remains."
+      "note": "716-byte vocal update now 97.2067%; pitch-call evaluation, minimum and cap-loop operand order restored; freestyle cursor reloads remain."
     }
   ],
   "notes": [
@@ -8314,6 +9062,10 @@
     {
       "commit": "bc05788e",
       "note": "Pushed store-song source link and six smaller verified B8 fixes by ChatGPT."
+    },
+    {
+      "commit": "880711c5",
+      "note": "Pushed Ghidra-assisted vocal partials and reusable local declaration search by ChatGPT."
     }
   ],
   "usage_snapshots": [
@@ -8340,18 +9092,18 @@
     }
   ],
   "latest_checkpoint": {
-    "at": 1791096238.001135,
+    "at": 1791097450.817741,
     "measures": {
-      "fuzzy_match_percent": 69.05717,
+      "fuzzy_match_percent": 69.05916,
       "total_code": "11431676",
-      "matched_code": "6374668",
-      "matched_code_percent": 55.7632,
+      "matched_code": "6376328",
+      "matched_code_percent": 55.777718,
       "total_data": "2755932",
       "matched_data": "615568",
       "matched_data_percent": 22.336111,
       "total_functions": 41333,
-      "matched_functions": 28796,
-      "matched_functions_percent": 69.668304,
+      "matched_functions": 28805,
+      "matched_functions_percent": 69.69008,
       "complete_code": "1248012",
       "complete_code_percent": 10.917139,
       "complete_data": "498484",
@@ -8360,37 +9112,44 @@
       "complete_units": 548
     },
     "gains": {
-      "matched_code": 4668,
-      "matched_functions": 17,
+      "matched_code": 6328,
+      "matched_functions": 26,
       "complete_code": 2704,
       "complete_units": 3,
       "matched_data": 792,
       "complete_data": 344
     },
-    "elapsed_seconds": 7007.0,
+    "elapsed_seconds": 8219.82,
     "account_usage": {
       "primary": {
-        "remaining_percent": 19,
-        "consumed_percentage_points": 80,
+        "remaining_percent": 1,
+        "consumed_percentage_points": 98,
         "same_window": true
       },
       "weekly": {
-        "remaining_percent": 9,
-        "consumed_percentage_points": 13,
+        "remaining_percent": 6,
+        "consumed_percentage_points": 16,
         "same_window": true
       }
     },
-    "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+    "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8",
+    "matched_gain_breakdown": {
+      "metadata_only_bytes": 492,
+      "canonical_existing_library_helper_bytes": 160,
+      "other_matched_code_bytes": 5676,
+      "upstream_bytes_excluded": 620
+    },
+    "breakdown_is_reviewed_checkpoint_only": true
   },
   "latest_usage": {
-    "primary_used_percent": 81,
-    "weekly_used_percent": 91,
+    "primary_used_percent": 99,
+    "weekly_used_percent": 94,
     "primary_resets_at": 1791107162,
     "weekly_resets_at": 1791580276
   },
   "local_helper_runs": [],
   "partial_summary": {
-    "retained_records": 11
+    "retained_records": 10
   },
   "ghidra": {
     "home": "build/references/ghidra/ghidra_12.1.4_PUBLIC",
@@ -8424,14 +9183,21 @@
       },
       "typed_singer_export": "build/decomp/ghidra/SZBE69_B8/packets/02313a46f2d974dfd12a",
       "typed_poll_export": "build/decomp/ghidra/SZBE69_B8/packets/5e854787ee38aa90dde3"
+    },
+    "exact_reconstruction_result": {
+      "symbol": "GetBestHit__9VocalPartFfiiP12TalkyMatcherRffRiRiRfRfRb",
+      "bytes": 760,
+      "score": 100.0,
+      "method": "Typed Ghidra draft, original assembly/vtable review, output stack order, deterministic lifetime trials and full B8 guard"
     }
   },
   "remaining_issues": [
-    "Eleven retained vocal partials remain assembly-linked; three newly reconstructed methods plus existing scoring/rollback methods need remaining matching work.",
+    "Ten retained vocal partials remain assembly-linked. ScoreSinger is 98.11321%, Poll 97.2067%, Rollback 96%; remaining register/lifetime and floating-order work is recorded in the trial ledger.",
     "Ghidra CodeWarrior demangler compatibility error remains; selected vocal signatures now reviewed, unlisted types/signatures remain inferred.",
     "Tracker metadata-only gains (492 bytes / two functions) are separate from newly reconstructed vocal behavior and its canonical library helper.",
     "CircleBuffer source linking uses the synced upstream implementation, not newly authored behavior; customer-support source pre-existed.",
-    "StoreSongSortNode now fully source-linked after matching handler and restoring original definition order; near-match register/scheduling trials remain for other units."
+    "StoreSongSortNode now fully source-linked after matching handler and restoring original definition order; near-match register/scheduling trials remain for other units.",
+    "WiiCommerceMgr header remains incomplete: prepared MarkChanged/WaitAsyncOp comparisons expose wrong field offsets, including an inherited this[0x44] placeholder. Reconstruct layout from original evidence before replacing these bodies; they remain assembly-linked."
   ],
   "local_declaration_search": {
     "model_calls": 0,
@@ -8451,5 +9217,23 @@
       "after": 100,
       "reason": "Original float-rounded 0.1 promoted to double; report already counted relocations as matched"
     }
-  ]
+  ],
+  "closing_preparation": {
+    "status": "queue_complete",
+    "units_compared": 74,
+    "cache_hits": 323,
+    "packets": 2380,
+    "elapsed_seconds": 18.5444,
+    "protected_files_changed": [],
+    "initial_attempt": "Interrupted because the main agent made the final B8-only call guard while preparation was active; source-change protection flagged it. Fresh final queue completed with unchanged protected files."
+  },
+  "stop_reason": "critical_account_usage",
+  "validation": {
+    "automation_tests_passed": 72,
+    "exact_b8_dol": true,
+    "final_renderer_strict_score": 100,
+    "private_input_tracking_audit": "No tracked orig/build/debug dump folders, DOL, WBFS, ISO or selector files"
+  },
+  "ended_at": 1791097450.817741,
+  "ended_utc": "2026-10-04T07:04:10.817741+00:00"
 }

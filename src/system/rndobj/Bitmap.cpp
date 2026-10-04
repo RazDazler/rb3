@@ -423,9 +423,9 @@ unsigned char RndBitmap::PixelIndex(int i1, int i2) const {
     if (mBpp == 8) {
         ret = *(pixels + offset);
     } else if (bb) {
-        ret = *(pixels + offset) & 0xF;
+        ret = (*(pixels + offset) >> 4) & 0xF;
     } else {
-        ret = *(pixels + offset) >> 4;
+        ret = *(pixels + offset) & 0xF;
     }
     return ret;
 }

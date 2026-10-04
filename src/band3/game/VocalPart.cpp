@@ -470,11 +470,11 @@ void VocalPart::Poll(float ms, const SongPos &) {
         unk98 = 0;
     int first = -1, last = -1;
     GetNoteRange(ms, first, last);
-    while (unk3c < last && unk3c < mThisPhrase->unk14) {
+    while (last > unk3c && unk3c < mThisPhrase->unk14) {
         unk38 += mPhraseScoreCapGrowth * mNoteWeights[unk3c];
         ++unk3c;
     }
-    last = std::min((int)mVocalNoteList->mNotes.size(), last);
+    last = std::min(last, (int)mVocalNoteList->mNotes.size());
     bool allUnpitched = true;
     for (int i = first; i < last; ++i) {
         if (!mVocalNoteList->mNotes[i].IsUnpitched()) {
@@ -485,8 +485,10 @@ void VocalPart::Poll(float ms, const SongPos &) {
     if (allUnpitched && first != last)
         unk98 = 1;
     VocalFrameSpewData *spew = mPlayer->mFrameSpewData;
-    if (spew)
-        spew->mPartData[mPartIndex].unk0 = mVocalNoteList->PitchAt(ms);
+    if (spew) {
+        float targetPitch = mVocalNoteList->PitchAt(ms);
+        spew->mPartData[mPartIndex].unk0 = targetPitch;
+    }
 }
 
 void VocalPart::AddPhrasePoints(float points) {
@@ -531,18 +533,23 @@ float VocalPart::GetBestHit(
     for (int i = first; i < last; ++i) {
         if (mVocalNoteList->mNotes[i].IsUnpitched()) {
             MILO_ASSERT(i_pTalkyMatcher, 0x46D);
-            bool energy = i_pTalkyMatcher->mVoiceBeat.unk4 > mTalkyEnergyThreshold;
             voiced = i_pTalkyMatcher->mVoiceBeat.unk1;
             rejected = i_pTalkyMatcher->mVoiceBeat.unk0;
+            bool energy = i_pTalkyMatcher->mVoiceBeat.unk4 > mTalkyEnergyThreshold;
             float hit = 1.0f;
             if (mPlayer->IsAutoplay() || (voiced && !rejected && energy)) {
                 if (bestIsUnpitched) {
                     MILO_ASSERT(noteMatched != -1, 0x486);
                     const VocalNote &previous = mVocalNoteList->mNotes[noteMatched];
                     const VocalNote &current = mVocalNoteList->mNotes[i];
-                    float previousEnd = previous.EndMs();
-                    float currentDistance = std::fabs(current.mMs - ms);
-                    float previousDistance = std::fabs(previousEnd - ms);
+                    float previousEnd;
+                    float currentDistance;
+                    float previousDistance;
+                    previousEnd = previous.EndMs();
+                    currentDistance = current.mMs - ms;
+                    previousDistance = previousEnd - ms;
+                    currentDistance = std::fabs(currentDistance);
+                    previousDistance = std::fabs(previousDistance);
                     if (previousDistance < currentDistance)
                         hit = 0.0f;
                 }

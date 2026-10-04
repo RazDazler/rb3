@@ -13,7 +13,7 @@
 #include <revolution/os/__ppc_eabi_init.h>
 
 #define INVALID_NAME_CHAR(c) ('0' > c || ('9' < c && c < 'A') || c > 'Z')
-#define OS_PHYS_BOOT_PARTITION_TYPE 3
+#define OS_PHYS_BOOT_PARTITION_TYPE 0x3194
 
 OSExecParams __OSRebootParams;
 static DVDDriveInfo DriveInfo ALIGN(32);

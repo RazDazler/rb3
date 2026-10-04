@@ -59,7 +59,7 @@ void HttpWii::Start() {
 
 void HttpWii::CleanupCallback() { TheHttpWii.mStatus = 0; }
 
-BOOL gWaitingOnCancelToComplete;
+bool gWaitingOnCancelToComplete;
 
 void HttpWii::Stop() {
     if (mStatus == 1) {
