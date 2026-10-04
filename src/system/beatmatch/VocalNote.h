@@ -37,6 +37,13 @@ public:
     int EndPitch() const { return mEndPitch; }
     int EndTick() const { return mTick + mDurationTicks; }
     float EndMs() const { return mMs + mDurationMs; }
+    float PitchAt(float ms) const {
+        if (mBeginPitch == mEndPitch)
+            return (float)mBeginPitch;
+        float elapsed = Max(0.0f, Min(EndMs(), ms) - mMs);
+        float fraction = elapsed / mDurationMs;
+        return fraction * (float)mEndPitch + (1.0f - fraction) * (float)mBeginPitch;
+    }
 
     int mPhrase; // 0x0
     int mBeginPitch; // 0x4

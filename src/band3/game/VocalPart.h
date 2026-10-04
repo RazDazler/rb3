@@ -49,6 +49,10 @@ public:
     void AfterPoll(float);
     float GetPartHitPercentage(const std::vector<VocalPhrase> &, int, int) const;
     void ResetScoring();
+    float ScoreNote(float, int, float &, int &, float &, float &) const;
+    bool CouldScoreAgainstPart(float, TalkyMatcher *, float, float, float &);
+    float GetSloppyPitch(float, int, float, float &) const;
+    void CalculateScore(float, int, float, VocalScoreCache &) const;
     float CalcPhraseScoreMax(const VocalPhrase *const &) const;
     void AddScore(const VocalScoreCache &);
     void AddPhrasePoints(float);

@@ -1,4 +1,19 @@
 #include "game/PerfectSectionTracker.h"
+#include "decomp.h"
+
+#if defined(VERSION_SZBE69_B8)
+// Preserve original literal ordering while incomplete methods remain.
+DECOMP_FORCEACTIVE(
+    LiteralPoolPerfectSectionTracker,
+    "chorus",
+    "PerfectSectionTracker.cpp",
+    "pPlayer",
+    "(enteredExtent && exitedExtent) == false",
+    "( 0) <= ( iExtentIndex) && ( iExtentIndex) < ( mSectionData.size())",
+    "send_tracker_section_complete",
+    "player"
+)
+#endif
 #include "beatmatch/TrackType.h"
 #include "game/TrackerSource.h"
 #include "obj/Data.h"
@@ -66,7 +81,7 @@ void PerfectSectionTracker::Poll_(float) {}
 void PerfectSectionTracker::RemoteSectionComplete(
     Player *p, int iExtentIndex, int flags, int i
 ) {
-    MILO_ASSERT_RANGE(iExtentIndex, 0, mSectionData.size(), 0xFC);
+    MILO_ASSERT_RANGE( iExtentIndex, 0, mSectionData.size(), 0xFC);
     TrackerPlayerID pid = mSource->FindPlayerID(p);
     if (pid.NotNull()) {
         LocalSectionComplete(pid, iExtentIndex, (SectionFlags)flags, (float)i / 10000.0f);
@@ -118,7 +133,7 @@ void PerfectSectionTracker::CheckForCompletedSections() {
 void PerfectSectionTracker::LocalSectionComplete(
     const TrackerPlayerID &pid, int iExtentIndex, SectionFlags flags, float f
 ) {
-    MILO_ASSERT_RANGE(iExtentIndex, 0, mSectionData.size(), 0x16B);
+    MILO_ASSERT_RANGE( iExtentIndex, 0, mSectionData.size(), 0x16B);
     SectionData &cur = mSectionData[iExtentIndex];
     cur.unk0++;
     if (flags & 2) {

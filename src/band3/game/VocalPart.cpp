@@ -132,7 +132,69 @@ void VocalPart::Restart(bool b1) {
     }
 }
 
+void VocalPart::UpdateMinMaxPitch(const VocalPhrase *const &phrase) {
+    const VocalPhrase *current = phrase;
+    const VocalNoteList *notes = mVocalNoteList;
+    const VocalPhrase *end = notes->mPhrases.end();
+    if (current == end) {
+        unka4 = unka8 = 0.0f;
+        return;
+    }
+    unka4 = FLT_MAX;
+    unka8 = -FLT_MAX;
+    bool foundPitch = false;
+    for (; current != end; ++current) {
+        if (current->unk10 != current->unk14) {
+            for (int i = current->unk10; i < current->unk14; ++i) {
+                if (!notes->mNotes[i].IsUnpitched()) {
+                    foundPitch = true;
+                    unka4 = Min(unka4, current->unk24);
+                    unka8 = Max(unka8, current->unk28);
+                    break;
+                }
+            }
+        }
+        if (current->unk1a)
+            break;
+    }
+    if (!foundPitch) {
+        unka4 = 50.0f;
+        unka8 = 67.0f;
+    } else if (unka4 == unka8) {
+        unka4 -= 5.0f;
+        unka8 += 5.0f;
+    }
+}
 void VocalPart::SetPaused(bool) {}
+bool VocalPart::CouldScoreAgainstPart(
+    float ms, TalkyMatcher *i_pTalkyMatcher, float pitch, float margin, float &targetPitch
+) {
+    int first = -1;
+    int last = -1;
+    GetNoteRange(ms, first, last);
+    for (int i = first; i < last; ++i) {
+        const VocalNote &note = mVocalNoteList->mNotes[i];
+        if (note.IsUnpitched()) {
+            MILO_ASSERT(i_pTalkyMatcher, 0x1F2);
+            bool energy = i_pTalkyMatcher->mVoiceBeat.unk4 > mTalkyEnergyThreshold;
+            bool voiced = i_pTalkyMatcher->mVoiceBeat.unk1;
+            bool rejected = i_pTalkyMatcher->mVoiceBeat.unk0;
+            if (mPlayer->IsAutoplay() || (voiced && !rejected && energy))
+                return true;
+        } else if (pitch != 0.0f) {
+            float distance;
+            float target = GetSloppyPitch(ms, i, pitch, distance);
+            float difference = (float)std::fmod((double)std::fabs(target - pitch), 12.0);
+            difference = Min(12.0f - difference, difference);
+            if (difference < margin) {
+                targetPitch = target;
+                return true;
+            }
+        }
+    }
+    targetPitch = 0.0f;
+    return false;
+}
 
 void VocalPart::Jump(float f1, bool) {
     unk58 = 0;
@@ -394,6 +456,105 @@ void VocalPart::AddPhrasePoints(float points) {
     unk48 += delta * (float)(bonus2 - 1);
 }
 
+void VocalPart::CalculateScore(float ms, int noteIndex, float hit, VocalScoreCache &cache)
+    const {
+    if (noteIndex != -1) {
+        float weight = GetNoteSliceWeight(unk54, ms, noteIndex);
+        const VocalNote &note = mVocalNoteList->mNotes[noteIndex];
+        float points;
+        float multiplier;
+        if (!note.IsUnpitched())
+            multiplier = mPitchHitMultiplier;
+        else if (note.mUnpitchedEasy)
+            multiplier = mNonPitchHitMultiplier * mNonPitchEasyMultiplier;
+        else
+            multiplier = mNonPitchHitMultiplier;
+        if (note.mDurationMs < mShortNoteThresh)
+            multiplier *= mShortNoteMult;
+        points = multiplier * (hit * weight);
+        VocalFrameSpewData *spew = mPlayer->mFrameSpewData;
+        if (spew) {
+            spew->mPartData[mPartIndex].unk4 = points;
+            spew->mPartData[mPartIndex].unk8 = unk38;
+            spew->mPartData[mPartIndex].unkc = hit;
+            spew->mPartData[mPartIndex].unk10 = weight;
+            spew->mPartData[mPartIndex].unk14 = multiplier;
+        }
+        cache.unkc = points;
+        if (mPhraseScore + points > unk38)
+            points = unk38 - mPhraseScore;
+        cache.unk4 = points;
+        float available = mPhraseScore + weight * multiplier;
+        float cap = Min(unk38, mPhraseScoreMax);
+        float remaining = Min(available, cap) - mPhraseScore;
+        MaxEq(remaining, 0.0f);
+        cache.unk10 = remaining;
+    }
+}
+bool PitchBetween(float, float, float, float &);
+
+float VocalPart::GetSloppyPitch(float ms, int noteIndex, float pitch, float &targetMs)
+    const {
+    const VocalNote &note = mVocalNoteList->mNotes[noteIndex];
+    float late = note.PitchAt(ms + mSlop);
+    float early = note.PitchAt(ms - mSlop);
+    float pitchClass = (float)std::fmod((double)pitch, 12.0);
+    float lateClass = (float)std::fmod((double)late, 12.0);
+    float earlyClass = (float)std::fmod((double)early, 12.0);
+    float between = -1.0f;
+    if (PitchBetween(pitch, late, early, between)) {
+        targetMs = ms;
+        return between;
+    }
+    float lateDistance = std::fabs(pitchClass - lateClass);
+    float earlyDistance = std::fabs(pitchClass - earlyClass);
+    if (lateDistance < earlyDistance) {
+        targetMs = std::min(ms + mSlop, note.EndMs());
+        return late;
+    } else if (lateDistance > earlyDistance) {
+        targetMs = std::max(ms - mSlop, note.mMs);
+        return early;
+    }
+    bool within = false;
+    if (note.mMs <= ms && ms < note.EndMs())
+        within = true;
+    if (within)
+        targetMs = ms;
+    else
+        // Preserve the original argument order in this equal-distance case.
+        targetMs = Clamp(ms, note.mMs, note.EndMs());
+    return late;
+}
+float VocalPart::ScoreNote(
+    float ms,
+    int noteIndex,
+    float &pitch,
+    int &octaveOffset,
+    float &targetPitch,
+    float &targetMs
+) const {
+    float target = GetSloppyPitch(ms, noteIndex, pitch, targetMs);
+    targetPitch = target;
+    float difference = target - pitch;
+    float magnitude = std::fabs(difference);
+    float folded = (float)std::fmod((double)magnitude, 12.0);
+    float distance = Min(12.0f - folded, folded);
+    if (distance <= 2.5f) {
+        int direction = difference > 0.0f ? 1 : -1;
+        octaveOffset = (int)(magnitude / 12.0f + 0.5f) * direction;
+        pitch += 12.0f * (float)octaveOffset;
+        difference = distance;
+    }
+    float score = 0.0f;
+    if (std::fabs(difference) <= mPitchMaximumDistance) {
+        score = (float)std::exp((double)(-(difference * difference) / mPitchSigma));
+        if (score < 0.01f)
+            score = 0.0f;
+    }
+    if (GetNoteSliceWeight(unk54, ms, noteIndex) == 0.0f)
+        score = 0.0f;
+    return score;
+}
 const float kFrameTimeMs = 16.666667938232421875f;
 
 float VocalPart::GetNoteSliceWeight(float start, float end, int index) const {

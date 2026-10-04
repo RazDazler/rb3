@@ -27,7 +27,7 @@ def main():
     session = json.loads(ledger.read_text(encoding='utf-8'))
     if session.get('target') != 'SZBE69_B8' or session.get('status') != 'active':
         parser.error('Only an active B8 session may receive trials')
-    manifest = (prepare_manifest(args.manifest, 'SZBE69_B8', args.symbol, allow_existing_forceactive=True)
+    manifest = (prepare_manifest(args.manifest.as_posix(), 'SZBE69_B8', args.symbol, allow_existing_forceactive=True)
                 if args.kind == 'literal' else json.loads(args.manifest.read_text(encoding='utf-8')))
     output = ROOT / 'build/decomp/session-trials' / str(time.time_ns())
     output.mkdir(parents=True)

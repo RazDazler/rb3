@@ -1792,7 +1792,9 @@
         "cflags": "sdk/MSL",
         "objects": {
             "sdk/PowerPC_EABI_Support/MetroTRK/custconn/cc_gdev.c": "MISSING",
-            "sdk/PowerPC_EABI_Support/MetroTRK/custconn/CircleBuffer.c": "MISSING",
+            "sdk/PowerPC_EABI_Support/MetroTRK/custconn/CircleBuffer.c": {
+                "status": "Matching"
+            },
             "sdk/PowerPC_EABI_Support/MetroTRK/custconn/MWCriticalSection_gc.c": "Matching",
 
             "sdk/PowerPC_EABI_Support/MetroTRK/__exception.s": "MISSING",
@@ -2230,7 +2232,9 @@
 
             "sdk/ec/src/ec_connect.cpp": "MISSING",
             "sdk/ec/src/ec_content.cpp": "MISSING",
-            "sdk/ec/src/ec_csup.cpp": "MISSING",
+            "sdk/ec/src/ec_csup.cpp": {
+                "status": "Matching"
+            },
             "sdk/ec/src/ec_deleteContents.cpp": "MISSING",
             "sdk/ec/src/ec_dk.cpp": "MISSING",
             "sdk/ec/src/ec_downloadContents.cpp": "MISSING",

@@ -49,10 +49,30 @@ during analysis, although the remaining analysis, save and all four decompilatio
 exports succeeded. Original mangled names remain available. Ghidra also initially
 misinterpreted `_savegpr_26` as returning `this`, inferred some float values as
 double, and emitted GQR quantization branches for paired-single save/restore.
-The exporter now annotates standard compiler save/restore helpers as register-preserving bookkeeping in a temporary read-only analysis view; a native export test confirms the false helper-return input is removed. Return types and other signatures remain inferred, and GQR noise remains. These are analysis artifacts, not discovered game logic. Assembly and existing
+The exporter annotates standard compiler save/restore helpers as register-preserving
+bookkeeping in a temporary read-only analysis view; a native export test confirms
+the false helper-return input is removed. For requested `VocalPart` routines it
+also supplies `GQR0 = 0`: B8 `__OSPSInit` explicitly clears it, and the only other
+named writer found in the original assembly is MetroTRK restoring its saved value.
+This assumption is stated in each affected export and is not applied to arbitrary
+SDK/debugger functions. The eligibility draft shrank from 260 to 141 lines after
+this annotation, with the irrelevant `ldexpf` branches removed. This reduces
+analysis noise; it does not establish a measured end-to-end decompilation speedup.
+Return types and other signatures remain inferred, and paired-save temporaries
+can remain. These are analysis artifacts, not discovered game logic. Assembly and existing
 headers must decide calling convention, types, NaN behavior, field layout and
 floating-point operation order. Do not copy these artifacts into reconstructed
 source or claim a generated draft matches merely because decompilation completed.
+
+Seven explicitly reviewed vocal/pitch signatures now override inference in the
+temporary view. Primitive references retain their types; class pointees remain
+opaque. The PowerPC default calling convention assigns float parameters to
+`f1`, `f2`, etc. independently of `r3`, `r4`, etc. for ordinary parameters.
+The exporter verifies each assignment and fails if that ABI mapping changes.
+In `ScoreNote`, correcting the return to `float` restored the omitted Gaussian
+confidence calculation and zero-weight gate; the untyped draft had incorrectly
+returned an integer address. Header declarations and original caller/callee
+assembly supplied this evidence. Unlisted functions still need signature review.
 
 Review a draft together with the corresponding original assembly and prepared
 objdiff packet, reconstruct meaningful C++, and submit it to
