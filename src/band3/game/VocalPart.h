@@ -12,6 +12,7 @@ public:
     void SetDifficultyVariables(int);
     void PostLoad();
     void CalcNoteWeights();
+    float GetNoteSliceWeight(float, float, int) const;
     void Start();
     void StartIntro();
     void UpdateSongMinMaxPitch();
@@ -43,6 +44,9 @@ public:
     bool IsPhraseMarkerAtEnd(const VocalPhrase *const &) const;
     bool IsEmptyPhrase(const VocalPhrase *const &) const;
     void Rollback(float, float);
+    void GetNoteRange(float, int &, int &);
+    bool NearNote(float);
+    void AfterPoll(float);
     float GetPartHitPercentage(const std::vector<VocalPhrase> &, int, int) const;
     void ResetScoring();
     float CalcPhraseScoreMax(const VocalPhrase *const &) const;

@@ -5,6 +5,1482 @@
   "started_utc": "2026-10-04T04:47:11Z",
   "model_label": "Current Codex model/effort not independently retrieved",
   "baseline": {
+    "fuzzy_match_percent": 68.99898,
+    "total_code": "11431676",
+    "matched_code": "6370000",
+    "matched_code_percent": 55.722363,
+    "total_data": "2755932",
+    "matched_data": "614776",
+    "matched_data_percent": 22.307373,
+    "total_functions": 41333,
+    "matched_functions": 28779,
+    "matched_functions_percent": 69.627174,
+    "complete_code": "1245308",
+    "complete_code_percent": 10.893486,
+    "complete_data": "498140",
+    "complete_data_percent": 18.075191,
+    "total_units": 1876,
+    "complete_units": 545
+  },
+  "initial_usage": {
+    "primary_used_percent": 1,
+    "weekly_used_percent": 78,
+    "primary_resets_at": 1791107162,
+    "weekly_resets_at": 1791580276
+  },
+  "accepted_changes": [
+    {
+      "candidate": "Reconstruct constant-pitch and gliding note slice integration from Ghidra and original floating-point instructions",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791090885293032900/manifest.json",
+      "started_at": 1791090885.2941673,
+      "elapsed_seconds": 12.87,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetNoteSliceWeight__9VocalPartCFffi",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791090890246748100-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791090889467019200-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetNoteSliceWeight__9VocalPartCFffi",
+          "compiled_symbol": "GetNoteSliceWeight__9VocalPartCFffi",
+          "match_percent": 40.74074,
+          "instruction_differences": [
+            {
+              "row": 0,
+              "original_address": "6448",
+              "original": "stwu r1, -0xd0(r1)",
+              "compiled": "stwu r1, -0xc0(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 3,
+              "original_address": "6460",
+              "original": "stw r0, 0xd4(r1)",
+              "compiled": "stw r0, 0xc4(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 4,
+              "original_address": "6464",
+              "original": "stfd f31, 0xc0(r1)",
+              "compiled": "stfd f31, 0xb0(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 5,
+              "original_address": "6468",
+              "original": "psq_st f31, 0xc8(r1), 0, qr0",
+              "compiled": "psq_st f31, 0xb8(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 6,
+              "original_address": "6472",
+              "original": "stfd f30, 0xb0(r1)",
+              "compiled": "stfd f30, 0xa0(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 7,
+              "original_address": "6476",
+              "original": "psq_st f30, 0xb8(r1), 0, qr0",
+              "compiled": "psq_st f30, 0xa8(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 8,
+              "original_address": "6480",
+              "original": "stfd f29, 0xa0(r1)",
+              "compiled": "stfd f29, 0x90(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 9,
+              "original_address": "6484",
+              "original": "psq_st f29, 0xa8(r1), 0, qr0",
+              "compiled": "psq_st f29, 0x98(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 10,
+              "original_address": "6488",
+              "original": "stfd f28, 0x90(r1)",
+              "compiled": "stfd f28, 0x80(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 11,
+              "original_address": "6492",
+              "original": "psq_st f28, 0x98(r1), 0, qr0",
+              "compiled": "psq_st f28, 0x88(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 12,
+              "original_address": "6496",
+              "original": "stfd f27, 0x80(r1)",
+              "compiled": "stfd f27, 0x70(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 13,
+              "original_address": "6500",
+              "original": "psq_st f27, 0x88(r1), 0, qr0",
+              "compiled": "psq_st f27, 0x78(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 14,
+              "original_address": "6504",
+              "original": "stfd f26, 0x70(r1)",
+              "compiled": "stfd f26, 0x60(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 15,
+              "original_address": "6508",
+              "original": "psq_st f26, 0x78(r1), 0, qr0",
+              "compiled": "psq_st f26, 0x68(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 16,
+              "original_address": "6512",
+              "original": "stfd f25, 0x60(r1)",
+              "compiled": "stfd f25, 0x50(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 17,
+              "original_address": "6516",
+              "original": "psq_st f25, 0x68(r1), 0, qr0",
+              "compiled": "psq_st f25, 0x58(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 18,
+              "original_address": "6520",
+              "original": "stfd f24, 0x50(r1)",
+              "compiled": "stfd f24, 0x40(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 19,
+              "original_address": "6524",
+              "original": "psq_st f24, 0x58(r1), 0, qr0",
+              "compiled": "psq_st f24, 0x48(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 20,
+              "original_address": "6528",
+              "original": "stfd f23, 0x40(r1)",
+              "compiled": "stfd f23, 0x30(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 21,
+              "original_address": "6532",
+              "original": "psq_st f23, 0x48(r1), 0, qr0",
+              "compiled": "psq_st f23, 0x38(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 22,
+              "original_address": "6536",
+              "original": "stfd f22, 0x30(r1)",
+              "compiled": "stfd f22, 0x20(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 23,
+              "original_address": "6540",
+              "original": "psq_st f22, 0x38(r1), 0, qr0",
+              "compiled": "psq_st f22, 0x28(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 24,
+              "original_address": "6544",
+              "original": "stfd f21, 0x20(r1)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 25,
+              "original_address": "6548",
+              "original": "psq_st f21, 0x28(r1), 0, qr0",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 29,
+              "original_address": null,
+              "original": null,
+              "compiled": "stw r28, 0x10(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 41,
+              "original_address": "6608",
+              "original": "lfs f23, 0x14(r4)",
+              "compiled": "lfs f24, 0x14(r4)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 43,
+              "original_address": "6616",
+              "original": "fsubs f29, f1, f0",
+              "compiled": "fsubs f30, f1, f0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 46,
+              "original_address": "6628",
+              "original": "fmr f26, f23",
+              "compiled": "fmr f26, f24",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 48,
+              "original_address": "6636",
+              "original": "lis r31, 0x0",
+              "compiled": "lis r28, 0x0",
+              "original_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@F_00000000",
+                    "flags": 1
+                  }
+                }
+              },
+              "compiled_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@F_00000000",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              }
+            },
+            {
+              "row": 50,
+              "original_address": "6644",
+              "original": "lfs f30, 0x0(r31)",
+              "compiled": "lfs f29, 0x0(r28)",
+              "original_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "@F_00000000",
+                    "flags": 1
+                  }
+                }
+              },
+              "compiled_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "@F_00000000",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              }
+            },
+            {
+              "row": 53,
+              "original_address": "6656",
+              "original": "lis r3, 0x0",
+              "compiled": null,
+              "original_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@F_56558541",
+                    "address": "20",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              },
+              "compiled_relocation": null
+            },
+            {
+              "row": 54,
+              "original_address": "6660",
+              "original": "fmr f24, f30",
+              "compiled": "fmr f25, f29",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 55,
+              "original_address": "6664",
+              "original": "lfs f25, 0x0(r3)",
+              "compiled": null,
+              "original_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "@F_56558541",
+                    "address": "20",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              },
+              "compiled_relocation": null
+            },
+            {
+              "row": 60,
+              "original_address": "6684",
+              "original": "fsubs f0, f31, f29",
+              "compiled": "fsubs f1, f31, f30",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 61,
+              "original_address": null,
+              "original": null,
+              "compiled": "lfs f0, 0x0(r31)",
+              "original_relocation": null,
+              "compiled_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "kFrameTimeMs",
+                    "address": "84",
+                    "size": "4",
+                    "flags": 2
+                  }
+                }
+              }
+            },
+            {
+              "row": 62,
+              "original_address": "6688",
+              "original": "stfs f0, 0xc(r1)",
+              "compiled": "stfs f1, 0xc(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 63,
+              "original_address": "6692",
+              "original": "fcmpo cr0, f0, f25",
+              "compiled": "fcmpo cr0, f1, f0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 68,
+              "original_address": "6712",
+              "original": "fcmpo cr0, f29, f24",
+              "compiled": "fcmpo cr0, f30, f25",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 69,
+              "original_address": "6716",
+              "original": "lfs f23, 0x0(r3)",
+              "compiled": "lfs f24, 0x0(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 71,
+              "original_address": "6724",
+              "original": "fmr f0, f24",
+              "compiled": "fmr f0, f25",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 73,
+              "original_address": "6732",
+              "original": "fcmpo cr0, f29, f26",
+              "compiled": "fcmpo cr0, f30, f26",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 75,
+              "original_address": "6740",
+              "original": "fdivs f1, f29, f26",
+              "compiled": "fdivs f1, f30, f26",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 81,
+              "original_address": "6764",
+              "original": "fmadds f30, f0, f23, f30",
+              "compiled": "fmadds f29, f0, f24, f29",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 82,
+              "original_address": "6768",
+              "original": "fadds f29, f29, f23",
+              "compiled": "fadds f30, f30, f24",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 83,
+              "original_address": "6772",
+              "original": "fcmpo cr0, f29, f31",
+              "compiled": "fcmpo cr0, f30, f31",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 94,
+              "original_address": "6816",
+              "original": "lis r6, 0x0",
+              "compiled": "lis r5, 0x0",
+              "original_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@F_56558541",
+                    "address": "20",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              },
+              "compiled_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@F_0000003f",
+                    "address": "76",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              }
+            },
+            {
+              "row": 95,
+              "original_address": "6820",
+              "original": "lis r5, 0x0",
+              "compiled": "lis r4, 0x0",
+              "original_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@F_0000003f",
+                    "flags": 1
+                  }
+                }
+              },
+              "compiled_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@F_00000040",
+                    "address": "72",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              }
+            },
+            {
+              "row": 96,
+              "original_address": "6824",
+              "original": "lis r4, 0x0",
+              "compiled": "lis r3, 0x0",
+              "original_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@F_00000040",
+                    "flags": 1
+                  }
+                }
+              },
+              "compiled_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@F_0000e03f",
+                    "address": "80",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              }
+            },
+            {
+              "row": 97,
+              "original_address": "6828",
+              "original": "lis r3, 0x0",
+              "compiled": null,
+              "original_relocation": {
+                "type": 6,
+                "type_name": "R_PPC_ADDR16_HA",
+                "target": {
+                  "symbol": {
+                    "name": "@F_0000e03f",
+                    "address": "32",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              },
+              "compiled_relocation": null
+            },
+            {
+              "row": 98,
+              "original_address": "6832",
+              "original": "fsubs f22, f0, f1",
+              "compiled": "fsubs f23, f0, f1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 99,
+              "original_address": "6836",
+              "original": "lfs f24, 0x0(r6)",
+              "compiled": null,
+              "original_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "@F_56558541",
+                    "address": "20",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              },
+              "compiled_relocation": null
+            },
+            {
+              "row": 100,
+              "original_address": "6840",
+              "original": "fmr f25, f30",
+              "compiled": "fmr f25, f29",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 106,
+              "original_address": "6864",
+              "original": "fsubs f0, f31, f29",
+              "compiled": "fsubs f1, f31, f30",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 107,
+              "original_address": null,
+              "original": null,
+              "compiled": "lfs f0, 0x0(r31)",
+              "original_relocation": null,
+              "compiled_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "kFrameTimeMs",
+                    "address": "84",
+                    "size": "4",
+                    "flags": 2
+                  }
+                }
+              }
+            },
+            {
+              "row": 108,
+              "original_address": "6868",
+              "original": "stfs f0, 0x8(r1)",
+              "compiled": "stfs f1, 0x8(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 109,
+              "original_address": "6872",
+              "original": "fcmpo cr0, f0, f24",
+              "compiled": "fcmpo cr0, f1, f0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 114,
+              "original_address": "6892",
+              "original": "fcmpo cr0, f29, f25",
+              "compiled": "fcmpo cr0, f30, f25",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 115,
+              "original_address": "6896",
+              "original": "lfs f21, 0x0(r3)",
+              "compiled": "lfs f22, 0x0(r3)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 119,
+              "original_address": "6912",
+              "original": "fcmpo cr0, f29, f23",
+              "compiled": "fcmpo cr0, f30, f24",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 120,
+              "original_address": null,
+              "original": null,
+              "compiled": "cror eq, lt, eq",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 121,
+              "original_address": "6916",
+              "original": "ble 0xc",
+              "compiled": "bne 0x28",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 122,
+              "original_address": "6920",
+              "original": "lfs f0, 0x0(r30)",
+              "compiled": null,
+              "original_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "@F_0000803f",
+                    "flags": 1
+                  }
+                }
+              },
+              "compiled_relocation": null
+            },
+            {
+              "row": 123,
+              "original_address": "6924",
+              "original": "b 0x24",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 124,
+              "original_address": "6928",
+              "original": "fdivs f0, f29, f23",
+              "compiled": "fdivs f0, f30, f24",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 131,
+              "original_address": "6956",
+              "original": "fadds f0, f22, f0",
+              "compiled": "fadds f0, f23, f0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 132,
+              "original_address": null,
+              "original": null,
+              "compiled": "b 0x8",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 133,
+              "original_address": null,
+              "original": null,
+              "compiled": "lfs f0, 0x0(r30)",
+              "original_relocation": null,
+              "compiled_relocation": {
+                "type": 4,
+                "type_name": "R_PPC_ADDR16_LO",
+                "target": {
+                  "symbol": {
+                    "name": "@F_0000803f",
+                    "address": "4",
+                    "size": "4",
+                    "flags": 5
+                  }
+                }
+              }
+            },
+            {
+              "row": 134,
+              "original_address": "6960",
+              "original": "fmadds f30, f0, f21, f30",
+              "compiled": "fmadds f29, f0, f22, f29",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 135,
+              "original_address": "6964",
+              "original": "fadds f29, f29, f21",
+              "compiled": "fadds f30, f30, f22",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 136,
+              "original_address": "6968",
+              "original": "fcmpo cr0, f29, f31",
+              "compiled": "fcmpo cr0, f30, f31",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 138,
+              "original_address": "6976",
+              "original": "psq_l f31, 0xc8(r1), 0, qr0",
+              "compiled": "psq_l f31, 0xb8(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 139,
+              "original_address": "6980",
+              "original": "fmr f1, f30",
+              "compiled": "fmr f1, f29",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 140,
+              "original_address": "6984",
+              "original": "lfd f31, 0xc0(r1)",
+              "compiled": "lfd f31, 0xb0(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 141,
+              "original_address": "6988",
+              "original": "psq_l f30, 0xb8(r1), 0, qr0",
+              "compiled": "psq_l f30, 0xa8(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 142,
+              "original_address": "6992",
+              "original": "lfd f30, 0xb0(r1)",
+              "compiled": "lfd f30, 0xa0(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 143,
+              "original_address": "6996",
+              "original": "psq_l f29, 0xa8(r1), 0, qr0",
+              "compiled": "psq_l f29, 0x98(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 144,
+              "original_address": "7000",
+              "original": "lfd f29, 0xa0(r1)",
+              "compiled": "lfd f29, 0x90(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 145,
+              "original_address": "7004",
+              "original": "psq_l f28, 0x98(r1), 0, qr0",
+              "compiled": "psq_l f28, 0x88(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 146,
+              "original_address": "7008",
+              "original": "lfd f28, 0x90(r1)",
+              "compiled": "lfd f28, 0x80(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 147,
+              "original_address": "7012",
+              "original": "psq_l f27, 0x88(r1), 0, qr0",
+              "compiled": "psq_l f27, 0x78(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 148,
+              "original_address": "7016",
+              "original": "lfd f27, 0x80(r1)",
+              "compiled": "lfd f27, 0x70(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 149,
+              "original_address": "7020",
+              "original": "psq_l f26, 0x78(r1), 0, qr0",
+              "compiled": "psq_l f26, 0x68(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 150,
+              "original_address": "7024",
+              "original": "lfd f26, 0x70(r1)",
+              "compiled": "lfd f26, 0x60(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 151,
+              "original_address": "7028",
+              "original": "psq_l f25, 0x68(r1), 0, qr0",
+              "compiled": "psq_l f25, 0x58(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 152,
+              "original_address": "7032",
+              "original": "lfd f25, 0x60(r1)",
+              "compiled": "lfd f25, 0x50(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 153,
+              "original_address": "7036",
+              "original": "psq_l f24, 0x58(r1), 0, qr0",
+              "compiled": "psq_l f24, 0x48(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 154,
+              "original_address": "7040",
+              "original": "lfd f24, 0x50(r1)",
+              "compiled": "lfd f24, 0x40(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 155,
+              "original_address": "7044",
+              "original": "psq_l f23, 0x48(r1), 0, qr0",
+              "compiled": "psq_l f23, 0x38(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 156,
+              "original_address": "7048",
+              "original": "lfd f23, 0x40(r1)",
+              "compiled": "lfd f23, 0x30(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 157,
+              "original_address": "7052",
+              "original": "psq_l f22, 0x38(r1), 0, qr0",
+              "compiled": "psq_l f22, 0x28(r1), 0, qr0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 158,
+              "original_address": "7056",
+              "original": "lfd f22, 0x30(r1)",
+              "compiled": "lfd f22, 0x20(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 159,
+              "original_address": "7060",
+              "original": "psq_l f21, 0x28(r1), 0, qr0",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 160,
+              "original_address": "7064",
+              "original": "lfd f21, 0x20(r1)",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 164,
+              "original_address": "7080",
+              "original": "lwz r0, 0xd4(r1)",
+              "compiled": "lwz r28, 0x10(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 165,
+              "original_address": null,
+              "original": null,
+              "compiled": "lwz r0, 0xc4(r1)",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 167,
+              "original_address": "7088",
+              "original": "addi r1, r1, 0xd0",
+              "compiled": "addi r1, r1, 0xc0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          40.74074,
+          -96
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 0,
+          "matched_functions": 0,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align vocal slice frame bound and glide range branches with original pointer selection and register lifetimes",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791091083706829800/manifest.json",
+      "started_at": 1791091083.7076821,
+      "elapsed_seconds": 12.07,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetNoteSliceWeight__9VocalPartCFffi",
+        "started_at": 1791091087.5585945,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": "glide-outer-range",
+        "before": [
+          40.74074,
+          -96
+        ],
+        "after": [
+          46.296295,
+          -87
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 4,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Retain strict-exact vocal note-weight calculation with separately reviewed existing STLport weak helper variants; no unit adoption",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791091412225331900/manifest.json",
+      "started_at": 1791091412.2264023,
+      "elapsed_seconds": 11.29,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "CalcNoteWeights__9VocalPartFv",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791091416703746300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791091415918906000-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "CalcNoteWeights__9VocalPartFv",
+          "compiled_symbol": "CalcNoteWeights__9VocalPartFv",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          14.782609,
+          -98
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 460,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 460,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct octave pitch bounds, rollback phrase/freestyle cursors, near-note and post-poll bookkeeping from cached Ghidra context and assembly",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791091668426406400/manifest.json",
+      "started_at": 1791091668.427658,
+      "elapsed_seconds": 11.81,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "PitchBetween__FfffRf",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791091672642031300-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791091671854612900-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "PitchBetween__FfffRf",
+          "compiled_symbol": "PitchBetween__FfffRf",
+          "match_percent": 80.645164,
+          "instruction_differences": [
+            {
+              "row": 22,
+              "original_address": null,
+              "original": null,
+              "compiled": "li r3, 0x0",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 24,
+              "original_address": "4348",
+              "original": "bne 0x18",
+              "compiled": "bnelr",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 27,
+              "original_address": "4360",
+              "original": "bne 0xc",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 28,
+              "original_address": "4364",
+              "original": "li r3, 0x1",
+              "compiled": null,
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 29,
+              "original_address": "4368",
+              "original": "blr",
+              "compiled": "bnelr",
+              "original_relocation": null,
+              "compiled_relocation": null
+            },
+            {
+              "row": 30,
+              "original_address": "4372",
+              "original": "li r3, 0x0",
+              "compiled": "li r3, 0x1",
+              "original_relocation": null,
+              "compiled_relocation": null
+            }
+          ],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          80.645164,
+          -6
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 80,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 80,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Reconstruct note search window and practice-phrase hit percentage including original assertion text and evaluation order",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791091804456675200/manifest.json",
+      "started_at": 1791091804.4575026,
+      "elapsed_seconds": 12.52,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetPartHitPercentage__9VocalPartCFRCQ211stlpmtx_std69vector<11VocalPhrase,Us,Q211stlpmtx_std27StlNodeAlloc<11VocalPhrase>>ii",
+        "accepted": true,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791091809360703600-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791091808578194100-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "GetPartHitPercentage__9VocalPartCFRCQ211stlpmtx_std69vector<11VocalPhrase,Us,Q211stlpmtx_std27StlNodeAlloc<11VocalPhrase>>ii",
+          "compiled_symbol": "GetPartHitPercentage__9VocalPartCFRCQ211stlpmtx_std69vector<11VocalPhrase,Us,Q211stlpmtx_std27StlNodeAlloc<11VocalPhrase>>ii",
+          "match_percent": 100.0,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": []
+        },
+        "before": [
+          0.0,
+          0
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "reason": "improved_without_function_regressions",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 664,
+          "matched_functions": 3,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": true,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 664,
+        "matched_functions": 3,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align octave pitch range result paths with original explicit true and false returns",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791091863689140000/manifest.json",
+      "started_at": 1791091863.6901548,
+      "elapsed_seconds": 11.52,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "PitchBetween__FfffRf",
+        "started_at": 1791091867.8768075,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "explicit-success-return",
+        "before": [
+          80.645164,
+          -6
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 1,
+      "gains": {
+        "matched_code": 124,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Align post-poll nonnegative note index clamp and load/store order with original sign-mask code",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791091907371058700/manifest.json",
+      "started_at": 1791091907.3721366,
+      "elapsed_seconds": 11.83,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "AfterPoll__9VocalPartFf",
+        "started_at": 1791091911.4796917,
+        "stop_reason": "target_fully_matched",
+        "accepted_variant": "cached-first-zero-max",
+        "before": [
+          69.565216,
+          -7
+        ],
+        "after": [
+          100.0,
+          0
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 2,
+      "gains": {
+        "matched_code": 84,
+        "matched_functions": 1,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    }
+  ],
+  "rejected_experiments": [
+    {
+      "candidate": "Reconstruct vocal note weights and nonempty-phrase count from Ghidra draft verified against B8 assembly",
+      "method": "source",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791090584450282800/manifest.json",
+      "started_at": 1791090584.4514472,
+      "elapsed_seconds": 21.32,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "CalcNoteWeights__9VocalPartFv",
+        "accepted": false,
+        "build_verified": true,
+        "log": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791090588722074000-006-source-trial.log",
+        "object_summary": "H:\\Xbox360\\Rock Band 3 Decomp\\rb3\\build\\decomp\\SZBE69_B8\\1791090587939409400-object-summary.json",
+        "target_inspection": {
+          "original_symbol": "CalcNoteWeights__9VocalPartFv",
+          "compiled_symbol": "CalcNoteWeights__9VocalPartFv",
+          "match_percent": 99.13043,
+          "instruction_differences": [],
+          "same_instruction_relocation_differences": [
+            {
+              "row": 47,
+              "original_address": "2412",
+              "original": "bl 0x0",
+              "compiled": "bl 0x0",
+              "original_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "GetNoteSliceWeight__9VocalPartCFffi",
+                    "demangled_name": "VocalPart::GetNoteSliceWeight(float, float, int) const",
+                    "address": "6448",
+                    "size": "648",
+                    "flags": 1
+                  }
+                }
+              },
+              "compiled_relocation": {
+                "type": 10,
+                "type_name": "R_PPC_REL24",
+                "target": {
+                  "symbol": {
+                    "name": "GetNoteSliceWeight__9VocalPartCFffi",
+                    "demangled_name": "VocalPart::GetNoteSliceWeight(float, float, int) const",
+                    "flags": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "before": [
+          14.782609,
+          -98
+        ],
+        "after": [
+          99.13043,
+          -1
+        ],
+        "reason": "new_unpaired_helpers: _Answer__Q211stlpmtx_std16_OKToMemCpy<f,f>Fv, _M_insert_overflow__Q211stlpmtx_std51_Vector_impl<f,Us,Q211stlpmtx_std15StlNodeAlloc<f>>FPfRCfRCQ211stlpmtx_std11__true_typeUlb, _M_throw_length_error__Q211stlpmtx_std51_Vector_base<f,Us,Q211stlpmtx_std15StlNodeAlloc<f>>CFv, reserve__Q211stlpmtx_std51_Vector_impl<f,Us,Q211stlpmtx_std15StlNodeAlloc<f>>FUl",
+        "global_regressions": [],
+        "measure_gains": {
+          "matched_code": 460,
+          "matched_functions": 1,
+          "complete_code": 0,
+          "matched_data": 0
+        },
+        "source_adopted": false,
+        "retained": false,
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 0,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    },
+    {
+      "candidate": "Test original exported frame constant linkage and fixed-bound lifetime without changing its exact value",
+      "method": "variants",
+      "classification": "behavior",
+      "manifest": "build/decomp/session-trials/1791091474506364300/manifest.json",
+      "started_at": 1791091474.5072675,
+      "elapsed_seconds": 12.53,
+      "result": {
+        "unit": "main/band3/game/VocalPart",
+        "symbol": "GetNoteSliceWeight__9VocalPartCFffi",
+        "started_at": 1791091478.66359,
+        "stop_reason": "variants_exhausted",
+        "accepted_variant": null,
+        "before": [
+          46.296295,
+          -87
+        ],
+        "after": [
+          46.296295,
+          -87
+        ],
+        "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+      },
+      "variants_tried": 3,
+      "gains": {
+        "matched_code": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_units": 0,
+        "matched_data": 0,
+        "complete_data": 0
+      }
+    }
+  ],
+  "retained_partial_reconstructions": [
+    {
+      "unit": "main/band3/game/VocalPart",
+      "symbol": "GetNoteSliceWeight__9VocalPartCFffi",
+      "after": [
+        46.296295,
+        -87
+      ],
+      "note": "New 648-byte constant-pitch/gliding integration; register scheduling and constant ownership remain."
+    },
+    {
+      "unit": "main/band3/game/VocalPart",
+      "symbol": "Rollback__9VocalPartFff",
+      "after": [
+        94.0,
+        -3
+      ],
+      "note": "New 200-byte rollback cursor reconstruction; original redundant cursor reload and undefined UpdateMinMaxPitch relocation remain."
+    }
+  ],
+  "notes": [
+    "Setup and upstream gains must be separated from this session decompilation gains.",
+    "User authorizes commits and pushes to RazDazler/rb3 master with ChatGPT attribution at session end.",
+    "Recovered previous source, formatted non-library code with protected paired-single assembly, all original B8 checkpoint measures unchanged. Pushed 04315684/54d18630 to fork; synced upstream gain +620 bytes /5 functions excluded from decomp baseline.",
+    "Ghidra-assisted vocal batch: CalcNoteWeights460, NearNote80, GetNoteRange272, GetPartHitPercentage232, PitchBetween124, AfterPoll84 strict-exact; canonical const upper_bound160 also matched. No units source-adopted."
+  ],
+  "setup_baseline": {
     "fuzzy_match_percent": 68.993546,
     "total_code": "11431676",
     "matched_code": "6369380",
@@ -22,17 +1498,112 @@
     "total_units": 1876,
     "complete_units": 545
   },
-  "initial_usage": {
-    "primary_used_percent": 1,
-    "weekly_used_percent": 78,
+  "upstream_gains": {
+    "matched_code": 620,
+    "matched_functions": 5,
+    "complete_code": 0,
+    "complete_units": 0,
+    "matched_data": 0,
+    "complete_data": 0
+  },
+  "checkpoint_commits": [
+    "04315684",
+    "54d18630"
+  ],
+  "usage_snapshots": [
+    {
+      "at": 1791089964.1976714,
+      "primary_used_percent": 6,
+      "weekly_used_percent": 79,
+      "primary_resets_at": 1791107162,
+      "weekly_resets_at": 1791580276
+    },
+    {
+      "at": 1791090361.252232,
+      "primary_used_percent": 10,
+      "weekly_used_percent": 80,
+      "primary_resets_at": 1791107162,
+      "weekly_resets_at": 1791580276
+    },
+    {
+      "at": 1791092037.320983,
+      "primary_used_percent": 31,
+      "weekly_used_percent": 83,
+      "primary_resets_at": 1791107162,
+      "weekly_resets_at": 1791580276
+    }
+  ],
+  "latest_checkpoint": {
+    "at": 1791092044.1281872,
+    "measures": {
+      "fuzzy_match_percent": 69.015045,
+      "total_code": "11431676",
+      "matched_code": "6371412",
+      "matched_code_percent": 55.73471,
+      "total_data": "2755932",
+      "matched_data": "614776",
+      "matched_data_percent": 22.307373,
+      "total_functions": 41333,
+      "matched_functions": 28786,
+      "matched_functions_percent": 69.64411,
+      "complete_code": "1245308",
+      "complete_code_percent": 10.893486,
+      "complete_data": "498140",
+      "complete_data_percent": 18.075191,
+      "total_units": 1876,
+      "complete_units": 545
+    },
+    "gains": {
+      "matched_code": 1412,
+      "matched_functions": 7,
+      "complete_code": 0,
+      "complete_units": 0,
+      "matched_data": 0,
+      "complete_data": 0
+    },
+    "elapsed_seconds": 2813.13,
+    "account_usage": {
+      "primary": {
+        "remaining_percent": 69,
+        "consumed_percentage_points": 30,
+        "same_window": true
+      },
+      "weekly": {
+        "remaining_percent": 17,
+        "consumed_percentage_points": 5,
+        "same_window": true
+      }
+    },
+    "verified_dol_sha1": "e26b3daf41886f0d09670135910f2510cd093ae8"
+  },
+  "latest_usage": {
+    "primary_used_percent": 31,
+    "weekly_used_percent": 83,
     "primary_resets_at": 1791107162,
     "weekly_resets_at": 1791580276
   },
-  "accepted_changes": [],
-  "rejected_experiments": [],
-  "retained_partial_reconstructions": [],
-  "notes": [
-    "Setup and upstream gains must be separated from this session decompilation gains.",
-    "User authorizes commits and pushes to RazDazler/rb3 master with ChatGPT attribution at session end."
+  "local_helper_runs": [],
+  "partial_summary": {
+    "retained_records": 2
+  },
+  "ghidra": {
+    "home": "build/references/ghidra/ghidra_12.1.4_PUBLIC",
+    "ghidra_release": "12.1.4",
+    "loader_release": "1.3.1",
+    "install_digest_audit": "build/references/ghidra/install.json",
+    "import_seconds": 140.49,
+    "labels": 82161,
+    "functions": 41253,
+    "first_export_seconds": 3.44,
+    "abi_annotated_export_seconds": 4.55,
+    "analysis_warnings": [
+      "CodeWarrior demangler null-provider compatibility exception; original mangled names retained.",
+      "Paired-single/GQR save-restore noise and incomplete inferred signatures require assembly review."
+    ],
+    "compiler_abi_annotations": "Register-preserving no-op injection for standard save/rest compiler helpers, applied only in read-only export view."
+  },
+  "remaining_issues": [
+    "Vocal note slice weight retained at 46.296295%; fixed-bound changes can improve register scheduling but currently regress other constants, so restored.",
+    "CalcNoteWeights strict-exact 460 bytes; newly emitted existing STLport weak copies reviewed separately (Answer100%, insert82.65306%, length-error91.66667%, reserve71.42857%). These helpers are not claimed as matched and the unit remains assembly-linked."
   ]
 }

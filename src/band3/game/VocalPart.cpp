@@ -171,7 +171,26 @@ void VocalPart::LocalDeployBandEnergy() {
         unkad = true;
 }
 
-void VocalPart::CalcNoteWeights() { mNoteWeights.clear(); }
+void VocalPart::CalcNoteWeights() {
+    mNoteWeights.clear();
+    if (mVocalNoteList) {
+        mNoteWeights.reserve(mVocalNoteList->mNotes.size());
+        for (unsigned int i = 0; i != mVocalNoteList->mNotes.size(); ++i) {
+            const VocalNote &note = mVocalNoteList->mNotes[i];
+            float weight = GetNoteSliceWeight(note.mMs, note.EndMs(), i);
+            mNoteWeights.push_back(weight);
+        }
+        mThisPhrase = mVocalNoteList->mPhrases.begin();
+        mPhraseScoreMax = 0;
+        unk1c = 0;
+        for (const VocalPhrase *phrase = mVocalNoteList->mPhrases.begin();
+             phrase != mVocalNoteList->mPhrases.end();
+             ++phrase) {
+            if (phrase->unk10 != phrase->unk14)
+                ++unk1c;
+        }
+    }
+}
 
 void VocalPart::EnableScoring(bool b) { mScoringEnabled = b; }
 bool VocalPart::ScoringEnabled() const { return mScoringEnabled; }
@@ -373,4 +392,125 @@ void VocalPart::AddPhrasePoints(float points) {
     mPlayer->GetMultiplier(true, multiplier, bonus1, bonus2);
     unk44 += delta * (float)(bonus1 - 1);
     unk48 += delta * (float)(bonus2 - 1);
+}
+
+const float kFrameTimeMs = 16.666667938232421875f;
+
+float VocalPart::GetNoteSliceWeight(float start, float end, int index) const {
+    if (end < start) {
+        float temp = start;
+        start = end;
+        end = temp;
+    }
+    const VocalNote &note = mVocalNoteList->mNotes[index];
+    float duration = note.mDurationMs;
+    float finish = end - note.mMs;
+    float position = start - note.mMs;
+    float limit = 150.0f;
+    if (finish < limit)
+        limit = duration;
+    float total = 0.0f;
+    if (note.mBeginPitch == note.mEndPitch) {
+        for (; position < finish;) {
+            float step = std::min(kFrameTimeMs, finish - position);
+            float weight;
+            if (position < 0.0f)
+                weight = 0.0f;
+            else if (position < limit)
+                weight = (float)std::pow((double)(position / limit), 0.5);
+            else
+                weight = 1.0f;
+            total += weight * step;
+            position += step;
+        }
+    } else {
+        float baseline = 1.0f - (float)std::pow((double)(1.0f / 1.75f), 2.0);
+        for (; position < finish;) {
+            float step = std::min(kFrameTimeMs, finish - position);
+            float weight;
+            if (position < 0.0f)
+                weight = 1.0f;
+            else if (position > duration)
+                weight = 1.0f;
+            else
+                weight = baseline
+                    + (float
+                    )std::pow((double)(2.0f * (position / duration - 0.5f) / 1.75f), 2.0);
+            total += weight * step;
+            position += step;
+        }
+    }
+    return total;
+}
+
+bool PitchBetween(float pitch, float a, float b, float &adjusted) {
+    float low = Min(a, b);
+    float high = Max(a, b);
+    while (pitch > high)
+        pitch -= 12.0f;
+    while (pitch < low)
+        pitch += 12.0f;
+    adjusted = pitch;
+    if (pitch >= low && pitch <= high)
+        return true;
+    return false;
+}
+
+void VocalPart::Rollback(float, float ms) {
+    unk58 = 0;
+    unk54 = ms;
+    if (mVocalNoteList) {
+        mThisPhrase = mVocalNoteList->mPhrases.begin();
+        while (mThisPhrase != mVocalNoteList->mPhrases.end()
+               && mThisPhrase->unk0 + mThisPhrase->unk4 < ms)
+            ++mThisPhrase;
+        mFreestyleSection = mVocalNoteList->mFreestyleSections.begin();
+        while (mFreestyleSection != mVocalNoteList->mFreestyleSections.end()
+               && ms > mFreestyleSection->second)
+            ++mFreestyleSection;
+        mSpotlightPhraseID = -1;
+        UpdateMinMaxPitch(mThisPhrase);
+    }
+}
+
+bool VocalPart::NearNote(float ms) {
+    int first = -1;
+    int last = -1;
+    GetNoteRange(ms, first, last);
+    return first < last;
+}
+
+void VocalPart::AfterPoll(float ms) {
+    int first, last;
+    GetNoteRange(ms, first, last);
+    int begin = first;
+    unk54 = ms;
+    unk58 = Max(begin, 0);
+}
+
+float VocalPart::GetPartHitPercentage(const std::vector<VocalPhrase> &phrases, int, int)
+    const {
+    if (!unk50)
+        return 0.0f;
+    float fPercentage = unk4c / (float)NumPracticePhrases(phrases);
+    MILO_ASSERT(( 0.0f) <= ( fPercentage) && ( fPercentage) <= ( 1.0f), 0x6E4);
+    return fPercentage;
+}
+
+void VocalPart::GetNoteRange(float ms, int &first, int &last) {
+    float low = ms - mSlop;
+    float high = ms + mSlop;
+    const std::vector<VocalNote> &notes = mVocalNoteList->GetNotes();
+    first = -1;
+    last = -1;
+    const VocalNote *note =
+        std::upper_bound(notes.begin(), notes.end(), low, VocalNoteEndCmp);
+    if (note != notes.end()) {
+        for (; note->mMs < high && note != notes.end(); ++note) {
+            int index = note - notes.begin();
+            if (first == -1)
+                first = index;
+            last = index + 1;
+        }
+    }
 }
